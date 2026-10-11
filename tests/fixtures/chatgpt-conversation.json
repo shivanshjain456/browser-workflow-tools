@@ -1,0 +1,41 @@
+{
+  "title": "Optimizing QuickSort in Rust",
+  "create_time": 1700000000,
+  "mapping": {
+    "node_0": {
+      "id": "node_0",
+      "parent": null,
+      "children": ["node_1"],
+      "message": null
+    },
+    "node_1": {
+      "id": "node_1",
+      "parent": "node_0",
+      "children": ["node_2"],
+      "message": {
+        "id": "msg_1",
+        "author": { "role": "user" },
+        "create_time": 1700000010,
+        "content": {
+          "content_type": "text",
+          "parts": ["How do I implement in-place quicksort in Rust with median-of-three pivot?"]
+        }
+      }
+    },
+    "node_2": {
+      "id": "node_2",
+      "parent": "node_1",
+      "children": [],
+      "message": {
+        "id": "msg_2",
+        "author": { "role": "assistant" },
+        "create_time": 1700000020,
+        "content": {
+          "content_type": "text",
+          "parts": ["Here is an idiomatic Rust implementation using partition logic:\n\n```rust\npub fn quicksort<T: Ord>(slice: &mut [T]) {\n    if slice.len() <= 1 { return; }\n    let pivot = partition(slice);\n    quicksort(&mut slice[..pivot]);\n    quicksort(&mut slice[pivot + 1..]);\n}\n```"]
+        }
+      }
+    }
+  },
+  "current_node": "node_2"
+}

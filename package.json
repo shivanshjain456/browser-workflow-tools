@@ -1,0 +1,39 @@
+{
+  "name": "browser-workflow-tools",
+  "version": "1.0.0",
+  "description": "Production-grade browser userscripts for developer productivity, LLM context packing, archive lookups, and web privacy.",
+  "type": "module",
+  "author": "Shivansh Jain <https://github.com/shivanshjain456>",
+  "license": "MIT",
+  "homepage": "https://github.com/shivanshjain456/browser-workflow-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivanshjain456/browser-workflow-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shivanshjain456/browser-workflow-tools/issues"
+  },
+  "scripts": {
+    "test": "node --test tests/**/*.test.mjs",
+    "check:syntax": "node -e \"const fs = require('fs'); ['clip-leetcode/clip-leetcode.user.js','codebase-uploader/codebase-uploader.user.js','chatgpt-conversation-bridge/chatgpt-conversation-bridge.user.js','web-archives/web-archives.user.js','youtube-search-command/youtube-search-command.user.js','yt-share-antitrack/yt-share-antitrack.user.js'].forEach(f => new Function(fs.readFileSync('scripts/' + f, 'utf8'))); console.log('All 6 userscripts are valid JavaScript syntax.');\"",
+    "check:meta": "node tools/check-userscript-metadata.mjs",
+    "check:perm": "node tools/check-permissions.mjs",
+    "check:secrets": "node tools/check-secrets.mjs",
+    "check": "npm run check:syntax && npm run check:meta && npm run check:perm && npm run check:secrets",
+    "ci": "npm run check && npm run test"
+  },
+  "keywords": [
+    "tampermonkey",
+    "violentmonkey",
+    "userscripts",
+    "developer-tools",
+    "productivity",
+    "llm",
+    "chatgpt",
+    "leetcode",
+    "privacy"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

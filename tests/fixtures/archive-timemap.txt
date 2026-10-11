@@ -1,0 +1,5 @@
+<https://example.com/page>; rel="original",
+<https://archive.is/timemap/https://example.com/page>; rel="self"; type="application/link-format",
+<https://archive.is/20210515120000/https://example.com/page>; rel="memento"; datetime="Sat, 15 May 2021 12:00:00 GMT",
+<https://archive.is/20220820153000/https://example.com/page>; rel="memento"; datetime="Sat, 20 Aug 2022 15:30:00 GMT",
+<https://archive.is/20231110091500/https://example.com/page>; rel="memento"; datetime="Fri, 10 Nov 2023 09:15:00 GMT"

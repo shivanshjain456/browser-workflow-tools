@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Secret files
+.env
+.env.*
+secrets.json
+*.pem
+id_rsa
+
+# Whitelisted files
+!dist/manifest.json

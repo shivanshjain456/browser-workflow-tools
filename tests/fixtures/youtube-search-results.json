@@ -1,0 +1,32 @@
+[
+  {
+    "id": "video_101",
+    "title": "Systems Programming in Zig - Crash Course 2026",
+    "channelId": "UC_engineer_pro",
+    "channelTitle": "Systems Engineering",
+    "viewCount": 125000,
+    "publishedDaysAgo": 14,
+    "durationSec": 1845,
+    "verified": true
+  },
+  {
+    "id": "video_102",
+    "title": "React vs Vue in 2026: The Honest Truth (SHOCKING)",
+    "channelId": "UC_clickbait_central",
+    "channelTitle": "Tech Hype Weekly",
+    "viewCount": 350000,
+    "publishedDaysAgo": 3,
+    "durationSec": 612,
+    "verified": false
+  },
+  {
+    "id": "video_103",
+    "title": "Building a High-Performance Database Engine from Scratch",
+    "channelId": "UC_db_architect",
+    "channelTitle": "Distributed Systems Deep Dive",
+    "viewCount": 89000,
+    "publishedDaysAgo": 45,
+    "durationSec": 3720,
+    "verified": true
+  }
+]

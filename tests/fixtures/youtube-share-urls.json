@@ -1,0 +1,18 @@
+[
+  {
+    "input": "https://youtu.be/dQw4w9WgXcQ?si=abcdef123456&feature=shared",
+    "expected": "https://youtu.be/dQw4w9WgXcQ"
+  },
+  {
+    "input": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&si=tracking_token_here&t=120s&utm_source=twitter",
+    "expected": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=120s"
+  },
+  {
+    "input": "https://music.youtube.com/watch?v=dQw4w9WgXcQ&si=music_tracking&feature=share",
+    "expected": "https://music.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "input": "https://m.youtube.com/watch?v=dQw4w9WgXcQ&si=mobile_si_param&list=PL12345",
+    "expected": "https://m.youtube.com/watch?v=dQw4w9WgXcQ&list=PL12345"
+  }
+]
