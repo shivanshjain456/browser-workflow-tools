@@ -1,13 +1,13 @@
-# Browser Workflow Tools — identity usage
+# Browser Workflow Tools - identity usage
 
 > Modular, zero-dependency browser userscripts for developer productivity, AI context packing, archive resiliency and web privacy.
 > Audience: Developers and power users who live in the browser
 
 ## Concept
-A browser window with an accent tab carries a bold routed workflow path — scripts that take work in, process it locally, and hand it back out.
+A browser window with an accent tab carries a bold routed workflow path - scripts that take work in, process it locally, and hand it back out.
 
 The compact mark carries the identity alone; the primary lockup pairs it with the
-'Browser Workflow Tools' wordmark (Space Grotesk SemiBold, converted to outlines — no font
+'Browser Workflow Tools' wordmark (Space Grotesk SemiBold, converted to outlines - no font
 required to render the production files).
 **Ownership / provenance:** One identity covers the whole suite: the individual userscripts are modules of a single product, not separate brands.
 
@@ -20,7 +20,7 @@ required to render the production files).
 
 Single-colour reproduction: use `*-mono.svg` (all geometry set to
 `currentColor`); set any colour ≥ 4.5:1 contrast against the background.
-Negative space (needle, slashes, core, route) must always show the background —
+Negative space (needle, slashes, core, route) must always show the background -
 never fill it with a second colour.
 
 ## Typography
