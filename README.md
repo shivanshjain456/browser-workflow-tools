@@ -7,6 +7,13 @@
 [![Compatibility](https://img.shields.io/badge/Tampermonkey-Verified-brightgreen.svg)](SMOKE_MATRIX.md)
 [![Tests](https://img.shields.io/badge/Tests-29%20Passing-success.svg)](tests/)
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/svg/browser-workflow-tools-primary-dark.svg">
+    <img src="assets/brand/svg/browser-workflow-tools-primary.svg" alt="Browser Workflow Tools — modular, zero-dependency browser userscripts" width="480">
+  </picture>
+</p>
+
 ---
 
 ## Overview

@@ -10,7 +10,8 @@
 // @supportURL   https://github.com/shivanshjain456/browser-workflow-tools/issues
 // @downloadURL  https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/clip-leetcode/clip-leetcode.user.js
 // @updateURL    https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/clip-leetcode/clip-leetcode.user.js
-// @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJlY3QgeD0iMy41IiB5PSIzIiB3aWR0aD0iMTciIGhlaWdodD0iMTkiIHJ4PSIzLjUiIGZpbGw9IiMwQ0IzNDUiLz48cmVjdCB4PSI3LjUiIHk9IjEuMiIgd2lkdGg9IjkiIGhlaWdodD0iNC4yIiByeD0iMi4xIiBmaWxsPSIjMDg3YTJmIi8+PHBhdGggZD0iTTggMTIuNWg4TTggMTYuNWg1IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+
+// @icon         https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-32.png
+// @icon64       https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-64.png
 // @match        *://*.leetcode.com/problems/*
 // @match        *://*.leetcode.com/contest/*
 // @match        *://*.leetcode.com/problemset*

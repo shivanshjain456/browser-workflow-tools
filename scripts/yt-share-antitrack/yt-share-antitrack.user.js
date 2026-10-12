@@ -10,6 +10,8 @@
 // @supportURL   https://github.com/shivanshjain456/browser-workflow-tools/issues
 // @downloadURL  https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/yt-share-antitrack/yt-share-antitrack.user.js
 // @updateURL    https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/yt-share-antitrack/yt-share-antitrack.user.js
+// @icon         https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-32.png
+// @icon64       https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-64.png
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @match        https://music.youtube.com/*
