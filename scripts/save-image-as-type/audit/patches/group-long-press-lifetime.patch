@@ -1,0 +1,117 @@
+--- a/src/ui/menu.js
++++ b/src/ui/menu.js
+@@ -102,7 +102,7 @@
+   let lastHoveredElement = null;
+   /** The format entries of the currently open menu, for digit type-ahead. */
+   let openStateFormatItems = [];
+-  let longPressTimer = 0;
++  let stopLongPress = null;
+   let longPressOpenedAt = 0;
+   let openedAt = 0;
+   let attached = false;
+@@ -445,17 +445,14 @@
+     const startX = event.clientX;
+     const startY = event.clientY;
+     const element = event.target;
+-    clearTimeout(longPressTimer);
+-    longPressTimer = setTimeout(() => {
+-      const target = resolveImageTarget(element, { enableBackgroundImages: settings.enableBackgroundImages });
+-      if (!target) return;
+-      longPressOpenedAt = Date.now();
+-      open(target, startX, startY, { trigger: 'longpress' });
+-    }, LONG_PRESS_MS);
++    if (stopLongPress) stopLongPress();
++    let timer = 0;
+     // One-shot local handlers that remove themselves. These must NOT go through
+     // addListener(): that array lives as long as the page, and three entries per
+     // touch-down would grow without bound on a touch device.
+     const release = () => {
++      clearTimeout(timer);
++      if (stopLongPress === release) stopLongPress = null;
+       doc.removeEventListener('pointermove', guardUserEvent(onMove));
+       doc.removeEventListener('pointerup', guardUserEvent(onEnd));
+       doc.removeEventListener('pointercancel', guardUserEvent(onEnd));
+@@ -467,15 +464,24 @@
+         const dx = Math.abs(moveEvent.clientX - startX);
+         const dy = Math.abs(moveEvent.clientY - startY);
+         if (dx > LONG_PRESS_MOVE_TOLERANCE || dy > LONG_PRESS_MOVE_TOLERANCE) {
+-          clearTimeout(longPressTimer);
+           release();
+         }
+       }
+     };
+     const onEnd = () => {
+-      clearTimeout(longPressTimer);
+       release();
+     };
++    stopLongPress = release;
++    timer = setTimeout(() => {
++      try {
++        const target = resolveImageTarget(element, { enableBackgroundImages: settings.enableBackgroundImages });
++        if (!target) return;
++        longPressOpenedAt = Date.now();
++        open(target, startX, startY, { trigger: 'longpress' });
++      } finally {
++        release();
++      }
++    }, LONG_PRESS_MS);
+     doc.addEventListener('pointermove', guardUserEvent(onMove), { passive: true });
+     doc.addEventListener('pointerup', guardUserEvent(onEnd), { once: true });
+     doc.addEventListener('pointercancel', guardUserEvent(onEnd), { once: true });
+@@ -488,6 +494,7 @@
+   }
+ 
+   function onDismiss(event) {
++    if (stopLongPress) stopLongPress();
+     if (!openState) return;
+     if (event && event.type === 'scroll' && Date.now() - openedAt < SCROLL_GRACE_MS) return;
+     close({ restoreFocus: false });
+@@ -518,6 +525,7 @@
+       addListener(doc, 'scroll', onDismiss, { passive: true, capture: true });
+     },
+     detach() {
++      if (stopLongPress) stopLongPress();
+       for (const [target, type, handler, options] of listeners) {
+         try {
+           target.removeEventListener(type, guardUserEvent(handler), options);
+--- a/test/unit/ui-menu.test.mjs
++++ b/test/unit/ui-menu.test.mjs
+@@ -539,11 +539,33 @@
+     assert.equal(api.isOpen, false);
+   });
+ 
+-
+-
+-
+-
+-
++  test('detaching during a pending long press cancels timer and local subscriptions', (t) => {
++    const { api } = makeMenu(); t.after(() => api.destroy());
++    pointerEvent('pointerdown', { target: doc.getElementById('photo') });
++    api.detach(); mock.timers.tick(2000);
++    assert.equal(api.isOpen, false);
++    assert.deepEqual(scriptListeners(), []);
++  });
++
++  test('completed long press releases local handlers even without pointerup', (t) => {
++    const { api } = makeMenu(); t.after(() => api.destroy());
++    const count = scriptListeners().length;
++    pointerEvent('pointerdown', { target: doc.getElementById('photo') });
++    mock.timers.tick(600);
++    assert.equal(api.isOpen, true);
++    assert.equal(scriptListeners().length, count);
++  });
++
++  test('replacement touch sessions retain only one set of transient listeners', (t) => {
++    const { api } = makeMenu(); t.after(() => api.destroy());
++    const count = scriptListeners().length;
++    for (let n = 0; n < 20; n += 1) pointerEvent('pointerdown', { target: doc.getElementById('photo') });
++    assert.equal(scriptListeners().length, count + 2, 'two callback identities cover three event types');
++    dom.window.dispatchEvent(new dom.window.Event('blur'));
++    mock.timers.tick(2000);
++    assert.equal(api.isOpen, false);
++    assert.equal(scriptListeners().length, count);
++  });
+ 
+   test('repeated touches do not accumulate document listeners (leak regression)', (t) => {
+     const { api } = makeMenu();

@@ -1,0 +1,1 @@
+PASS: 48 original defaults unchanged, 1 declared addition (profiles), 8 full format definitions, 6 actions, shortcuts, and 10 grants.

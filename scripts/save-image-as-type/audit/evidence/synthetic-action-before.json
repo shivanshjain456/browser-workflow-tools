@@ -1,0 +1,13 @@
+{
+  "scope": "Chrome shared-world page DOM attack with fake GM; NOT actual-manager exploit validation",
+  "contextEventTrusted": false,
+  "menuOpened": true,
+  "publicApiPresent": false,
+  "privilegedFetchAttempted": true,
+  "attempts": [
+    {
+      "url": "http://127.0.0.1:38595/image.png"
+    }
+  ],
+  "status": "CONFIRMED ADDITIONAL RELEASE BLOCKER"
+}

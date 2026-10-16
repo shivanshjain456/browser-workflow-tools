@@ -1,0 +1,377 @@
+[
+  {
+    "file": "src/main.js",
+    "line": 471,
+    "code": ": { signal: { aborted: false, addEventListener() {}, removeEventListener() {} }, abort() {} };"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1234,
+    "code": "if (controller && controller.signal && typeof controller.signal.addEventListener === 'function') {"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1235,
+    "code": "controller.signal.addEventListener('abort', guardUserEvent(() => setTimeout(finish, 200)), { once: true });"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1386,
+    "code": "image.removeEventListener('load', guardUserEvent(settle));"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1387,
+    "code": "image.removeEventListener('error', guardUserEvent(settle));"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1390,
+    "code": "image.addEventListener('load', guardUserEvent(settle));"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1391,
+    "code": "image.addEventListener('error', guardUserEvent(settle));"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1542,
+    "code": "doc.addEventListener('keydown', guardUserEvent(handler), true);"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1543,
+    "code": "disposers.push(() => doc.removeEventListener('keydown', guardUserEvent(handler), true));"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1707,
+    "code": "win.addEventListener('pagehide', guardUserEvent(onPageHide), { once: true });"
+  },
+  {
+    "file": "src/main.js",
+    "line": 1708,
+    "code": "disposers.push(() => win.removeEventListener('pagehide', guardUserEvent(onPageHide)));"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 105,
+    "code": "fileInput.addEventListener('change', guardUserEvent(onImportFile));"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 162,
+    "code": "prefix.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 170,
+    "code": "subfolder.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 186,
+    "code": "maxLen.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 232,
+    "code": "templateControl.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 275,
+    "code": "jpeg.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 281,
+    "code": "webp.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 294,
+    "code": "pdfSelect.addEventListener('change', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 307,
+    "code": "bgSelect.addEventListener('change', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 315,
+    "code": "downscale.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 342,
+    "code": "maxFrames.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 348,
+    "code": "memLimit.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 364,
+    "code": "concurrency.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 377,
+    "code": "maxImages.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 387,
+    "code": "minWidth.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 392,
+    "code": "minHeight.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 464,
+    "code": "zipMax.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 489,
+    "code": "scanCap.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 614,
+    "code": "nameControl.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 655,
+    "code": "templateControl.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 661,
+    "code": "hostsControl.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 726,
+    "code": "control.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/panel.js",
+    "line": 774,
+    "code": "input.addEventListener('change', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 145,
+    "code": "width.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 159,
+    "code": "height.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 221,
+    "code": "input.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 573,
+    "code": "cropBox.addEventListener('pointerdown', guardUserEvent(onDown));"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 574,
+    "code": "cropBox.addEventListener('pointermove', guardUserEvent(onMove));"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 575,
+    "code": "cropBox.addEventListener('pointerup', guardUserEvent(onUp));"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 576,
+    "code": "cropBox.addEventListener('pointercancel', guardUserEvent(onUp));"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 577,
+    "code": "wrap.addEventListener('pointerdown', guardUserEvent((event) => {"
+  },
+  {
+    "file": "src/ui/transform-dialog.js",
+    "line": 584,
+    "code": "wrap.addEventListener('keydown', guardUserEvent((event) => {"
+  },
+  {
+    "file": "src/ui/jobbar.js",
+    "line": 116,
+    "code": "collapseButton.addEventListener('click', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/toast.js",
+    "line": 191,
+    "code": "button.addEventListener('click', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/toast.js",
+    "line": 210,
+    "code": "close.addEventListener('click', guardUserEvent(() => dismiss(id)));"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 116,
+    "code": "button.addEventListener('click', guardUserEvent(action));"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 153,
+    "code": "target.addEventListener(type, guardUserEvent(handler), options);"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 459,
+    "code": "doc.removeEventListener('pointermove', guardUserEvent(onMove));"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 460,
+    "code": "doc.removeEventListener('pointerup', guardUserEvent(onEnd));"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 461,
+    "code": "doc.removeEventListener('pointercancel', guardUserEvent(onEnd));"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 479,
+    "code": "doc.addEventListener('pointermove', guardUserEvent(onMove), { passive: true });"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 480,
+    "code": "doc.addEventListener('pointerup', guardUserEvent(onEnd), { once: true });"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 481,
+    "code": "doc.addEventListener('pointercancel', guardUserEvent(onEnd), { once: true });"
+  },
+  {
+    "file": "src/ui/menu.js",
+    "line": 523,
+    "code": "target.removeEventListener(type, guardUserEvent(handler), options);"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 174,
+    "code": "search.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 181,
+    "code": "minWidth.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 188,
+    "code": "minHeight.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 343,
+    "code": "checkbox.addEventListener('change', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 378,
+    "code": "openButton.addEventListener('click', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/picker.js",
+    "line": 506,
+    "code": "if (observer && typeof observer.disconnect === 'function') observer.disconnect();"
+  },
+  {
+    "file": "src/ui/batch-dialog.js",
+    "line": 199,
+    "code": "minWidth.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/batch-dialog.js",
+    "line": 205,
+    "code": "minHeight.addEventListener('input', guardUserEvent(() => {"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 200,
+    "code": "if (typeof handler === 'function') node.addEventListener('click', guardUserEvent(handler));"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 219,
+    "code": "if (typeof onChange === 'function') input.addEventListener('change', guardUserEvent(() => onChange(input.checked)));"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 261,
+    "code": "if (typeof onChange === 'function') select.addEventListener('change', guardUserEvent(() => onChange(select.value)));"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 331,
+    "code": "if (!target || typeof target.addEventListener !== 'function') return () => {};"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 332,
+    "code": "target.addEventListener(type, guardUserEvent(handler), capture);"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 336,
+    "code": "target.removeEventListener(type, guardUserEvent(handler), capture);"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 346,
+    "code": "target.removeEventListener(type, guardUserEvent(handler), capture);"
+  },
+  {
+    "file": "src/ui/dialog.js",
+    "line": 398,
+    "code": "head.lastChild.addEventListener('click', guardUserEvent(() => closeDialog()));"
+  },
+  {
+    "file": "src/core/gm.js",
+    "line": 260,
+    "code": "if (signal) signal.removeEventListener('abort', onAbort);"
+  },
+  {
+    "file": "src/core/gm.js",
+    "line": 280,
+    "code": "signal.addEventListener('abort', onAbort, { once: true });"
+  },
+  {
+    "file": "src/core/scan.js",
+    "line": 660,
+    "code": "observer.observe(doc.body || doc.documentElement || doc, {"
+  },
+  {
+    "file": "src/core/scan.js",
+    "line": 677,
+    "code": "observer.disconnect();"
+  }
+]

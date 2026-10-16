@@ -1,0 +1,527 @@
+[
+  [
+    1,
+    "Partially confirmed",
+    "src/main.js: bootstrap markerRoots / API publication",
+    "Executed clean same-world page can invoke gm.setValue; preseed returns fake and suppresses boot. Refuted subclaim: no privileged methods are copied onto the preseeded object, because bootstrap returns before constructing them. Real managers not tested.",
+    "2.0.1"
+  ],
+  [
+    2,
+    "Partially confirmed",
+    "src/core/gm.js: sandboxed; src/ui/panel.js: diagnostics",
+    "Expression is tautological with info. sandboxed is not used by panel or main diagnostics; false assurance in the displayed panel is not reproduced.",
+    "2.0.1"
+  ],
+  [
+    3,
+    "Confirmed",
+    "src/main.js: isTestHarness",
+    "Executed flag and DOM attribute attacks suppress boot. Node imports currently depend on the flag.",
+    "2.0.1"
+  ],
+  [
+    4,
+    "Partially confirmed",
+    "src/meta.js: connect; src/core/source.js: acquisition",
+    "Wildcard and consent confirmed. Narrowing breaks arbitrary-CDN tool. Justification already exists in src/meta.js and README, but not origin trail.",
+    "3.0.0"
+  ],
+  [
+    5,
+    "Partially confirmed",
+    "src/core/settings.js: migrate/normalize/import/store; src/core/presets.js: normalizePreset",
+    "Unguarded merges confirmed; field validation does not equate to demonstrated global pollution exploit. Inherited values can be accepted. Hostile-channel tests required.",
+    "2.0.1"
+  ],
+  [
+    6,
+    "Partially confirmed",
+    "src/core/filename.js header; lint.mjs; build.mjs header",
+    "There is already a filename threat model and runnable invariant lint in repository. Standalone distribution lacks the complete model and lint.",
+    "2.0.1"
+  ],
+  [
+    7,
+    "Partially confirmed",
+    "src/core/raster.js:createCanvas; src/core/transform.js",
+    "No explicit canvas gamut policy. Actual P3 conversion/clipping magnitude not measured; browser decoding may honour ICC on input, so 'neither honoured' is not established.",
+    "3.0.0"
+  ],
+  [
+    8,
+    "Partially confirmed",
+    "src/core/formats.js; src/core/compare.js",
+    "Native encoding/control gaps confirmed; comparison already says actual bytes and near-tie rationale. Browser-specific labelling needs work. Size wins quoted in brief unmeasured.",
+    "3.0.0"
+  ],
+  [
+    9,
+    "Partially confirmed",
+    "src/core/raster.js:drawToCanvas; src/core/transform.js",
+    "Single high-smoothing path confirmed. Quantified visual loss versus reference not established.",
+    "3.0.0"
+  ],
+  [
+    10,
+    "Confirmed",
+    "src/encoders/pdf.js; src/core/convert.js",
+    "Single-page JPEG DeviceRGB writer confirmed; existing independent PDF tests pass. Transparency/lossless PDF not offered.",
+    "3.0.0"
+  ],
+  [
+    11,
+    "Confirmed",
+    "src/core/metadata.js; src/core/convert.js",
+    "Readers and strip path present, re-encode metadata writer absent. Existing metadata tests demonstrate strip, not preservation.",
+    "3.0.0"
+  ],
+  [
+    12,
+    "Confirmed",
+    "src/core/filename.js:WINDOWS_RESERVED",
+    "Dotted device stems survive anchored whole-string test. Actual Windows filesystem not available; acceptance limited to published reserved-name rules.",
+    "2.0.1"
+  ],
+  [
+    13,
+    "Partially confirmed",
+    "src/main.js:waitForPendingImages; src/ui/picker.js; raster.loadImage",
+    "Real local HTTP origin with strict CSP emits img-src violation for data image. preload conflates error/load; raster.loadImage already rejects errors. Public strict-CSP site not tested.",
+    "3.0.0"
+  ],
+  [
+    14,
+    "Partially confirmed",
+    "src/encoders/gif.js; src/core/raster.js; src/core/queue.js",
+    "Browser repeated GIF timings show main-thread stalls (raw production probe). No worker pipeline. Native encoding may run browser-internal threads; claim all decoding is synchronously on main thread too broad.",
+    "3.0.0"
+  ],
+  [
+    15,
+    "Confirmed",
+    "src/core/transform.js:MAX_TRANSFORM_PIXELS; src/core/raster.js",
+    "Hard ceiling but no general preflight budget tiers. Memory pressure/tab kills not induced.",
+    "3.0.0"
+  ],
+  [
+    16,
+    "Partially confirmed",
+    "src/meta.js:noframes/runAt; src/main.js",
+    "Executed 10-child fixture boots 11 instances and registers 88 commands. Frames deliberately supported and documented, so 'no policy' overstated; duplicate conversion across nested frames not reproduced.",
+    "3.0.0"
+  ],
+  [
+    17,
+    "Cannot determine",
+    "src/main.js:markers",
+    "Different-world marker visibility is manager-specific. No actual dual-manager installation available. Existing same-world fixture does not establish cross-manager arbitration.",
+    "3.0.0"
+  ],
+  [
+    18,
+    "Partially confirmed",
+    "src/main.js:onPageHide; README limits",
+    "Cancel/revoke on navigation and no durable queue confirmed. Files already downloaded are not thrown away. Actual discard/crash not tested.",
+    "3.0.0"
+  ],
+  [
+    19,
+    "Partially confirmed",
+    "src/ui/menu.js; src/core/scan.js; src/main.js:destroy",
+    "Call-site imbalance is not a leak proof. Existing teardown tests pass but full lifetime inventory absent.",
+    "3.0.0"
+  ],
+  [
+    20,
+    "Confirmed",
+    "src/ui/*; src/core/settings.js",
+    "Inline English and no message catalogue. Exact distinct user-facing string count requires semantic extraction; raw literal count is not a truthful substitute.",
+    "3.0.0"
+  ],
+  [
+    21,
+    "Confirmed",
+    "src/ui/* CSS",
+    "No explicit dir/logical layout strategy. No translated RTL UI available to observe.",
+    "3.0.0"
+  ],
+  [
+    22,
+    "Partially confirmed",
+    "src/ui/* CSS",
+    "Pixel font sizes confirmed. Shadow DOM does not inherently defeat all browser zoom/minimum-font mechanisms; actual override behaviour unmeasured at triage.",
+    "2.0.1"
+  ],
+  [
+    23,
+    "Partially confirmed",
+    "src/ui/toast.js; src/ui/* CSS",
+    "Forced-color rules missing, reduced-motion coverage limited. Claim hex always overrides forced system palette is not generally true; actual rendering must be observed.",
+    "2.0.1"
+  ],
+  [
+    24,
+    "Confirmed",
+    "src/core/presets.js; src/main.js:pause command",
+    "Page-session pause exists, persisted host disable does not.",
+    "3.0.0"
+  ],
+  [
+    25,
+    "Partially confirmed",
+    "src/meta.js:description; README format table",
+    "Description omits AVIF/original; long README covers them. Platform compliance verdict not established by an actual moderator.",
+    "2.0.1"
+  ],
+  [
+    26,
+    "Confirmed",
+    "src/meta.js:identity comment",
+    "No maintained public support/homepage supplied. Cannot invent a serviceable URL; offline evidence/report path feasible but not equivalent to maintainer support.",
+    "3.0.0"
+  ],
+  [
+    27,
+    "Partially confirmed",
+    "src/meta.js:grant; src/core/gm.js",
+    "Only legacy declarations and dual runtime probes confirmed. Actual namespace-only manager grant behaviour not tested; blanket compatibility claim withheld.",
+    "3.0.0"
+  ],
+  [
+    28,
+    "Partially confirmed",
+    "build.mjs; src/meta.js; CHANGELOG.md",
+    "Repository has changelog and executable version freshness tests. Single standalone file does not include or link them. Duplication is build-stamped, not independent manual constants.",
+    "2.0.1"
+  ],
+  [
+    29,
+    "Partially confirmed",
+    "build.mjs; lint.mjs; test/unit/*",
+    "All referenced infrastructure exists and ran locally, refuting absence from repository. It was not packaged beside standalone deliverable; distribute runnable source capsule.",
+    "2.0.1"
+  ],
+  [
+    30,
+    "Partially confirmed",
+    "src/main.js final block; src/core/* module exports",
+    "Production seam exists. Source ESM already supports headless import directly, so not the only route when repository is provided.",
+    "2.0.1"
+  ],
+  [
+    31,
+    "Partially confirmed",
+    "test/unit/encoders.test.mjs; encoders-zip.test.mjs",
+    "Independent structural tests already exist and pass. No pinned golden-byte corpus found. Pin before modifying encoders.",
+    "2.0.1"
+  ],
+  [
+    32,
+    "Confirmed",
+    "src/encoders/* headers; docs",
+    "Comments exist but spec/omission matrix absent.",
+    "3.0.0"
+  ],
+  [
+    33,
+    "Partially confirmed",
+    "src/main.js:ensureSettings().then / idle / bootstrap",
+    "Many async paths catch/report errors, but final try/catch cannot catch rejected async bootstrap. Global host-page error handlers would wrongly capture site failures; use owned-task funnel.",
+    "2.0.1"
+  ],
+  [
+    34,
+    "Confirmed",
+    "src/ui/panel.js:buildDiagnosticsSection",
+    "Diagnostics table only; settings export exists but is not diagnostics export.",
+    "3.0.0"
+  ],
+  [
+    35,
+    "Partially confirmed",
+    "src/main.js:ensureCapabilities; src/ui/panel.js",
+    "Per-use messages confirmed; eager settings-repair notices already exist. No once-per-environment missing-storage warning.",
+    "3.0.0"
+  ],
+  [
+    36,
+    "Partially confirmed",
+    "src/ui/transform-dialog.js; src/core/transform.js",
+    "No undo stack. Source pixels are not destructively modified and preview rebuilds from original; 'destructive' refers output/default choice, not loss of source.",
+    "3.0.0"
+  ],
+  [
+    37,
+    "Confirmed",
+    "src/core/transform.js; src/ui/transform-dialog.js",
+    "No pixel redaction modes. Need established by commission, not independently studied user population.",
+    "3.0.0"
+  ],
+  [
+    38,
+    "Partially confirmed",
+    "src/core/formats.js; src/core/frames.js",
+    "Listed extra formats absent as outputs. Evidence of actual population demand not supplied beyond brief; distinguish needed icon rasters from ICO container.",
+    "3.1.0"
+  ],
+  [
+    39,
+    "Confirmed",
+    "src/ui/compare-dialog.js; src/ui/inspector.js",
+    "Findings and comparison result have no portable report export.",
+    "3.0.0"
+  ],
+  [
+    40,
+    "Partially confirmed",
+    "src/core exports; docs",
+    "ESM exports discoverable via source and JSDoc but no stable external ABI promised. A count of top-level bindings is not a public API.",
+    "2.0.1"
+  ],
+  [
+    41,
+    "Confirmed",
+    "src/core/source.js:resolveImageTarget",
+    "No VIDEO target path. Poster discovery exists in scan. Cross-origin/DRM behaviour not tested because no live capture implementation.",
+    "3.0.0"
+  ],
+  [
+    42,
+    "Confirmed",
+    "src/core/clipboard.js",
+    "Clipboard writes only, no read or paste intake. Browser clipboard write tests pass, not intake tests.",
+    "3.0.0"
+  ],
+  [
+    43,
+    "Confirmed",
+    "src/ui/panel.js file input; src/main.js",
+    "File input imports settings only, no media intake.",
+    "3.0.0"
+  ],
+  [
+    44,
+    "Confirmed",
+    "src/main.js; src/core/source.js",
+    "No user-entered URL action; internal URL acquisition already works for DOM-derived sources.",
+    "3.0.0"
+  ],
+  [
+    45,
+    "Confirmed",
+    "src/meta.js:match",
+    "HTTP(S)-only metadata. Injecting via CDP into file page would not test real manager matching; actual file manager test unavailable.",
+    "3.0.0"
+  ],
+  [
+    46,
+    "Partially confirmed",
+    "src/core/source.js:resolveImageTarget; src/core/scan.js",
+    "Input-image/link actions absent. Scanner srcset variants are inventory entries and can be selected through picker, so categorical nonselectability refuted.",
+    "3.0.0"
+  ],
+  [
+    47,
+    "Partially confirmed",
+    "src/core/scan.js; src/main.js:batch path",
+    "Explicit scan 'materialise' action absent; known URLs of not-loaded entries can already be acquired when included in batch. Not equivalent to forcing site's JS lazy loader.",
+    "3.0.0"
+  ],
+  [
+    48,
+    "Confirmed",
+    "src/encoders/pdf.js; src/ui/batch-dialog.js",
+    "No PDF batch destination or multipage page tree writer. Existing writer is one page.",
+    "3.0.0"
+  ],
+  [
+    49,
+    "Partially confirmed",
+    "src/core/frames.js; src/core/formats.js",
+    "APNG detection exists, native frame decode browser-gated. Not full independent APNG decode. APNG output absent.",
+    "3.1.0"
+  ],
+  [
+    50,
+    "Partially confirmed",
+    "src/core/formats.js registry; convert native path",
+    "Own-PNG missing, but engine/transparency/quality fields already are machine-readable; registry idea not entirely absent.",
+    "3.1.0"
+  ],
+  [
+    51,
+    "Confirmed",
+    "src/core/formats.js; src/encoders/zip.js",
+    "No icon-size set action, although resize and ZIP primitives exist. ICO writer and PNG raster ZIP are different capabilities.",
+    "3.1.0"
+  ],
+  [
+    52,
+    "Confirmed",
+    "src/ui/batch-dialog.js; src/main.js",
+    "No contact sheet action or encoder path.",
+    "3.1.0"
+  ],
+  [
+    53,
+    "Confirmed",
+    "runtime full-source search",
+    "No QR encoder/action found. Peripheral generation explicitly eligible for decline.",
+    "Declined"
+  ],
+  [
+    54,
+    "Partially confirmed",
+    "src/core/frames.js; src/core/convert.js",
+    "No average-frame policy. Existing report.notes already disclose some animation degradation, so 'every loss silent' false.",
+    "3.1.0"
+  ],
+  [
+    55,
+    "Confirmed",
+    "src/core/compare.js; src/core/convert.js",
+    "Comparison measures bytes but no bounded target-budget search.",
+    "3.1.0"
+  ],
+  [
+    56,
+    "Confirmed",
+    "src/core/source.js:mimeFromUrl; frames detection",
+    "HEIC/HEIF/JXL identification absent; universal decoding not promised by browsers.",
+    "3.0.0"
+  ],
+  [
+    57,
+    "Confirmed",
+    "src/main.js:state; src/core/settings.js",
+    "No persisted conversion history. Queue snapshots are transient, not history.",
+    "3.0.0"
+  ],
+  [
+    58,
+    "Confirmed",
+    "src/ui/*; src/main.js",
+    "Dialog badge styles only; no saved-on-page marker layer.",
+    "3.1.0"
+  ],
+  [
+    59,
+    "Confirmed",
+    "src/main.js:lastFormat; src/core/settings.js",
+    "lastFormat is page-session only. Presets can carry site format but aren't learned per-host memory or fixed order.",
+    "3.0.0"
+  ],
+  [
+    60,
+    "Partially confirmed",
+    "src/core/scan.js:dedupeEntries; src/main.js",
+    "URL dedupe exists; byte identity/perceptual preview absent. Similarity not evidence of interchangeable content.",
+    "3.1.0"
+  ],
+  [
+    61,
+    "Confirmed",
+    "src/core/scan.js:observeInventory; src/main.js",
+    "Inventory observation only; no armed capture watcher.",
+    "3.2.0"
+  ],
+  [
+    62,
+    "Confirmed",
+    "src/ui/menu.js:hoveredTarget; src/main.js",
+    "Hover tracking exists; no quick-save button or peek card. Not the only entry point: keyboard and manager commands already work.",
+    "3.1.0"
+  ],
+  [
+    63,
+    "Confirmed",
+    "src/ui/picker.js selection state",
+    "Selection exists only within dialog, no persistent page-session tray.",
+    "3.0.0"
+  ],
+  [
+    64,
+    "Confirmed",
+    "src/core/shortcuts.js; src/ui/help.js",
+    "Shortcut help is not searchable action palette; no palette found.",
+    "3.0.0"
+  ],
+  [
+    65,
+    "Confirmed",
+    "runtime full-source search",
+    "No timed review/slideshow. Peripheral and eligible for decline.",
+    "Declined"
+  ],
+  [
+    66,
+    "Confirmed",
+    "src/core/presets.js; src/main.js:resolveSettings",
+    "Host preset overlays only selected conversion fields. No arbitrary validated site setting overlay or host disable.",
+    "3.0.0"
+  ],
+  [
+    67,
+    "Partially confirmed",
+    "competitor B normalizeProfile; A profiles extraction; own presets",
+    "B profile is format/resize/pack, substantially overlapping own presets; A needs focused semantic study. Existence alone does not prove second tier necessary.",
+    "Declined"
+  ],
+  [
+    68,
+    "Confirmed",
+    "src/ui/panel.js; src/main.js",
+    "No internal log ring or redacted diagnostics export. No telemetry added to solve it.",
+    "3.0.0"
+  ],
+  [
+    69,
+    "Confirmed",
+    "src/main.js:ensureCapabilities; test/unit/encoders.test.mjs",
+    "Native MIME capability probe exists, own-encoder on-demand self-test UI absent.",
+    "3.0.0"
+  ],
+  [
+    70,
+    "Partially confirmed",
+    "src/core/compare.js; src/ui/compare-dialog.js",
+    "Explicit recommendation exists inside comparison; proactive auto save mode absent. No need to rebuild comparison.",
+    "3.0.0"
+  ],
+  [
+    71,
+    "Confirmed",
+    "src/ui/menu.js; src/core/clipboard.js",
+    "No open/copy source address/copy data URI actions. Grant-free window.open/Clipboard API plausible but manager/browser behaviour untested.",
+    "3.0.0"
+  ],
+  [
+    72,
+    "Partially confirmed",
+    "src/main.js:handleShortcut saveAll; src/ui/batch-dialog.js",
+    "Refuted high-volume unconfirmed shortcut claim: saveAll calls openBatchDialog, preview then Start. Filename edit and crop ratios absent; plain save preview absent.",
+    "3.0.0"
+  ],
+  [
+    73,
+    "Partially confirmed",
+    "src/main.js:gm.registerMenuCommand",
+    "Eight commands do not include per-format entries; disabling formats therefore does NOT leave eight stale format commands. Labels static and callbacks read current settings; dynamic expansion is absent, not a reproduced defect.",
+    "3.0.0"
+  ],
+  [
+    74,
+    "Partially confirmed",
+    "src/meta.js; src/main.js",
+    "Same root as G-16; document-start/frame multiplicity confirmed. Timing trade-off needs measured design, not automatic adoption of competitor's idle choice.",
+    "3.0.0"
+  ],
+  [
+    75,
+    "Partially confirmed",
+    "src/meta.js:match/exclude; bootstrap",
+    "No sensitive-host precheck; actual store injection restrictions manager-specific and not tested. Claimed inertness of all exclusions not independently verified.",
+    "3.0.0"
+  ]
+]

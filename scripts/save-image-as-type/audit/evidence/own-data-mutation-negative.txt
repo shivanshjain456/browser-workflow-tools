@@ -1,0 +1,287 @@
+TAP version 13
+# Subtest: audit — own-data configuration ingress
+    # Subtest: never invokes getters, inherits fields or carries prototype-control keys
+    not ok 1 - never invokes getters, inherits fields or carries prototype-control keys
+      ---
+      duration_ms: 3.002288
+      location: '/home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:19:2'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + {
+        +   filenamePrefix: 'inherited'
+        + }
+        - null
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: ~
+      actual:
+        filenamePrefix: 'inherited'
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:24:32)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        Test.start (node:internal/test_runner/test:702:17)
+        node:internal/test_runner/test:1133:71
+        node:internal/per_context/primordials:482:82
+        new Promise (<anonymous>)
+        new SafePromise (node:internal/per_context/primordials:450:29)
+        node:internal/per_context/primordials:482:9
+        Array.map (<anonymous>)
+      ...
+    # Subtest: JSON magic keys cannot change migration or schema prototypes
+    not ok 2 - JSON magic keys cannot change migration or schema prototypes
+      ---
+      duration_ms: 0.474124
+      location: '/home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:28:2'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + {
+        +   filenamePrefix: 'pwn'
+        + }
+        - undefined
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      actual:
+        filenamePrefix: 'pwn'
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:31:59)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        Suite.processPendingSubtests (node:internal/test_runner/test:526:18)
+        Test.postRun (node:internal/test_runner/test:889:19)
+        Test.run (node:internal/test_runner/test:835:12)
+        async Promise.all (index 0)
+        async Suite.run (node:internal/test_runner/test:1135:7)
+        async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+    not ok 3 - deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+      ---
+      duration_ms: 0.831031
+      location: '/home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:34:2'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        + actual - expected
+        
+        + <ref *1> {
+        +   [Symbol(bad)]: 'ignored',
+        +   x: [Circular *1]
+        + }
+        - null
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: ~
+      actual:
+        x: <Circular>
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:37:10)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        Suite.processPendingSubtests (node:internal/test_runner/test:526:18)
+        Test.postRun (node:internal/test_runner/test:889:19)
+        Test.run (node:internal/test_runner/test:835:12)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: every setting field withstands object/array/scalar confusion without throwing
+    ok 4 - every setting field withstands object/array/scalar confusion without throwing
+      ---
+      duration_ms: 11.02741
+      ...
+    # Subtest: text limit is checked before parsing an oversized file
+    ok 5 - text limit is checked before parsing an oversized file
+      ---
+      duration_ms: 0.464203
+      ...
+    # Subtest: manager load, remote change and save patch share the same boundary
+    ok 6 - manager load, remote change and save patch share the same boundary
+      ---
+      duration_ms: 1.050337
+      ...
+    1..6
+not ok 1 - audit — own-data configuration ingress
+  ---
+  duration_ms: 18.249646
+  type: 'suite'
+  location: '/home/user/save-image-as-type/.tmp-audit-mutant/test/unit/audit-hardening.test.mjs:18:1'
+  failureType: 'subtestsFailed'
+  error: '3 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: audit — reserved names and final byte budgets
+    # Subtest: neutralises CON
+    ok 1 - neutralises CON
+      ---
+      duration_ms: 0.534221
+      ...
+    # Subtest: neutralises nul.png
+    ok 2 - neutralises nul.png
+      ---
+      duration_ms: 0.159002
+      ...
+    # Subtest: neutralises con.txt.txt
+    ok 3 - neutralises con.txt.txt
+      ---
+      duration_ms: 0.174385
+      ...
+    # Subtest: neutralises PRN.pdf
+    ok 4 - neutralises PRN.pdf
+      ---
+      duration_ms: 0.189682
+      ...
+    # Subtest: neutralises AUX.a.b
+    ok 5 - neutralises AUX.a.b
+      ---
+      duration_ms: 0.105643
+      ...
+    # Subtest: neutralises COM1.jpeg
+    ok 6 - neutralises COM1.jpeg
+      ---
+      duration_ms: 0.184852
+      ...
+    # Subtest: neutralises LPT9.tar.png
+    ok 7 - neutralises LPT9.tar.png
+      ---
+      duration_ms: 0.104379
+      ...
+    # Subtest: neutralises COM¹.png
+    ok 8 - neutralises COM¹.png
+      ---
+      duration_ms: 0.154182
+      ...
+    # Subtest: neutralises LPT².bmp
+    ok 9 - neutralises LPT².bmp
+      ---
+      duration_ms: 0.114926
+      ...
+    # Subtest: neutralises CONIN$.txt
+    ok 10 - neutralises CONIN$.txt
+      ---
+      duration_ms: 0.14759
+      ...
+    # Subtest: neutralises CONOUT$.png
+    ok 11 - neutralises CONOUT$.png
+      ---
+      duration_ms: 0.194964
+      ...
+    # Subtest: non-reserved device-like stems stay unchanged
+    ok 12 - non-reserved device-like stems stay unchanged
+      ---
+      duration_ms: 0.34419
+      ...
+    # Subtest: post-truncation device stems cannot reappear
+    ok 13 - post-truncation device stems cannot reappear
+      ---
+      duration_ms: 0.353785
+      ...
+    # Subtest: minimum multibyte stem budget never emits only extension
+    ok 14 - minimum multibyte stem budget never emits only extension
+      ---
+      duration_ms: 0.413223
+      ...
+    1..14
+ok 2 - audit — reserved names and final byte budgets
+  ---
+  duration_ms: 3.825669
+  type: 'suite'
+  ...
+# Subtest: audit — honest environment and startup funnel
+    # Subtest: isolation unknown for unverified metadata 
+    ok 1 - isolation unknown for unverified metadata 
+      ---
+      duration_ms: 0.482166
+      ...
+    # Subtest: isolation unknown for unverified metadata auto
+    ok 2 - isolation unknown for unverified metadata auto
+      ---
+      duration_ms: 0.252157
+      ...
+    # Subtest: isolation unknown for unverified metadata page
+    ok 3 - isolation unknown for unverified metadata page
+      ---
+      duration_ms: 0.08927
+      ...
+    # Subtest: isolation unknown for unverified metadata content
+    ok 4 - isolation unknown for unverified metadata content
+      ---
+      duration_ms: 0.076327
+      ...
+    # Subtest: isolation unknown for unverified metadata sandbox
+    ok 5 - isolation unknown for unverified metadata sandbox
+      ---
+      duration_ms: 0.074098
+      ...
+    # Subtest: a rejected startup promise is reported once without escaping
+    ok 6 - a rejected startup promise is reported once without escaping
+      ---
+      duration_ms: 0.708437
+      ...
+    # Subtest: broken reporter does not turn contained failure into unhandled rejection
+    ok 7 - broken reporter does not turn contained failure into unhandled rejection
+      ---
+      duration_ms: 0.27526
+      ...
+    1..7
+ok 3 - audit — honest environment and startup funnel
+  ---
+  duration_ms: 2.269822
+  type: 'suite'
+  ...
+# Subtest: audit — deterministic encoder bytes pinned to audited original
+    # Subtest: alpha.bmp
+    ok 1 - alpha.bmp
+      ---
+      duration_ms: 0.793406
+      ...
+    # Subtest: odd.bmp
+    ok 2 - odd.bmp
+      ---
+      duration_ms: 0.185033
+      ...
+    # Subtest: static.gif
+    ok 3 - static.gif
+      ---
+      duration_ms: 0.172437
+      ...
+    # Subtest: animated.gif
+    ok 4 - animated.gif
+      ---
+      duration_ms: 0.118661
+      ...
+    # Subtest: single.pdf
+    ok 5 - single.pdf
+      ---
+      duration_ms: 0.12231
+      ...
+    # Subtest: unicode.zip
+    ok 6 - unicode.zip
+      ---
+      duration_ms: 0.112109
+      ...
+    1..6
+ok 4 - audit — deterministic encoder bytes pinned to audited original
+  ---
+  duration_ms: 1.722876
+  type: 'suite'
+  ...
+1..4
+# tests 33
+# suites 4
+# pass 30
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 178.500197
+
+
+exit=1

@@ -1,0 +1,10 @@
+{
+  "scope": "Development-only download/setup, Linux x86_64; unchanged official VM unpacked for lab, not signed-store installation; no runtime dependency",
+  "node": "22.22.2",
+  "managerUrl": "https://github.com/violentmonkey/violentmonkey/releases/download/v2.49.0/Violentmonkey-mv3-v2.49.0.zip",
+  "managerArchiveSha256": "3fa676c803a9698453ed23dfe496d4bc29a4bec52f6a95e55c43c2955921f8ee",
+  "managerVersion": "2.49.0",
+  "chromeVersion": "Google Chrome for Testing 155.0.8059.84",
+  "chromeExecutableSha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b",
+  "next": "node audit/manager-lab-setup.mjs && node audit/real-manager.mjs vm && python3 audit/verify-manager-outputs.py vm"
+}

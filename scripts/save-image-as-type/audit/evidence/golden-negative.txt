@@ -1,0 +1,3 @@
+alpha.bmp: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+exit=1

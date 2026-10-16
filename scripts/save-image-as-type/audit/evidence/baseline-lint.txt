@@ -1,0 +1,48 @@
+PASS  no-eval
+      dynamic code execution: absent from all 36 sources and the artifact
+PASS  no-new-function
+      dynamic code execution: absent from all 36 sources and the artifact
+PASS  no-innerhtml
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-outerhtml
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-insert-adjacent-html
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-document-write
+      document rewriting: absent from all 36 sources and the artifact
+PASS  no-string-timer
+      string timers are eval in disguise: absent from all 36 sources and the artifact
+PASS  no-unsafeWindow
+      page-world access is not needed by this script: absent from all 36 sources and the artifact
+PASS  no-debugger
+      debug statement left in source: absent from all 36 sources and the artifact
+PASS  no-javascript-url
+      script URL sink: absent from all 36 sources and the artifact
+PASS  no-remote-require
+      unpinned remote executable dependency: absent from all 36 sources and the artifact
+PASS  no-remote-resource
+      unpinned remote dependency: absent from all 36 sources and the artifact
+PASS  no-gm-add-element-src
+      remote script injection: absent from all 36 sources and the artifact
+PASS  grants-match-usage
+      10 grants, all used: GM_info, GM_getValue, GM_setValue, GM_addValueChangeListener, GM_removeValueChangeListener, GM_deleteValue, GM_xmlhttpRequest, GM_download, GM_registerMenuCommand, GM_notification
+PASS  connect-scope
+      @connect = ["*"] (wildcard required: images are hosted on arbitrary CDNs; documented in README)
+PASS  match-scope
+      @match = ["*://*/*"]; no file://, chrome://, or extension origins
+PASS  artifact-exists
+      560.0 KB, sha256 2eb8851b422393eb
+PASS  artifact-header-matches-meta
+      metadata block in release/ is byte-identical to src/meta.js
+PASS  no-build-placeholder
+      version placeholder was replaced at build time
+PASS  no-runtime-imports
+      no import/require statements survive into the artifact
+PASS  version-consistent
+      metadata @version and in-script version are both 2.0.0
+PASS  no-remote-endpoints
+      only inert identifiers/reserved parse bases appear: https://siat.invalid/save-image-as-type, http://www.w3.org/2000/svg, https://siat.invalid/
+PASS  no-implicit-page-globals
+      no bare calls to window-owned names (27 checked) across 36 sources
+
+23/23 lint checks passed

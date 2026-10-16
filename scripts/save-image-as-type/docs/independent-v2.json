@@ -1,0 +1,228 @@
+{
+  "artifactSha256": "2eb8851b422393ebe9d14ef5a0bd11874abac03fd76a28328d6fae6ff280daed",
+  "zip": {
+    "archives": [
+      {
+        "size": 35970,
+        "testzip": null,
+        "comment": "Created by Save Image as Type 2.0.0",
+        "member_count": 2,
+        "members": [
+          {
+            "name": "001-photo-png.png",
+            "size": 35341,
+            "crc": 3866677998,
+            "crc_recomputed": 3866677998,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 35341,
+            "sha256": "0c80d2d54d05c7d1f726bc4b1762b7c091488b727249868b26e2734ed203ecae",
+            "decoded": {
+              "format": "PNG",
+              "width": 200,
+              "height": 140,
+              "mode": "RGBA",
+              "pixel_sha256": "e555de48aa89def2bcce8134bcefb357240fe344d1c928b89e9aec2c8152925a"
+            }
+          },
+          {
+            "name": "002-opaque-png.png",
+            "size": 350,
+            "crc": 3864850388,
+            "crc_recomputed": 3864850388,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 350,
+            "sha256": "fc004600c7ad964ade722bef6937ede421031337f6f711503d579a708fac9723",
+            "decoded": {
+              "format": "PNG",
+              "width": 64,
+              "height": 48,
+              "mode": "RGBA",
+              "pixel_sha256": "052ef2b7a144b50795c45826fbed6b49b4bde1d7ede5a0310e7864a71651d3ff"
+            }
+          }
+        ],
+        "name": "v2-batch.zip"
+      },
+      {
+        "size": 129488,
+        "testzip": null,
+        "comment": "Created by Save Image as Type 2.0.0",
+        "member_count": 4,
+        "members": [
+          {
+            "name": "same-name.png",
+            "size": 35341,
+            "crc": 3866677998,
+            "crc_recomputed": 3866677998,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 35341,
+            "sha256": "0c80d2d54d05c7d1f726bc4b1762b7c091488b727249868b26e2734ed203ecae",
+            "decoded": {
+              "format": "PNG",
+              "width": 200,
+              "height": 140,
+              "mode": "RGBA",
+              "pixel_sha256": "e555de48aa89def2bcce8134bcefb357240fe344d1c928b89e9aec2c8152925a"
+            }
+          },
+          {
+            "name": "same-name.bmp",
+            "size": 84054,
+            "crc": 1374477520,
+            "crc_recomputed": 1374477520,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 84054,
+            "sha256": "4e4c9a77f072006f3a665507ff8a5d5bb2d95d21a288c7e85027ce61e315047b",
+            "decoded": {
+              "format": "BMP",
+              "width": 200,
+              "height": 140,
+              "mode": "RGB",
+              "pixel_sha256": "e555de48aa89def2bcce8134bcefb357240fe344d1c928b89e9aec2c8152925a"
+            }
+          },
+          {
+            "name": "same-name-2.png",
+            "size": 350,
+            "crc": 3864850388,
+            "crc_recomputed": 3864850388,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 350,
+            "sha256": "fc004600c7ad964ade722bef6937ede421031337f6f711503d579a708fac9723",
+            "decoded": {
+              "format": "PNG",
+              "width": 64,
+              "height": 48,
+              "mode": "RGBA",
+              "pixel_sha256": "052ef2b7a144b50795c45826fbed6b49b4bde1d7ede5a0310e7864a71651d3ff"
+            }
+          },
+          {
+            "name": "same-name-2.bmp",
+            "size": 9270,
+            "crc": 614314978,
+            "crc_recomputed": 614314978,
+            "crc_matches": true,
+            "compress_type": 0,
+            "bytes_read": 9270,
+            "sha256": "35854de7bf7962a59cdaa9b1680426f308c75b5e2277f9bf78076b99d89d2d14",
+            "decoded": {
+              "format": "BMP",
+              "width": 64,
+              "height": 48,
+              "mode": "RGB",
+              "pixel_sha256": "052ef2b7a144b50795c45826fbed6b49b4bde1d7ede5a0310e7864a71651d3ff"
+            }
+          }
+        ],
+        "name": "v2-multiformat.zip"
+      }
+    ],
+    "errors": []
+  },
+  "metadata": {
+    "original": {
+      "images": [
+        {
+          "size": 1853,
+          "format": "JPEG",
+          "width": 40,
+          "height": 30,
+          "mode": "RGB",
+          "pixel_sha256": "8d17165d9417df92db9412813df3e58ec5c771ed3eb80d03a8d9bf2d5777e5cb",
+          "pixel_bytes": 3600,
+          "exif": {
+            "present": true,
+            "tags": {
+              "make": "FixtureCam",
+              "model": "FX-900",
+              "datetime": "2026:03:04 05:06:07",
+              "description": "A test image with location data",
+              "orientation": "6",
+              "xresolution": "72.0"
+            },
+            "gps": {
+              "present": true,
+              "tag_count": 5,
+              "latitude": [
+                48,
+                51,
+                30
+              ],
+              "longitude": [
+                2,
+                20,
+                0
+              ],
+              "altitude": 515
+            },
+            "tag_count": 8
+          },
+          "icc_bytes": 588,
+          "png_text": [],
+          "xmp_present": false,
+          "raw_has_gps_chars": false,
+          "name": "v2-metadata-original.jpg"
+        }
+      ],
+      "errors": []
+    },
+    "stripped": {
+      "images": [
+        {
+          "size": 1523,
+          "format": "JPEG",
+          "width": 40,
+          "height": 30,
+          "mode": "RGB",
+          "pixel_sha256": "8d17165d9417df92db9412813df3e58ec5c771ed3eb80d03a8d9bf2d5777e5cb",
+          "pixel_bytes": 3600,
+          "exif": {
+            "present": false,
+            "tags": {},
+            "gps": {
+              "present": false
+            }
+          },
+          "icc_bytes": 588,
+          "png_text": [],
+          "xmp_present": false,
+          "raw_has_gps_chars": false,
+          "name": "v2-stripped.jpg"
+        }
+      ],
+      "errors": []
+    }
+  },
+  "resized": {
+    "images": [
+      {
+        "size": 10739,
+        "format": "PNG",
+        "width": 100,
+        "height": 70,
+        "mode": "RGBA",
+        "pixel_sha256": "29663b262082347b7fabfed6c07a2a7920e66ec19bc4c507b44a3d4e8783361f",
+        "pixel_bytes": 21000,
+        "exif": {
+          "present": false,
+          "tags": {},
+          "gps": {
+            "present": false
+          }
+        },
+        "icc_bytes": 0,
+        "png_text": [],
+        "xmp_present": false,
+        "raw_has_gps_chars": false,
+        "name": "v2-resized.png"
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,18 @@
+--- src/ui/picker.js (before)
++++ src/ui/picker.js (after)
+@@ -30,12 +30,12 @@
+ .siat-toolbar input[type="search"], .siat-toolbar input[type="number"] { max-width: 150px; }
+ .siat-filters { display: flex; flex-wrap: wrap; gap: 4px 10px; padding: 4px 0 8px; }
+ .siat-filters .siat-check { padding: 3px 6px; }
+-.siat-count { font-size: 12px; color: #5c6472; padding: 2px 0 8px; }
++.siat-count { font-size: max(0.75rem, 12px); color: #5c6472; padding: 2px 0 8px; }
+ @media (prefers-color-scheme: dark) { .siat-count { color: #a3acbb; } }
+-.siat-row-thumb-empty { display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #5c6472; text-align: center; }
++.siat-row-thumb-empty { display: flex; align-items: center; justify-content: center; font-size: max(0.75rem, 12px); color: #5c6472; text-align: center; }
+ .siat-row-actions { display: flex; gap: 4px; flex: 0 0 auto; }
+ .siat-mini-btn {
+-  font: inherit; font-size: 11px; padding: 3px 7px; border-radius: 7px; cursor: pointer;
++  font: inherit; font-size: max(0.75rem, 12px); padding: 3px 7px; border-radius: 7px; cursor: pointer;
+   border: 1px solid rgba(127,127,127,.45); background: rgba(127,127,127,.08); color: inherit;
+ }
+ .siat-mini-btn:hover { filter: brightness(1.06); }

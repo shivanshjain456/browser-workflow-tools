@@ -1,0 +1,1 @@
+PASS: A global snapshot/export/apply differs from B output profiles and current conversion presets; no runtime code copied. Demand study is not a user survey.

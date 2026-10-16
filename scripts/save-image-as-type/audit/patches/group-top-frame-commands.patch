@@ -1,0 +1,168 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -1271,6 +1271,7 @@
+         applySettingsSideEffects(store.get());
+         return result;
+       },
++      notify: (message, detail) => toaster.success('siat-profile', message, detail || '', [], null, 6000),
+       resetSettings: async () => {
+         const result = await store.reset();
+         applySettingsSideEffects(result.settings);
+@@ -1545,61 +1546,66 @@
+ 
+     /* ---------------- manager menu commands ---------------- */
+ 
+-    gm.registerMenuCommand('Save Image as Type — Settings…', () => {
+-      ensureSettings().then(() => panel.open());
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Convert the last image I pointed at…', () => {
+-      ensureSettings().then(() => {
+-        if (!menu.openForLastHovered()) {
+-          toaster.error('siat-no-target', 'No image to convert yet', 'Point at an image on the page first, then use this command (or right-click the image).');
+-        }
++    // Frame policy: embedded documents retain their own image interaction,
++    // but only the top document contributes the eight manager commands.
++    if (win.top === win || !win.top) {
++      gm.registerMenuCommand('Save Image as Type — Settings…', () => {
++        ensureSettings().then(() => panel.open());
+       });
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Browse page images…', () => {
+-      ensureSettings().then(() => picker.open());
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Convert every image on this page…', () => {
+-      ensureSettings().then(() => openBatchDialog());
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Copy the last image I pointed at', () => {
+-      ensureSettings().then(() => {
+-        const target = menu.hoveredTarget();
+-        if (!target) {
+-          noTargetToast('Point at an image on the page first, then run this command.');
+-          return;
+-        }
+-        rememberedTarget = target;
+-        copyImage(target);
++      gm.registerMenuCommand('Save Image as Type — Convert the last image I pointed at…', () => {
++        ensureSettings().then(() => {
++          if (!menu.openForLastHovered()) {
++            toaster.error('siat-no-target', 'No image to convert yet', 'Point at an image on the page first, then use this command (or right-click the image).');
++          }
++        });
+       });
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Keyboard shortcut help', () => {
+-      ensureSettings().then(() => shortcutHelp.open());
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Capability report', () => {
+-      ensureSettings()
+-        .then(ensureCapabilities)
+-        .then(() => {
+-          const d = diagnostics();
+-          const lines = [
+-            `Encoders: ${Object.keys(d.encoders).map((k) => `${k.split('/')[1]}=${d.encoders[k] ? 'yes' : 'no'}`).join(', ')}`,
+-            `Frame decoding: ${d.animation.decoderAvailable ? `yes (${d.animation.supportedTypes.join(', ') || 'none probed'})` : `no — ${d.animation.reason || 'unavailable'}`}`,
+-            `Clipboard images: ${d.clipboard.supported ? 'yes' : `no — ${d.clipboard.reasons[0] || 'unavailable'}`}`,
+-            describeDownloadCapability(gm, d.downloadMode),
+-            `Settings storage: ${d.storage === 'gm' ? 'userscript manager' : 'memory only'}`,
+-            `Presets: ${(getSettings().presets || []).length} stored${activePresetLabel() ? `, active: ${activePresetLabel()}` : ''}`,
+-            `Grants: ${Object.keys(d.capabilities).filter((k) => d.capabilities[k]).join(', ') || 'none'}`,
+-          ];
+-          if (store.info().warnings && store.info().warnings.length) lines.push(...store.info().warnings);
+-          toaster.success('siat-report', 'Capability report', capabilityReport(), lines, [{ label: 'Open settings', variant: 'ghost', onClick: () => panel.open() }], 20000);
++      gm.registerMenuCommand('Save Image as Type — Browse page images…', () => {
++        ensureSettings().then(() => picker.open());
++      });
++      gm.registerMenuCommand('Save Image as Type — Convert every image on this page…', () => {
++        ensureSettings().then(() => openBatchDialog());
++      });
++      gm.registerMenuCommand('Save Image as Type — Copy the last image I pointed at', () => {
++        ensureSettings().then(() => {
++          const target = menu.hoveredTarget();
++          if (!target) {
++            noTargetToast('Point at an image on the page first, then run this command.');
++            return;
++          }
++          rememberedTarget = target;
++          copyImage(target);
+         });
+-    });
+-    gm.registerMenuCommand('Save Image as Type — Pause on this page', () => {
+-      state.paused = !state.paused;
+-      if (state.paused) menu.detach();
+-      else applySettingsSideEffects(getSettings());
+-      toaster.progress('siat-pause', state.paused ? 'Paused on this page' : 'Resumed on this page', state.paused ? 'Right-click is untouched here until you resume from the manager menu.' : 'Right-click an image to save it again.', null, null);
+-      setTimeout(() => toaster.dismiss('siat-pause'), 5000);
+-    });
++      });
++      gm.registerMenuCommand('Save Image as Type — Keyboard shortcut help', () => {
++        ensureSettings().then(() => shortcutHelp.open());
++      });
++      gm.registerMenuCommand('Save Image as Type — Capability report', () => {
++        ensureSettings()
++          .then(ensureCapabilities)
++          .then(() => {
++            const d = diagnostics();
++            const lines = [
++              `Encoders: ${Object.keys(d.encoders).map((k) => `${k.split('/')[1]}=${d.encoders[k] ? 'yes' : 'no'}`).join(', ')}`,
++              `Frame decoding: ${d.animation.decoderAvailable ? `yes (${d.animation.supportedTypes.join(', ') || 'none probed'})` : `no — ${d.animation.reason || 'unavailable'}`}`,
++              `Clipboard images: ${d.clipboard.supported ? 'yes' : `no — ${d.clipboard.reasons[0] || 'unavailable'}`}`,
++              describeDownloadCapability(gm, d.downloadMode),
++              `Settings storage: ${d.storage === 'gm' ? 'userscript manager' : 'memory only'}`,
++              `Presets: ${(getSettings().presets || []).length} stored${activePresetLabel() ? `, active: ${activePresetLabel()}` : ''}`,
++              `Grants: ${Object.keys(d.capabilities).filter((k) => d.capabilities[k]).join(', ') || 'none'}`,
++            ];
++            if (store.info().warnings && store.info().warnings.length) lines.push(...store.info().warnings);
++            toaster.success('siat-report', 'Capability report', capabilityReport(), lines, [{ label: 'Open settings', variant: 'ghost', onClick: () => panel.open() }], 20000);
++          });
++      });
++      gm.registerMenuCommand('Save Image as Type — Pause on this page', () => {
++        state.paused = !state.paused;
++        if (state.paused) menu.detach();
++        else applySettingsSideEffects(getSettings());
++        toaster.progress('siat-pause', state.paused ? 'Paused on this page' : 'Resumed on this page', state.paused ? 'Right-click is untouched here until you resume from the manager menu.' : 'Right-click an image to save it again.', null, null);
++        setTimeout(() => toaster.dismiss('siat-pause'), 5000);
++      });
++
++    }
+ 
+     /* ---------------- start ---------------- */
+ 
+--- a/src/entry.js
++++ b/src/entry.js
+@@ -8,6 +8,8 @@
+  * image-only user-initiated fetches, no telemetry/uploads/executable downloads;
+  * no dynamic code/HTML sinks; no capability handles on DOM/window. lint.mjs
+  * checks forbidden sinks and scope, tests pin deterministic encoder bytes.
++ * Frame policy: document-local interaction including subframes; eight manager
++ * commands in the top frame only. This is not cross-manager arbitration.
+  */
+ import { startProduction } from './main.js';
+ startProduction();
+--- a/test/unit/main-bootstrap.test.mjs
++++ b/test/unit/main-bootstrap.test.mjs
+@@ -157,7 +157,24 @@
+     }
+   });
+ 
+-
++  test('embedded document keeps interaction without registering another eight manager commands', async (t) => {
++    const commands = [];
++    const gm = createGmAdapter({ GM_registerMenuCommand: (label) => commands.push(label) });
++    const parent = await bootstrap({ document: doc, gm });
++    t.after(() => parent.destroy());
++    assert.equal(commands.length, 8);
++    const frame = doc.createElement('iframe');doc.body.appendChild(frame);
++    frame.contentWindow.requestIdleCallback = () => 0;
++    const child = await bootstrap({ document: frame.contentDocument, gm });
++    t.after(() => child.destroy());
++    assert.equal(child.ready, true);
++    assert.equal(commands.length, 8);
++    const image = frame.contentDocument.createElement('img');image.src = 'https://cdn.example/child.png';
++    frame.contentDocument.body.appendChild(image);
++    assert.equal(child.resolveTarget(image).kind, 'img');
++    assert.equal(child.menu.open(child.resolveTarget(image), 20, 20), true);
++    assert.equal(child.menu.isOpen, true);
++  });
+ 
+   test('resolveTarget() reports an image and nothing else', async (t) => {
+     const instance = await bootstrap({ document: doc });

@@ -1,0 +1,1 @@
+/home/user/.npm/_npx/5705de4b80ce9477/node_modules/node/bin/node

@@ -1,0 +1,3185 @@
+
+> save-image-as-type@2.0.0 test
+> node --test test/unit/
+
+TAP version 13
+# Subtest: metadata block
+    # Subtest: declares the identity fields a manager requires
+    ok 1 - declares the identity fields a manager requires
+      ---
+      duration_ms: 1.032705
+      ...
+    # Subtest: runs at document-start and inside frames, deliberately
+    ok 2 - runs at document-start and inside frames, deliberately
+      ---
+      duration_ms: 0.711204
+      ...
+    # Subtest: match scope is http/https everywhere and nothing privileged
+    ok 3 - match scope is http/https everywhere and nothing privileged
+      ---
+      duration_ms: 0.297854
+      ...
+    # Subtest: grants are explicit and each one is justified in src/meta.js
+    ok 4 - grants are explicit and each one is justified in src/meta.js
+      ---
+      duration_ms: 0.360754
+      ...
+    # Subtest: no remote code or resources are pulled in
+    ok 5 - no remote code or resources are pulled in
+      ---
+      duration_ms: 0.261684
+      ...
+    # Subtest: @connect is the documented wildcard and is explained at the declaration
+    ok 6 - @connect is the documented wildcard and is explained at the declaration
+      ---
+      duration_ms: 0.323964
+      ...
+    # Subtest: the icon is a self-contained data URI (no network fetch)
+    ok 7 - the icon is a self-contained data URI (no network fetch)
+      ---
+      duration_ms: 0.395178
+      ...
+    1..7
+ok 1 - metadata block
+  ---
+  duration_ms: 4.767915
+  type: 'suite'
+  ...
+# Subtest: build and artifact integrity
+    # Subtest: the artifact exists and starts with the rendered metadata block
+    ok 1 - the artifact exists and starts with the rendered metadata block
+      ---
+      duration_ms: 5.167405
+      ...
+    # Subtest: bundling is reproducible and includes every module
+    ok 2 - bundling is reproducible and includes every module
+      ---
+      duration_ms: 30.462471
+      ...
+    # Subtest: the artifact is one self-contained strict-mode IIFE
+    ok 3 - the artifact is one self-contained strict-mode IIFE
+      ---
+      duration_ms: 6.071575
+      ...
+    # Subtest: the artifact parses as JavaScript and stays a sane size
+    ok 4 - the artifact parses as JavaScript and stays a sane size
+      ---
+      duration_ms: 41.577726
+      ...
+    # Subtest: build --check passes for the committed artifact
+    ok 5 - build --check passes for the committed artifact
+      ---
+      duration_ms: 79.85086
+      ...
+    # Subtest: the bundler refuses a name collision instead of emitting broken code
+    ok 6 - the bundler refuses a name collision instead of emitting broken code
+      ---
+      duration_ms: 11.004669
+      ...
+    1..6
+ok 2 - build and artifact integrity
+  ---
+  duration_ms: 174.589309
+  type: 'suite'
+  ...
+# (node:1841) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: clipboard — capability detection
+    # Subtest: a fully capable secure context is reported as supported
+    ok 1 - a fully capable secure context is reported as supported
+      ---
+      duration_ms: 1.389602
+      ...
+    # Subtest: each missing piece is named, and support is refused
+    ok 2 - each missing piece is named, and support is refused
+      ---
+      duration_ms: 0.405472
+      ...
+    # Subtest: mimeSupported answers per browser, defaulting to the PNG-only reality
+    ok 3 - mimeSupported answers per browser, defaulting to the PNG-only reality
+      ---
+      duration_ms: 0.479655
+      ...
+    # Subtest: the write timeout is bounded and sane
+    ok 4 - the write timeout is bounded and sane
+      ---
+      duration_ms: 0.120752
+      ...
+    1..4
+ok 3 - clipboard — capability detection
+  ---
+  duration_ms: 3.661772
+  type: 'suite'
+  ...
+# Subtest: clipboard — copying, and every way it can fail
+    # Subtest: a PNG copy on a capable browser succeeds and reports the size
+    ok 1 - a PNG copy on a capable browser succeeds and reports the size
+      ---
+      duration_ms: 1.264741
+      ...
+    # Subtest: a JPEG is re-encoded to PNG and the user is told
+    ok 2 - a JPEG is re-encoded to PNG and the user is told
+      ---
+      duration_ms: 0.375359
+      ...
+    # Subtest: without a re-encoder, an unsupported type is refused with the reason
+    ok 3 - without a re-encoder, an unsupported type is refused with the reason
+      ---
+      duration_ms: 0.225614
+      ...
+    # Subtest: a failing re-encoder is reported, not swallowed
+    ok 4 - a failing re-encoder is reported, not swallowed
+      ---
+      duration_ms: 0.229331
+      ...
+    # Subtest: an unsupported browser never attempts a write
+    ok 5 - an unsupported browser never attempts a write
+      ---
+      duration_ms: 0.223439
+      ...
+    # Subtest: an empty blob is refused before touching the clipboard
+    ok 6 - an empty blob is refused before touching the clipboard
+      ---
+      duration_ms: 0.268201
+      ...
+    # Subtest: a denied permission is named, with the way out
+    ok 7 - a denied permission is named, with the way out
+      ---
+      duration_ms: 0.177938
+      ...
+    # Subtest: a browser that rejects the permission query is not treated as a denial
+    ok 8 - a browser that rejects the permission query is not treated as a denial
+      ---
+      duration_ms: 0.269352
+      ...
+    # Subtest: an unfocused document is refused with the one action that fixes it
+    ok 9 - an unfocused document is refused with the one action that fixes it
+      ---
+      duration_ms: 0.263343
+      ...
+    # Subtest: browser-side refusals are classified into actionable messages
+    ok 10 - browser-side refusals are classified into actionable messages
+      ---
+      duration_ms: 0.646923
+      ...
+    # Subtest: an unknown failure still produces a message, never an empty string
+    ok 11 - an unknown failure still produces a message, never an empty string
+      ---
+      duration_ms: 0.307017
+      ...
+    # Subtest: a hanging write is timed out instead of leaving the toast spinning
+    ok 12 - a hanging write is timed out instead of leaving the toast spinning
+      ---
+      duration_ms: 25.041224
+      ...
+    1..12
+ok 4 - clipboard — copying, and every way it can fail
+  ---
+  duration_ms: 31.064831
+  type: 'suite'
+  ...
+# Subtest: compare — which formats are candidates
+    # Subtest: PDF and "original file" are left out unless asked for
+    ok 1 - PDF and "original file" are left out unless asked for
+      ---
+      duration_ms: 1.471426
+      ...
+    # Subtest: the candidate list is capped and falls back to a sensible default
+    ok 2 - the candidate list is capped and falls back to a sensible default
+      ---
+      duration_ms: 0.335707
+      ...
+    # Subtest: the user's own format order is preserved
+    ok 3 - the user's own format order is preserved
+      ---
+      duration_ms: 0.166897
+      ...
+    1..3
+ok 5 - compare — which formats are candidates
+  ---
+  duration_ms: 3.1124
+  type: 'suite'
+  ...
+# Subtest: compare — running the comparison
+    # Subtest: every candidate is encoded in memory and nothing is saved
+    ok 1 - every candidate is encoded in memory and nothing is saved
+      ---
+      duration_ms: 1.228499
+      ...
+    # Subtest: candidates run one at a time by default, so a big image cannot spike memory
+    ok 2 - candidates run one at a time by default, so a big image cannot spike memory
+      ---
+      duration_ms: 42.682572
+      ...
+    # Subtest: one encoder failing is reported, and the others still count
+    ok 3 - one encoder failing is reported, and the others still count
+      ---
+      duration_ms: 0.875184
+      ...
+    # Subtest: an encoder that produces no bytes is a failure, not a 0-byte winner
+    ok 4 - an encoder that produces no bytes is a failure, not a 0-byte winner
+      ---
+      duration_ms: 0.328867
+      ...
+    # Subtest: transparency in the source is detected and carried into the choice
+    ok 5 - transparency in the source is detected and carried into the choice
+      ---
+      duration_ms: 0.308255
+      ...
+    # Subtest: cancellation stops the run and reports what did finish
+    ok 6 - cancellation stops the run and reports what did finish
+      ---
+      duration_ms: 11.042095
+      ...
+    # Subtest: an already-aborted signal encodes nothing at all
+    ok 7 - an already-aborted signal encodes nothing at all
+      ---
+      duration_ms: 0.352197
+      ...
+    # Subtest: progress is reported per candidate, so the dialog can show what is happening
+    ok 8 - progress is reported per candidate, so the dialog can show what is happening
+      ---
+      duration_ms: 0.364034
+      ...
+    # Subtest: junk arguments are refused honestly instead of throwing
+    ok 9 - junk arguments are refused honestly instead of throwing
+      ---
+      duration_ms: 0.364568
+      ...
+    # Subtest: a converter that returns a bare blob still yields a size
+    ok 10 - a converter that returns a bare blob still yields a size
+      ---
+      duration_ms: 0.321714
+      ...
+    1..10
+ok 6 - compare — running the comparison
+  ---
+  duration_ms: 58.446745
+  type: 'suite'
+  ...
+# Subtest: compare — choosing the smallest good candidate
+    # Subtest: the smallest candidate wins and the saving is measured against the largest
+    ok 1 - the smallest candidate wins and the saving is measured against the largest
+      ---
+      duration_ms: 0.251754
+      ...
+    # Subtest: a lossless format within the tolerance is preferred over a marginal win
+    ok 2 - a lossless format within the tolerance is preferred over a marginal win
+      ---
+      duration_ms: 0.408572
+      ...
+    # Subtest: a source with transparency is never recommended into a flattening format
+    ok 3 - a source with transparency is never recommended into a flattening format
+      ---
+      duration_ms: 0.213901
+      ...
+    # Subtest: when every candidate would flatten, the user is told rather than misled
+    ok 4 - when every candidate would flatten, the user is told rather than misled
+      ---
+      duration_ms: 0.169465
+      ...
+    # Subtest: failed and empty results are ignored, and no candidates means no recommendation
+    ok 5 - failed and empty results are ignored, and no candidates means no recommendation
+      ---
+      duration_ms: 0.219104
+      ...
+    1..5
+ok 7 - compare — choosing the smallest good candidate
+  ---
+  duration_ms: 2.715257
+  type: 'suite'
+  ...
+# Subtest: compare — the table the dialog renders
+    # Subtest: rows carry size, relative size, transparency, animation and the recommendation
+    ok 1 - rows carry size, relative size, transparency, animation and the recommendation
+      ---
+      duration_ms: 0.558449
+      ...
+    # Subtest: a failed candidate shows a dash and its error, and is never "smallest"
+    ok 2 - a failed candidate shows a dash and its error, and is never "smallest"
+      ---
+      duration_ms: 0.257213
+      ...
+    # Subtest: rows survive junk input
+    ok 3 - rows survive junk input
+      ---
+      duration_ms: 0.128664
+      ...
+    1..3
+ok 8 - compare — the table the dialog renders
+  ---
+  duration_ms: 1.106846
+  type: 'suite'
+  ...
+# Subtest: sanitizePathComponent — hostile input
+    # Subtest: removes characters that are illegal in file names on major platforms
+    ok 1 - removes characters that are illegal in file names on major platforms
+      ---
+      duration_ms: 1.242973
+      ...
+    # Subtest: removes control characters, BOM and bidi override characters
+    ok 2 - removes control characters, BOM and bidi override characters
+      ---
+      duration_ms: 0.407342
+      ...
+    # Subtest: cannot be used to escape the download folder
+    ok 3 - cannot be used to escape the download folder
+      ---
+      duration_ms: 0.23384
+      ...
+    # Subtest: strips leading and trailing dots and spaces (Windows rejects them)
+    ok 4 - strips leading and trailing dots and spaces (Windows rejects them)
+      ---
+      duration_ms: 0.24785
+      ...
+    # Subtest: prefixes Windows reserved device names so they stay usable
+    ok 5 - prefixes Windows reserved device names so they stay usable
+      ---
+      duration_ms: 0.157083
+      ...
+    # Subtest: decodes percent escapes but never lets them reintroduce separators
+    ok 6 - decodes percent escapes but never lets them reintroduce separators
+      ---
+      duration_ms: 0.234979
+      ...
+    # Subtest: normalises unicode and collapses whitespace
+    ok 7 - normalises unicode and collapses whitespace
+      ---
+      duration_ms: 0.13828
+      ...
+    # Subtest: enforces the length cap without leaving a trailing dot or space
+    ok 8 - enforces the length cap without leaving a trailing dot or space
+      ---
+      duration_ms: 0.17094
+      ...
+    # Subtest: non-string input yields an empty string instead of throwing
+    ok 9 - non-string input yields an empty string instead of throwing
+      ---
+      duration_ms: 0.215391
+      ...
+    1..9
+ok 9 - sanitizePathComponent — hostile input
+  ---
+  duration_ms: 4.504044
+  type: 'suite'
+  ...
+# Subtest: sanitizeSubfolder
+    # Subtest: keeps a sane relative path and drops traversal
+    ok 1 - keeps a sane relative path and drops traversal
+      ---
+      duration_ms: 0.349076
+      ...
+    # Subtest: each segment is limited and reserved names are defused
+    ok 2 - each segment is limited and reserved names are defused
+      ---
+      duration_ms: 0.147203
+      ...
+    1..2
+ok 10 - sanitizeSubfolder
+  ---
+  duration_ms: 0.655399
+  type: 'suite'
+  ...
+# Subtest: baseNameFromSource — derivation order
+    # Subtest: prefers the URL basename, then alt, then title, then host
+    ok 1 - prefers the URL basename, then alt, then title, then host
+      ---
+      duration_ms: 1.487152
+      ...
+    # Subtest: handles data: and blob: URLs, which have no basename
+    ok 2 - handles data: and blob: URLs, which have no basename
+      ---
+      duration_ms: 0.364065
+      ...
+    # Subtest: a hostile URL cannot inject a path or an illegal name
+    ok 3 - a hostile URL cannot inject a path or an illegal name
+      ---
+      duration_ms: 0.16918
+      ...
+    # Subtest: encoded URLs are decoded for readability
+    ok 4 - encoded URLs are decoded for readability
+      ---
+      duration_ms: 0.187465
+      ...
+    1..4
+ok 11 - baseNameFromSource — derivation order
+  ---
+  duration_ms: 2.432725
+  type: 'suite'
+  ...
+# Subtest: buildFilename
+    # Subtest: applies prefix, extension and keeps the stem intact
+    ok 1 - applies prefix, extension and keeps the stem intact
+      ---
+      duration_ms: 0.467779
+      ...
+    # Subtest: forces the correct extension and sanitises a hostile one
+    ok 2 - forces the correct extension and sanitises a hostile one
+      ---
+      duration_ms: 0.225183
+      ...
+    # Subtest: truncates the stem, never the extension, and reports it
+    ok 3 - truncates the stem, never the extension, and reports it
+      ---
+      duration_ms: 0.350471
+      ...
+    # Subtest: truncation is byte-aware for multi-byte characters
+    ok 4 - truncation is byte-aware for multi-byte characters
+      ---
+      duration_ms: 0.226563
+      ...
+    # Subtest: clamps an out-of-range maxLength instead of producing an unusable name
+    ok 5 - clamps an out-of-range maxLength instead of producing an unusable name
+      ---
+      duration_ms: 0.247184
+      ...
+    # Subtest: sub-folder is included only when the caller says the manager supports it
+    ok 6 - sub-folder is included only when the caller says the manager supports it
+      ---
+      duration_ms: 0.225125
+      ...
+    # Subtest: a prefix can never create a folder or a traversal
+    ok 7 - a prefix can never create a folder or a traversal
+      ---
+      duration_ms: 0.149646
+      ...
+    # Subtest: empty or hostile base falls back to "image"
+    ok 8 - empty or hostile base falls back to "image"
+      ---
+      duration_ms: 0.106397
+      ...
+    1..8
+ok 12 - buildFilename
+  ---
+  duration_ms: 2.251645
+  type: 'suite'
+  ...
+# Subtest: decodeFrames — WebCodecs path (stubbed decoder and canvas)
+    # Subtest: the capability probe reports the stubbed decoder and its supported types
+    ok 1 - the capability probe reports the stubbed decoder and its supported types
+      ---
+      duration_ms: 47.656295
+      ...
+    # Subtest: REGRESSION: a track that reports 0x0 (Chromium GIF) is decoded using frame 0
+    ok 2 - REGRESSION: a track that reports 0x0 (Chromium GIF) is decoded using frame 0
+      ---
+      duration_ms: 9.650114
+      ...
+    # Subtest: frame delays come from the decoder (microseconds → ms)
+    ok 3 - frame delays come from the decoder (microseconds → ms)
+      ---
+      duration_ms: 6.546658
+      ...
+    # Subtest: a decoder that reports a single frame does not claim animation
+    ok 4 - a decoder that reports a single frame does not claim animation
+      ---
+      duration_ms: 6.213452
+      ...
+    # Subtest: the frame limit subsamples and tells the user
+    ok 5 - the frame limit subsamples and tells the user
+      ---
+      duration_ms: 9.193351
+      ...
+    # Subtest: the memory limit scales frames down instead of crashing the tab
+    ok 6 - the memory limit scales frames down instead of crashing the tab
+      ---
+      duration_ms: 6.140095
+      ...
+    # Subtest: a decoder failure degrades to an honest note, and still closes the decoder
+    ok 7 - a decoder failure degrades to an honest note, and still closes the decoder
+      ---
+      duration_ms: 5.947481
+      ...
+    # Subtest: the caller keeps its bytes: the decoder gets a copy
+    ok 8 - the caller keeps its bytes: the decoder gets a copy
+      ---
+      duration_ms: 5.701973
+      ...
+    # Subtest: an unsupported container never reaches the decoder
+    ok 9 - an unsupported container never reaches the decoder
+      ---
+      duration_ms: 17.139889
+      ...
+    1..9
+ok 13 - decodeFrames — WebCodecs path (stubbed decoder and canvas)
+  ---
+  duration_ms: 115.80999
+  type: 'suite'
+  ...
+# Subtest: detectAnimation — real container files produced by Pillow
+    # Subtest: animated GIF: frame count and total duration from the block walk
+    ok 1 - animated GIF: frame count and total duration from the block walk
+      ---
+      duration_ms: 1.775365
+      ...
+    # Subtest: animated WebP: ANIM/ANMF chunks detected
+    ok 2 - animated WebP: ANIM/ANMF chunks detected
+      ---
+      duration_ms: 0.413818
+      ...
+    # Subtest: APNG: acTL chunk detected
+    ok 3 - APNG: acTL chunk detected
+      ---
+      duration_ms: 0.311573
+      ...
+    # Subtest: still images are reported as not animated
+    ok 4 - still images are reported as not animated
+      ---
+      duration_ms: 0.527915
+      ...
+    # Subtest: non-image input is handled without throwing
+    ok 5 - non-image input is handled without throwing
+      ---
+      duration_ms: 0.365729
+      ...
+    # Subtest: truncated containers degrade instead of crashing
+    ok 6 - truncated containers degrade instead of crashing
+      ---
+      duration_ms: 0.608005
+      ...
+    # Subtest: a single-frame GIF is not reported as animated
+    ok 7 - a single-frame GIF is not reported as animated
+      ---
+      duration_ms: 0.198234
+      ...
+    # Subtest: a WebP without the animation flag is still, even with a VP8X chunk
+    ok 8 - a WebP without the animation flag is still, even with a VP8X chunk
+      ---
+      duration_ms: 0.184972
+      ...
+    1..8
+ok 14 - detectAnimation — real container files produced by Pillow
+  ---
+  duration_ms: 5.772543
+  type: 'suite'
+  ...
+# Subtest: sniffMime — content sniffing for the "Original file" path
+    # Subtest: identifies the fixtures by magic bytes, not by extension
+    ok 1 - identifies the fixtures by magic bytes, not by extension
+      ---
+      duration_ms: 1.318419
+      ...
+    1..1
+ok 15 - sniffMime — content sniffing for the "Original file" path
+  ---
+  duration_ms: 1.518634
+  type: 'suite'
+  ...
+# Subtest: frame decoding without WebCodecs — honest degradation
+    # Subtest: capability probe reports the absence of ImageDecoder in this runtime
+    ok 1 - capability probe reports the absence of ImageDecoder in this runtime
+      ---
+      duration_ms: 0.803801
+      ...
+    # Subtest: decodeFrames resolves with an explanatory note instead of throwing
+    ok 2 - decodeFrames resolves with an explanatory note instead of throwing
+      ---
+      duration_ms: 0.723402
+      ...
+    # Subtest: decodeFrames reports an unsupported container type without touching the decoder
+    ok 3 - decodeFrames reports an unsupported container type without touching the decoder
+      ---
+      duration_ms: 0.230534
+      ...
+    # Subtest: an aborted signal is honoured where a decoder exists
+    ok 4 - an aborted signal is honoured where a decoder exists
+      ---
+      duration_ms: 0.211379
+      ...
+    1..4
+ok 16 - frame decoding without WebCodecs — honest degradation
+  ---
+  duration_ms: 2.173358
+  type: 'suite'
+  ...
+# Subtest: createGmAdapter — nothing granted
+    # Subtest: every capability is reported false and calls degrade safely
+    ok 1 - every capability is reported false and calls degrade safely
+      ---
+      duration_ms: 2.220425
+      ...
+    # Subtest: manager facts are "unknown" rather than invented
+    ok 2 - manager facts are "unknown" rather than invented
+      ---
+      duration_ms: 0.149512
+      ...
+    1..2
+ok 17 - createGmAdapter — nothing granted
+  ---
+  duration_ms: 3.550902
+  type: 'suite'
+  ...
+# Subtest: createGmAdapter — classic GM_* manager (Tampermonkey style)
+    # Subtest: reads manager facts from GM_info
+    ok 1 - reads manager facts from GM_info
+      ---
+      duration_ms: 0.494944
+      ...
+    # Subtest: sync storage APIs are normalised to promises
+    ok 2 - sync storage APIs are normalised to promises
+      ---
+      duration_ms: 0.305654
+      ...
+    # Subtest: a throwing storage API degrades to the fallback instead of crashing
+    ok 3 - a throwing storage API degrades to the fallback instead of crashing
+      ---
+      duration_ms: 0.266944
+      ...
+    # Subtest: GM_download success resolves with via:"gm"
+    ok 4 - GM_download success resolves with via:"gm"
+      ---
+      duration_ms: 8.96194
+      ...
+    # Subtest: every documented GM_download failure reason surfaces with an actionable message
+    ok 5 - every documented GM_download failure reason surfaces with an actionable message
+      ---
+      duration_ms: 0.955221
+      ...
+    # Subtest: a download timeout is reported distinctly
+    ok 6 - a download timeout is reported distinctly
+      ---
+      duration_ms: 0.28742
+      ...
+    # Subtest: GM_xmlhttpRequest resolves with status, body, headers and final URL
+    ok 7 - GM_xmlhttpRequest resolves with status, body, headers and final URL
+      ---
+      duration_ms: 4.171715
+      ...
+    # Subtest: network error and timeout map to distinct GmError reasons
+    ok 8 - network error and timeout map to distinct GmError reasons
+      ---
+      duration_ms: 0.67164
+      ...
+    # Subtest: an abort signal cancels the request and rejects as aborted
+    ok 9 - an abort signal cancels the request and rejects as aborted
+      ---
+      duration_ms: 0.814636
+      ...
+    # Subtest: notifications use the details form and fall back to the positional form
+    ok 10 - notifications use the details form and fall back to the positional form
+      ---
+      duration_ms: 0.282909
+      ...
+    # Subtest: menu commands are registered and tolerate a throwing manager
+    ok 11 - menu commands are registered and tolerate a throwing manager
+      ---
+      duration_ms: 0.984065
+      ...
+    # Subtest: value-change listeners can be disposed
+    ok 12 - value-change listeners can be disposed
+      ---
+      duration_ms: 0.268125
+      ...
+    1..12
+ok 18 - createGmAdapter — classic GM_* manager (Tampermonkey style)
+  ---
+  duration_ms: 19.12379
+  type: 'suite'
+  ...
+# Subtest: createGmAdapter — GM.* namespace manager (Violentmonkey/GM4 style)
+    # Subtest: async GM.* functions are awaited like the sync GM_* ones
+    ok 1 - async GM.* functions are awaited like the sync GM_* ones
+      ---
+      duration_ms: 0.328492
+      ...
+    # Subtest: GM_* wins when a manager exposes both spellings
+    ok 2 - GM_* wins when a manager exposes both spellings
+      ---
+      duration_ms: 0.177364
+      ...
+    1..2
+ok 19 - createGmAdapter — GM.* namespace manager (Violentmonkey/GM4 style)
+  ---
+  duration_ms: 0.729987
+  type: 'suite'
+  ...
+# Subtest: metadata — container detection
+    # Subtest: every container this script can produce is recognised from its bytes
+    ok 1 - every container this script can produce is recognised from its bytes
+      ---
+      duration_ms: 0.890918
+      ...
+    # Subtest: a real fixture is detected without being told its type
+    ok 2 - a real fixture is detected without being told its type
+      ---
+      duration_ms: 0.150011
+      ...
+    # Subtest: XMP is recognised by its packet markers, never by parsing XML
+    ok 3 - XMP is recognised by its packet markers, never by parsing XML
+      ---
+      duration_ms: 0.421977
+      ...
+    # Subtest: the support matrix states honestly what cannot be inspected
+    ok 4 - the support matrix states honestly what cannot be inspected
+      ---
+      duration_ms: 0.268886
+      ...
+    1..4
+ok 20 - metadata — container detection
+  ---
+  duration_ms: 2.422432
+  type: 'suite'
+  ...
+# Subtest: metadata — inspection
+ok 21 - metadata — inspection # SKIP python3 + Pillow are unavailable, so no metadata fixtures could be generated
+  ---
+  duration_ms: 0.935103
+  type: 'suite'
+  ...
+# Subtest: metadata — stripping
+ok 22 - metadata — stripping # SKIP python3 + Pillow are unavailable, so stripping cannot be verified externally
+  ---
+  duration_ms: 0.164447
+  type: 'suite'
+  ...
+# Subtest: presets — normalisation of untrusted input
+    # Subtest: a complete preset round-trips with every field in range
+    ok 1 - a complete preset round-trips with every field in range
+      ---
+      duration_ms: 2.608819
+      ...
+    # Subtest: missing or junk values fall back to safe defaults
+    ok 2 - missing or junk values fall back to safe defaults
+      ---
+      duration_ms: 0.387956
+      ...
+    # Subtest: out-of-range numbers are clamped, not accepted
+    ok 3 - out-of-range numbers are clamped, not accepted
+      ---
+      duration_ms: 0.15589
+      ...
+    # Subtest: a format this browser does not have is dropped with a warning
+    ok 4 - a format this browser does not have is dropped with a warning
+      ---
+      duration_ms: 0.22257
+      ...
+    # Subtest: REGRESSION: an unset quality stays unset through export and re-import
+    ok 5 - REGRESSION: an unset quality stays unset through export and re-import
+      ---
+      duration_ms: 0.476785
+      ...
+    # Subtest: an invalid filename template is dropped rather than stored
+    ok 6 - an invalid filename template is dropped rather than stored
+      ---
+      duration_ms: 0.341751
+      ...
+    # Subtest: names, ids and host lists are capped and de-duplicated
+    ok 7 - names, ids and host lists are capped and de-duplicated
+      ---
+      duration_ms: 0.566707
+      ...
+    # Subtest: validatePresets caps the list and resolves duplicate ids and names deterministically
+    ok 8 - validatePresets caps the list and resolves duplicate ids and names deterministically
+      ---
+      duration_ms: 0.780744
+      ...
+    1..8
+ok 23 - presets — normalisation of untrusted input
+  ---
+  duration_ms: 6.953716
+  type: 'suite'
+  ...
+# Subtest: presets — host rules
+    # Subtest: a rule is a host only: schemes, ports, paths and queries are stripped
+    ok 1 - a rule is a host only: schemes, ports, paths and queries are stripped
+      ---
+      duration_ms: 0.295196
+      ...
+    # Subtest: rules that would match too much, or nothing, are refused
+    ok 2 - rules that would match too much, or nothing, are refused
+      ---
+      duration_ms: 0.205976
+      ...
+    # Subtest: a long rule is truncated rather than stored whole
+    ok 3 - a long rule is truncated rather than stored whole
+      ---
+      duration_ms: 0.130664
+      ...
+    # Subtest: matching covers the apex and subdomains, and never a substring of a label
+    ok 4 - matching covers the apex and subdomains, and never a substring of a label
+      ---
+      duration_ms: 0.291335
+      ...
+    # Subtest: auto-apply picks the most specific rule, ties broken by declaration order
+    ok 5 - auto-apply picks the most specific rule, ties broken by declaration order
+      ---
+      duration_ms: 0.344908
+      ...
+    1..5
+ok 24 - presets — host rules
+  ---
+  duration_ms: 1.515322
+  type: 'suite'
+  ...
+# Subtest: presets — applying one to the settings in force
+    # Subtest: the documented acceptance case: a preset changes the format and the file name
+    ok 1 - the documented acceptance case: a preset changes the format and the file name
+      ---
+      duration_ms: 0.52115
+      ...
+    # Subtest: the stored settings are never mutated, so turning a preset off restores them
+    ok 2 - the stored settings are never mutated, so turning a preset off restores them
+      ---
+      duration_ms: 1.266638
+      ...
+    # Subtest: a preset that sets nothing changes nothing but still records itself
+    ok 3 - a preset that sets nothing changes nothing but still records itself
+      ---
+      duration_ms: 0.241897
+      ...
+    # Subtest: an explicit empty sub-folder in a preset clears the user sub-folder
+    ok 4 - an explicit empty sub-folder in a preset clears the user sub-folder
+      ---
+      duration_ms: 0.183671
+      ...
+    # Subtest: effectiveSettings survives junk input
+    ok 5 - effectiveSettings survives junk input
+      ---
+      duration_ms: 0.223704
+      ...
+    # Subtest: the one-line summary says what the preset does
+    ok 6 - the one-line summary says what the preset does
+      ---
+      duration_ms: 0.304484
+      ...
+    # Subtest: serialise → validate → serialise is stable (settings export round-trips)
+    ok 7 - serialise → validate → serialise is stable (settings export round-trips)
+      ---
+      duration_ms: 0.445688
+      ...
+    1..7
+ok 25 - presets — applying one to the settings in force
+  ---
+  duration_ms: 3.643721
+  type: 'suite'
+  ...
+# Subtest: queue — normal runs
+    # Subtest: every item runs exactly once and the job reports done
+    ok 1 - every item runs exactly once and the job reports done
+      ---
+      duration_ms: 22.349378
+      ...
+    # Subtest: concurrency is bounded at every moment, and clamped to the documented maximum
+    ok 2 - concurrency is bounded at every moment, and clamped to the documented maximum
+      ---
+      duration_ms: 121.484267
+      ...
+    # Subtest: a start with no queued work is refused with a reason (all-skipped selection)
+    ok 3 - a start with no queued work is refused with a reason (all-skipped selection)
+      ---
+      duration_ms: 0.589553
+      ...
+    # Subtest: skipped items are never handed to the runner
+    ok 4 - skipped items are never handed to the runner
+      ---
+      duration_ms: 11.548448
+      ...
+    # Subtest: re-adding the same id is ignored, so a re-scan cannot enqueue an image twice
+    ok 5 - re-adding the same id is ignored, so a re-scan cannot enqueue an image twice
+      ---
+      duration_ms: 0.321192
+      ...
+    # Subtest: the item cap is enforced and reported rather than silently dropping work
+    ok 6 - the item cap is enforced and reported rather than silently dropping work
+      ---
+      duration_ms: 10.182847
+      ...
+    # Subtest: a runner is mandatory: a queue without one cannot be built
+    ok 7 - a runner is mandatory: a queue without one cannot be built
+      ---
+      duration_ms: 4.86952
+      ...
+    # Subtest: pause stops picking up work and resume continues from where it left off
+    ok 8 - pause stops picking up work and resume continues from where it left off
+      ---
+      duration_ms: 96.422335
+      ...
+    1..8
+ok 26 - queue — normal runs
+  ---
+  duration_ms: 269.604851
+  type: 'suite'
+  ...
+# Subtest: queue — failure isolation and retry semantics
+    # Subtest: one failing item never stops the others, and the failure is described
+    ok 1 - one failing item never stops the others, and the failure is described
+      ---
+      duration_ms: 32.380097
+      ...
+    # Subtest: a retryable error is auto-retried within the budget, then recorded as failed
+    ok 2 - a retryable error is auto-retried within the budget, then recorded as failed
+      ---
+      duration_ms: 30.470206
+      ...
+    # Subtest: an auto-retry that succeeds reports success
+    ok 3 - an auto-retry that succeeds reports success
+      ---
+      duration_ms: 20.31115
+      ...
+    # Subtest: REGRESSION: an uncertain outcome is never auto-retried
+    ok 4 - REGRESSION: an uncertain outcome is never auto-retried
+      ---
+      duration_ms: 30.778765
+      ...
+    # Subtest: retryFailed() re-queues failures only: a finished save is never repeated
+    ok 5 - retryFailed() re-queues failures only: a finished save is never repeated
+      ---
+      duration_ms: 62.060854
+      ...
+    # Subtest: retryFailed() leaves uncertain items alone unless the caller insists
+    ok 6 - retryFailed() leaves uncertain items alone unless the caller insists
+      ---
+      duration_ms: 40.649506
+      ...
+    # Subtest: an item that never settles is timed out, marked uncertain and reported
+    ok 7 - an item that never settles is timed out, marked uncertain and reported
+      ---
+      duration_ms: 1120.176152
+      ...
+    1..7
+ok 27 - queue — failure isolation and retry semantics
+  ---
+  duration_ms: 1337.70504
+  type: 'suite'
+  ...
+# Subtest: queue — cancellation
+    # Subtest: cancel marks queued items cancelled, aborts running ones and keeps finished results
+    ok 1 - cancel marks queued items cancelled, aborts running ones and keeps finished results
+      ---
+      duration_ms: 32.073488
+      ...
+    # Subtest: the runner sees an aborted signal, so no further work is started
+    ok 2 - the runner sees an aborted signal, so no further work is started
+      ---
+      duration_ms: 21.243172
+      ...
+    # Subtest: destroy() cancels, clears listeners and makes the queue inert
+    ok 3 - destroy() cancels, clears listeners and makes the queue inert
+      ---
+      duration_ms: 66.005078
+      ...
+    1..3
+ok 28 - queue — cancellation
+  ---
+  duration_ms: 119.70879
+  type: 'suite'
+  ...
+# Subtest: queue — events and snapshots
+    # Subtest: the event stream describes the run in order
+    ok 1 - the event stream describes the run in order
+      ---
+      duration_ms: 20.701564
+      ...
+    # Subtest: every event carries the job label and live stats, so a progress bar needs no polling
+    ok 2 - every event carries the job label and live stats, so a progress bar needs no polling
+      ---
+      duration_ms: 20.123833
+      ...
+    # Subtest: a listener that throws cannot break the run
+    ok 3 - a listener that throws cannot break the run
+      ---
+      duration_ms: 20.329133
+      ...
+    # Subtest: subscribe() adds a listener and returns a working unsubscribe
+    ok 4 - subscribe() adds a listener and returns a working unsubscribe
+      ---
+      duration_ms: 20.992372
+      ...
+    # Subtest: item snapshots expose state but no payload, so progress data cannot leak page objects
+    ok 5 - item snapshots expose state but no payload, so progress data cannot leak page objects
+      ---
+      duration_ms: 20.933778
+      ...
+    # Subtest: an injected clock makes durations deterministic
+    ok 6 - an injected clock makes durations deterministic
+      ---
+      duration_ms: 20.982152
+      ...
+    1..6
+ok 29 - queue — events and snapshots
+  ---
+  duration_ms: 124.616937
+  type: 'suite'
+  ...
+# Subtest: scan — the inventory of a mixed page
+    # Subtest: every kind of image source is found and described
+    ok 1 - every kind of image source is found and described
+      ---
+      duration_ms: 130.15803
+      ...
+    # Subtest: URLs are absolute, so the host column and de-duplication are meaningful
+    ok 2 - URLs are absolute, so the host column and de-duplication are meaningful
+      ---
+      duration_ms: 56.350531
+      ...
+    # Subtest: ids are sequential and identical across re-scans of an unchanged page
+    ok 3 - ids are sequential and identical across re-scans of an unchanged page
+      ---
+      duration_ms: 42.84544
+      ...
+    # Subtest: REGRESSION: images inside an open shadow root are inventoried with backgrounds on and off
+    ok 4 - REGRESSION: images inside an open shadow root are inventoried with backgrounds on and off
+      ---
+      duration_ms: 63.44454
+      ...
+    # Subtest: srcset candidates are parsed and the largest variant is reported
+    ok 5 - srcset candidates are parsed and the largest variant is reported
+      ---
+      duration_ms: 24.956789
+      ...
+    # Subtest: the scan does not modify the page
+    ok 6 - the scan does not modify the page
+      ---
+      duration_ms: 28.030723
+      ...
+    # Subtest: work is bounded and the truncation is reported
+    ok 7 - work is bounded and the truncation is reported
+      ---
+      duration_ms: 24.227965
+      ...
+    # Subtest: a document with no body, or no document at all, yields an honest empty result
+    ok 8 - a document with no body, or no document at all, yields an honest empty result
+      ---
+      duration_ms: 17.947107
+      ...
+    1..8
+ok 30 - scan — the inventory of a mixed page
+  ---
+  duration_ms: 389.565114
+  type: 'suite'
+  ...
+# Subtest: scan — filtering, de-duplication, sorting and totals
+    # Subtest: filters combine, and "0 or empty" always means off
+    ok 1 - filters combine, and "0 or empty" always means off
+      ---
+      duration_ms: 23.645426
+      ...
+    # Subtest: tiny images are flagged and can be excluded
+    ok 2 - tiny images are flagged and can be excluded
+      ---
+      duration_ms: 23.848615
+      ...
+    # Subtest: de-duplication merges identical URLs but keeps distinct sources
+    ok 3 - de-duplication merges identical URLs but keeps distinct sources
+      ---
+      duration_ms: 22.378398
+      ...
+    # Subtest: sorting is stable and every key is supported
+    ok 4 - sorting is stable and every key is supported
+      ---
+      duration_ms: 30.719235
+      ...
+    # Subtest: the summary counts what the picker header shows
+    ok 5 - the summary counts what the picker header shows
+      ---
+      duration_ms: 23.620376
+      ...
+    # Subtest: entry states are described in words a user can act on
+    ok 6 - entry states are described in words a user can act on
+      ---
+      duration_ms: 20.568171
+      ...
+    1..6
+ok 31 - scan — filtering, de-duplication, sorting and totals
+  ---
+  duration_ms: 145.237791
+  type: 'suite'
+  ...
+# Subtest: scan — thumbnails without touching the network
+    # Subtest: a loaded image gets a thumbnail drawn from pixels the page already decoded
+    ok 1 - a loaded image gets a thumbnail drawn from pixels the page already decoded
+      ---
+      duration_ms: 24.595734
+      ...
+    # Subtest: the thumbnail keeps the aspect ratio and never upscales
+    ok 2 - the thumbnail keeps the aspect ratio and never upscales
+      ---
+      duration_ms: 39.299051
+      ...
+    # Subtest: an image the page has not loaded gets a reason instead of a download
+    ok 3 - an image the page has not loaded gets a reason instead of a download
+      ---
+      duration_ms: 44.636991
+      ...
+    # Subtest: a background image explains that a preview would cost a download
+    ok 4 - a background image explains that a preview would cost a download
+      ---
+      duration_ms: 21.416694
+      ...
+    # Subtest: a cross-origin image whose pixels cannot be read reports that honestly
+    ok 5 - a cross-origin image whose pixels cannot be read reports that honestly
+      ---
+      duration_ms: 20.804706
+      ...
+    # Subtest: without a canvas, or without an entry, the answer is a reason, not a crash
+    ok 6 - without a canvas, or without an entry, the answer is a reason, not a crash
+      ---
+      duration_ms: 22.440391
+      ...
+    # Subtest: an inline SVG is rasterised locally through an object URL, never fetched
+    ok 7 - an inline SVG is rasterised locally through an object URL, never fetched
+      ---
+      duration_ms: 22.957207
+      ...
+    # Subtest: the module source itself contains no network call
+    ok 8 - the module source itself contains no network call
+      ---
+      duration_ms: 10.7914
+      ...
+    1..8
+ok 32 - scan — thumbnails without touching the network
+  ---
+  duration_ms: 207.571029
+  type: 'suite'
+  ...
+# Subtest: scan — watching the inventory
+    # Subtest: mutations are debounced into one notification
+    ok 1 - mutations are debounced into one notification
+      ---
+      duration_ms: 170.636119
+      ...
+    # Subtest: the notification cap stops an infinite-scroll page from re-scanning forever
+    ok 2 - the notification cap stops an infinite-scroll page from re-scanning forever
+      ---
+      duration_ms: 435.69204
+      ...
+    # Subtest: disconnect stops notifications, and text-only changes are ignored
+    ok 3 - disconnect stops notifications, and text-only changes are ignored
+      ---
+      duration_ms: 378.879615
+      ...
+    # Subtest: an attribute change on src/srcset/style/poster is relevant
+    ok 4 - an attribute change on src/srcset/style/poster is relevant
+      ---
+      duration_ms: 132.919862
+      ...
+    # Subtest: without a MutationObserver the answer is "unsupported", not a crash
+    ok 5 - without a MutationObserver the answer is "unsupported", not a crash
+      ---
+      duration_ms: 11.854057
+      ...
+    1..5
+ok 33 - scan — watching the inventory
+  ---
+  duration_ms: 1130.487596
+  type: 'suite'
+  ...
+# Subtest: scan — hard-bound and cleanup regressions
+    # Subtest: a skipped subtree does not skip its later siblings
+    ok 1 - a skipped subtree does not skip its later siblings
+      ---
+      duration_ms: 24.824268
+      ...
+    # Subtest: frame descent stops at the hard limit and announces truncation
+    ok 2 - frame descent stops at the hard limit and announces truncation
+      ---
+      duration_ms: 115.227297
+      ...
+    # Subtest: an SVG preview failure still revokes the local object URL
+    ok 3 - an SVG preview failure still revokes the local object URL
+      ---
+      duration_ms: 24.47803
+      ...
+    1..3
+ok 34 - scan — hard-bound and cleanup regressions
+  ---
+  duration_ms: 164.729491
+  type: 'suite'
+  ...
+# Subtest: normalizeSettings — validation and clamping
+    # Subtest: returns complete defaults for missing or corrupt storage
+    ok 1 - returns complete defaults for missing or corrupt storage
+      ---
+      duration_ms: 2.51744
+      ...
+    # Subtest: numbers are clamped into range, with a note
+    ok 2 - numbers are clamped into range, with a note
+      ---
+      duration_ms: 0.279248
+      ...
+    # Subtest: enums reject unknown values and keep a usable default
+    ok 3 - enums reject unknown values and keep a usable default
+      ---
+      duration_ms: 0.251726
+      ...
+    # Subtest: booleans reject truthy non-booleans rather than coercing them
+    ok 4 - booleans reject truthy non-booleans rather than coercing them
+      ---
+      duration_ms: 0.330562
+      ...
+    # Subtest: format list: unknown ids are dropped, an empty result restores defaults
+    ok 5 - format list: unknown ids are dropped, an empty result restores defaults
+      ---
+      duration_ms: 0.210311
+      ...
+    # Subtest: strings are sanitised, so a settings file cannot inject a path
+    ok 6 - strings are sanitised, so a settings file cannot inject a path
+      ---
+      duration_ms: 0.64806
+      ...
+    # Subtest: unknown keys are dropped and reported, never carried through
+    ok 7 - unknown keys are dropped and reported, never carried through
+      ---
+      duration_ms: 0.255582
+      ...
+    # Subtest: every declared default is a valid setting (self-consistency)
+    ok 8 - every declared default is a valid setting (self-consistency)
+      ---
+      duration_ms: 1.13122
+      ...
+    1..8
+ok 35 - normalizeSettings — validation and clamping
+  ---
+  duration_ms: 7.140002
+  type: 'suite'
+  ...
+# Subtest: migrateSettings — upgrades and downgrades
+    # Subtest: v1 shape maps onto the current schema
+    ok 1 - v1 shape maps onto the current schema
+      ---
+      duration_ms: 0.522625
+      ...
+    # Subtest: an unversioned legacy object is treated as v1
+    ok 2 - an unversioned legacy object is treated as v1
+      ---
+      duration_ms: 0.172686
+      ...
+    # Subtest: a newer schema keeps only known fields and is reported
+    ok 3 - a newer schema keeps only known fields and is reported
+      ---
+      duration_ms: 0.159051
+      ...
+    # Subtest: current-schema data passes through untouched
+    ok 4 - current-schema data passes through untouched
+      ---
+      duration_ms: 0.163933
+      ...
+    1..4
+ok 36 - migrateSettings — upgrades and downgrades
+  ---
+  duration_ms: 1.27989
+  type: 'suite'
+  ...
+# Subtest: validateImportedSettings — user-supplied JSON
+    # Subtest: rejects invalid JSON with a readable error
+    ok 1 - rejects invalid JSON with a readable error
+      ---
+      duration_ms: 0.389032
+      ...
+    # Subtest: accepts a valid file and normalises it
+    ok 2 - accepts a valid file and normalises it
+      ---
+      duration_ms: 0.342412
+      ...
+    # Subtest: a hostile import cannot smuggle a path, a URL or an oversized payload
+    ok 3 - a hostile import cannot smuggle a path, a URL or an oversized payload
+      ---
+      duration_ms: 0.360519
+      ...
+    # Subtest: non-object JSON is rejected back to defaults
+    ok 4 - non-object JSON is rejected back to defaults
+      ---
+      duration_ms: 0.302604
+      ...
+    1..4
+ok 37 - validateImportedSettings — user-supplied JSON
+  ---
+  duration_ms: 2.489082
+  type: 'suite'
+  ...
+# Subtest: createSettingsStore — persistence behaviour
+    # Subtest: loads defaults when nothing is stored, without claiming a recovery
+    ok 1 - loads defaults when nothing is stored, without claiming a recovery
+      ---
+      duration_ms: 0.882434
+      ...
+    # Subtest: round-trips a save through manager storage
+    ok 2 - round-trips a save through manager storage
+      ---
+      duration_ms: 1.162594
+      ...
+    # Subtest: no storage permission is reported as a limitation, not as damage
+    ok 3 - no storage permission is reported as a limitation, not as damage
+      ---
+      duration_ms: 0.440181
+      ...
+    # Subtest: corrupt stored JSON recovers to defaults and says so
+    ok 4 - corrupt stored JSON recovers to defaults and says so
+      ---
+      duration_ms: 0.362247
+      ...
+    # Subtest: migrates a legacy key and rewrites it under the current key
+    ok 5 - migrates a legacy key and rewrites it under the current key
+      ---
+      duration_ms: 0.415463
+      ...
+    # Subtest: reset restores defaults and persists them
+    ok 6 - reset restores defaults and persists them
+      ---
+      duration_ms: 0.354266
+      ...
+    # Subtest: a read-only or absent storage degrades to memory without breaking
+    ok 7 - a read-only or absent storage degrades to memory without breaking
+      ---
+      duration_ms: 0.693614
+      ...
+    # Subtest: subscribers are notified and a throwing subscriber cannot break the store
+    ok 8 - subscribers are notified and a throwing subscriber cannot break the store
+      ---
+      duration_ms: 0.667491
+      ...
+    # Subtest: remote changes from another tab are applied through the value-change listener
+    ok 9 - remote changes from another tab are applied through the value-change listener
+      ---
+      duration_ms: 0.438197
+      ...
+    1..9
+ok 38 - createSettingsStore — persistence behaviour
+  ---
+  duration_ms: 5.803011
+  type: 'suite'
+  ...
+# Subtest: shortcuts — the documented defaults
+    # Subtest: five actions ship with five distinct, modifier-bearing defaults
+    ok 1 - five actions ship with five distinct, modifier-bearing defaults
+      ---
+      duration_ms: 1.589309
+      ...
+    # Subtest: the defaults survive validation unchanged
+    ok 2 - the defaults survive validation unchanged
+      ---
+      duration_ms: 0.584079
+      ...
+    1..2
+ok 39 - shortcuts — the documented defaults
+  ---
+  duration_ms: 3.283208
+  type: 'suite'
+  ...
+# Subtest: shortcuts — parsing and formatting
+    # Subtest: modifier aliases all parse to the same binding
+    ok 1 - modifier aliases all parse to the same binding
+      ---
+      duration_ms: 0.28041
+      ...
+    # Subtest: named keys and punctuation are normalised
+    ok 2 - named keys and punctuation are normalised
+      ---
+      duration_ms: 0.199717
+      ...
+    # Subtest: unparsable input returns null instead of a half-binding
+    ok 3 - unparsable input returns null instead of a half-binding
+      ---
+      duration_ms: 0.377057
+      ...
+    1..3
+ok 40 - shortcuts — parsing and formatting
+  ---
+  duration_ms: 1.042556
+  type: 'suite'
+  ...
+# Subtest: shortcuts — matching live events
+    # Subtest: a chord matches on the physical key, whatever the layout produces
+    ok 1 - a chord matches on the physical key, whatever the layout produces
+      ---
+      duration_ms: 0.36793
+      ...
+    # Subtest: modifiers must match exactly: no extra, no missing
+    ok 2 - modifiers must match exactly: no extra, no missing
+      ---
+      duration_ms: 0.247233
+      ...
+    # Subtest: bindingFromEvent normalises codes, keys and digits
+    ok 3 - bindingFromEvent normalises codes, keys and digits
+      ---
+      duration_ms: 0.332326
+      ...
+    1..3
+ok 41 - shortcuts — matching live events
+  ---
+  duration_ms: 1.271163
+  type: 'suite'
+  ...
+# Subtest: shortcuts — validation rules
+    # Subtest: a plain letter is refused because it would capture ordinary typing
+    ok 1 - a plain letter is refused because it would capture ordinary typing
+      ---
+      duration_ms: 0.307898
+      ...
+    # Subtest: browser-reserved chords are refused with an explanation
+    ok 2 - browser-reserved chords are refused with an explanation
+      ---
+      duration_ms: 1.536035
+      ...
+    # Subtest: function keys are allowed without a modifier (they are not typing keys)
+    ok 3 - function keys are allowed without a modifier (they are not typing keys)
+      ---
+      duration_ms: 0.178041
+      ...
+    # Subtest: two actions cannot share one chord: the second keeps its default
+    ok 4 - two actions cannot share one chord: the second keeps its default
+      ---
+      duration_ms: 0.235132
+      ...
+    # Subtest: an unreadable value warns and keeps the default
+    ok 5 - an unreadable value warns and keeps the default
+      ---
+      duration_ms: 0.244807
+      ...
+    # Subtest: an action can be turned off, and the help overlay says so
+    ok 6 - an action can be turned off, and the help overlay says so
+      ---
+      duration_ms: 0.307488
+      ...
+    # Subtest: missing, empty and hostile input never throws
+    ok 7 - missing, empty and hostile input never throws
+      ---
+      duration_ms: 0.194486
+      ...
+    # Subtest: an unknown action id in storage is ignored, not invented
+    ok 8 - an unknown action id in storage is ignored, not invented
+      ---
+      duration_ms: 0.233743
+      ...
+    1..8
+ok 42 - shortcuts — validation rules
+  ---
+  duration_ms: 3.558085
+  type: 'suite'
+  ...
+# Subtest: shortcuts — staying out of the page's way
+    # Subtest: form fields and editable widgets are recognised as typing targets
+    ok 1 - form fields and editable widgets are recognised as typing targets
+      ---
+      duration_ms: 0.225973
+      ...
+    1..1
+ok 43 - shortcuts — staying out of the page's way
+  ---
+  duration_ms: 0.308342
+  type: 'suite'
+  ...
+# Subtest: template tokens — the documented surface
+    # Subtest: every advertised token renders, and only advertised tokens do
+    ok 1 - every advertised token renders, and only advertised tokens do
+      ---
+      duration_ms: 2.065339
+      ...
+    # Subtest: the token list is what the settings panel advertises
+    ok 2 - the token list is what the settings panel advertises
+      ---
+      duration_ms: 0.239979
+      ...
+    1..2
+ok 44 - template tokens — the documented surface
+  ---
+  duration_ms: 3.504482
+  type: 'suite'
+  ...
+# Subtest: validateTemplate — before anything is stored
+    # Subtest: accepts a normal template and reports its tokens
+    ok 1 - accepts a normal template and reports its tokens
+      ---
+      duration_ms: 0.756663
+      ...
+    # Subtest: rejects empty, over-long and unknown-token templates
+    ok 2 - rejects empty, over-long and unknown-token templates
+      ---
+      duration_ms: 0.399101
+      ...
+    # Subtest: warns about the mistakes that produce bad names but are still usable
+    ok 3 - warns about the mistakes that produce bad names but are still usable
+      ---
+      duration_ms: 0.255473
+      ...
+    # Subtest: validation never throws on non-string input
+    ok 4 - validation never throws on non-string input
+      ---
+      duration_ms: 0.226547
+      ...
+    1..4
+ok 45 - validateTemplate — before anything is stored
+  ---
+  duration_ms: 1.874709
+  type: 'suite'
+  ...
+# Subtest: renderTemplate — deterministic and total
+    # Subtest: the documented acceptance case: {host} + {w}x{h} gives the exact file name
+    ok 1 - the documented acceptance case: {host} + {w}x{h} gives the exact file name
+      ---
+      duration_ms: 0.587798
+      ...
+    # Subtest: date, time, index and preset render in the documented shapes
+    ok 2 - date, time, index and preset render in the documented shapes
+      ---
+      duration_ms: 0.279185
+      ...
+    # Subtest: an unknown token is dropped with a warning, never left in the name
+    ok 3 - an unknown token is dropped with a warning, never left in the name
+      ---
+      duration_ms: 1.271795
+      ...
+    # Subtest: page-derived values are sanitised: no path escape, no separators, no control characters
+    ok 4 - page-derived values are sanitised: no path escape, no separators, no control characters
+      ---
+      duration_ms: 0.577918
+      ...
+    # Subtest: a token that renders to nothing cannot produce an empty or dot-leading name
+    ok 5 - a token that renders to nothing cannot produce an empty or dot-leading name
+      ---
+      duration_ms: 0.278828
+      ...
+    # Subtest: missing context values render as empty, not as "undefined"
+    ok 6 - missing context values render as empty, not as "undefined"
+      ---
+      duration_ms: 0.149306
+      ...
+    # Subtest: an invalid clock falls back to a real date instead of NaN
+    ok 7 - an invalid clock falls back to a real date instead of NaN
+      ---
+      duration_ms: 0.290048
+      ...
+    # Subtest: long values are clamped so the name stays usable
+    ok 8 - long values are clamped so the name stays usable
+      ---
+      duration_ms: 0.180567
+      ...
+    1..8
+ok 46 - renderTemplate — deterministic and total
+  ---
+  duration_ms: 4.033575
+  type: 'suite'
+  ...
+# Subtest: uniqueFilename — collisions inside one run
+    # Subtest: an unused name is returned unchanged
+    ok 1 - an unused name is returned unchanged
+      ---
+      duration_ms: 0.211218
+      ...
+    # Subtest: a collision gets the lowest free counter, keeping the extension
+    ok 2 - a collision gets the lowest free counter, keeping the extension
+      ---
+      duration_ms: 0.155325
+      ...
+    # Subtest: a name without an extension still gets a counter
+    ok 3 - a name without an extension still gets a counter
+      ---
+      duration_ms: 0.088394
+      ...
+    # Subtest: a batch of identical names produces a set of distinct names
+    ok 4 - a batch of identical names produces a set of distinct names
+      ---
+      duration_ms: 6.991472
+      ...
+    # Subtest: hostile input cannot escape the download folder through the counter
+    ok 5 - hostile input cannot escape the download folder through the counter
+      ---
+      duration_ms: 0.274481
+      ...
+    1..5
+ok 47 - uniqueFilename — collisions inside one run
+  ---
+  duration_ms: 7.970874
+  type: 'suite'
+  ...
+# Subtest: transform — spec handling
+    # Subtest: the defaults are a no-op and every resize preset maps to a real mode
+    ok 1 - the defaults are a no-op and every resize preset maps to a real mode
+      ---
+      duration_ms: 1.609718
+      ...
+    # Subtest: isTransformActive notices every kind of change and ignores inert ones
+    ok 2 - isTransformActive notices every kind of change and ignores inert ones
+      ---
+      duration_ms: 0.291468
+      ...
+    # Subtest: untrusted specs are coerced into range, never trusted
+    ok 3 - untrusted specs are coerced into range, never trusted
+      ---
+      duration_ms: 0.412433
+      ...
+    # Subtest: a crop is clipped to the source when the source size is known
+    ok 4 - a crop is clipped to the source when the source size is known
+      ---
+      duration_ms: 0.161169
+      ...
+    # Subtest: non-object input yields the defaults instead of throwing
+    ok 5 - non-object input yields the defaults instead of throwing
+      ---
+      duration_ms: 0.3211
+      ...
+    1..5
+ok 48 - transform — spec handling
+  ---
+  duration_ms: 3.924407
+  type: 'suite'
+  ...
+# Subtest: transform — the plan (pure geometry)
+    # Subtest: no transform keeps the source size and adds no steps
+    ok 1 - no transform keeps the source size and adds no steps
+      ---
+      duration_ms: 1.303863
+      ...
+    # Subtest: the documented case: 200×140 at 50% becomes exactly 100×70
+    ok 2 - the documented case: 200×140 at 50% becomes exactly 100×70
+      ---
+      duration_ms: 0.234653
+      ...
+    # Subtest: exact, fit and max resizing all produce the planned size
+    ok 3 - exact, fit and max resizing all produce the planned size
+      ---
+      duration_ms: 0.254616
+      ...
+    # Subtest: resizing never upscales by accident in fit mode
+    ok 4 - resizing never upscales by accident in fit mode
+      ---
+      duration_ms: 0.287958
+      ...
+    # Subtest: a 90° or 270° rotation swaps the planned dimensions
+    ok 5 - a 90° or 270° rotation swaps the planned dimensions
+      ---
+      duration_ms: 0.223605
+      ...
+    # Subtest: crop is applied before rotation, and the plan reports both
+    ok 6 - crop is applied before rotation, and the plan reports both
+      ---
+      duration_ms: 0.211383
+      ...
+    # Subtest: a crop past the edge is clipped with a warning, not an error
+    ok 7 - a crop past the edge is clipped with a warning, not an error
+      ---
+      duration_ms: 0.192888
+      ...
+    # Subtest: an incomplete exact resize is an error the dialog can show
+    ok 8 - an incomplete exact resize is an error the dialog can show
+      ---
+      duration_ms: 0.142251
+      ...
+    # Subtest: "keep aspect ratio" is explained for the modes that ignore it
+    ok 9 - "keep aspect ratio" is explained for the modes that ignore it
+      ---
+      duration_ms: 0.176413
+      ...
+    # Subtest: validateTransform refuses a source with no size and a result above the ceiling
+    ok 10 - validateTransform refuses a source with no size and a result above the ceiling
+      ---
+      duration_ms: 0.378767
+      ...
+    1..10
+ok 49 - transform — the plan (pure geometry)
+  ---
+  duration_ms: 3.960788
+  type: 'suite'
+  ...
+# Subtest: transform — drawing geometry
+    # Subtest: a 50% resize draws the whole source into a 100×70 canvas
+    ok 1 - a 50% resize draws the whole source into a 100×70 canvas
+      ---
+      duration_ms: 0.710464
+      ...
+    # Subtest: a crop runs as its own pass with the exact source rectangle
+    ok 2 - a crop runs as its own pass with the exact source rectangle
+      ---
+      duration_ms: 0.241732
+      ...
+    # Subtest: rotation and flips are applied as context transforms, centred
+    ok 3 - rotation and flips are applied as context transforms, centred
+      ---
+      duration_ms: 0.336252
+      ...
+    # Subtest: flipV mirrors on y only
+    ok 4 - flipV mirrors on y only
+      ---
+      duration_ms: 0.163305
+      ...
+    # Subtest: a large reduction is stepped down instead of jumped in one pass
+    ok 5 - a large reduction is stepped down instead of jumped in one pass
+      ---
+      duration_ms: 0.379368
+      ...
+    # Subtest: the source dimensions are read from the source when not given
+    ok 6 - the source dimensions are read from the source when not given
+      ---
+      duration_ms: 0.230261
+      ...
+    # Subtest: failure modes are errors with codes, never silent no-ops
+    ok 7 - failure modes are errors with codes, never silent no-ops
+      ---
+      duration_ms: 0.627579
+      ...
+    # Subtest: animation frames go through the same geometry
+    ok 8 - animation frames go through the same geometry
+      ---
+      duration_ms: 0.393152
+      ...
+    1..8
+ok 50 - transform — drawing geometry
+  ---
+  duration_ms: 3.373406
+  type: 'suite'
+  ...
+# Subtest: transform — reporting
+    # Subtest: describeTransform reads like the settings panel and the toast note
+    ok 1 - describeTransform reads like the settings panel and the toast note
+      ---
+      duration_ms: 0.197355
+      ...
+    1..1
+ok 51 - transform — reporting
+  ---
+  duration_ms: 0.317006
+  type: 'suite'
+  ...
+# Subtest: zip — structure and primitives
+    # Subtest: CRC-32 matches the published check values
+    ok 1 - CRC-32 matches the published check values
+      ---
+      duration_ms: 0.859069
+      ...
+    # Subtest: DOS date/time encodes the documented fields and clamps impossible years
+    ok 2 - DOS date/time encodes the documented fields and clamps impossible years
+      ---
+      duration_ms: 0.434223
+      ...
+    # Subtest: entry names cannot escape the extraction directory (zip-slip)
+    ok 3 - entry names cannot escape the extraction directory (zip-slip)
+      ---
+      duration_ms: 1.217387
+      ...
+    # Subtest: a long name is truncated on a byte boundary, not mid-character
+    ok 4 - a long name is truncated on a byte boundary, not mid-character
+      ---
+      duration_ms: 2.218427
+      ...
+    # Subtest: the size estimate is close to the archive that is actually built
+    ok 5 - the size estimate is close to the archive that is actually built
+      ---
+      duration_ms: 1.230744
+      ...
+    # Subtest: junk input is refused with a code, not a corrupt archive
+    ok 6 - junk input is refused with a code, not a corrupt archive
+      ---
+      duration_ms: 3.000099
+      ...
+    # Subtest: an entry with no bytes is skipped with a note rather than archived empty
+    ok 7 - an entry with no bytes is skipped with a note rather than archived empty
+      ---
+      duration_ms: 0.354083
+      ...
+    # Subtest: byte-ish inputs (ArrayBuffer, plain array) are all accepted
+    ok 8 - byte-ish inputs (ArrayBuffer, plain array) are all accepted
+      ---
+      duration_ms: 0.899722
+      ...
+    # Subtest: the entry cap is enforced and reported
+    ok 9 - the entry cap is enforced and reported
+      ---
+      duration_ms: 37.341218
+      ...
+    1..9
+ok 52 - zip — structure and primitives
+  ---
+  duration_ms: 48.669004
+  type: 'suite'
+  ...
+# Subtest: zip — verified by Python zipfile and Pillow
+ok 53 - zip — verified by Python zipfile and Pillow # SKIP python3 + Pillow are unavailable in this environment
+  ---
+  duration_ms: 0.144948
+  type: 'suite'
+  ...
+# Subtest: BMP encoder — header and pixel layout
+    # Subtest: writes a 32-bit BITMAPV5 file with alpha masks when the image has transparency
+    ok 1 - writes a 32-bit BITMAPV5 file with alpha masks when the image has transparency
+      ---
+      duration_ms: 2.013587
+      ...
+    # Subtest: stores rows bottom-up in BGRA order
+    ok 2 - stores rows bottom-up in BGRA order
+      ---
+      duration_ms: 1.286912
+      ...
+    # Subtest: writes a 24-bit V3 file with 4-byte row padding for an odd width
+    ok 3 - writes a 24-bit V3 file with 4-byte row padding for an odd width
+      ---
+      duration_ms: 0.486301
+      ...
+    # Subtest: alpha mode is respected (auto / always / never)
+    ok 4 - alpha mode is respected (auto / always / never)
+      ---
+      duration_ms: 0.328539
+      ...
+    # Subtest: rejects invalid input instead of writing a broken file
+    ok 5 - rejects invalid input instead of writing a broken file
+      ---
+      duration_ms: 0.596269
+      ...
+    1..5
+ok 54 - BMP encoder — header and pixel layout
+  ---
+  duration_ms: 6.949726
+  type: 'suite'
+  ...
+# Subtest: GIF encoder — container structure
+    # Subtest: header, screen descriptor and global colour table are well formed
+    ok 1 - header, screen descriptor and global colour table are well formed
+      ---
+      duration_ms: 15.434806
+      ...
+    # Subtest: writes the Netscape looping extension with loop=0 (forever)
+    ok 2 - writes the Netscape looping extension with loop=0 (forever)
+      ---
+      duration_ms: 8.430529
+      ...
+    # Subtest: one Graphic Control Extension + image descriptor per frame, with clamped delays
+    ok 3 - one Graphic Control Extension + image descriptor per frame, with clamped delays
+      ---
+      duration_ms: 7.602923
+      ...
+    # Subtest: delays below 2cs are raised (browsers clamp them) and zero becomes 10cs
+    ok 4 - delays below 2cs are raised (browsers clamp them) and zero becomes 10cs
+      ---
+      duration_ms: 3.626282
+      ...
+    # Subtest: transparency gets a reserved palette index and the GCE flag
+    ok 5 - transparency gets a reserved palette index and the GCE flag
+      ---
+      duration_ms: 5.806857
+      ...
+    # Subtest: splits the LZW stream into <=255 byte sub-blocks on a large noisy image
+    ok 6 - splits the LZW stream into <=255 byte sub-blocks on a large noisy image
+      ---
+      duration_ms: 95.069973
+      ...
+    # Subtest: subsampleFrames keeps total duration when dropping frames
+    ok 7 - subsampleFrames keeps total duration when dropping frames
+      ---
+      duration_ms: 3.513791
+      ...
+    # Subtest: estimateAnimationMemory reports RGBA bytes for the crash guard
+    ok 8 - estimateAnimationMemory reports RGBA bytes for the crash guard
+      ---
+      duration_ms: 0.168629
+      ...
+    # Subtest: lzwEncode emits clear + EOI and never exceeds 12-bit codes
+    ok 9 - lzwEncode emits clear + EOI and never exceeds 12-bit codes
+      ---
+      duration_ms: 0.763618
+      ...
+    # Subtest: rejects mismatched frame dimensions and empty input
+    ok 10 - rejects mismatched frame dimensions and empty input
+      ---
+      duration_ms: 0.279137
+      ...
+    1..10
+ok 55 - GIF encoder — container structure
+  ---
+  duration_ms: 141.285869
+  type: 'suite'
+  ...
+# Subtest: PDF encoder — structure
+    # Subtest: produces a parseable 1.4 file with a byte-exact xref table
+    ok 1 - produces a parseable 1.4 file with a byte-exact xref table
+      ---
+      duration_ms: 1.311281
+      ...
+    # Subtest: page geometry follows the pageFit setting
+    ok 2 - page geometry follows the pageFit setting
+      ---
+      duration_ms: 0.306316
+      ...
+    # Subtest: the MediaBox in the written file matches the layout
+    ok 3 - the MediaBox in the written file matches the layout
+      ---
+      duration_ms: 0.532221
+      ...
+    # Subtest: embeds the JPEG byte-for-byte with DCTDecode
+    ok 4 - embeds the JPEG byte-for-byte with DCTDecode
+      ---
+      duration_ms: 3.098844
+      ...
+    # Subtest: refuses input that is not a complete JPEG rather than writing a broken PDF
+    ok 5 - refuses input that is not a complete JPEG rather than writing a broken PDF
+      ---
+      duration_ms: 0.2602
+      ...
+    # Subtest: escapePdfString neutralises hostile titles
+    ok 6 - escapePdfString neutralises hostile titles
+      ---
+      duration_ms: 0.274758
+      ...
+    1..6
+ok 56 - PDF encoder — structure
+  ---
+  duration_ms: 6.104021
+  type: 'suite'
+  ...
+# Subtest: encoders verified by independent decoders (Pillow + pypdf)
+ok 57 - encoders verified by independent decoders (Pillow + pypdf) # SKIP Pillow/pypdf not installed
+  ---
+  duration_ms: 0.05844
+  type: 'suite'
+  ...
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1646:33)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:145:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1646:33)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:145:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1646:33)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:145:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1646:33)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:145:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Subtest: bootstrap — one instance per document
+    # Subtest: boots, reports ready, and publishes the documented API
+    ok 1 - boots, reports ready, and publishes the documented API
+      ---
+      duration_ms: 61.340204
+      ...
+    # Subtest: the marker is visible on every root a later injection might check
+    ok 2 - the marker is visible on every root a later injection might check
+      ---
+      duration_ms: 13.813446
+      ...
+    # Subtest: a second bootstrap returns the same instance and adds no listeners
+    ok 3 - a second bootstrap returns the same instance and adds no listeners
+      ---
+      duration_ms: 7.635903
+      ...
+    # Subtest: REGRESSION: booting at document-start (no <html> yet) is still seen by a later injection
+    ok 4 - REGRESSION: booting at document-start (no <html> yet) is still seen by a later injection
+      ---
+      duration_ms: 7.422976
+      ...
+    # Subtest: destroy() clears the marker so the script can boot again cleanly
+    ok 5 - destroy() clears the marker so the script can boot again cleanly
+      ---
+      duration_ms: 7.408586
+      ...
+    # Subtest: resolveTarget() reports an image and nothing else
+    ok 6 - resolveTarget() reports an image and nothing else
+      ---
+      duration_ms: 68.850996
+      ...
+    1..6
+ok 58 - bootstrap — one instance per document
+  ---
+  duration_ms: 167.859529
+  type: 'suite'
+  ...
+# Subtest: static security gate (lint.mjs)
+    # Subtest: every lint rule passes
+    ok 1 - every lint rule passes
+      ---
+      duration_ms: 1.27214
+      ...
+    # Subtest: the rule set actually covers the risky constructs
+    ok 2 - the rule set actually covers the risky constructs
+      ---
+      duration_ms: 0.279877
+      ...
+    1..2
+ok 59 - static security gate (lint.mjs)
+  ---
+  duration_ms: 2.697501
+  type: 'suite'
+  ...
+# Subtest: network access is a single auditable choke point
+    # Subtest: only core/gm.js can reach the raw manager XHR API
+    ok 1 - only core/gm.js can reach the raw manager XHR API
+      ---
+      duration_ms: 5.577381
+      ...
+    # Subtest: the only fetch() call sites are same-origin, credential-limited reads of the image itself
+    ok 2 - the only fetch() call sites are same-origin, credential-limited reads of the image itself
+      ---
+      duration_ms: 6.544363
+      ...
+    # Subtest: no reachable remote endpoint is baked into the shipped artifact
+    ok 3 - no reachable remote endpoint is baked into the shipped artifact
+      ---
+      duration_ms: 2.409015
+      ...
+    1..3
+ok 60 - network access is a single auditable choke point
+  ---
+  duration_ms: 14.766277
+  type: 'suite'
+  ...
+# Subtest: no page-storage or privilege escalation
+    # Subtest: the script never reads or writes page-visible storage
+    ok 1 - the script never reads or writes page-visible storage
+      ---
+      duration_ms: 4.574819
+      ...
+    # Subtest: settings live only in manager storage (namespaced, versioned keys)
+    ok 2 - settings live only in manager storage (namespaced, versioned keys)
+      ---
+      duration_ms: 0.302487
+      ...
+    # Subtest: no postMessage listener (an untrusted-page attack surface) is registered
+    ok 3 - no postMessage listener (an untrusted-page attack surface) is registered
+      ---
+      duration_ms: 0.734633
+      ...
+    # Subtest: the only global property the script assigns is its documented init flag
+    ok 4 - the only global property the script assigns is its documented init flag
+      ---
+      duration_ms: 2.879198
+      ...
+    # Subtest: no credential-shaped strings are embedded
+    ok 5 - no credential-shaped strings are embedded
+      ---
+      duration_ms: 1.640585
+      ...
+    1..5
+ok 61 - no page-storage or privilege escalation
+  ---
+  duration_ms: 10.716224
+  type: 'suite'
+  ...
+# Subtest: UI isolation and safe rendering
+    # Subtest: every UI surface renders into a shadow root
+    ok 1 - every UI surface renders into a shadow root
+      ---
+      duration_ms: 0.747396
+      ...
+    # Subtest: untrusted strings (URLs, alt text, file names, notes) reach the DOM only via textContent
+    ok 2 - untrusted strings (URLs, alt text, file names, notes) reach the DOM only via textContent
+      ---
+      duration_ms: 2.001964
+      ...
+    # Subtest: SVG icons are built with createElementNS, never parsed from a string
+    ok 3 - SVG icons are built with createElementNS, never parsed from a string
+      ---
+      duration_ms: 0.188276
+      ...
+    # Subtest: the context menu and dialog expose ARIA semantics and keyboard handling
+    ok 4 - the context menu and dialog expose ARIA semantics and keyboard handling
+      ---
+      duration_ms: 0.634365
+      ...
+    # Subtest: user-visible styles adapt to dark mode, narrow screens and reduced motion
+    ok 5 - user-visible styles adapt to dark mode, narrow screens and reduced motion
+      ---
+      duration_ms: 0.54534
+      ...
+    1..5
+ok 62 - UI isolation and safe rendering
+  ---
+  duration_ms: 4.572737
+  type: 'suite'
+  ...
+# Subtest: lifecycle hygiene
+    # Subtest: timers, listeners and object URLs are cleaned up
+    ok 1 - timers, listeners and object URLs are cleaned up
+      ---
+      duration_ms: 1.661623
+      ...
+    # Subtest: initialisation is idempotent and cannot double-inject UI
+    ok 2 - initialisation is idempotent and cannot double-inject UI
+      ---
+      duration_ms: 1.24598
+      ...
+    # Subtest: the script cannot break the host page if startup throws
+    ok 3 - the script cannot break the host page if startup throws
+      ---
+      duration_ms: 0.614435
+      ...
+    1..3
+ok 63 - lifecycle hygiene
+  ---
+  duration_ms: 3.741555
+  type: 'suite'
+  ...
+# Subtest: batch dialog — the plan the user confirms
+    # Subtest: opening seeds the options from settings and plans once before anything runs
+    ok 1 - opening seeds the options from settings and plans once before anything runs
+      ---
+      duration_ms: 88.141197
+      ...
+    # Subtest: the stored batch settings are honoured, including a ZIP destination
+    ok 2 - the stored batch settings are honoured, including a ZIP destination
+      ---
+      duration_ms: 22.69068
+      ...
+    # Subtest: the table states exactly what the run will do
+    ok 3 - the table states exactly what the run will do
+      ---
+      duration_ms: 40.406932
+      ...
+    # Subtest: every option change re-plans before the run, with the option the user set
+    ok 4 - every option change re-plans before the run, with the option the user set
+      ---
+      duration_ms: 43.03398
+      ...
+    # Subtest: "Original file" is not offered as an extra format, and a disabled encoder cannot be picked
+    ok 5 - "Original file" is not offered as an extra format, and a disabled encoder cannot be picked
+      ---
+      duration_ms: 15.76636
+      ...
+    # Subtest: Start hands over exactly the visible options, then closes
+    ok 6 - Start hands over exactly the visible options, then closes
+      ---
+      duration_ms: 44.031351
+      ...
+    # Subtest: a plan with nothing in it cannot be started, and says why
+    ok 7 - a plan with nothing in it cannot be started, and says why
+      ---
+      duration_ms: 20.586847
+      ...
+    # Subtest: a plan that throws is reported, and still cannot be started
+    ok 8 - a plan that throws is reported, and still cannot be started
+      ---
+      duration_ms: 20.302986
+      ...
+    # Subtest: "Choose images instead" hands over to the picker
+    ok 9 - "Choose images instead" hands over to the picker
+      ---
+      duration_ms: 18.589126
+      ...
+    # Subtest: Cancel and Escape close without starting anything
+    ok 10 - Cancel and Escape close without starting anything
+      ---
+      duration_ms: 30.822358
+      ...
+    # Subtest: open(options) can preselect a format for a picker-driven run
+    ok 11 - open(options) can preselect a format for a picker-driven run
+      ---
+      duration_ms: 16.003262
+      ...
+    # Subtest: state() reports the options and the plan for support and automation
+    ok 12 - state() reports the options and the plan for support and automation
+      ---
+      duration_ms: 20.498843
+      ...
+    # Subtest: destroy() removes the host, and a second instance does not stack
+    ok 13 - destroy() removes the host, and a second instance does not stack
+      ---
+      duration_ms: 20.946971
+      ...
+    1..13
+ok 64 - batch dialog — the plan the user confirms
+  ---
+  duration_ms: 404.0272
+  type: 'suite'
+  ...
+# Subtest: compare dialog
+    # Subtest: opening encodes the candidates and shows one row per format
+    ok 1 - opening encodes the candidates and shows one row per format
+      ---
+      duration_ms: 105.932743
+      ...
+    # Subtest: the recommendation is explained and marked, and only it enables "Save smallest"
+    ok 2 - the recommendation is explained and marked, and only it enables "Save smallest"
+      ---
+      duration_ms: 25.553961
+      ...
+    # Subtest: each row can be saved on its own, with the target and format
+    ok 3 - each row can be saved on its own, with the target and format
+      ---
+      duration_ms: 22.260165
+      ...
+    # Subtest: "Save smallest" saves the recommended format
+    ok 4 - "Save smallest" saves the recommended format
+      ---
+      duration_ms: 15.237592
+      ...
+    # Subtest: a failed encoder is a row with a reason, not a missing row
+    ok 5 - a failed encoder is a row with a reason, not a missing row
+      ---
+      duration_ms: 15.904877
+      ...
+    # Subtest: when nothing could be encoded the dialog says so and offers no save
+    ok 6 - when nothing could be encoded the dialog says so and offers no save
+      ---
+      duration_ms: 14.295757
+      ...
+    # Subtest: a comparison that throws reports the failure in the dialog
+    ok 7 - a comparison that throws reports the failure in the dialog
+      ---
+      duration_ms: 19.27038
+      ...
+    # Subtest: "Stop comparing" aborts the run and passes the signal to the caller
+    ok 8 - "Stop comparing" aborts the run and passes the signal to the caller
+      ---
+      duration_ms: 19.731709
+      ...
+    # Subtest: closing mid-run aborts it, so no encoder keeps burning CPU
+    ok 9 - closing mid-run aborts it, so no encoder keeps burning CPU
+      ---
+      duration_ms: 22.449034
+      ...
+    # Subtest: re-running for another image supersedes the previous run
+    ok 10 - re-running for another image supersedes the previous run
+      ---
+      duration_ms: 27.666558
+      ...
+    # Subtest: destroy() removes the host and aborts a running comparison
+    ok 11 - destroy() removes the host and aborts a running comparison
+      ---
+      duration_ms: 15.570487
+      ...
+    # Subtest: the state seam reports the rows for support and automation
+    ok 12 - the state seam reports the rows for support and automation
+      ---
+      duration_ms: 14.652095
+      ...
+    1..12
+ok 65 - compare dialog
+  ---
+  duration_ms: 320.887143
+  type: 'suite'
+  ...
+# Subtest: metadata inspector
+    # Subtest: a file with no metadata says so, and still offers a stripped copy
+    ok 1 - a file with no metadata says so, and still offers a stripped copy
+      ---
+      duration_ms: 18.86343
+      ...
+    # Subtest: a container this script cannot read is reported honestly, with no save offered
+    ok 2 - a container this script cannot read is reported honestly, with no save offered
+      ---
+      duration_ms: 12.66324
+      ...
+    # Subtest: "Save original without metadata" hands over the target and the strip flag
+    ok 3 - "Save original without metadata" hands over the target and the strip flag
+      ---
+      duration_ms: 12.985017
+      ...
+    # Subtest: a reader that fails, or returns nothing, leaves an explanation instead of a spinner
+    ok 4 - a reader that fails, or returns nothing, leaves an explanation instead of a spinner
+      ---
+      duration_ms: 19.682318
+      ...
+    # Subtest: "Re-check" reads the file again without rebuilding the dialog
+    ok 5 - "Re-check" reads the file again without rebuilding the dialog
+      ---
+      duration_ms: 28.162386
+      ...
+    # Subtest: untrusted metadata values are rendered as text, never as markup
+    ok 6 - untrusted metadata values are rendered as text, never as markup
+      ---
+      duration_ms: 14.944778
+      ...
+    # Subtest: destroy() removes the host
+    ok 7 - destroy() removes the host
+      ---
+      duration_ms: 11.626062
+      ...
+    1..7
+ok 66 - metadata inspector
+  ---
+  duration_ms: 119.669037
+  type: 'suite'
+  ...
+# Subtest: metadata inspector — with real EXIF and GPS fixtures
+ok 67 - metadata inspector — with real EXIF and GPS fixtures # SKIP python3 + Pillow are unavailable, so no EXIF fixtures could be generated
+  ---
+  duration_ms: 0.043552
+  type: 'suite'
+  ...
+# Subtest: shortcut help
+    # Subtest: every action is listed with the chord that is actually configured
+    ok 1 - every action is listed with the chord that is actually configured
+      ---
+      duration_ms: 14.472285
+      ...
+    # Subtest: a custom binding is shown instead of the default
+    ok 2 - a custom binding is shown instead of the default
+      ---
+      duration_ms: 12.125553
+      ...
+    # Subtest: an invalid stored binding is shown as the default that replaced it, not as the broken text
+    ok 3 - an invalid stored binding is shown as the default that replaced it, not as the broken text
+      ---
+      duration_ms: 8.330926
+      ...
+    # Subtest: a disabled action is listed as disabled
+    ok 4 - a disabled action is listed as disabled
+      ---
+      duration_ms: 7.967239
+      ...
+    # Subtest: when shortcuts are turned off, the overlay says so first
+    ok 5 - when shortcuts are turned off, the overlay says so first
+      ---
+      duration_ms: 11.603914
+      ...
+    # Subtest: the menu keys, including the digit type-ahead, are documented
+    ok 6 - the menu keys, including the digit type-ahead, are documented
+      ---
+      duration_ms: 8.219163
+      ...
+    # Subtest: the Shift+right-click line follows the setting
+    ok 7 - the Shift+right-click line follows the setting
+      ---
+      duration_ms: 11.551109
+      ...
+    # Subtest: "Open settings" closes the help and hands over
+    ok 8 - "Open settings" closes the help and hands over
+      ---
+      duration_ms: 18.414452
+      ...
+    # Subtest: Close and Escape both dismiss it
+    ok 9 - Close and Escape both dismiss it
+      ---
+      duration_ms: 18.227712
+      ...
+    # Subtest: a settings object with no shortcuts still lists the defaults
+    ok 10 - a settings object with no shortcuts still lists the defaults
+      ---
+      duration_ms: 12.391515
+      ...
+    1..10
+ok 68 - shortcut help
+  ---
+  duration_ms: 123.79909
+  type: 'suite'
+  ...
+# Subtest: saveBlob — manager download path
+    # Subtest: uses GM_download when the manager supports it and reports it truthfully
+    ok 1 - uses GM_download when the manager supports it and reports it truthfully
+      ---
+      duration_ms: 2.694144
+      ...
+    # Subtest: passes the sub-folder to the manager but never to the anchor
+    ok 2 - passes the sub-folder to the manager but never to the anchor
+      ---
+      duration_ms: 0.485907
+      ...
+    # Subtest: Save As is only claimed as honoured in browser download mode
+    ok 3 - Save As is only claimed as honoured in browser download mode
+      ---
+      duration_ms: 0.414413
+      ...
+    1..3
+ok 69 - saveBlob — manager download path
+  ---
+  duration_ms: 50.84495
+  type: 'suite'
+  ...
+# Subtest: saveBlob — fallback to the browser
+    # Subtest: a whitelisted-extension rejection falls back to an anchor download and says so
+    ok 1 - a whitelisted-extension rejection falls back to an anchor download and says so
+      ---
+      duration_ms: 11.17344
+      ...
+    # Subtest: every recoverable manager failure falls back; an unknown one does not
+    ok 2 - every recoverable manager failure falls back; an unknown one does not
+      ---
+      duration_ms: 4.11223
+      ...
+    # Subtest: timeout, thrown and ambiguous failures never repeat an uncertain save
+    ok 3 - timeout, thrown and ambiguous failures never repeat an uncertain save
+      ---
+      duration_ms: 0.783641
+      ...
+    # Subtest: downloadMode "disabled" goes straight to the browser without trying GM_download
+    ok 4 - downloadMode "disabled" goes straight to the browser without trying GM_download
+      ---
+      duration_ms: 0.987841
+      ...
+    # Subtest: without the GM_download grant the browser path is used
+    ok 5 - without the GM_download grant the browser path is used
+      ---
+      duration_ms: 0.913054
+      ...
+    # Subtest: the sub-folder is dropped on the anchor path and reported as dropped
+    ok 6 - the sub-folder is dropped on the anchor path and reported as dropped
+      ---
+      duration_ms: 1.306173
+      ...
+    # Subtest: an empty blob is refused rather than downloading a 0-byte surprise
+    ok 7 - an empty blob is refused rather than downloading a 0-byte surprise
+      ---
+      duration_ms: 0.389606
+      ...
+    # Subtest: a throwing anchor click is reported as a failure
+    ok 8 - a throwing anchor click is reported as a failure
+      ---
+      duration_ms: 0.740346
+      ...
+    1..8
+ok 70 - saveBlob — fallback to the browser
+  ---
+  duration_ms: 27.007581
+  type: 'suite'
+  ...
+# Subtest: describeDownloadCapability — the wording shown in diagnostics
+    # Subtest: explains each mode and what it means for folders and dialogs
+    ok 1 - explains each mode and what it means for folders and dialogs
+      ---
+      duration_ms: 0.237471
+      ...
+    1..1
+ok 71 - describeDownloadCapability — the wording shown in diagnostics
+  ---
+  duration_ms: 0.348973
+  type: 'suite'
+  ...
+# Subtest: job bar — progress reporting
+    # Subtest: nothing is added to the page until a run starts
+    ok 1 - nothing is added to the page until a run starts
+      ---
+      duration_ms: 49.838249
+      ...
+    # Subtest: show() creates one shadow host and announces the run
+    ok 2 - show() creates one shadow host and announces the run
+      ---
+      duration_ms: 25.044966
+      ...
+    # Subtest: update() reports percent, counts, bytes and ARIA progress values
+    ok 3 - update() reports percent, counts, bytes and ARIA progress values
+      ---
+      duration_ms: 16.646755
+      ...
+    # Subtest: queued items are not listed, and the list is capped
+    ok 4 - queued items are not listed, and the list is capped
+      ---
+      duration_ms: 37.201073
+      ...
+    # Subtest: an uncertain save is labelled "unknown", not "failed"
+    ok 5 - an uncertain save is labelled "unknown", not "failed"
+      ---
+      duration_ms: 18.379703
+      ...
+    # Subtest: Cancel is available while running and hidden once the run settles
+    ok 6 - Cancel is available while running and hidden once the run settles
+      ---
+      duration_ms: 9.294624
+      ...
+    # Subtest: "Retry failed" appears only when something failed, and only re-runs on click
+    ok 7 - "Retry failed" appears only when something failed, and only re-runs on click
+      ---
+      duration_ms: 8.376076
+      ...
+    # Subtest: finish() replaces the status with the summary and disables Cancel
+    ok 8 - finish() replaces the status with the summary and disables Cancel
+      ---
+      duration_ms: 7.78525
+      ...
+    # Subtest: the bar can be collapsed without losing the run
+    ok 9 - the bar can be collapsed without losing the run
+      ---
+      duration_ms: 13.744728
+      ...
+    # Subtest: update() before show() is a no-op, and hide() then update() stays quiet
+    ok 10 - update() before show() is a no-op, and hide() then update() stays quiet
+      ---
+      duration_ms: 8.328132
+      ...
+    # Subtest: destroy() removes the host from the page entirely
+    ok 11 - destroy() removes the host from the page entirely
+      ---
+      duration_ms: 10.482309
+      ...
+    # Subtest: a second instance adopts the existing host instead of stacking
+    ok 12 - a second instance adopts the existing host instead of stacking
+      ---
+      duration_ms: 8.077443
+      ...
+    1..12
+ok 72 - job bar — progress reporting
+  ---
+  duration_ms: 215.129509
+  type: 'suite'
+  ...
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:419:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9)
+#     at HTMLDivElementImpl.dispatchEvent (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17) undefined
+# Subtest: context menu — opening rules
+    # Subtest: a right-click on an image opens a shadow-DOM menu and suppresses the native one
+    ok 1 - a right-click on an image opens a shadow-DOM menu and suppresses the native one
+      ---
+      duration_ms: 85.798575
+      ...
+    # Subtest: a right-click that is not on an image leaves the native menu alone
+    ok 2 - a right-click that is not on an image leaves the native menu alone
+      ---
+      duration_ms: 50.253648
+      ...
+    # Subtest: Shift + right-click always yields the native menu (documented escape hatch)
+    ok 3 - Shift + right-click always yields the native menu (documented escape hatch)
+      ---
+      duration_ms: 10.107143
+      ...
+    # Subtest: requireShift inverts the rule: plain right-click is native, Shift opens ours
+    ok 4 - requireShift inverts the rule: plain right-click is native, Shift opens ours
+      ---
+      duration_ms: 13.324244
+      ...
+    # Subtest: interceptContextMenu:false disables the menu entirely
+    ok 5 - interceptContextMenu:false disables the menu entirely
+      ---
+      duration_ms: 9.137565
+      ...
+    # Subtest: target kinds: CSS background (only when enabled) and inline SVG
+    ok 6 - target kinds: CSS background (only when enabled) and inline SVG
+      ---
+      duration_ms: 40.598474
+      ...
+    # Subtest: two instances never produce two host elements
+    ok 7 - two instances never produce two host elements
+      ---
+      duration_ms: 15.695106
+      ...
+    1..7
+ok 73 - context menu — opening rules
+  ---
+  duration_ms: 226.406849
+  type: 'suite'
+  ...
+# Subtest: context menu — keyboard operation
+    # Subtest: focus starts on the first item and arrow keys wrap around
+    ok 1 - focus starts on the first item and arrow keys wrap around
+      ---
+      duration_ms: 12.396273
+      ...
+    # Subtest: Tab is trapped inside the open menu
+    ok 2 - Tab is trapped inside the open menu
+      ---
+      duration_ms: 13.941845
+      ...
+    # Subtest: Enter activates the focused item, closes the menu and restores page focus
+    ok 3 - Enter activates the focused item, closes the menu and restores page focus
+      ---
+      duration_ms: 16.378465
+      ...
+    # Subtest: Space activates too, and Escape closes without activating anything
+    ok 4 - Space activates too, and Escape closes without activating anything
+      ---
+      duration_ms: 12.778718
+      ...
+    # Subtest: the Settings item opens the panel instead of converting
+    ok 5 - the Settings item opens the panel instead of converting
+      ---
+      duration_ms: 14.808198
+      ...
+    # Subtest: keys are ignored while the menu is closed
+    ok 6 - keys are ignored while the menu is closed
+      ---
+      duration_ms: 7.122535
+      ...
+    1..6
+ok 74 - context menu — keyboard operation
+  ---
+  duration_ms: 77.989291
+  type: 'suite'
+  ...
+# (node:2087) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: context menu — dismissal
+    # Subtest: a click outside, a scroll, a resize, a blur and a pagehide all close it
+    ok 1 - a click outside, a scroll, a resize, a blur and a pagehide all close it
+      ---
+      duration_ms: 178.471573
+      ...
+    # Subtest: clicking the menu’s own chrome does not dismiss it
+    ok 2 - clicking the menu’s own chrome does not dismiss it
+      ---
+      duration_ms: 13.008677
+      ...
+    # Subtest: detach() removes every listener the script added
+    ok 3 - detach() removes every listener the script added
+      ---
+      duration_ms: 8.24955
+      ...
+    1..3
+ok 75 - context menu — dismissal
+  ---
+  duration_ms: 199.987538
+  type: 'suite'
+  ...
+# Subtest: context menu — busy state
+    # Subtest: formats are disabled, explained and unclickable while a conversion runs
+    ok 1 - formats are disabled, explained and unclickable while a conversion runs
+      ---
+      duration_ms: 9.085851
+      ...
+    # Subtest: an empty format list says so instead of showing a blank menu
+    ok 2 - an empty format list says so instead of showing a blank menu
+      ---
+      duration_ms: 11.006701
+      ...
+    # Subtest: an unavailable format is listed but disabled with its reason
+    ok 3 - an unavailable format is listed but disabled with its reason
+      ---
+      duration_ms: 8.096104
+      ...
+    1..3
+ok 76 - context menu — busy state
+  ---
+  duration_ms: 28.357841
+  type: 'suite'
+  ...
+# Subtest: context menu — positioning
+    # Subtest: the menu is clamped inside the viewport instead of opening off-screen
+    ok 1 - the menu is clamped inside the viewport instead of opening off-screen
+      ---
+      duration_ms: 11.723385
+      ...
+    # Subtest: openForLastHovered() places the menu over the element for manager menu commands
+    ok 2 - openForLastHovered() places the menu over the element for manager menu commands
+      ---
+      duration_ms: 13.34069
+      ...
+    1..2
+ok 77 - context menu — positioning
+  ---
+  duration_ms: 25.197839
+  type: 'suite'
+  ...
+# Subtest: context menu — long press (touch)
+    # Subtest: holding still for the long-press duration opens the menu
+    ok 1 - holding still for the long-press duration opens the menu
+      ---
+      duration_ms: 8.980075
+      ...
+    # Subtest: a small finger jitter does not cancel the long press
+    ok 2 - a small finger jitter does not cancel the long press
+      ---
+      duration_ms: 7.894531
+      ...
+    # Subtest: dragging beyond the tolerance cancels it (that is a scroll, not a press)
+    ok 3 - dragging beyond the tolerance cancels it (that is a scroll, not a press)
+      ---
+      duration_ms: 5.659072
+      ...
+    # Subtest: lifting the finger before the delay cancels it
+    ok 4 - lifting the finger before the delay cancels it
+      ---
+      duration_ms: 14.397145
+      ...
+    # Subtest: a mouse pointerdown never starts a long press
+    ok 5 - a mouse pointerdown never starts a long press
+      ---
+      duration_ms: 5.735989
+      ...
+    # Subtest: enableLongPress:false disables the gesture
+    ok 6 - enableLongPress:false disables the gesture
+      ---
+      duration_ms: 5.981595
+      ...
+    # Subtest: repeated touches do not accumulate document listeners (leak regression)
+    ok 7 - repeated touches do not accumulate document listeners (leak regression)
+      ---
+      duration_ms: 83.21892
+      ...
+    1..7
+ok 78 - context menu — long press (touch)
+  ---
+  duration_ms: 132.189161
+  type: 'suite'
+  ...
+# Subtest: context menu — dismissal timing and listener hygiene
+    # Subtest: a scroll landing right after the menu opens does not dismiss it (grace window)
+    ok 1 - a scroll landing right after the menu opens does not dismiss it (grace window)
+      ---
+      duration_ms: 8.048991
+      ...
+    # Subtest: resize, blur and pagehide dismiss immediately — the grace applies to scroll only
+    ok 2 - resize, blur and pagehide dismiss immediately — the grace applies to scroll only
+      ---
+      duration_ms: 12.297397
+      ...
+    # Subtest: attach() is idempotent: re-applying settings does not stack listeners
+    ok 3 - attach() is idempotent: re-applying settings does not stack listeners
+      ---
+      duration_ms: 8.694915
+      ...
+    1..3
+ok 79 - context menu — dismissal timing and listener hygiene
+  ---
+  duration_ms: 29.206916
+  type: 'suite'
+  ...
+# Subtest: settings panel — modal structure
+    # Subtest: open() builds an accessible modal dialog in a shadow host
+    ok 1 - open() builds an accessible modal dialog in a shadow host
+      ---
+      duration_ms: 136.492838
+      ...
+    # Subtest: opening twice reuses one host and rebuilds the content
+    ok 2 - opening twice reuses one host and rebuilds the content
+      ---
+      duration_ms: 73.695556
+      ...
+    # Subtest: stored-settings warnings are announced in a status banner
+    ok 3 - stored-settings warnings are announced in a status banner
+      ---
+      duration_ms: 51.882492
+      ...
+    1..3
+ok 80 - settings panel — modal structure
+  ---
+  duration_ms: 263.502688
+  type: 'suite'
+  ...
+# Subtest: settings panel — dismissal (regression: window.close/window.open)
+    # Subtest: Save persists the draft and closes the dialog
+    ok 1 - Save persists the draft and closes the dialog
+      ---
+      duration_ms: 55.31642
+      ...
+    # Subtest: a failed save keeps the dialog open and explains why
+    ok 2 - a failed save keeps the dialog open and explains why
+      ---
+      duration_ms: 38.909187
+      ...
+    # Subtest: Cancel, the × button and Escape all close without saving
+    ok 3 - Cancel, the × button and Escape all close without saving
+      ---
+      duration_ms: 121.196244
+      ...
+    # Subtest: a backdrop click closes; a click inside the dialog does not
+    ok 4 - a backdrop click closes; a click inside the dialog does not
+      ---
+      duration_ms: 43.161468
+      ...
+    # Subtest: Reset defaults resets the store and rebuilds the dialog — without a popup
+    ok 5 - Reset defaults resets the store and rebuilds the dialog — without a popup
+      ---
+      duration_ms: 49.25
+      ...
+    # Subtest: destroy() removes the host entirely
+    ok 6 - destroy() removes the host entirely
+      ---
+      duration_ms: 26.406053
+      ...
+    # Subtest: focus returns to the page element that opened the dialog
+    ok 7 - focus returns to the page element that opened the dialog
+      ---
+      duration_ms: 26.2807
+      ...
+    1..7
+ok 81 - settings panel — dismissal (regression: window.close/window.open)
+  ---
+  duration_ms: 361.394654
+  type: 'suite'
+  ...
+# Subtest: image picker — inventory rows
+    # Subtest: opening scans once and renders a row per image
+    ok 1 - opening scans once and renders a row per image
+      ---
+      duration_ms: 92.454494
+      ...
+    # Subtest: each row describes its image: name, size, type, origin and state
+    ok 2 - each row describes its image: name, size, type, origin and state
+      ---
+      duration_ms: 29.250509
+      ...
+    # Subtest: an empty page and a filter that matches nothing say different things
+    ok 3 - an empty page and a filter that matches nothing say different things
+      ---
+      duration_ms: 32.648802
+      ...
+    # Subtest: a huge page is listed up to the row cap, and the rest is reported
+    ok 4 - a huge page is listed up to the row cap, and the rest is reported
+      ---
+      duration_ms: 272.233739
+      ...
+    # Subtest: a truncated scan tells the user the list may be incomplete
+    ok 5 - a truncated scan tells the user the list may be incomplete
+      ---
+      duration_ms: 23.825711
+      ...
+    1..5
+ok 82 - image picker — inventory rows
+  ---
+  duration_ms: 451.779524
+  type: 'suite'
+  ...
+# Subtest: image picker — filters, sorting and selection
+    # Subtest: filtering and sorting reuse the scan instead of re-walking the DOM
+    ok 1 - filtering and sorting reuse the scan instead of re-walking the DOM
+      ---
+      duration_ms: 72.021345
+      ...
+    # Subtest: sorting changes the row order, and "Re-scan" is the only thing that re-walks
+    ok 2 - sorting changes the row order, and "Re-scan" is the only thing that re-walks
+      ---
+      duration_ms: 49.885848
+      ...
+    # Subtest: selection survives a re-scan because it is keyed by URL, not row position
+    ok 3 - selection survives a re-scan because it is keyed by URL, not row position
+      ---
+      duration_ms: 21.785403
+      ...
+    # Subtest: "Select all listed" selects the filtered rows only
+    ok 4 - "Select all listed" selects the filtered rows only
+      ---
+      duration_ms: 45.488612
+      ...
+    # Subtest: a selection of not-loaded images is counted separately, with the load button offered
+    ok 5 - a selection of not-loaded images is counted separately, with the load button offered
+      ---
+      duration_ms: 61.489784
+      ...
+    # Subtest: the load button is hidden when everything selected is already loaded
+    ok 6 - the load button is hidden when everything selected is already loaded
+      ---
+      duration_ms: 24.860616
+      ...
+    1..6
+ok 83 - image picker — filters, sorting and selection
+  ---
+  duration_ms: 276.057111
+  type: 'suite'
+  ...
+# Subtest: image picker — actions
+    # Subtest: "Save selected" hands the selection, the format and the destination to the batch runner
+    ok 1 - "Save selected" hands the selection, the format and the destination to the batch runner
+      ---
+      duration_ms: 13.137533
+      ...
+    # Subtest: "Save as ZIP" asks for an archive instead of separate files
+    ok 2 - "Save as ZIP" asks for an archive instead of separate files
+      ---
+      duration_ms: 15.528999
+      ...
+    # Subtest: nothing selected means no run, and an explanation instead
+    ok 3 - nothing selected means no run, and an explanation instead
+      ---
+      duration_ms: 15.070198
+      ...
+    # Subtest: "This one" converts a single row without touching the rest of the selection
+    ok 4 - "This one" converts a single row without touching the rest of the selection
+      ---
+      duration_ms: 15.028211
+      ...
+    # Subtest: single-image actions need exactly one selection, and say so otherwise
+    ok 5 - single-image actions need exactly one selection, and say so otherwise
+      ---
+      duration_ms: 18.366999
+      ...
+    # Subtest: copy, transform and compare route to their own surfaces
+    ok 6 - copy, transform and compare route to their own surfaces
+      ---
+      duration_ms: 45.106755
+      ...
+    # Subtest: the format list comes from the orchestrator and shows what this browser cannot do
+    ok 7 - the format list comes from the orchestrator and shows what this browser cannot do
+      ---
+      duration_ms: 16.356876
+      ...
+    1..7
+ok 84 - image picker — actions
+  ---
+  duration_ms: 139.081067
+  type: 'suite'
+  ...
+# Subtest: image picker — previews and lifecycle
+    # Subtest: thumbnails are requested only for rows that can be drawn locally
+    ok 1 - thumbnails are requested only for rows that can be drawn locally
+      ---
+      duration_ms: 41.747164
+      ...
+    # Subtest: a failing preview is cosmetic: the row still works
+    ok 2 - a failing preview is cosmetic: the row still works
+      ---
+      duration_ms: 42.27044
+      ...
+    # Subtest: closing stops the observer: later page mutations cost nothing
+    ok 3 - closing stops the observer: later page mutations cost nothing
+      ---
+      duration_ms: 726.588067
+      ...
+    # Subtest: Escape closes the picker and returns focus to the page
+    ok 4 - Escape closes the picker and returns focus to the page
+      ---
+      duration_ms: 23.218172
+      ...
+    # Subtest: destroy() removes the host and a second instance does not stack
+    ok 5 - destroy() removes the host and a second instance does not stack
+      ---
+      duration_ms: 20.368161
+      ...
+    # Subtest: the picker state is readable for support and automation
+    ok 6 - the picker state is readable for support and automation
+      ---
+      duration_ms: 15.22513
+      ...
+    1..6
+ok 85 - image picker — previews and lifecycle
+  ---
+  duration_ms: 869.918863
+  type: 'suite'
+  ...
+# Subtest: toast stack — bounds and sharing
+    # Subtest: the stack never holds more than four toasts, oldest dropped first
+    ok 1 - the stack never holds more than four toasts, oldest dropped first
+      ---
+      duration_ms: 73.897826
+      ...
+    # Subtest: a re-rendered id keeps its place in the stack and does not add a node
+    ok 2 - a re-rendered id keeps its place in the stack and does not add a node
+      ---
+      duration_ms: 11.701558
+      ...
+    # Subtest: two instances sharing one host still respect the bound
+    ok 3 - two instances sharing one host still respect the bound
+      ---
+      duration_ms: 18.288892
+      ...
+    # Subtest: dismissAll() clears this instance's toasts
+    ok 4 - dismissAll() clears this instance's toasts
+      ---
+      duration_ms: 10.408507
+      ...
+    # Subtest: failures are assertive, progress and success are polite, and text is never parsed as HTML
+    ok 5 - failures are assertive, progress and success are polite, and text is never parsed as HTML
+      ---
+      duration_ms: 9.936408
+      ...
+    1..5
+ok 86 - toast stack — bounds and sharing
+  ---
+  duration_ms: 125.520441
+  type: 'suite'
+  ...
+# Subtest: transform dialog — preview and readout
+    # Subtest: opening loads the image once and reports the real source size
+    ok 1 - opening loads the image once and reports the real source size
+      ---
+      duration_ms: 107.076508
+      ...
+    # Subtest: the documented case: typing 100 wide yields exactly 100×70 with the aspect lock on
+    ok 2 - the documented case: typing 100 wide yields exactly 100×70 with the aspect lock on
+      ---
+      duration_ms: 38.640741
+      ...
+    # Subtest: the aspect lock uses cropped and rotated dimensions, not the original ratio
+    ok 3 - the aspect lock uses cropped and rotated dimensions, not the original ratio
+      ---
+      duration_ms: 34.718283
+      ...
+    # Subtest: turning the aspect lock off lets the two dimensions differ
+    ok 4 - turning the aspect lock off lets the two dimensions differ
+      ---
+      duration_ms: 23.94034
+      ...
+    # Subtest: resize presets set the mode and the readout follows
+    ok 5 - resize presets set the mode and the readout follows
+      ---
+      duration_ms: 22.225507
+      ...
+    # Subtest: rotation swaps the dimensions and the label follows, in 90° steps only
+    ok 6 - rotation swaps the dimensions and the label follows, in 90° steps only
+      ---
+      duration_ms: 30.399008
+      ...
+    # Subtest: flips are independent of rotation and appear in the summary
+    ok 7 - flips are independent of rotation and appear in the summary
+      ---
+      duration_ms: 19.29678
+      ...
+    # Subtest: "Original file" and unsupported encoders are not offered as output
+    ok 8 - "Original file" and unsupported encoders are not offered as output
+      ---
+      duration_ms: 21.787353
+      ...
+    # Subtest: a stored default transform is applied on open
+    ok 9 - a stored default transform is applied on open
+      ---
+      duration_ms: 22.508453
+      ...
+    1..9
+ok 87 - transform dialog — preview and readout
+  ---
+  duration_ms: 322.575575
+  type: 'suite'
+  ...
+# Subtest: transform dialog — cropping
+    # Subtest: enabling the crop starts from a sensible region and is reflected everywhere
+    ok 1 - enabling the crop starts from a sensible region and is reflected everywhere
+      ---
+      duration_ms: 40.113403
+      ...
+    # Subtest: crop numbers can be typed, and are clamped to the image
+    ok 2 - crop numbers can be typed, and are clamped to the image
+      ---
+      duration_ms: 36.893915
+      ...
+    # Subtest: arrow keys move the crop box and Shift+arrow resizes it
+    ok 3 - arrow keys move the crop box and Shift+arrow resizes it
+      ---
+      duration_ms: 285.733557
+      ...
+    # Subtest: pointer drags move and resize the crop box
+    ok 4 - pointer drags move and resize the crop box
+      ---
+      duration_ms: 39.117447
+      ...
+    # Subtest: disabling the crop removes it from the spec, and Reset clears everything
+    ok 5 - disabling the crop removes it from the spec, and Reset clears everything
+      ---
+      duration_ms: 38.165939
+      ...
+    1..5
+ok 88 - transform dialog — cropping
+  ---
+  duration_ms: 440.569261
+  type: 'suite'
+  ...
+# Subtest: transform dialog — saving, failure and cleanup
+    # Subtest: Save hands over the target, the exact spec and the chosen format, then closes
+    ok 1 - Save hands over the target, the exact spec and the chosen format, then closes
+      ---
+      duration_ms: 22.438051
+      ...
+    # Subtest: the spec handed over is a copy: later edits cannot change it
+    ok 2 - the spec handed over is a copy: later edits cannot change it
+      ---
+      duration_ms: 27.146495
+      ...
+    # Subtest: "Make default" says so in the payload
+    ok 3 - "Make default" says so in the payload
+      ---
+      duration_ms: 18.711803
+      ...
+    # Subtest: Cancel closes, releases the source and submits nothing
+    ok 4 - Cancel closes, releases the source and submits nothing
+      ---
+      duration_ms: 21.514266
+      ...
+    # Subtest: an image that cannot be loaded says so and refuses to save
+    ok 5 - an image that cannot be loaded says so and refuses to save
+      ---
+      duration_ms: 15.004665
+      ...
+    # Subtest: opening for a second image releases the first and loads the new one
+    ok 6 - opening for a second image releases the first and loads the new one
+      ---
+      duration_ms: 39.81116
+      ...
+    # Subtest: destroy() releases the source and removes the host
+    ok 7 - destroy() releases the source and removes the host
+      ---
+      duration_ms: 14.660305
+      ...
+    # Subtest: a source with no size is reported instead of producing a 0×0 file
+    ok 8 - a source with no size is reported instead of producing a 0×0 file
+      ---
+      duration_ms: 19.495397
+      ...
+    1..8
+ok 89 - transform dialog — saving, failure and cleanup
+  ---
+  duration_ms: 179.513913
+  type: 'suite'
+  ...
+# Subtest: transform dialog — asynchronous ownership regressions
+    # Subtest: a preview finishing after close is released instead of retained
+    ok 1 - a preview finishing after close is released instead of retained
+      ---
+      duration_ms: 13.690668
+      ...
+    # Subtest: out-of-order previews cannot overwrite the newly selected image
+    ok 2 - out-of-order previews cannot overwrite the newly selected image
+      ---
+      duration_ms: 27.927729
+      ...
+    1..2
+ok 90 - transform dialog — asynchronous ownership regressions
+  ---
+  duration_ms: 41.835775
+  type: 'suite'
+  ...
+1..90
+# tests 488
+# suites 90
+# pass 488
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46293.569628

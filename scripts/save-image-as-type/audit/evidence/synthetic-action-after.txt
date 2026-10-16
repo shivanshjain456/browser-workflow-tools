@@ -1,0 +1,11 @@
+{
+  "scriptPath": "release/save-image-as-type.user.js",
+  "sha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499",
+  "scope": "Chrome shared-world page DOM attack with fake GM; NOT actual-manager exploit validation",
+  "contextEventTrusted": false,
+  "menuOpened": false,
+  "publicApiPresent": false,
+  "privilegedFetchAttempted": false,
+  "attempts": [],
+  "status": "REJECTED by production UI event boundary"
+}

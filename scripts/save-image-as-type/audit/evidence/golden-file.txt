@@ -1,0 +1,7 @@
+test/golden/alpha.bmp:     PC bitmap, Windows 98/2000 and newer format, 12 x 10 x 32, cbSize 618, bits offset 138
+test/golden/animated.gif:  GIF image data, version 89a, 10 x 8
+test/golden/manifest.json: JSON text data
+test/golden/odd.bmp:       PC bitmap, Windows 3.x format, 5 x 3 x 24, image size 48, resolution 2835 x 2835 px/m, cbSize 102, bits offset 54
+test/golden/single.pdf:    PDF document, version 1.4, 1 page(s)
+test/golden/static.gif:    GIF image data, version 89a, 8 x 8
+test/golden/unicode.zip:   Zip archive data, made by v3.0 UNIX, extract using at least v2.0, last modified Feb 03 2024 04:05:06, uncompressed size 618, method=store

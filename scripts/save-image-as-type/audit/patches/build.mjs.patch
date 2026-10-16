@@ -1,0 +1,20 @@
+--- build.mjs (before)
++++ build.mjs (after)
+@@ -8,7 +8,7 @@
+  * module loader there). This script does the smallest honest thing that gets
+  * from one to the other:
+  *
+- *   1. walk the relative-import graph from src/main.js (entry),
++ *   1. walk the relative-import graph from src/entry.js (entry),
+  *   2. order modules dependencies-first,
+  *   3. strip `import` statements and de-export declarations,
+  *   4. fail loudly on duplicate export names (they would collide in one scope),
+@@ -26,7 +26,7 @@
+ import { renderMetadata, SCRIPT_VERSION } from './src/meta.js';
+ 
+ const ROOT = dirname(fileURLToPath(import.meta.url));
+-const ENTRY = resolve(ROOT, 'src/main.js');
++const ENTRY = resolve(ROOT, 'src/entry.js');
+ // `release/` rather than the conventional `dist/`: this workspace's snapshot
+ // excludes directory names like dist/ and build/, so the deliverable artifact
+ // would not persist between sessions. One artifact, one path, no copies.

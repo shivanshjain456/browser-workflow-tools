@@ -1,0 +1,35 @@
+{
+  "node": "v22.22.2",
+  "checks": [
+    {
+      "tool": "supported Node",
+      "ok": true,
+      "version": "v22.22.2",
+      "minimum": "22.22.2"
+    },
+    {
+      "tool": "jsdom",
+      "ok": true
+    },
+    {
+      "tool": "puppeteer",
+      "ok": true
+    },
+    {
+      "tool": "independent-codecs",
+      "ok": true,
+      "result": "{\"python\": \"3.13.16\", \"Pillow\": \"12.3.0\", \"pypdf\": \"6.21.0\", \"webp\": true}",
+      "error": ""
+    },
+    {
+      "tool": "file(1)",
+      "ok": true,
+      "result": "file-5.46"
+    },
+    {
+      "tool": "Chrome executable/libraries",
+      "ok": true,
+      "binary": "/home/user/.cache/puppeteer/chrome/linux-155.0.8059.79/chrome-linux64/chrome"
+    }
+  ]
+}

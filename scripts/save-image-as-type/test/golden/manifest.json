@@ -1,0 +1,31 @@
+{
+  "sourceMd5": "ed285e423b3e85b5da38e9798423581c",
+  "sourceSha256": "2eb8851b422393ebe9d14ef5a0bd11874abac03fd76a28328d6fae6ff280daed",
+  "clock": "Local DOS wall time 2024-02-03 04:05:06; no timezone-dependent UTC construction",
+  "files": {
+    "alpha.bmp": {
+      "bytes": 618,
+      "sha256": "1c5b5598f7bffe919c8955f3b3263f87e10de549df59dfedb6ce979ef351bad5"
+    },
+    "odd.bmp": {
+      "bytes": 102,
+      "sha256": "fe2fa1b94e2e2b0c0c6c67e6432bdade0345a77724e72ce03727ea3d1b4fb103"
+    },
+    "static.gif": {
+      "bytes": 83,
+      "sha256": "7e8a240a6838f91b5b93e8ec390077ab9b144700b0172568bb34fbaefdc9243c"
+    },
+    "animated.gif": {
+      "bytes": 132,
+      "sha256": "e58c9b518b216ebcb05c2c2c240fd0bdf7cb92bed4e8674eacdd29533e6f3eba"
+    },
+    "single.pdf": {
+      "bytes": 4650,
+      "sha256": "273c73442bba6a46474ed27968438a7635bb1bf73bade74a2986fad4a3254dd3"
+    },
+    "unicode.zip": {
+      "bytes": 938,
+      "sha256": "2f0eac0822898d9540ed9e0a495370c332422ed27f4ffb3022af04d29c3d3a7d"
+    }
+  }
+}

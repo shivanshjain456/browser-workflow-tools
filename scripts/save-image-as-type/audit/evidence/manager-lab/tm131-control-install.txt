@@ -1,0 +1,29 @@
+file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:77
+            this._reject(callback, new TargetCloseError('Target closed'));
+                                   ^
+
+TargetCloseError: Protocol error (Runtime.callFunctionOn): Target closed
+    at CallbackRegistry.clear (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:77:36)
+    at CdpCDPSession._onClosed (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:105:25)
+    at #onClose (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:171:21)
+    at WebSocket.<anonymous> (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/node/NodeWebSocketTransport.js:43:30)
+    at callListener (/home/user/save-image-as-type/node_modules/ws/lib/event-target.js:290:14)
+    at WebSocket.onClose (/home/user/save-image-as-type/node_modules/ws/lib/event-target.js:220:9)
+    at WebSocket.emit (node:events:524:28)
+    at WebSocket.emitClose (/home/user/save-image-as-type/node_modules/ws/lib/websocket.js:292:10)
+    at Socket.socketOnClose (/home/user/save-image-as-type/node_modules/ws/lib/websocket.js:1374:15)
+    at Socket.emit (node:events:524:28) {
+  cause: ProtocolError
+      at <instance_members_initializer> (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:97:14)
+      at new Callback (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:101:16)
+      at CallbackRegistry.create (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/CallbackRegistry.js:20:26)
+      at Connection._rawSend (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Connection.js:89:26)
+      at CdpCDPSession.send (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/CDPSession.js:65:33)
+      at #evaluate (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/ExecutionContext.js:360:50)
+      at ExecutionContext.evaluate (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/ExecutionContext.js:275:36)
+      at IsolatedWorld.evaluate (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/IsolatedWorld.js:97:30)
+      at CdpJSHandle.evaluate (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/api/JSHandle.js:146:37)
+      at CdpElementHandle.evaluate (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/api/ElementHandle.js:340:38)
+}
+
+Node.js v20.20.2

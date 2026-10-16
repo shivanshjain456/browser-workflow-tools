@@ -1,0 +1,248 @@
+{
+  "scope": "Actual Violentmonkey unpacked official MV3 distribution, installed via manager UI, production artifact unmodified; local HTTP fixture, headless Chrome, not public-site/other-OS certification",
+  "artifactSha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499",
+  "tests": [
+    {
+      "path": "/same",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "syntheticMenuOpened": true,
+      "downloads": [
+        {
+          "name": "fixture.png",
+          "url": "blob:chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/655c872c-f8b1-4650-beb0-c8050956fd58"
+        }
+      ],
+      "after": {
+        "toast": "\n:host { all: initial; }\n.siat-toast-stack {\n  position: fixed; right: 12px; bottom: 12px; z-index: 2147483647;\n  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;\n  font: max(0.8125rem, 13px)/1.45 system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif;\n  max-width: min(92vw, 420px); pointer-events: none;\n}\n.siat-toast {\n  pointer-events: auto; background: #1f2430; color: #f4f6fb;\n  border: 1px solid rgba(255,255,255,.14); border-radius: 10px;\n  box-shadow: 0 8px 28px rgba(0,0,0,.35); padding: 10px 12px;\n  display: flex; gap: 10px; align-items: flex-start; min-width: 220px;\n}\n.siat-toast[data-kind=\"error\"] { border-color: #b4232a; background: #2a1416; }\n.siat-toast[data-kind=\"progress\"] { border-color: #2c4a7c; }\n.siat-badge { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 1px; }\n.siat-body { flex: 1 1 auto; min-width: 0; }\n.siat-title { font-weight: 650; letter-spacing: .1px; }\n.siat-meta { color: #c3cad8; font-size: max(0.75rem, 12px); margin-top: 2px; word-break: break-word; }\n.siat-close {\n  flex: 0 0 auto; background: transparent; border: 0; color: #c3cad8; cursor: pointer;\n  font-size: max(1rem, 16px); line-height: 1; padding: 2px 4px; border-radius: 6px;\n}\n.siat-close:hover { background: rgba(255,255,255,.12); color: #fff; }\n.siat-close:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 1px; }\n.siat-details { margin-top: 6px; }\n.siat-details summary { cursor: pointer; color: #9fb3d9; font-size: max(0.75rem, 12px); user-select: none; }\n.siat-details ul { margin: 6px 0 0; padding-left: 18px; color: #d7dce6; font-size: max(0.75rem, 12px); }\n.siat-details li { margin-bottom: 3px; }\n.siat-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }\n.siat-btn {\n  background: #2f6fdb; color: #fff; border: 0; border-radius: 7px; padding: 5px 10px;\n  font: inherit; font-size: max(0.75rem, 12px); cursor: pointer;\n}\n.siat-btn[data-variant=\"ghost\"] { background: rgba(255,255,255,.1); color: #e8ecf5; }\n.siat-btn:hover { filter: brightness(1.08); }\n.siat-btn:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }\n.siat-spinner { transform-origin: 50% 50%; animation: siat-spin 1s linear infinite; }\n@keyframes siat-spin { to { transform: rotate(360deg); } }\n@media (prefers-reduced-motion: reduce) { .siat-spinner { animation: none; } }\n@media (max-width: 560px) {\n  .siat-toast-stack { left: 8px; right: 8px; bottom: 8px; align-items: stretch; max-width: none; }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after {\n    animation: none !important;\n    transition: none !important;\n    scroll-behavior: auto !important;\n  }\n}\n@media (prefers-contrast: more) {\n  button, input, select, textarea, [role=\"dialog\"], [role=\"menu\"] { border-width: 2px; }\n  :focus-visible { outline: 3px solid currentColor !important; outline-offset: 3px; }\n}\n@media (forced-colors: active) {\n  * { box-shadow: none !important; text-shadow: none !important; }\n  [role=\"dialog\"], [role=\"menu\"], [role=\"status\"], [role=\"alert\"],\n  .siat-jobbar, .siat-toast, .siat-body, .siat-dialog-head, .siat-dialog-foot {\n    background: Canvas !important; color: CanvasText !important; border-color: CanvasText !important;\n  }\n  small, label, summary, p, li, td, th, span, .siat-hint, .siat-meta, .siat-desc,\n  .siat-note, .siat-dialog-subtitle { color: CanvasText !important; }\n  button { background: ButtonFace !important; color: ButtonText !important; border: 1px solid ButtonText !important; }\n  input, select, textarea { background: Field !important; color: FieldText !important; border-color: FieldText !important; accent-color: Highlight; }\n  a { color: LinkText !important; }\n  :focus-visible { outline: 3px solid Highlight !important; outline-offset: 3px; }\n  [aria-selected=\"true\"], [aria-checked=\"true\"] { outline: 2px solid Highlight; }\n  img, canvas { forced-color-adjust: none; }\n}\nSaved fixture.pngImage · 489 B · saved through your userscript manager3 detailsOutput: image/png, 489 B, 89 ms.Dimensions: 64×48px.Saved through your userscript manager.×",
+        "menu": false
+      },
+      "errors": []
+    },
+    {
+      "path": "/cross",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "syntheticMenuOpened": true,
+      "downloads": [
+        {
+          "name": "opaque.png",
+          "url": "blob:chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/0493227a-a110-48a3-92c5-a152d20a7a76"
+        }
+      ],
+      "after": {
+        "toast": "\n:host { all: initial; }\n.siat-toast-stack {\n  position: fixed; right: 12px; bottom: 12px; z-index: 2147483647;\n  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;\n  font: max(0.8125rem, 13px)/1.45 system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif;\n  max-width: min(92vw, 420px); pointer-events: none;\n}\n.siat-toast {\n  pointer-events: auto; background: #1f2430; color: #f4f6fb;\n  border: 1px solid rgba(255,255,255,.14); border-radius: 10px;\n  box-shadow: 0 8px 28px rgba(0,0,0,.35); padding: 10px 12px;\n  display: flex; gap: 10px; align-items: flex-start; min-width: 220px;\n}\n.siat-toast[data-kind=\"error\"] { border-color: #b4232a; background: #2a1416; }\n.siat-toast[data-kind=\"progress\"] { border-color: #2c4a7c; }\n.siat-badge { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 1px; }\n.siat-body { flex: 1 1 auto; min-width: 0; }\n.siat-title { font-weight: 650; letter-spacing: .1px; }\n.siat-meta { color: #c3cad8; font-size: max(0.75rem, 12px); margin-top: 2px; word-break: break-word; }\n.siat-close {\n  flex: 0 0 auto; background: transparent; border: 0; color: #c3cad8; cursor: pointer;\n  font-size: max(1rem, 16px); line-height: 1; padding: 2px 4px; border-radius: 6px;\n}\n.siat-close:hover { background: rgba(255,255,255,.12); color: #fff; }\n.siat-close:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 1px; }\n.siat-details { margin-top: 6px; }\n.siat-details summary { cursor: pointer; color: #9fb3d9; font-size: max(0.75rem, 12px); user-select: none; }\n.siat-details ul { margin: 6px 0 0; padding-left: 18px; color: #d7dce6; font-size: max(0.75rem, 12px); }\n.siat-details li { margin-bottom: 3px; }\n.siat-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }\n.siat-btn {\n  background: #2f6fdb; color: #fff; border: 0; border-radius: 7px; padding: 5px 10px;\n  font: inherit; font-size: max(0.75rem, 12px); cursor: pointer;\n}\n.siat-btn[data-variant=\"ghost\"] { background: rgba(255,255,255,.1); color: #e8ecf5; }\n.siat-btn:hover { filter: brightness(1.08); }\n.siat-btn:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }\n.siat-spinner { transform-origin: 50% 50%; animation: siat-spin 1s linear infinite; }\n@keyframes siat-spin { to { transform: rotate(360deg); } }\n@media (prefers-reduced-motion: reduce) { .siat-spinner { animation: none; } }\n@media (max-width: 560px) {\n  .siat-toast-stack { left: 8px; right: 8px; bottom: 8px; align-items: stretch; max-width: none; }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after {\n    animation: none !important;\n    transition: none !important;\n    scroll-behavior: auto !important;\n  }\n}\n@media (prefers-contrast: more) {\n  button, input, select, textarea, [role=\"dialog\"], [role=\"menu\"] { border-width: 2px; }\n  :focus-visible { outline: 3px solid currentColor !important; outline-offset: 3px; }\n}\n@media (forced-colors: active) {\n  * { box-shadow: none !important; text-shadow: none !important; }\n  [role=\"dialog\"], [role=\"menu\"], [role=\"status\"], [role=\"alert\"],\n  .siat-jobbar, .siat-toast, .siat-body, .siat-dialog-head, .siat-dialog-foot {\n    background: Canvas !important; color: CanvasText !important; border-color: CanvasText !important;\n  }\n  small, label, summary, p, li, td, th, span, .siat-hint, .siat-meta, .siat-desc,\n  .siat-note, .siat-dialog-subtitle { color: CanvasText !important; }\n  button { background: ButtonFace !important; color: ButtonText !important; border: 1px solid ButtonText !important; }\n  input, select, textarea { background: Field !important; color: FieldText !important; border-color: FieldText !important; accent-color: Highlight; }\n  a { color: LinkText !important; }\n  :focus-visible { outline: 3px solid Highlight !important; outline-offset: 3px; }\n  [aria-selected=\"true\"], [aria-checked=\"true\"] { outline: 2px solid Highlight; }\n  img, canvas { forced-color-adjust: none; }\n}\nSaved opaque.pngImage · 489 B · saved through your userscript manager3 detailsOutput: image/png, 489 B, 88 ms.Dimensions: 64×48px.Saved through your userscript manager.×",
+        "menu": false
+      },
+      "errors": []
+    },
+    {
+      "path": "/csp",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "syntheticMenuOpened": true,
+      "downloads": [],
+      "after": {
+        "toast": "\n:host { all: initial; }\n.siat-toast-stack {\n  position: fixed; right: 12px; bottom: 12px; z-index: 2147483647;\n  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;\n  font: max(0.8125rem, 13px)/1.45 system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif;\n  max-width: min(92vw, 420px); pointer-events: none;\n}\n.siat-toast {\n  pointer-events: auto; background: #1f2430; color: #f4f6fb;\n  border: 1px solid rgba(255,255,255,.14); border-radius: 10px;\n  box-shadow: 0 8px 28px rgba(0,0,0,.35); padding: 10px 12px;\n  display: flex; gap: 10px; align-items: flex-start; min-width: 220px;\n}\n.siat-toast[data-kind=\"error\"] { border-color: #b4232a; background: #2a1416; }\n.siat-toast[data-kind=\"progress\"] { border-color: #2c4a7c; }\n.siat-badge { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 1px; }\n.siat-body { flex: 1 1 auto; min-width: 0; }\n.siat-title { font-weight: 650; letter-spacing: .1px; }\n.siat-meta { color: #c3cad8; font-size: max(0.75rem, 12px); margin-top: 2px; word-break: break-word; }\n.siat-close {\n  flex: 0 0 auto; background: transparent; border: 0; color: #c3cad8; cursor: pointer;\n  font-size: max(1rem, 16px); line-height: 1; padding: 2px 4px; border-radius: 6px;\n}\n.siat-close:hover { background: rgba(255,255,255,.12); color: #fff; }\n.siat-close:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 1px; }\n.siat-details { margin-top: 6px; }\n.siat-details summary { cursor: pointer; color: #9fb3d9; font-size: max(0.75rem, 12px); user-select: none; }\n.siat-details ul { margin: 6px 0 0; padding-left: 18px; color: #d7dce6; font-size: max(0.75rem, 12px); }\n.siat-details li { margin-bottom: 3px; }\n.siat-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }\n.siat-btn {\n  background: #2f6fdb; color: #fff; border: 0; border-radius: 7px; padding: 5px 10px;\n  font: inherit; font-size: max(0.75rem, 12px); cursor: pointer;\n}\n.siat-btn[data-variant=\"ghost\"] { background: rgba(255,255,255,.1); color: #e8ecf5; }\n.siat-btn:hover { filter: brightness(1.08); }\n.siat-btn:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }\n.siat-spinner { transform-origin: 50% 50%; animation: siat-spin 1s linear infinite; }\n@keyframes siat-spin { to { transform: rotate(360deg); } }\n@media (prefers-reduced-motion: reduce) { .siat-spinner { animation: none; } }\n@media (max-width: 560px) {\n  .siat-toast-stack { left: 8px; right: 8px; bottom: 8px; align-items: stretch; max-width: none; }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after {\n    animation: none !important;\n    transition: none !important;\n    scroll-behavior: auto !important;\n  }\n}\n@media (prefers-contrast: more) {\n  button, input, select, textarea, [role=\"dialog\"], [role=\"menu\"] { border-width: 2px; }\n  :focus-visible { outline: 3px solid currentColor !important; outline-offset: 3px; }\n}\n@media (forced-colors: active) {\n  * { box-shadow: none !important; text-shadow: none !important; }\n  [role=\"dialog\"], [role=\"menu\"], [role=\"status\"], [role=\"alert\"],\n  .siat-jobbar, .siat-toast, .siat-body, .siat-dialog-head, .siat-dialog-foot {\n    background: Canvas !important; color: CanvasText !important; border-color: CanvasText !important;\n  }\n  small, label, summary, p, li, td, th, span, .siat-hint, .siat-meta, .siat-desc,\n  .siat-note, .siat-dialog-subtitle { color: CanvasText !important; }\n  button { background: ButtonFace !important; color: ButtonText !important; border: 1px solid ButtonText !important; }\n  input, select, textarea { background: Field !important; color: FieldText !important; border-color: FieldText !important; accent-color: Highlight; }\n  a { color: LinkText !important; }\n  :focus-visible { outline: 3px solid Highlight !important; outline-offset: 3px; }\n  [aria-selected=\"true\"], [aria-checked=\"true\"] { outline: 2px solid Highlight; }\n  img, canvas { forced-color-adjust: none; }\n}\nCould not save as PNGThe browser could not decode image data.×",
+        "menu": false
+      },
+      "errors": []
+    }
+  ],
+  "requests": [
+    {
+      "server": "page",
+      "url": "/same"
+    },
+    {
+      "server": "page",
+      "url": "/fixture.png"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "page",
+      "url": "/cross"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "http://127.0.0.1:36203/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "http://127.0.0.1:36203",
+      "referer": "http://127.0.0.1:36203/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "",
+      "fetchSite": "none"
+    },
+    {
+      "server": "page",
+      "url": "/csp"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "http://127.0.0.1:36203/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "http://127.0.0.1:36203",
+      "referer": "http://127.0.0.1:36203/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "",
+      "fetchSite": "none"
+    }
+  ],
+  "browser": "Chrome/155.0.8059.84",
+  "managerManifest": {
+    "action": {
+      "browser_style": true,
+      "default_icon": {
+        "16": "public/images/icon16b.png",
+        "32": "public/images/icon32b.png",
+        "38": "public/images/icon38b.png",
+        "48": "public/images/icon48b.png",
+        "64": "public/images/icon64b.png"
+      },
+      "default_popup": "popup/index.html",
+      "default_title": "Violentmonkey"
+    },
+    "author": "Gerald",
+    "background": {
+      "service_worker": "sw.js"
+    },
+    "commands": {
+      "SkipScripts": {
+        "description": "Reload page without userscripts"
+      },
+      "_execute_action": {},
+      "dashboard": {
+        "description": "Open Dashboard"
+      },
+      "newScript": {
+        "description": "Create a new script"
+      },
+      "settings": {
+        "description": "Settings"
+      },
+      "toggleInjection": {
+        "description": "Toggle userscript injection"
+      },
+      "updateScripts": {
+        "description": "Update all scripts"
+      },
+      "updateScriptsInTab": {
+        "description": "Update current tab's scripts"
+      }
+    },
+    "current_locale": "en_US",
+    "default_locale": "en",
+    "description": "An open source userscript manager that supports a lot of browsers",
+    "homepage_url": "https://violentmonkey.github.io/",
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "icons": {
+      "16": "public/images/icon16.png",
+      "48": "public/images/icon48.png",
+      "128": "public/images/icon128.png"
+    },
+    "incognito": "split",
+    "manifest_version": 3,
+    "minimum_chrome_version": "135.0",
+    "name": "Violentmonkey",
+    "optional_permissions": [
+      "downloads"
+    ],
+    "options_ui": {
+      "open_in_tab": true,
+      "page": "options/index.html#settings"
+    },
+    "permissions": [
+      "tabs",
+      "webRequest",
+      "notifications",
+      "storage",
+      "unlimitedStorage",
+      "clipboardWrite",
+      "contextMenus",
+      "cookies",
+      "alarms",
+      "declarativeNetRequestWithHostAccess",
+      "identity",
+      "offscreen",
+      "userScripts",
+      "webNavigation"
+    ],
+    "version": "2.49.0"
+  },
+  "storedKeys": [
+    "blacklistErrors",
+    "blacklistNetErrors",
+    "code:1",
+    "mod:1",
+    "options",
+    "scr:1",
+    "version"
+  ],
+  "storedCodeHashes": [
+    {
+      "key": "code:1",
+      "sha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499"
+    }
+  ],
+  "popupText": "Violentmonkey 2.49.0 MV3\nFind scripts for this site (GF)\n/\nOUJS\nMatched scripts\nSave Image as Type\nSave Image as Type — Settings…\nSave Image as Type — Convert the last image I pointed at…\nSave Image as Type — Browse page images…\nSave Image as Type — Convert every image on this page…\nSave Image as Type — Copy the last image I pointed at\nSave Image as Type — Keyboard shortcut help\nSave Image as Type — Capability report\nSave Image as Type — Pause on this page\nviolentmonkey.github.io",
+  "downloadedFiles": [
+    {
+      "name": "fixture.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489
+    },
+    {
+      "name": "opaque.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489
+    }
+  ],
+  "valueKeys": []
+}

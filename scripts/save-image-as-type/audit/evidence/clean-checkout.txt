@@ -1,0 +1,296 @@
+### clean-checkout verification of the published repository snapshot
+### 2026-10-16T18:01:29Z  node v22.22.2  Python 3.13.16
+### extraction directory: /tmp/clean4 (unrelated name; the checkout has no git history)
+### harness note: test/browser/v2.mjs generates Pillow metadata fixtures into the ignored
+### .tmp-browser/fixtures/ directory instead of writing into test/fixtures/
+
+$ npm ci  # dev dependencies strictly from package-lock.json
+added 88 packages in 1s
+    [exit 0]
+
+$ node audit/preflight.mjs
+node v22.22.2
+ok    supported Node
+ok    jsdom
+ok    puppeteer
+ok    independent-codecs
+ok    file(1)
+ok    Chrome executable/libraries
+    [exit 0]
+
+$ npm run lint
+27/27 lint checks passed
+    [exit 0]
+
+$ npm run verify:release
+PASS version 2.0.1 consistent across 5 locations
+PASS artifact 605.0 KiB, sha256 2e994164334133f8…, metadata complete
+PASS 10 grants and @connect * documented and unchanged
+PASS release/SHA256SUMS matches the artifact
+PASS settings reference is current (49 settings, 8 formats, 5 shortcuts)
+PASS 60 relative documentation links resolve
+PASS 8 manager command labels documented exactly as registered
+PASS 6 menu action labels documented in the user guide
+WARN owner placeholders still present in: README.md, docs/installation.md, .github/ISSUE_TEMPLATE/config.yml, docs/publication-checklist.md (expected until the repository URL exists)
+WARN package.json has no repository/homepage URL yet (owner decision)
+    [exit 0]
+
+$ npm run build:check
+OK: release/save-image-as-type.user.js is in sync with 41 source modules.
+    [exit 0]
+
+$ npm run docs:settings:check
+settings reference is current (49 settings, 8 formats, 5 shortcuts)
+    [exit 0]
+
+$ npm test
+# Subtest: audit — own-data configuration ingress
+# Subtest: audit — reserved names and final byte budgets
+# Subtest: audit — honest environment and startup funnel
+# Subtest: audit — deterministic encoder bytes pinned to audited original
+# Subtest: metadata block
+# Subtest: build and artifact integrity
+# Subtest: acquisition — CSP-safe decode leases
+# Subtest: acquisition — local payload and cached byte contract
+# (node:39873) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: clipboard — capability detection
+# Subtest: clipboard — copying, and every way it can fail
+# Subtest: compare — which formats are candidates
+# Subtest: compare — running the comparison
+# Subtest: compare — choosing the smallest good candidate
+# Subtest: compare — the table the dialog renders
+# Subtest: sanitizePathComponent — hostile input
+# Subtest: sanitizeSubfolder
+# Subtest: baseNameFromSource — derivation order
+# Subtest: buildFilename
+# Subtest: decodeFrames — WebCodecs path (stubbed decoder and canvas)
+# Subtest: detectAnimation — real container files produced by Pillow
+# Subtest: sniffMime — content sniffing for the "Original file" path
+# Subtest: frame decoding without WebCodecs — honest degradation
+# Subtest: createGmAdapter — nothing granted
+# Subtest: createGmAdapter — classic GM_* manager (Tampermonkey style)
+# Subtest: createGmAdapter — GM.* namespace manager (Violentmonkey/GM4 style)
+# Subtest: metadata — container detection
+# Subtest: metadata — inspection
+# Subtest: metadata — stripping
+# Subtest: presets — normalisation of untrusted input
+# Subtest: presets — host rules
+# Subtest: presets — applying one to the settings in force
+# Subtest: configuration profiles — capture and apply
+# Subtest: configuration profiles — hostile and malformed input
+# Subtest: configuration profiles — storage, export and import
+# Subtest: message catalogue for the new strings
+# Subtest: queue — normal runs
+# Subtest: queue — failure isolation and retry semantics
+# Subtest: queue — cancellation
+# Subtest: queue — events and snapshots
+# Subtest: scan — the inventory of a mixed page
+# Subtest: scan — filtering, de-duplication, sorting and totals
+# Subtest: scan — thumbnails without touching the network
+# Subtest: scan — watching the inventory
+# Subtest: scan — hard-bound and cleanup regressions
+# Subtest: normalizeSettings — validation and clamping
+# Subtest: migrateSettings — upgrades and downgrades
+# Subtest: validateImportedSettings — user-supplied JSON
+# Subtest: createSettingsStore — persistence behaviour
+# Subtest: shortcuts — the documented defaults
+# Subtest: shortcuts — parsing and formatting
+# Subtest: shortcuts — matching live events
+# Subtest: shortcuts — validation rules
+# Subtest: shortcuts — staying out of the page's way
+# Subtest: template tokens — the documented surface
+# Subtest: validateTemplate — before anything is stored
+# Subtest: renderTemplate — deterministic and total
+# Subtest: uniqueFilename — collisions inside one run
+# Subtest: transform — spec handling
+# Subtest: transform — the plan (pure geometry)
+# Subtest: transform — drawing geometry
+# Subtest: transform — reporting
+# Subtest: zip — structure and primitives
+# Subtest: zip — verified by Python zipfile and Pillow
+# Subtest: BMP encoder — header and pixel layout
+# Subtest: GIF encoder — container structure
+# Subtest: PDF encoder — structure
+# Subtest: encoders verified by independent decoders (Pillow + pypdf)
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///tmp/clean4/src/main.js:1639:35)
+#     at TestContext.<anonymous> (file:///tmp/clean4/test/unit/main-bootstrap.test.mjs:185:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///tmp/clean4/src/main.js:1639:35)
+#     at TestContext.<anonymous> (file:///tmp/clean4/test/unit/main-bootstrap.test.mjs:185:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///tmp/clean4/src/main.js:1639:35)
+#     at TestContext.<anonymous> (file:///tmp/clean4/test/unit/main-bootstrap.test.mjs:185:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///tmp/clean4/src/main.js:1639:35)
+#     at TestContext.<anonymous> (file:///tmp/clean4/test/unit/main-bootstrap.test.mjs:185:27)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) undefined
+# Subtest: bootstrap — one instance per document
+# Subtest: static security gate (lint.mjs)
+# Subtest: network access is a single auditable choke point
+# Subtest: no page-storage or privilege escalation
+# Subtest: UI isolation and safe rendering
+# Subtest: lifecycle hygiene
+# Subtest: batch dialog — the plan the user confirms
+# Subtest: compare dialog
+# Subtest: metadata inspector
+# Subtest: metadata inspector — with real EXIF and GPS fixtures
+# Subtest: shortcut help
+# Subtest: saveBlob — manager download path
+# Subtest: saveBlob — fallback to the browser
+# Subtest: describeDownloadCapability — the wording shown in diagnostics
+# Subtest: job bar — progress reporting
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/tmp/clean4/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///tmp/clean4/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///tmp/clean4/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///tmp/clean4/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///tmp/clean4/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/tmp/clean4/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Subtest: context menu — opening rules
+# Subtest: context menu — keyboard operation
+# (node:40089) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: context menu — dismissal
+# Subtest: context menu — busy state
+# Subtest: context menu — positioning
+# Subtest: context menu — long press (touch)
+# Subtest: context menu — dismissal timing and listener hygiene
+# Subtest: settings panel — modal structure
+# Subtest: settings panel — dismissal (regression: window.close/window.open)
+# Subtest: image picker — inventory rows
+# Subtest: image picker — filters, sorting and selection
+# Subtest: image picker — actions
+# Subtest: image picker — previews and lifecycle
+# Subtest: toast stack — bounds and sharing
+# Subtest: transform dialog — preview and readout
+# Subtest: transform dialog — cropping
+# Subtest: transform dialog — saving, failure and cleanup
+# Subtest: transform dialog — asynchronous ownership regressions
+# tests 577
+# suites 100
+# pass 577
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 47009.622964
+    [exit 0]
+
+$ npm run test:browser
+57 passed, 0 failed, 0 skipped (57 scenarios)
+    [exit 0]
+
+$ node audit/independent-goldens.mjs
+verify_media.py: parsed without errors
+verify_zip.py: parsed without errors
+    [exit 0]
+
+$ node --test test/unit/security.test.mjs
+# Subtest: static security gate (lint.mjs)
+# Subtest: network access is a single auditable choke point
+# Subtest: no page-storage or privilege escalation
+# Subtest: UI isolation and safe rendering
+# Subtest: lifecycle hygiene
+# tests 18
+# suites 5
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 220.831598
+    [exit 0]
+
+### post-run tree audit: did the suite modify, add or delete any packaged file?
+    $ python3 -  (compare every packaged file with the checkout copy)
+    407/407 packaged files byte-identical in the checkout after the full run
+    changed by the run: none
+    missing from the checkout: none
+    written by the run: node_modules/, .tmp-browser/ (gitignored: metadata fixtures, browser
+    profile, verification captures) — no packaged file was created, modified or deleted.
+
+### failing steps: none — every command exited 0

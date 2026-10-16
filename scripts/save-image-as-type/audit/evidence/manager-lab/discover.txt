@@ -1,0 +1,198 @@
+console Failed to load resource: net::ERR_FILE_NOT_FOUND
+targets [
+  [ 'browser', '' ],
+  [ 'other', 'chrome://omnibox-popup.top-chrome/' ],
+  [ 'other', 'chrome://webui-toolbar.top-chrome/' ],
+  [
+    'other',
+    'chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html'
+  ],
+  [ 'page', 'about:blank' ],
+  [
+    'service_worker',
+    'chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/sw.js'
+  ],
+  [
+    'page',
+    'chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/options/index.html'
+  ]
+]
+mhgcikllajkigcoackdmejhakoklkngl Please enable "Allow User Scripts" in details for Violentmonkey in chrome://extensions and reload the tab
+Violentmonkey
+Installed scripts
+Settings | Backup
+About
+New
+New from file
+Install from OpenUserJS
+Install from GreasyFork
+Install from URL
+Import from zip / Sync...
+execution
+execution ▼
+alphabetical
+alphabetical ▼
+author
+author ▼
+last update time
+last update time ▼
+last visit time
+last visit time ▼
+size
+size ▼
+No script is found.
+[
+  {
+    tag: 'A',
+    text: 'Please enable "Allow User Scripts" in details for Violentmonkey in chrome://extensions and reload the tab',
+    title: '',
+    type: '',
+    outer: '<a href="chrome://extensions/?id=mhgcikllajkigcoackdmejhakoklkngl">Please enable "Allow User Scripts" in details for Violentmonkey in chrome://extensions and reload the tab</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Installed scripts',
+    title: '',
+    type: '',
+    outer: '<a href="#scripts" class="active" data-num-scripts="0" data-short="Scripts"><span>Installed scripts</span></a>'
+  },
+  {
+    tag: 'A',
+    text: 'Settings | Backup',
+    title: '',
+    type: '',
+    outer: '<a href="#settings" class="" data-short="Settings"><span>Settings | Backup</span></a>'
+  },
+  {
+    tag: 'A',
+    text: 'About',
+    title: '',
+    type: '',
+    outer: '<a href="#about" class=""><span>About</span></a>'
+  },
+  {
+    tag: 'A',
+    text: 'Recycle Bin',
+    title: '',
+    type: '',
+    outer: '<a href="#recycleBin" class="" data-num-scripts="0"><span>Recycle Bin</span></a>'
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: '<a class="btn-ghost" tabindex="0"><svg class="icon"><use xlink:href="#plus"></use></svg></a>'
+  },
+  {
+    tag: 'A',
+    text: 'New',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item" tabindex="0">New</a>'
+  },
+  {
+    tag: 'A',
+    text: 'New from file',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item" tabindex="0">New from file</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Install from OpenUserJS',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item" href="https://openuserjs.org/" target="_blank" rel="noopener noreferrer">Install from OpenUserJS</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Install from GreasyFork',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item" href="https://greasyfork.org/scripts" target="_blank" rel="noopener noreferrer">Install from GreasyFork</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Install from URL',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item" tabindex="0">Install from URL</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Import from zip / Sync...',
+    title: '',
+    type: '',
+    outer: '<a class="dropdown-menu-item">Import from zip / Sync...</a>'
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: '<a class="btn-ghost" tabindex="0"><svg class="icon"><use xlink:href="#refresh"></use></svg></a>'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'search',
+    placeholder: 'Search scripts...',
+    outer: '<input type="search" class="" placeholder="Search scripts..." id="installed-search">'
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: '<a class="btn-ghost" tabindex="0"><svg class="icon"><use xlink:href="#question"></use></svg></a>'
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: '<a class="btn-ghost" tabindex="0"><svg class="icon"><use xlink:href="#cog"></use></svg></a>'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input type="checkbox">'
+  }
+]

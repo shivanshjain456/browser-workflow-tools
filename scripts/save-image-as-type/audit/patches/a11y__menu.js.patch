@@ -1,0 +1,60 @@
+--- src/ui/menu.js (before)
++++ src/ui/menu.js (after)
+@@ -1,3 +1,4 @@
++import { ACCESSIBILITY_STYLE } from './accessibility.js';
+ /**
+  * The right-click menu.
+  *
+@@ -40,7 +41,7 @@
+   border: 1px solid rgba(0,0,0,.14); border-radius: 11px;
+   box-shadow: 0 12px 34px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.14);
+   padding: 5px; margin: 0;
+-  font: 13px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
++  font: max(0.8125rem, 13px)/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+   -webkit-text-size-adjust: 100%;
+ }
+ @media (prefers-color-scheme: dark) {
+@@ -49,8 +50,8 @@
+ .siat-head {
+   padding: 6px 9px 7px; border-bottom: 1px solid rgba(127,127,127,.25); margin-bottom: 4px;
+ }
+-.siat-head-title { font-weight: 650; font-size: 12.5px; }
+-.siat-head-sub { color: #5c6472; font-size: 11.5px; margin-top: 2px; word-break: break-all; }
++.siat-head-title { font-weight: 650; font-size: max(0.78125rem, 12.5px); }
++.siat-head-sub { color: #5c6472; font-size: max(0.75rem, 12px); margin-top: 2px; word-break: break-all; }
+ @media (prefers-color-scheme: dark) { .siat-head-sub { color: #a7b0bf; } }
+ .siat-item {
+   display: flex; align-items: baseline; gap: 8px; width: 100%; box-sizing: border-box;
+@@ -61,18 +62,18 @@
+ .siat-item:focus-visible { outline: 2px solid #2f6fdb; outline-offset: -2px; }
+ .siat-item[aria-disabled="true"] { opacity: .5; cursor: default; }
+ .siat-ext {
+-  flex: 0 0 auto; min-width: 46px; font-weight: 680; letter-spacing: .2px; font-size: 12.5px;
++  flex: 0 0 auto; min-width: 46px; font-weight: 680; letter-spacing: .2px; font-size: max(0.78125rem, 12.5px);
+ }
+-.siat-hint { flex: 1 1 auto; color: #5c6472; font-size: 11.5px; }
++.siat-hint { flex: 1 1 auto; color: #5c6472; font-size: max(0.75rem, 12px); }
+ @media (prefers-color-scheme: dark) { .siat-hint { color: #a7b0bf; } }
+ .siat-sep { height: 1px; background: rgba(127,127,127,.28); margin: 4px 6px; }
+-.siat-foot { padding: 6px 9px 3px; color: #6b7280; font-size: 11px; }
++.siat-foot { padding: 6px 9px 3px; color: #6b7280; font-size: max(0.75rem, 12px); }
+ @media (prefers-color-scheme: dark) { .siat-foot { color: #9aa3b2; } }
+-.siat-busy { padding: 7px 9px; font-size: 12px; color: #2f6fdb; }
++.siat-busy { padding: 7px 9px; font-size: max(0.75rem, 12px); color: #2f6fdb; }
+ .siat-cancel {
+   margin: 4px 6px 2px; width: calc(100% - 12px); padding: 6px 8px; border-radius: 8px;
+   border: 1px solid rgba(180,35,42,.6); background: transparent; color: #b4232a;
+-  font: inherit; font-size: 12px; cursor: pointer;
++  font: inherit; font-size: max(0.75rem, 12px); cursor: pointer;
+ }
+ .siat-cancel:hover { background: rgba(180,35,42,.12); }
+ .siat-cancel:focus-visible { outline: 2px solid #b4232a; outline-offset: 1px; }
+@@ -126,7 +127,7 @@
+       (doc.documentElement || doc.body).appendChild(host);
+     }
+     const style = doc.createElement('style');
+-    style.textContent = MENU_STYLE;
++    style.textContent = MENU_STYLE + ACCESSIBILITY_STYLE;
+     shadow.appendChild(style);
+     menu = doc.createElement('div');
+     menu.className = 'siat-menu';

@@ -21,6 +21,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Added full unit test suite (`29 tests`) using Node's native test runner (`node --test`).
   - Added GitHub Actions workflow (`.github/workflows/ci.yml`) validating syntax, metadata, permissions, secrets, and tests across Node 20 and 22.
 
+## [save-image-as-type v2.0.1] - 2026-10-17
+### Added
+- Integrated full `save-image-as-type` project suite into `scripts/save-image-as-type/`.
+- Standardized userscript metadata headers with canonical `@namespace`, `@homepageURL`, `@supportURL`, `@downloadURL`, and `@updateURL` directives matching the repository standards.
+- Added SPDX-License-Identifier header (`MIT`).
+- Enforced zero-wildcard network grant policy with local-first image processing and memory-safe Canvas encoders.
+- Added comprehensive unit test suite in `tests/save-image-as-type/save-image-as-type.test.mjs`.
+
 ---
 
 ## [clip-leetcode v3.0.0] - 2026-10-12

@@ -1,0 +1,361 @@
+--- a/src/core/raster.js
++++ b/src/core/raster.js
+@@ -80,6 +80,98 @@
+   );
+ }
+ 
++/**
++ * Decode already-owned bytes without weakening the document's CSP. Retain the
++ * legacy image path first; Bitmap fallback is only for a failed image decode.
++ * The returned lease owns its URL/bitmap and must be disposed by the acquirer.
++ */
++export async function loadBlobImage(blob, { timeout = 20000, signal = null, bitmapOnly = false } = {}) {
++  const cancelled = () => new ConversionError('aborted', 'Cancelled.');
++  if (signal && signal.aborted) throw cancelled();
++  let originalError = new ConversionError('decode-failed', 'The browser could not decode image data.');
++  if (!bitmapOnly) {
++    const objectUrl = URL.createObjectURL(blob);
++    try {
++      const image = await loadImage(objectUrl, { timeout });
++      if (signal && signal.aborted) throw cancelled();
++      let disposed = false;
++      return { image, objectUrl, dispose() {
++        if (disposed) return;
++        disposed = true;
++        URL.revokeObjectURL(objectUrl);
++      } };
++    } catch (error) {
++      URL.revokeObjectURL(objectUrl);
++      if (error.code !== 'decode-failed') throw error;
++      originalError = error;
++    }
++  }
++  if (typeof createImageBitmap !== 'function') throw originalError;
++  let abandoned = false;
++  let received = null;
++  let closed = false;
++  const close = () => {
++    if (!received || closed) return;
++    closed = true;
++    received.close();
++  };
++  const pending = Promise.resolve().then(() => createImageBitmap(blob));
++  // A timeout/abort cannot cancel a native decode. Reclaim any late bitmap.
++  pending.then((bitmap) => {
++    received = bitmap;
++    if (abandoned) close();
++  }, () => {});
++  let onAbort;
++  const aborted = new Promise((_, reject) => {
++    onAbort = () => reject(cancelled());
++    if (signal) {
++      signal.addEventListener('abort', onAbort, { once: true });
++      if (signal.aborted) onAbort();
++    }
++  });
++  try {
++    const image = await withTimeout(Promise.race([pending, aborted]), timeout, 'Image decode');
++    if (signal && signal.aborted) throw cancelled();
++    return { image, objectUrl: null, dispose: close };
++  } catch (error) {
++    abandoned = true;
++    close();
++    if (error && (error.code === 'timeout' || error.code === 'aborted')) throw error;
++    throw originalError;
++  } finally {
++    if (signal) signal.removeEventListener('abort', onAbort);
++  }
++}
++
++/** RFC2397 payload decoding; no network or CSP-dependent fetch(data:) needed. */
++export function decodeDataUrl(url) {
++  const comma = url.indexOf(',');
++  if (!/^data:/i.test(url) || comma < 0) throw new ConversionError('decode-failed', 'The browser could not decode image data.');
++  const header = url.slice(5, comma);
++  const mime = (header.split(';')[0] || 'text/plain').toLowerCase();
++  const payload = url.slice(comma + 1);
++  let bytes;
++  if (/;base64$/i.test(header)) {
++    // Percent-escaped base64 is legal as a URL payload, too.
++    const binary = atob(decodeURIComponent(payload));
++    bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
++  } else {
++    const encoded = new TextEncoder().encode(payload);
++    const decoded = new Uint8Array(encoded.length);
++    let used = 0;
++    for (let i = 0; i < encoded.length; i += 1) {
++      if (encoded[i] === 37) {
++        const pair = String.fromCharCode(encoded[i + 1], encoded[i + 2]);
++        if (!/^[a-f0-9]{2}$/i.test(pair)) throw new ConversionError('decode-failed', 'The browser could not decode image data.');
++        decoded[used++] = parseInt(pair, 16);
++        i += 2;
++      } else decoded[used++] = encoded[i];
++    }
++    bytes = decoded.subarray(0, used);
++  }
++  return { bytes, mime };
++}
++
+ /** Draw any image-like source into a fresh canvas, optionally downscaling. */
+ export function drawToCanvas(source, { maxPixels = 0, willReadFrequently = false } = {}) {
+   const width = source.naturalWidth || source.width || 0;
+@@ -251,7 +343,7 @@
+ }
+ 
+ /** Serialise an inline <svg> element so it can be rasterised through an Image. */
+-export function svgElementToObjectUrl(svgElement) {
++export function svgElementToBlob(svgElement) {
+   const clone = svgElement.cloneNode(true);
+   if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+   const box = svgElement.getBoundingClientRect();
+@@ -264,7 +356,12 @@
+   if (!clone.getAttribute('width') && box.width > 0) clone.setAttribute('width', String(Math.round(box.width)));
+   if (!clone.getAttribute('height') && box.height > 0) clone.setAttribute('height', String(Math.round(box.height)));
+   const text = new XMLSerializer().serializeToString(clone);
+-  return URL.createObjectURL(new Blob([text], { type: 'image/svg+xml;charset=utf-8' }));
++  return new Blob([text], { type: 'image/svg+xml;charset=utf-8' });
++}
++
++/** Legacy URL helper retained for thumbnail/preview callers. */
++export function svgElementToObjectUrl(svgElement) {
++  return URL.createObjectURL(svgElementToBlob(svgElement));
+ }
+ 
+ /** Format a byte count for the UI without pulling in a locale library. */
+--- a/src/core/source.js
++++ b/src/core/source.js
+@@ -20,7 +20,7 @@
+  *    redirects to another origin taints the canvas just the same.
+  */
+ 
+-import { ConversionError, createCanvas, loadImage, canvasToImageData, svgElementToObjectUrl, withTimeout } from './raster.js';
++import { ConversionError, createCanvas, loadImage, canvasToImageData, svgElementToBlob, loadBlobImage, decodeDataUrl, withTimeout } from './raster.js';
+ 
+ export const TARGET_KINDS = {
+   IMG: 'img',
+@@ -209,23 +209,18 @@
+   // Inline SVG: serialise and rasterise. No network, no taint.
+   if (target.kind === TARGET_KINDS.INLINE_SVG) {
+     progress('serialising SVG');
+-    const objectUrl = svgElementToObjectUrl(target.element);
++    const decoded = await loadBlobImage(svgElementToBlob(target.element), { timeout, signal });
+     try {
+-      const image = await loadImage(objectUrl, { timeout, crossOrigin: null });
+       return acquired({
+-        kind: target.kind,
+-        url: '',
+-        image,
+-        objectUrl,
+-        strategy: 'inline-svg',
+-        mimeHint: 'image/svg+xml',
+-        altText: target.altText,
+-        width: image.naturalWidth,
+-        height: image.naturalHeight,
++        kind: target.kind, url: '', image: decoded.image,
++        objectUrl: decoded.objectUrl, dispose: decoded.dispose,
++        strategy: 'inline-svg', mimeHint: 'image/svg+xml', altText: target.altText,
++        width: decoded.image.naturalWidth || decoded.image.width,
++        height: decoded.image.naturalHeight || decoded.image.height,
+       });
+-    } catch (err) {
+-      revokeObjectUrlNow(objectUrl);
+-      throw err;
++    } catch (error) {
++      decoded.dispose();
++      throw error;
+     }
+   }
+ 
+@@ -269,12 +264,23 @@
+   // Route 1: no network needed at all.
+   if (/^data:/i.test(url)) {
+     progress('decoding data URL');
+-    const image = await loadImage(url, { timeout });
+-    return acquired({
+-      kind: target.kind, url, image, strategy: 'data-url',
+-      mimeHint: dataUrlMime(url), altText: target.altText,
+-      width: image.naturalWidth, height: image.naturalHeight,
+-    });
++    try {
++      const image = await loadImage(url, { timeout });
++      return acquired({
++        kind: target.kind, url, image, strategy: 'data-url',
++        mimeHint: dataUrlMime(url), altText: target.altText,
++        width: image.naturalWidth, height: image.naturalHeight,
++      });
++    } catch (error) {
++      if (error.code !== 'decode-failed') throw error;
++      const data = decodeDataUrl(url);
++      const decoded = await loadBlobImage(new Blob([data.bytes], { type: data.mime }), { timeout, signal, bitmapOnly: true });
++      return acquired({
++        kind: target.kind, url, image: decoded.image, dispose: decoded.dispose,
++        strategy: 'data-url', mimeHint: data.mime, bytes: data.bytes,
++        width: decoded.image.width, height: decoded.image.height, altText: target.altText,
++      });
++    }
+   }
+ 
+   // Route 2: same-origin (or a blob URL from this document) — plain decode.
+@@ -333,29 +339,31 @@
+   const fetched = await fetchBytes(url, gm, settings, signal, timeout);
+   if (!fetched) throw new ConversionError('fetch-failed', `Could not fetch ${safeHost(url)} image data.`);
+   const blob = new Blob([fetched.bytes], { type: fetched.mime || mimeFromUrl(url) || 'application/octet-stream' });
+-  const objectUrl = URL.createObjectURL(blob);
+-  try {
+-    const image = await loadImage(objectUrl, { timeout });
+-    await verifyReadable(image);
++  const decoded = await loadBlobImage(blob, { timeout, signal });
++  try {
++    await verifyReadable(decoded.image);
+     return acquired({
+-      kind: target.kind, url, image, objectUrl, strategy: 'manager-fetch',
++      kind: target.kind, url, image: decoded.image,
++      objectUrl: decoded.objectUrl, dispose: decoded.dispose, strategy: 'manager-fetch',
+       mimeHint: fetched.mime || mimeFromUrl(url), altText: target.altText,
+-      width: image.naturalWidth, height: image.naturalHeight,
+-      bytes: fetched.bytes,
+-      finalUrl: fetched.finalUrl,
++      width: decoded.image.naturalWidth || decoded.image.width,
++      height: decoded.image.naturalHeight || decoded.image.height,
++      bytes: fetched.bytes, finalUrl: fetched.finalUrl,
+     });
+-  } catch (err) {
+-    revokeObjectUrlNow(objectUrl);
+-    throw err;
++  } catch (error) {
++    decoded.dispose();
++    throw error;
+   }
+ }
+ 
+ function acquired(spec) {
+-  let cachedBytes = spec.bytes || null;
++  let cachedBytes = spec.bytes ? { bytes: spec.bytes, mime: spec.mimeHint || '', finalUrl: spec.finalUrl || spec.url || '' } : null;
++  let released = false;
+   return {
+     kind: spec.kind,
+     url: spec.url,
+     image: spec.image || null,
++    bytes: spec.bytes || null,
+     canvas: spec.canvas || null,
+     objectUrl: spec.objectUrl || null,
+     strategy: spec.strategy,
+@@ -365,6 +373,9 @@
+     height: spec.height || 0,
+     finalUrl: spec.finalUrl || spec.url || '',
+     release() {
++      if (released) return;
++      released = true;
++      if (spec.dispose) { spec.dispose(); return; }
+       if (spec.objectUrl) revokeObjectUrlNow(spec.objectUrl);
+     },
+     /** Original file bytes, fetched only when a format needs them (e.g. "Original file"). */
+@@ -382,7 +393,7 @@
+ 
+ /** Draw the image and prove the canvas is readable. Returns a mime hint when known. */
+ async function verifyReadable(image) {
+-  const { canvas, ctx } = createCanvas(Math.min(image.naturalWidth, 4), Math.min(image.naturalHeight, 4), { willReadFrequently: true });
++  const { canvas, ctx } = createCanvas(Math.min(image.naturalWidth || image.width, 4), Math.min(image.naturalHeight || image.height, 4), { willReadFrequently: true });
+   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+   canvasToImageData(canvas, ctx); // throws ConversionError('tainted-canvas') when not allowed
+   return { mimeHint: '' };
+--- /dev/null
++++ b/test/unit/core-acquisition.test.mjs
+@@ -0,0 +1,97 @@
++import {test,describe} from 'node:test';
++import assert from 'node:assert/strict';
++import {loadBlobImage,decodeDataUrl} from '../../src/core/raster.js';
++import {acquireImage} from '../../src/core/source.js';
++import {getOriginalBytes} from '../../src/core/convert.js';
++
++function withDecodeEnvironment(t,{htmlWorks=false,bitmap}={}) {
++  const oldImage=Object.getOwnPropertyDescriptor(globalThis,'Image');
++  const oldBitmap=Object.getOwnPropertyDescriptor(globalThis,'createImageBitmap');
++  const oldWindow=Object.getOwnPropertyDescriptor(globalThis,'window');
++  class FakeImage {
++    naturalWidth=2;naturalHeight=3;
++    set src(value) { queueMicrotask(()=> htmlWorks ? this.onload?.() : this.onerror?.()); }
++  }
++  Object.defineProperty(globalThis,'Image',{configurable:true,value:FakeImage});
++  Object.defineProperty(globalThis,'createImageBitmap',{configurable:true,value:bitmap});
++  Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{href:'https://page.test/',origin:'https://page.test'}}});
++  t.after(()=>{
++    for(const [key,descriptor]of [['Image',oldImage],['createImageBitmap',oldBitmap],['window',oldWindow]]){
++      if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];
++    }
++  });
++}
++const blob=new Blob([new Uint8Array([1,2,3])],{type:'image/png'});
++
++describe('acquisition — CSP-safe decode leases',()=>{
++ test('successful legacy HTML decode remains first and URL is revoked once',async t=>{
++  let called=0;withDecodeEnvironment(t,{htmlWorks:true,bitmap:()=>{called++;throw Error('not needed');}});
++  const revoked=[];const original=URL.revokeObjectURL.bind(URL);
++  t.mock.method(URL,'revokeObjectURL',url=>{revoked.push(url);original(url);});
++  const decoded=await loadBlobImage(blob);assert.equal(decoded.image.naturalWidth,2);assert.ok(decoded.objectUrl.startsWith('blob:'));assert.equal(called,0);
++  decoded.dispose();decoded.dispose();assert.deepEqual(revoked,[decoded.objectUrl]);
++ });
++ test('blocked HTML decode falls back to owned bitmap; release is idempotent',async t=>{
++  let closed=0;const bitmap={width:2,height:3,close(){closed++;}};
++  withDecodeEnvironment(t,{bitmap:async()=>bitmap});const decoded=await loadBlobImage(blob);
++  assert.equal(decoded.image,bitmap);assert.equal(decoded.objectUrl,null);decoded.dispose();decoded.dispose();assert.equal(closed,1);
++ });
++ test('unsupported bitmap codec fails, never reports a fake decode success',async t=>{
++  withDecodeEnvironment(t,{bitmap:async()=>{throw Error('codec unavailable');}});
++  await assert.rejects(loadBlobImage(blob),e=>e.code==='decode-failed');
++ });
++ test('timeout closes a bitmap that completes after the lease was abandoned',async t=>{
++  let resolveBitmap,closed=0;const pending=new Promise(r=>{resolveBitmap=r;});withDecodeEnvironment(t,{bitmap:()=>pending});
++  await assert.rejects(loadBlobImage(blob,{timeout:10,bitmapOnly:true}),e=>e.code==='timeout');
++  resolveBitmap({width:2,height:3,close(){closed++;}});await new Promise(r=>setImmediate(r));assert.equal(closed,1);
++ });
++ test('abort rejects promptly and closes late bitmap exactly once',async t=>{
++  let resolveBitmap,closed=0,started;const ready=new Promise(r=>{started=r;});
++  withDecodeEnvironment(t,{bitmap:()=>{started();return new Promise(r=>{resolveBitmap=r;});}});
++  const controller=new AbortController();const pending=loadBlobImage(blob,{signal:controller.signal,bitmapOnly:true});await ready;controller.abort();
++  await assert.rejects(pending,e=>e.code==='aborted');resolveBitmap({width:2,height:3,close(){closed++;}});await new Promise(r=>setImmediate(r));assert.equal(closed,1);
++ });
++ test('pre-aborted operation never creates a decode',async t=>{
++  let calls=0;withDecodeEnvironment(t,{bitmap:()=>{calls++;}});const c=new AbortController();c.abort();await assert.rejects(loadBlobImage(blob,{signal:c.signal}),e=>e.code==='aborted');assert.equal(calls,0);
++ });
++});
++
++describe('acquisition — local payload and cached byte contract',()=>{
++ test('base64, percent-escaped binary and literal UTF8 decode without fetch',()=>{
++  assert.deepEqual([...decodeDataUrl('data:image/png;base64,AP8B').bytes],[0,255,1]);
++  assert.deepEqual([...decodeDataUrl('data:application/octet-stream,%00%ff+%2B').bytes],[0,255,43,43]);
++  assert.equal(new TextDecoder().decode(decodeDataUrl('data:text/plain,é').bytes),'é');
++  assert.equal(decodeDataUrl('data:image/png;base64,AP8%2B').mime,'image/png');
++  for(const url of ['https://a.test/','data:x','data:image/png,%xx','data:image/png,%'])assert.throws(()=>decodeDataUrl(url));
++ });
++ test('manager-byte cache returns documented record and original needs no refetch',async t=>{
++  withDecodeEnvironment(t,{htmlWorks:true});
++  // Two failed anonymous attempts would normally reach GM; fake image first
++  // decode fails, then the manager Blob decode succeeds on its new instance.
++  let count=0;class FakeImage {
++    naturalWidth=2;naturalHeight=3;
++    set src(value){count++;queueMicrotask(()=>count===1?this.onerror?.():this.onload?.());}
++  }
++  Object.defineProperty(globalThis,'Image',{configurable:true,value:FakeImage});
++  const oldDocument=Object.getOwnPropertyDescriptor(globalThis,'document');
++  const documentStub = {
++    createElement() {
++      return {
++        getContext() {
++          return {
++            drawImage() {},
++            getImageData() { return { data: new Uint8ClampedArray(4) }; },
++          };
++        },
++      };
++    },
++  };
++  Object.defineProperty(globalThis, 'document', { configurable: true, value: documentStub });
++  t.after(()=>oldDocument?Object.defineProperty(globalThis,'document',oldDocument):delete globalThis.document);
++  const bytes=new Uint8Array([1,2,3]);let fetches=0;
++  const gm={capabilities:{xhr:true},async xhrBlob(){fetches++;return{status:200,response:new Blob([bytes],{type:'image/png'}),responseHeaders:'Content-Type: image/png',finalUrl:'https://cdn.test/final.png'};}};
++  const acquired=await acquireImage({kind:'img',url:'https://cdn.test/image.png'},{gm,settings:{allowCrossOriginFetch:true}});
++  const cached=await acquired.getBytes();assert.deepEqual(cached.bytes,bytes);assert.equal(cached.mime,'image/png');assert.equal(cached.finalUrl,'https://cdn.test/final.png');
++  const original=await getOriginalBytes(acquired,{gm,settings:{allowCrossOriginFetch:false},timeout:20});assert.deepEqual(original.bytes,bytes);assert.equal(fetches,1);acquired.release();acquired.release();
++ });
++});

@@ -1,0 +1,48 @@
+--- src/ui/jobbar.js (before)
++++ src/ui/jobbar.js (after)
+@@ -1,3 +1,4 @@
++import { ACCESSIBILITY_STYLE } from './accessibility.js';
+ /**
+  * Batch job bar.
+  *
+@@ -26,7 +27,7 @@
+   display: flex; flex-direction: column;
+   background: #fff; color: #16181d; border: 1px solid rgba(0,0,0,.16); border-radius: 12px;
+   box-shadow: 0 18px 44px rgba(0,0,0,.34); overflow: hidden;
+-  font: 12.5px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
++  font: max(0.78125rem, 12.5px)/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+ }
+ @media (prefers-color-scheme: dark) {
+   .siat-jobbar { background: #1e2128; color: #edf0f6; border-color: rgba(255,255,255,.16); }
+@@ -39,11 +40,11 @@
+ .siat-jobbar-fill { height: 100%; width: 0%; background: #2f6fdb; transition: width .18s ease; }
+ .siat-jobbar-fill[data-state="done"] { background: #1a7f37; }
+ .siat-jobbar-fill[data-state="cancelled"] { background: #b4232a; }
+-.siat-jobbar-status { color: #5c6472; font-size: 11.5px; }
++.siat-jobbar-status { color: #5c6472; font-size: max(0.75rem, 12px); }
+ @media (prefers-color-scheme: dark) { .siat-jobbar-status { color: #a3acbb; } }
+ .siat-jobbar-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+ .siat-jobbar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+-.siat-jobbar-item { display: flex; gap: 7px; align-items: baseline; font-size: 11.5px; }
++.siat-jobbar-item { display: flex; gap: 7px; align-items: baseline; font-size: max(0.75rem, 12px); }
+ .siat-jobbar-item-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ .siat-jobbar-item-state { flex: 0 0 auto; font-weight: 650; }
+ .siat-jobbar-item-state[data-state="done"] { color: #1a7f37; }
+@@ -54,7 +55,7 @@
+   .siat-jobbar-item-state[data-state="done"] { color: #56d364; }
+   .siat-jobbar-item-state[data-state="failed"] { color: #ff8f8f; }
+ }
+-.siat-jobbar details summary { cursor: pointer; font-size: 11.5px; color: #5c6472; }
++.siat-jobbar details summary { cursor: pointer; font-size: max(0.75rem, 12px); color: #5c6472; }
+ @media (prefers-color-scheme: dark) { .siat-jobbar details summary { color: #a3acbb; } }
+ `;
+ 
+@@ -93,7 +94,7 @@
+     host.setAttribute('data-siat', 'jobbar');
+     shadow = host.attachShadow({ mode: 'open' });
+     const style = doc.createElement('style');
+-    style.textContent = ':host { all: initial; }\n' + JOBBAR_STYLE;
++    style.textContent = ':host { all: initial; }\n' + JOBBAR_STYLE + ACCESSIBILITY_STYLE;
+     shadow.appendChild(style);
+     const root = doc.documentElement || doc.body;
+     if (root) root.appendChild(host);

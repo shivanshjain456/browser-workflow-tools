@@ -1,0 +1,1 @@
+{"schemaVersion":2,"__proto__":{"filenamePrefix":"pwn"},"constructor":{"prototype":{"polluted":true}},"prototype":{"x":1},"filenamePrefix":"kept","formats":["png"],"presets":[{"name":"My preset","__proto__":{"formatId":"jpg"},"formatId":"png"}]}

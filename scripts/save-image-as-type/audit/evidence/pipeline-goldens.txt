@@ -1,0 +1,2 @@
+verify_media.py: parsed without errors
+verify_zip.py: parsed without errors

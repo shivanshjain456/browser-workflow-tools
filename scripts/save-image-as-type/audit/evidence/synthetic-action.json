@@ -1,0 +1,9 @@
+{
+  "scope": "Chrome shared-world page DOM attack with fake GM; NOT actual-manager exploit validation",
+  "contextEventTrusted": false,
+  "menuOpened": false,
+  "publicApiPresent": false,
+  "privilegedFetchAttempted": false,
+  "attempts": [],
+  "status": "not reproduced"
+}

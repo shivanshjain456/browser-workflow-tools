@@ -1,0 +1,48 @@
+{
+ "archives": [
+  {
+   "size": 938,
+   "testzip": null,
+   "comment": "",
+   "member_count": 2,
+   "members": [
+    {
+     "name": "caf\u00e9/alpha.bmp",
+     "size": 618,
+     "crc": 1997710254,
+     "crc_recomputed": 1997710254,
+     "crc_matches": true,
+     "compress_type": 0,
+     "bytes_read": 618,
+     "sha256": "1c5b5598f7bffe919c8955f3b3263f87e10de549df59dfedb6ce979ef351bad5",
+     "decoded": {
+      "format": "BMP",
+      "width": 12,
+      "height": 10,
+      "mode": "RGBA",
+      "pixel_sha256": "8bdbef6f1e03464a58e16b0c2ecfcdbfe874947862bfe7f10179c8c05a11fc80"
+     }
+    },
+    {
+     "name": "odd.bmp",
+     "size": 102,
+     "crc": 2597757598,
+     "crc_recomputed": 2597757598,
+     "crc_matches": true,
+     "compress_type": 0,
+     "bytes_read": 102,
+     "sha256": "fe2fa1b94e2e2b0c0c6c67e6432bdade0345a77724e72ce03727ea3d1b4fb103",
+     "decoded": {
+      "format": "BMP",
+      "width": 5,
+      "height": 3,
+      "mode": "RGB",
+      "pixel_sha256": "e4fd5705ec649f529fb353baebb32444be9cc22e76461eb499ab4cb0611bf8ff"
+     }
+    }
+   ],
+   "name": "unicode.zip"
+  }
+ ],
+ "errors": []
+}

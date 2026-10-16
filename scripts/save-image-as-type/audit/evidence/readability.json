@@ -1,0 +1,25 @@
+{
+  "method": "js-tokens 4.0.0 explicitly pinned development tool; unique name tokens excluding listed keywords; comments counted by character and touched lines. Template strings are single tokens, so names inside interpolations are excluded. Comparable estimates, not identical to auditor identifier taxonomy.",
+  "files": [
+    {
+      "path": "audit/baseline/v2.0.0.user.js",
+      "bytes": 573476,
+      "newlines": 14641,
+      "uniqueNames": 2162,
+      "shortNames": 67,
+      "shortNamePercent": 3.0989824236817762,
+      "commentCharacterPercent": 14.473779041866695,
+      "commentLinePercent": 11.276552148077316
+    },
+    {
+      "path": "release/save-image-as-type.user.js",
+      "bytes": 593399,
+      "newlines": 14960,
+      "uniqueNames": 2198,
+      "shortNames": 68,
+      "shortNamePercent": 3.0937215650591448,
+      "commentCharacterPercent": 14.689870320528504,
+      "commentLinePercent": 11.477272727272727
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "version": "2.0.1",
+  "status": "UNRELEASED CANDIDATE — full engineering brief not accepted",
+  "releaseAccepted": false,
+  "artifact": "save-image-as-type.user.js",
+  "bytes": 620030,
+  "md5": "c9e722b12d0cb4bd436f77f1a8ccba02",
+  "sha256": "0769501f089aebcfc0e07543e8c8c6dadb9c90620a541aa21660928de5b62227",
+  "build": {
+    "modules": 41,
+    "namedTopLevelBindings": 444,
+    "splitLines": 15474
+  },
+  "gates": {
+    "unit": {
+      "passed": 577,
+      "total": 577,
+      "suites": 100,
+      "skipped": 0,
+      "cancelled": 0,
+      "scope": "Node fixtures; explicit offline event-policy loader"
+    },
+    "lint": {
+      "passed": 27,
+      "total": 27
+    },
+    "browser": {
+      "passed": 57,
+      "total": 57,
+      "consecutiveRuns": 2,
+      "scope": "Offline verifier build with fake manager, not exact production or real manager"
+    }
+  },
+  "exactProductionChecks": "audit/evidence/{candidate-production,candidate-browser-checks,synthetic-action-after}.json",
+  "blockers": [
+    "Independent repeated artifact executions register duplicate commands (8 -> 16)",
+    "Remaining S1 requirements and required breadth are not implemented",
+    "Actual manager / public-site matrix and complete normative spec study are not complete"
+  ],
+  "grants": [
+    "GM_info",
+    "GM_getValue",
+    "GM_setValue",
+    "GM_addValueChangeListener",
+    "GM_removeValueChangeListener",
+    "GM_deleteValue",
+    "GM_xmlhttpRequest",
+    "GM_download",
+    "GM_registerMenuCommand",
+    "GM_notification"
+  ],
+  "defaultSettingsKeys": 49,
+  "schemaVersion": 3,
+  "newStorageKeys": [],
+  "newRuntimeDependencies": [],
+  "newRuntimeDestinations": [],
+  "devAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "connect": [
+    "*"
+  ],
+  "connectJustification": "Retained original wildcard for explicitly user-initiated image acquisition across arbitrary source hosts; no extra host or grant added. Detailed origin trail remains deferred.",
+  "combinedVerification": {
+    "command": "node audit/verify-all.mjs",
+    "measuredExit": 2,
+    "meaning": "Candidate measured regression gates pass; RELEASE BLOCKED"
+  },
+  "productionKeyboardKeys": [
+    "1",
+    "Enter",
+    "Space"
+  ],
+  "toolchain": {
+    "nodeMinimum": "22.22.2",
+    "nodeTested": "22.22.2",
+    "puppeteer": "25.14.0",
+    "fixtureChrome": "155.0.8059.79",
+    "realManagerChrome": "155.0.8059.84"
+  },
+  "actualManagerEvidence": {
+    "manager": "Violentmonkey 2.49.0 MV3",
+    "completed": true,
+    "scope": "unpacked unchanged official distribution; native file install in isolated lab; five local cases plus same/cross-origin frames, manager settings round trip; SVG raster explicitly unavailable",
+    "artifactSha256": "f15a9041cafbf0171c76ef126b8c89e193bf08a877eed93f1f9bdb1137b8b88c",
+    "independentDownloads": 11,
+    "report": "audit/evidence/manager-lab/vm-production.json",
+    "verifier": "python3 audit/verify-manager-outputs.py vm",
+    "Tampermonkey": "5.5.1 inconclusive: even minimal installed control does not inject"
+  },
+  "extractedCapsuleVerification": {
+    "unit": 577,
+    "suites": 100,
+    "lint": 27,
+    "buildCheck": true,
+    "sameInstalledDependenciesReused": true,
+    "cleanOSInstall": false,
+    "codeAndCorpusReceipt": "audit/evidence/capsule-tested-inputs.json",
+    "log": "audit/evidence/capsule-current.txt"
+  },
+  "recentIndependentRollbackGroups": {
+    "acquisition-contract": 569,
+    "long-press-lifetime": 574,
+    "top-frame-commands": 576,
+    "scope": "Each group plus own tests reversed separately; remaining units and original goldens pass; earlier groups not certified"
+  },
+  "newSettings": [
+    {
+      "key": "profiles",
+      "default": [],
+      "purpose": "named whole-configuration snapshots (G-67); empty by default so behaviour is unchanged",
+      "ui": "Settings → Configuration profiles",
+      "migration": "absent in older schema-3 data reads as an empty list; JSON export/import carries it; older builds ignore the unknown key"
+    }
+  ],
+  "localisation": {
+    "newStrings": "all strings added by the profile feature live in src/core/messages.js with complete en/ar/hi catalogues and RTL direction; the pre-existing interface remains English-only and is NOT claimed as localised (G-20/G-21 incomplete)"
+  },
+  "configurationProfiles": {
+    "implemented": true,
+    "unitTests": 16,
+    "exactProductionRealInput": "audit/evidence/candidate-browser-checks.json#profileWorkflow",
+    "actualManagerRoundTrip": "audit/evidence/manager-lab/vm-production.json#profileWorkflow",
+    "localisedStrings": [
+      "en",
+      "ar",
+      "hi"
+    ],
+    "newDefaultKeys": [
+      "profiles"
+    ]
+  }
+}

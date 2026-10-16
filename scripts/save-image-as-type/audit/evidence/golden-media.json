@@ -1,0 +1,1264 @@
+{
+ "images": [
+  {
+   "path": "audit/evidence/golden-media-inputs/alpha.bmp",
+   "bytes": 618,
+   "magic": "424d6a020000000000008a00",
+   "format": "BMP",
+   "mode": "RGBA",
+   "size": [
+    12,
+    10
+   ],
+   "n_frames": 1,
+   "info_keys": [
+    "compression",
+    "dpi"
+   ],
+   "frames": [
+    {
+     "index": 0,
+     "duration_ms": null,
+     "size": [
+      12,
+      10
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        20,
+        60,
+        200,
+        255
+       ]
+      ],
+      [
+       11,
+       0,
+       [
+        255,
+        255,
+        255,
+        0
+       ]
+      ],
+      [
+       0,
+       9,
+       [
+        20,
+        60,
+        200,
+        255
+       ]
+      ],
+      [
+       11,
+       9,
+       [
+        255,
+        255,
+        255,
+        0
+       ]
+      ],
+      [
+       6,
+       5,
+       [
+        255,
+        255,
+        255,
+        0
+       ]
+      ],
+      [
+       1,
+       1,
+       [
+        20,
+        60,
+        200,
+        255
+       ]
+      ],
+      [
+       10,
+       8,
+       [
+        255,
+        255,
+        255,
+        0
+       ]
+      ],
+      [
+       3,
+       5,
+       [
+        20,
+        60,
+        200,
+        255
+       ]
+      ]
+     ]
+    }
+   ],
+   "pixels": [
+    [
+     0,
+     0,
+     [
+      20,
+      60,
+      200,
+      255
+     ]
+    ],
+    [
+     11,
+     0,
+     [
+      255,
+      255,
+      255,
+      0
+     ]
+    ],
+    [
+     0,
+     9,
+     [
+      20,
+      60,
+      200,
+      255
+     ]
+    ],
+    [
+     11,
+     9,
+     [
+      255,
+      255,
+      255,
+      0
+     ]
+    ],
+    [
+     6,
+     5,
+     [
+      255,
+      255,
+      255,
+      0
+     ]
+    ],
+    [
+     1,
+     1,
+     [
+      20,
+      60,
+      200,
+      255
+     ]
+    ],
+    [
+     10,
+     8,
+     [
+      255,
+      255,
+      255,
+      0
+     ]
+    ],
+    [
+     3,
+     5,
+     [
+      20,
+      60,
+      200,
+      255
+     ]
+    ]
+   ],
+   "name": "alpha.bmp"
+  },
+  {
+   "path": "audit/evidence/golden-media-inputs/animated.gif",
+   "bytes": 132,
+   "magic": "4749463839610a0008009100",
+   "format": "GIF",
+   "mode": "P",
+   "size": [
+    10,
+    8
+   ],
+   "n_frames": 3,
+   "info_keys": [
+    "background",
+    "duration",
+    "extension",
+    "loop",
+    "version"
+   ],
+   "frames": [
+    {
+     "index": 0,
+     "duration_ms": 100,
+     "size": [
+      10,
+      8
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       9,
+       0,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       0,
+       7,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       9,
+       7,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       5,
+       4,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       1,
+       1,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       8,
+       6,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       2,
+       4,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ]
+     ]
+    },
+    {
+     "index": 1,
+     "duration_ms": 200,
+     "size": [
+      10,
+      8
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       9,
+       0,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       0,
+       7,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       9,
+       7,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       5,
+       4,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       1,
+       1,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       8,
+       6,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       2,
+       4,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ]
+     ]
+    },
+    {
+     "index": 2,
+     "duration_ms": 50,
+     "size": [
+      10,
+      8
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       9,
+       0,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       0,
+       7,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       9,
+       7,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       5,
+       4,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       1,
+       1,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       8,
+       6,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       2,
+       4,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ]
+     ]
+    }
+   ],
+   "pixels": [
+    [
+     0,
+     0,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     9,
+     0,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     0,
+     7,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     9,
+     7,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     5,
+     4,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     1,
+     1,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     8,
+     6,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     2,
+     4,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ]
+   ],
+   "name": "animated.gif"
+  },
+  {
+   "path": "audit/evidence/golden-media-inputs/odd.bmp",
+   "bytes": 102,
+   "magic": "424d66000000000000003600",
+   "format": "BMP",
+   "mode": "RGB",
+   "size": [
+    5,
+    3
+   ],
+   "n_frames": 1,
+   "info_keys": [
+    "compression",
+    "dpi"
+   ],
+   "frames": [
+    {
+     "index": 0,
+     "duration_ms": null,
+     "size": [
+      5,
+      3
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        255,
+        0,
+        0,
+        255
+       ]
+      ],
+      [
+       4,
+       0,
+       [
+        128,
+        128,
+        128,
+        255
+       ]
+      ],
+      [
+       0,
+       2,
+       [
+        0,
+        0,
+        255,
+        255
+       ]
+      ],
+      [
+       4,
+       2,
+       [
+        0,
+        255,
+        0,
+        255
+       ]
+      ],
+      [
+       2,
+       1,
+       [
+        255,
+        255,
+        0,
+        255
+       ]
+      ]
+     ]
+    }
+   ],
+   "pixels": [
+    [
+     0,
+     0,
+     [
+      255,
+      0,
+      0,
+      255
+     ]
+    ],
+    [
+     4,
+     0,
+     [
+      128,
+      128,
+      128,
+      255
+     ]
+    ],
+    [
+     0,
+     2,
+     [
+      0,
+      0,
+      255,
+      255
+     ]
+    ],
+    [
+     4,
+     2,
+     [
+      0,
+      255,
+      0,
+      255
+     ]
+    ],
+    [
+     2,
+     1,
+     [
+      255,
+      255,
+      0,
+      255
+     ]
+    ]
+   ],
+   "name": "odd.bmp"
+  },
+  {
+   "path": "audit/evidence/golden-media-inputs/static.gif",
+   "bytes": 83,
+   "magic": "474946383961080008009100",
+   "format": "GIF",
+   "mode": "P",
+   "size": [
+    8,
+    8
+   ],
+   "n_frames": 1,
+   "info_keys": [
+    "background",
+    "duration",
+    "extension",
+    "loop",
+    "version"
+   ],
+   "frames": [
+    {
+     "index": 0,
+     "duration_ms": 100,
+     "size": [
+      8,
+      8
+     ],
+     "pixels": [
+      [
+       0,
+       0,
+       [
+        8,
+        16,
+        24,
+        255
+       ]
+      ],
+      [
+       7,
+       0,
+       [
+        206,
+        41,
+        57,
+        255
+       ]
+      ],
+      [
+       0,
+       7,
+       [
+        41,
+        206,
+        82,
+        255
+       ]
+      ],
+      [
+       7,
+       7,
+       [
+        57,
+        82,
+        222,
+        255
+       ]
+      ],
+      [
+       4,
+       4,
+       [
+        57,
+        82,
+        222,
+        255
+       ]
+      ],
+      [
+       1,
+       1,
+       [
+        8,
+        16,
+        24,
+        255
+       ]
+      ],
+      [
+       6,
+       6,
+       [
+        57,
+        82,
+        222,
+        255
+       ]
+      ],
+      [
+       2,
+       4,
+       [
+        41,
+        206,
+        82,
+        255
+       ]
+      ]
+     ]
+    }
+   ],
+   "pixels": [
+    [
+     0,
+     0,
+     [
+      8,
+      16,
+      24,
+      255
+     ]
+    ],
+    [
+     7,
+     0,
+     [
+      206,
+      41,
+      57,
+      255
+     ]
+    ],
+    [
+     0,
+     7,
+     [
+      41,
+      206,
+      82,
+      255
+     ]
+    ],
+    [
+     7,
+     7,
+     [
+      57,
+      82,
+      222,
+      255
+     ]
+    ],
+    [
+     4,
+     4,
+     [
+      57,
+      82,
+      222,
+      255
+     ]
+    ],
+    [
+     1,
+     1,
+     [
+      8,
+      16,
+      24,
+      255
+     ]
+    ],
+    [
+     6,
+     6,
+     [
+      57,
+      82,
+      222,
+      255
+     ]
+    ],
+    [
+     2,
+     4,
+     [
+      41,
+      206,
+      82,
+      255
+     ]
+    ]
+   ],
+   "name": "static.gif"
+  }
+ ],
+ "bmp_raw": [
+  {
+   "file_size": 618,
+   "signature": "BM",
+   "declared_file_size": 618,
+   "pixel_offset": 138,
+   "dib_header_size": 124,
+   "width": 12,
+   "height": 10,
+   "planes": 1,
+   "bpp": 32,
+   "compression": 3,
+   "image_size": 480,
+   "red_mask": "0xff0000",
+   "green_mask": "0xff00",
+   "blue_mask": "0xff",
+   "alpha_mask": "0xff000000",
+   "cstype": "0x73524742",
+   "cstype_ascii": "BGRs",
+   "intent": 4,
+   "variant": "BITMAPV5HEADER",
+   "expected_pixel_offset": 138,
+   "expected_image_size": 480,
+   "offset_matches": true,
+   "size_matches": true,
+   "file_size_matches": true,
+   "first_stored_pixel_raw": [
+    200,
+    60,
+    20,
+    255
+   ],
+   "last_stored_row_first_pixel_raw": [
+    200,
+    60,
+    20,
+    255
+   ],
+   "name": "alpha.bmp"
+  },
+  {
+   "file_size": 102,
+   "signature": "BM",
+   "declared_file_size": 102,
+   "pixel_offset": 54,
+   "dib_header_size": 40,
+   "width": 5,
+   "height": 3,
+   "planes": 1,
+   "bpp": 24,
+   "compression": 0,
+   "image_size": 48,
+   "x_ppm": 2835,
+   "y_ppm": 2835,
+   "clr_used": 0,
+   "variant": "BITMAPINFOHEADER (V3)",
+   "expected_pixel_offset": 54,
+   "expected_image_size": 48,
+   "row_stride": 16,
+   "offset_matches": true,
+   "size_matches": true,
+   "file_size_matches": true,
+   "first_stored_pixel_raw": [
+    255,
+    0,
+    0
+   ],
+   "last_stored_row_first_pixel_raw": [
+    0,
+    0,
+    255
+   ],
+   "name": "odd.bmp"
+  }
+ ],
+ "gif_raw": [
+  {
+   "file_size": 132,
+   "signature": "GIF89a",
+   "width": 10,
+   "height": 8,
+   "global_color_table": true,
+   "gct_entries": 4,
+   "color_resolution": 2,
+   "background_index": 0,
+   "aspect": 0,
+   "gct_first_entry": [
+    0,
+    0,
+    255
+   ],
+   "gct_last_entry": [
+    0,
+    0,
+    0
+   ],
+   "netscape_extension": true,
+   "trailer_at": 131,
+   "blocks": [
+    {
+     "type": "gce",
+     "disposal": 1,
+     "transparent_flag": false,
+     "delay_cs": 10,
+     "transparent_index": 0,
+     "block_size": 4
+    },
+    {
+     "type": "image",
+     "left": 0,
+     "top": 0,
+     "width": 10,
+     "height": 8,
+     "local_color_table": false,
+     "min_code_size": 2,
+     "sub_block_sizes": [
+      8
+     ],
+     "lzw_bytes": 8
+    },
+    {
+     "type": "gce",
+     "disposal": 1,
+     "transparent_flag": false,
+     "delay_cs": 20,
+     "transparent_index": 0,
+     "block_size": 4
+    },
+    {
+     "type": "image",
+     "left": 0,
+     "top": 0,
+     "width": 10,
+     "height": 8,
+     "local_color_table": false,
+     "min_code_size": 2,
+     "sub_block_sizes": [
+      8
+     ],
+     "lzw_bytes": 8
+    },
+    {
+     "type": "gce",
+     "disposal": 1,
+     "transparent_flag": false,
+     "delay_cs": 5,
+     "transparent_index": 0,
+     "block_size": 4
+    },
+    {
+     "type": "image",
+     "left": 0,
+     "top": 0,
+     "width": 10,
+     "height": 8,
+     "local_color_table": false,
+     "min_code_size": 2,
+     "sub_block_sizes": [
+      8
+     ],
+     "lzw_bytes": 8
+    }
+   ],
+   "image_descriptor_count": 3,
+   "gce_count": 3,
+   "loop_count": 0,
+   "max_sub_block_size": 8,
+   "sub_blocks_within_limit": true,
+   "min_code_sizes": [
+    2
+   ],
+   "name": "animated.gif"
+  },
+  {
+   "file_size": 83,
+   "signature": "GIF89a",
+   "width": 8,
+   "height": 8,
+   "global_color_table": true,
+   "gct_entries": 4,
+   "color_resolution": 2,
+   "background_index": 0,
+   "aspect": 0,
+   "gct_first_entry": [
+    8,
+    16,
+    24
+   ],
+   "gct_last_entry": [
+    57,
+    82,
+    222
+   ],
+   "netscape_extension": true,
+   "trailer_at": 82,
+   "blocks": [
+    {
+     "type": "gce",
+     "disposal": 1,
+     "transparent_flag": false,
+     "delay_cs": 10,
+     "transparent_index": 0,
+     "block_size": 4
+    },
+    {
+     "type": "image",
+     "left": 0,
+     "top": 0,
+     "width": 8,
+     "height": 8,
+     "local_color_table": false,
+     "min_code_size": 2,
+     "sub_block_sizes": [
+      17
+     ],
+     "lzw_bytes": 17
+    }
+   ],
+   "image_descriptor_count": 1,
+   "gce_count": 1,
+   "loop_count": 0,
+   "max_sub_block_size": 17,
+   "sub_blocks_within_limit": true,
+   "min_code_sizes": [
+    2
+   ],
+   "name": "static.gif"
+  }
+ ],
+ "gif_lzw": [
+  {
+   "decoded": 80,
+   "values": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "max_index": 2,
+   "clear_resets": 1,
+   "max_code_width": 5,
+   "name": "animated.gif",
+   "min_code_size": 2,
+   "stream_bytes": 8,
+   "expected_pixels": 80
+  },
+  {
+   "decoded": 64,
+   "values": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2
+   ],
+   "max_index": 3,
+   "clear_resets": 1,
+   "max_code_width": 6,
+   "name": "static.gif",
+   "min_code_size": 2,
+   "stream_bytes": 17,
+   "expected_pixels": 64
+  }
+ ],
+ "pdf_raw": [
+  {
+   "file_size": 4650,
+   "header": "%PDF-1.4",
+   "starts_with_pdf": true,
+   "ends_with_eof": true,
+   "startxref_found": true,
+   "startxref_value": 4434,
+   "xref_keyword_at_offset": "xref",
+   "startxref_points_to_xref": true,
+   "xref_start_obj": 0,
+   "xref_count": 7,
+   "xref_entries": [
+    {
+     "obj": 0,
+     "offset": 0,
+     "gen": 65535,
+     "kind": "f",
+     "entry_bytes": 20
+    },
+    {
+     "obj": 1,
+     "offset": 15,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    },
+    {
+     "obj": 2,
+     "offset": 64,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    },
+    {
+     "obj": 3,
+     "offset": 121,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    },
+    {
+     "obj": 4,
+     "offset": 282,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    },
+    {
+     "obj": 5,
+     "offset": 4173,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    },
+    {
+     "obj": 6,
+     "offset": 4271,
+     "gen": 0,
+     "kind": "n",
+     "entry_bytes": 20,
+     "points_to_object": true
+    }
+   ],
+   "all_entry_lengths_20": true,
+   "xref_consistent": true,
+   "pypdf_pages": 1,
+   "pypdf_mediabox": [
+    0.0,
+    0.0,
+    595.276,
+    841.89
+   ],
+   "pypdf_version": "%PDF-1.4",
+   "pypdf_image_count": 1,
+   "pypdf_image_name": "Im0.jpg",
+   "pypdf_image_bytes": 3725,
+   "pypdf_image_data_head": "ffd8ffe0",
+   "embedded_image_format": "JPEG",
+   "embedded_image_size": [
+    200,
+    140
+   ],
+   "embedded_image_mode": "RGB",
+   "pypdf_metadata": {
+    "/Producer": "Save Image as Type userscript",
+    "/Creator": "Save Image as Type userscript",
+    "/Title": "Pinned baseline",
+    "/CreationDate": "D:20240203040506Z"
+   },
+   "name": "single.pdf"
+  }
+ ],
+ "errors": []
+}

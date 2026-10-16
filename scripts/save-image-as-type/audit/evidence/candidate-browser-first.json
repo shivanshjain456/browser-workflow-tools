@@ -1,0 +1,795 @@
+{
+  "generatedAt": "2026-10-16T14:08:47.001Z",
+  "scriptVersion": "2.0.1",
+  "artifactSha256": "046b529cab0443e2705fa3e85cb5be69d3bdde66dff5cb82292b7d0a572d979a",
+  "instrumentedFixtureSha256": "53e7c173237b79b5619bc678b307fc49b6115b2441cdc75230aa118ff9a62909",
+  "scope": "Instrumented fixture build with explicit test-only API; NOT exact production injection or a real manager",
+  "browser": "Chrome/131.0.6778.204",
+  "pageApis": {
+    "imageDecoder": true,
+    "offscreenCanvas": true,
+    "createImageBitmap": true,
+    "idleCallback": true,
+    "secureContext": true,
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.0.0 Safari/537.36"
+  },
+  "managerApi": "emulated (test/browser/harness.mjs) — not Tampermonkey/Violentmonkey",
+  "independentVerification": "Pillow + pypdf",
+  "origins": {
+    "page": "http://127.0.0.1:40339",
+    "cdn": "http://127.0.0.1:39147"
+  },
+  "totals": {
+    "passed": 56,
+    "failed": 1,
+    "skipped": 0,
+    "total": 57
+  },
+  "notes": [
+    "browser: Chrome/131.0.6778.204",
+    "manager API: emulated by test/browser/harness.mjs (handler \"EmulatedMonkey\"), not a real userscript manager",
+    "independent verification: Pillow + pypdf via test/helpers/verify_media.py",
+    "page APIs on http://127.0.0.1:40339 (secureContext=true): ImageDecoder=true OffscreenCanvas=true createImageBitmap=true requestIdleCallback=true",
+    "same browser on about:blank (secureContext=false): ImageDecoder=false — WebCodecs needs a secure context, so capability claims are made per origin"
+  ],
+  "results": [
+    {
+      "id": "boot-and-register",
+      "title": "the artifact boots, registers manager commands and touches nothing else",
+      "status": "pass",
+      "ms": 1,
+      "evidence": [
+        "expected 404 noise from the deliberately broken fixture image: 2 entries",
+        "menu commands: Save Image as Type — Settings… / Save Image as Type — Convert the last image I pointed at… / Save Image as Type — Browse page images… / Save Image as Type — Convert every image on this page… / Save Image as Type — Copy the last image I pointed at / Save Image as Type — Keyboard shortcut help / Save Image as Type — Capability report / Save Image as Type — Pause on this page"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "idle-capability-probe",
+      "title": "the idle probe measures real encoders and gates AVIF on the result",
+      "status": "pass",
+      "ms": 72,
+      "evidence": [
+        "canvas.toBlob actually returns: png→png, jpeg→jpeg, webp→webp, avif→png, gif→png, bmp→png",
+        "script encoder map: {\"image/png\":true,\"image/jpeg\":true,\"image/webp\":true,\"image/avif\":false}",
+        "animation: decoderAvailable=true supportedTypes=[image/gif, image/webp, image/png, image/avif] reason=\"\"",
+        "menu offers: PNG, JPG, WebP, GIF, BMP, PDF, Original, Copy image to clipboard, Transform and save…, Compare formats…, Inspect metadata, Browse page images…, Save all images on this page…, Settings"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "idempotent-same-module-bootstrap",
+      "title": "repeated trusted bootstrap calls do not duplicate UI, listeners or work (not a second artifact execution)",
+      "status": "pass",
+      "ms": 788,
+      "evidence": [
+        "hosts 1→1, toast hosts 0→0, manager commands 8→8",
+        "document listeners unchanged: {\"contextmenu\":1,\"keydown\":2,\"click\":2,\"pointerdown\":1,\"scroll\":1,\"mouseover\":1}",
+        "one conversion after same-module bootstrap → 1 download (photo.png), 1 toast"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "shadow-dom-isolation",
+      "title": "the UI is encapsulated and page CSS cannot reach it",
+      "status": "pass",
+      "ms": 18,
+      "evidence": [
+        "menu background inside the shadow root: rgb(255, 255, 255)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "real-right-click-opens-menu",
+      "title": "a real right-click opens an accessible menu inside the viewport",
+      "status": "pass",
+      "ms": 12,
+      "evidence": [
+        "items: PNG, JPG, WebP, GIF, BMP, PDF, Original, Copy image to clipboard, Transform and save…, Compare formats…, Inspect metadata, Browse page images…, Save all images on this page…, Settings",
+        "rect 124,188 332x532 in a 1280x900 viewport"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "keyboard-only-operation",
+      "title": "the menu can be driven entirely from the keyboard",
+      "status": "pass",
+      "ms": 62,
+      "evidence": [
+        "keyboard order: PNG → JPG → WebP → GIF → BMP → PDF → Original → Copy image to clipboard → Transform and save… → Compare formats… → Inspect metadata → Browse page images… → Save all images on this page… → Settings"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "shift-yields-native-menu",
+      "title": "Shift + right-click leaves the browser menu alone",
+      "status": "pass",
+      "ms": 412,
+      "evidence": [
+        "with Shift held the script does not call preventDefault, so the native menu appears"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "menu-dismissal",
+      "title": "Escape, an outside click and a scroll all close the menu",
+      "status": "pass",
+      "ms": 305,
+      "evidence": [
+        "Escape, an outside click and a settled scroll all closed the menu within 3s; a scroll 60 ms after opening did not"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "narrow-viewport-clamping",
+      "title": "the menu stays fully visible in a narrow viewport",
+      "status": "pass",
+      "ms": 370,
+      "evidence": [
+        "360x640 viewport → menu at 20,8 332x473"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "jpg-to-png",
+      "title": "#same-jpg → PNG, verified by an independent decoder",
+      "status": "pass",
+      "ms": 145,
+      "evidence": [
+        "manager download name: photo.png (35341 bytes)",
+        "Pillow: PNG RGBA 200x140 35341B; (0,0) 0,1,130,255 → 0,1,130,255 (Δ0)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "png-to-jpg",
+      "title": "#same-png → JPG, verified by an independent decoder",
+      "status": "pass",
+      "ms": 139,
+      "evidence": [
+        "manager download name: opaque.jpg (1130 bytes)",
+        "Pillow: JPEG RGB 64x48 1130B; (0,0) 0,0,128,255 → 0,0,132,255 (Δ4)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "png-to-webp",
+      "title": "#same-png → WebP, verified by an independent decoder",
+      "status": "pass",
+      "ms": 139,
+      "evidence": [
+        "manager download name: opaque.webp (766 bytes)",
+        "Pillow: WEBP RGB 64x48 766B; (0,0) 0,0,128,255 → 4,0,131,255 (Δ4)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "png-to-gif",
+      "title": "#same-png → GIF, verified by an independent decoder",
+      "status": "pass",
+      "ms": 199,
+      "evidence": [
+        "manager download name: opaque.gif (2757 bytes)",
+        "Pillow: GIF P 64x48 2757B; (0,0) 0,0,128,255 → 0,3,136,255 (Δ8)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "png-to-bmp",
+      "title": "#same-png → BMP, verified by an independent decoder",
+      "status": "pass",
+      "ms": 141,
+      "evidence": [
+        "manager download name: opaque.bmp (9270 bytes)",
+        "Pillow: BMP RGB 64x48 9270B; (0,0) 0,0,128,255 → 0,0,128,255 (Δ0)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "alpha-to-bmp-lossless",
+      "title": "a transparent PNG → 32-bit BMP keeps alpha exactly",
+      "status": "pass",
+      "ms": 136,
+      "evidence": [
+        "BMP 64x48 RGBA: every sampled pixel bit-identical to the source PNG, alpha included"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "alpha-to-jpg-flattened",
+      "title": "a transparent PNG → JPG is flattened onto the chosen background",
+      "status": "pass",
+      "ms": 142,
+      "evidence": [
+        "JPEG (0,0) 88,160,234,255 vs expected white-composite 89,160,230 (Δ4); toast notes: 4"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "jpg-to-pdf",
+      "title": "JPG → PDF embeds the image and builds a valid xref",
+      "status": "pass",
+      "ms": 244,
+      "evidence": [
+        "pypdf: 1 page, MediaBox [0,0,595.276,841.89], embedded JPEG 200x140, xref consistent=true"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "original-passthrough",
+      "title": "\"Original file\" re-saves the exact source bytes",
+      "status": "pass",
+      "ms": 70,
+      "evidence": [
+        "sha256 572623b345b3244e… identical to test/fixtures/photo.jpg (3723 bytes)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "cross-origin-no-cors",
+      "title": "a CORS-blocked image is fetched through the manager and converted",
+      "status": "pass",
+      "ms": 192,
+      "evidence": [
+        "Pillow: PNG RGBA 16x16",
+        "manager XHR: http://127.0.0.1:39147/fixtures/icon.bmp → HTTP 200, 1078 bytes; toast notes 3",
+        "only 1 network request was made for this conversion"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "cross-origin-with-cors",
+      "title": "a CORS-enabled cross-origin image never needs the manager XHR",
+      "status": "pass",
+      "ms": 66,
+      "evidence": [
+        "the cheaper same-origin/CORS path was preferred over GM_xmlhttpRequest"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "cross-origin-fetch-disabled",
+      "title": "with cross-origin fetching turned off the user gets an explanation, not a broken file",
+      "status": "pass",
+      "ms": 305,
+      "evidence": [
+        "error toast: \"Could not save as PNG\" — This image is hosted on another origin (127.0.0.1) which does not permit cross-origin reading, and \"Fetch cross-origin images\" is turned off in settings. Turn it on to convert this image.",
+        "notes: Turn on \"Fetch cross-origin images through the manager\" to convert images from other origins.",
+        "expected browser noise (deliberate fixtures): 4 entries"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "no-xhr-grant",
+      "title": "without the GM_xmlhttpRequest grant the message says exactly that",
+      "status": "pass",
+      "ms": 279,
+      "evidence": [
+        "toast: \"Could not save as PNG\" — This image is cross-origin (127.0.0.1) and your userscript manager did not grant GM_xmlhttpRequest, so its pixels cannot be read. — Your manager did not grant GM_xmlhttpRequest, so cross-origin pixels are unreadable. Reinstall the script and accept the permissions."
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "lazy-loaded-image",
+      "title": "an image that loads on scroll is a working target",
+      "status": "pass",
+      "ms": 160,
+      "evidence": [
+        "Pillow: PNG 1200x900 from an image whose src was set by IntersectionObserver"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "spa-rerender",
+      "title": "after the node is destroyed and replaced the menu still works",
+      "status": "pass",
+      "ms": 116,
+      "evidence": [
+        "re-rendered node converted; saved as \"opaque.png\"",
+        "no re-initialisation was needed: the listeners are delegated on document with capture"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "toasts-do-not-obscure",
+      "title": "the toast stack never covers or swallows page interaction",
+      "status": "pass",
+      "ms": 278,
+      "evidence": [
+        "4 toasts in a 246x359 box at (1022,530); a real click on page content still landed"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "iframe-image",
+      "title": "an image inside an iframe gets its own working menu",
+      "status": "pass",
+      "ms": 68,
+      "evidence": [
+        "frame image saved as \"tiny.png\"; menu rendered inside the frame (14 items)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "inline-svg-target",
+      "title": "an inline SVG is rasterised to PNG",
+      "status": "pass",
+      "ms": 157,
+      "evidence": [
+        "Pillow: PNG RGBA 120x80; (0,0)=37,99,235,255",
+        "saved as \"Inline SVG target.png\" (1437 bytes)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "css-background-target",
+      "title": "a CSS background image is a target when the setting allows it",
+      "status": "pass",
+      "ms": 368,
+      "evidence": [
+        "Pillow: PNG 64x48 from background-image",
+        "header \"Save css background as\", saved as \"opaque.png\" (350 bytes)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "broken-image-error",
+      "title": "an image that 404s produces an actionable error, not a hang",
+      "status": "pass",
+      "ms": 766,
+      "evidence": [
+        "menu opened on a broken image; conversion failed with \"Could not save as PNG\" — The browser could not decode image data."
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "settings-panel-and-persistence",
+      "title": "the panel saves settings that survive a reload",
+      "status": "pass",
+      "ms": 869,
+      "evidence": [
+        "sections: Formats in the right-click menu / File names / Output quality / Animation and memory limits / Batch conversion and archives / Formats offered by \"Compare formats…\" / Presets / Keyboard shortcuts / Menu and download behaviour / Extra actions in the right-click menu / Privacy and network / Embedded metadata in saved originals / Diagnostics (read-only)",
+        "stored formats after Save: png, jpg, webp, gif, pdf, original",
+        "formats after reload: PNG, JPG, WebP, GIF, PDF, Original, Copy image to clipboard, Transform and save…, Compare formats…, Inspect metadata, Browse page images…, Save all images on this page…, Settings"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "filename-settings",
+      "title": "prefix, sub-folder and max length are applied to the saved name",
+      "status": "pass",
+      "ms": 260,
+      "evidence": [
+        "manager received name \"refs/2026/shot-photo.png\" (bare \"shot-photo.png\", 14 chars, limit 16)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "subfolder-needs-browser-mode",
+      "title": "in native download mode the sub-folder is dropped and the user is told",
+      "status": "pass",
+      "ms": 301,
+      "evidence": [
+        "native mode → name \"photo.png\"; disclosure: Your sub-folder setting (\"refs\") was ignored: this manager saves through the browser's native anchor-download path, which cannot pick a folder."
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "anchor-fallback-without-grant",
+      "title": "without GM_download the browser downloads the file itself",
+      "status": "pass",
+      "ms": 354,
+      "evidence": [
+        "Pillow: PNG 200x140 from a real Chrome download (photo.png)",
+        "toast: \"Saved photo.png\" — Image · 35 KB · saved through the browser · manager download unavailable (no-grant)",
+        "saved through the anchor fallback: /home/user/save-image-as-type/.tmp-browser/cdp-downloads/p9/photo.png"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "anchor-fallback-on-whitelist-error",
+      "title": "a not_whitelisted manager error falls back instead of losing the file",
+      "status": "pass",
+      "ms": 262,
+      "evidence": [
+        "manager error not_whitelisted → browser download photo.png; message: Saved photo.png Image · 35 KB · saved through the browser · manager download unavailable (not_whitelisted) Output: image/png, 35 KB, 24 ms. Dimensions: 200×140px. Saved through the"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "download-mode-disabled",
+      "title": "downloadMode \"disabled\" never calls GM_download",
+      "status": "pass",
+      "ms": 259,
+      "evidence": [
+        "the script honoured GM_info.downloadMode = \"disabled\" and used the browser path"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "animation-capability-honest",
+      "title": "animated conversion reports what this browser can actually do",
+      "status": "pass",
+      "ms": 147,
+      "evidence": [
+        "Pillow: GIF 50x40 n_frames=4",
+        "animated output verified frame by frame against the source: 4 frames, delays 100/100/100/100 ms, worst channel delta 7",
+        "decoderAvailable=true supportedTypes=[image/gif, image/webp, image/png, image/avif] → frames written: 4",
+        "independent probe: {\"present\":true,\"types\":{\"image/gif\":true,\"image/webp\":true,\"image/png\":true,\"image/avif\":true}}",
+        "toast notes: [\"Animated GIF written with 4 frames at 50×40.\",\"Output: image/gif, 709 B, 29 ms.\",\"Dimensions: 50×40px.\",\"Saved through your userscript manager.\"]"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-inventory-local",
+      "title": "picker inventory, filters, thumbnails and rescan produce no image requests",
+      "status": "pass",
+      "ms": 426,
+      "evidence": [
+        "12 sources; 4 data-URL thumbnails; filters + rescan: zero image requests"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-picker-single-routing",
+      "title": "picker This one saves the selected row in the chosen format",
+      "status": "pass",
+      "ms": 415,
+      "evidence": [
+        "one image → photo.bmp, independent decoder accepted BMP"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-batch-preview-files",
+      "title": "batch dialog previews counts, confirms, then saves each eligible image once",
+      "status": "pass",
+      "ms": 633,
+      "evidence": [
+        "preview 3 images/3 files; saved 3 independently decoded files; 3 files saved — 3/3 images converted · 0.1 MB · 0s"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-zip-multiple-formats",
+      "title": "picker exports two selected images in one independently verified ZIP",
+      "status": "pass",
+      "ms": 463,
+      "evidence": [
+        "Python zipfile+zlib+Pillow: 001-photo-png.png 35341 bytes; 002-opaque-png.png 350 bytes"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-transform-save",
+      "title": "transform dialog resizes 200×140 to 100×70 and saves real PNG pixels",
+      "status": "pass",
+      "ms": 400,
+      "evidence": [
+        "UI readout 200×140 → 100×70 px · resize to 100×70 · saved as PNG · steps: resize to exactly 100×70; independently decoded 100×70 PNG"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-transform-pixel-geometry",
+      "title": "rotate, flip and crop preserve exact coloured quadrant geometry",
+      "status": "pass",
+      "ms": 248,
+      "evidence": [
+        "real canvas → convertImage → PNG → ImageBitmap → readback: {\"w\":2,\"h\":4,\"first\":[255,0,0,255],\"last\":[0,0,255,255],\"flipped\":{\"w\":4,\"h\":2,\"first\":[0,0,255,255],\"last\":[255,0,0,255]},\"cropped\":{\"w\":2,\"h\":2,\"first\":[255,0,0,255],\"last\":[0,0,255,255]}}"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-template-download",
+      "title": "filename tokens reach the actual saved path without unsafe page text",
+      "status": "pass",
+      "ms": 281,
+      "evidence": [
+        "manager received 127.0.0.1-200x140.png"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-preset-host-roundtrip",
+      "title": "per-host preset changes format, template and transform and survives reload",
+      "status": "pass",
+      "ms": 427,
+      "evidence": [
+        "Archive-100x70.webp, 100×70 decoded; preset and quality sentinel preserved after reload"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-comparison-save",
+      "title": "comparison UI shows real encoded sizes then saves the recommended format",
+      "status": "pass",
+      "ms": 445,
+      "evidence": [
+        "png=35341, jpg=3416, webp=1562; recommended webp saved and independently decoded"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-metadata-inspect-strip",
+      "title": "inspector detects real GPS and saves an EXIF-free pixel-identical original",
+      "status": "pass",
+      "ms": 616,
+      "evidence": [
+        "inspector GPS warning → Save stripped → Pillow: EXIF absent; pixels SHA256 8d17165d9417df92db9412813df3e58ec5c771ed3eb80d03a8d9bf2d5777e5cb"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-keyboard-workflow",
+      "title": "hover + shortcut saves without a menu; typing field is left alone; picker shortcut opens UI",
+      "status": "pass",
+      "ms": 474,
+      "evidence": [
+        "real keyboard chord saved exactly one file; ordinary typing no save; picker chord opened dialog"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-clipboard-real",
+      "title": "image clipboard uses real browser permission and PNG bytes, or explains a real refusal",
+      "status": "pass",
+      "ms": 292,
+      "evidence": [
+        "real Chromium clipboard write + readback: image/png, 64×48, 8187 bytes; permission granted explicitly in test"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-multiformat-zip-collisions",
+      "title": "batch encodes multiple formats and resolves colliding templates inside ZIP",
+      "status": "pass",
+      "ms": 477,
+      "evidence": [
+        "same-name.png: PNG; same-name-2.png: PNG; same-name.bmp: BMP; same-name-2.bmp: BMP"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-default-transform",
+      "title": "Make default transform applies to subsequent ordinary saves and batches",
+      "status": "pass",
+      "ms": 623,
+      "evidence": [
+        "single + batch both independently decoded at 100px wide"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-batch-cancel",
+      "title": "cancel stops a running batch without scheduling queued saves or replaying writes",
+      "status": "pass",
+      "ms": 1183,
+      "evidence": [
+        "12-item queue at concurrency 1 cancelled during first write: one in-flight file landed, 11 not started; Batch cancelled — 0/12 images converted · 0s"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-partial-failure-no-replay",
+      "title": "a failed format cannot cause an already-saved sibling output to be retried",
+      "status": "pass",
+      "ms": 569,
+      "evidence": [
+        "one PNG saved, AVIF failed; retry refused partial-item replay with manual recovery explanation"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-clipboard-denied",
+      "title": "explicitly denied clipboard permission gives actionable feedback without a save",
+      "status": "pass",
+      "ms": 279,
+      "evidence": [
+        "real Chrome permission denial → actionable refusal, no file download"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-uncertain-save-no-fallback",
+      "title": "a manager timeout is reported as uncertain without a second browser download",
+      "status": "pass",
+      "ms": 422,
+      "evidence": [
+        "fixture manager timeout → check-downloads warning; one attempt, no fallback/retry (uncertainty simulated, not a real manager timeout)"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "v2-cancel-without-jobbar",
+      "title": "hiding the job bar still leaves an accessible toast Cancel control",
+      "status": "pass",
+      "ms": 762,
+      "evidence": [
+        "showJobBar=false: toast Cancel remained available and stopped the queue"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "no-network-beyond-the-image",
+      "title": "nothing is requested except the fixture origins",
+      "status": "pass",
+      "ms": 568,
+      "evidence": [
+        "requests during one conversion: 9, all to the two fixture origins"
+      ],
+      "attempts": 1,
+      "retriedBecause": null
+    },
+    {
+      "id": "page-untouched",
+      "title": "no page errors, no leaked globals, no page storage used",
+      "status": "fail",
+      "ms": 4,
+      "evidence": [],
+      "attempts": 1,
+      "retriedBecause": null,
+      "error": "only the documented globals exist: __siatE2E, __saveImageAsTypeInitialised, __siatVerificationBootstrap",
+      "diagnostics": {
+        "snapshot": {
+          "url": "http://127.0.0.1:40339/",
+          "scrollY": 0,
+          "menu": {
+            "hidden": true,
+            "items": [
+              "GIF",
+              "PNG",
+              "JPG",
+              "WebP",
+              "BMP",
+              "PDF",
+              "Original",
+              "Copy image to clipboard",
+              "Transform and save…",
+              "Compare formats…",
+              "Inspect metadata",
+              "Browse page images…",
+              "Save all images on this page…",
+              "Settings"
+            ]
+          },
+          "panelDialog": false,
+          "toasts": [
+            {
+              "kind": "success",
+              "title": "Saved opaque.png",
+              "meta": "Image · 350 B · saved through your userscript manager",
+              "notes": [
+                "Output: image/png, 350 B, 26 ms.",
+                "Dimensions: 64×48px.",
+                "Saved through your userscript manager."
+              ]
+            }
+          ],
+          "shimCalls": [
+            {
+              "api": "xmlHttpRequest",
+              "url": "http://127.0.0.1:39147/fixtures/icon.bmp",
+              "responseType": "blob",
+              "headers": {
+                "Accept": "image/*,*/*"
+              }
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/ab2a",
+              "name": "icon.png",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/9215",
+              "name": "still.png",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/8135",
+              "name": "big.png",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/e7af",
+              "name": "opaque.png",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/be18",
+              "name": "Inline SVG target.png",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/1cc5",
+              "name": "animated.gif",
+              "saveAs": false
+            },
+            {
+              "api": "download",
+              "url": "blob:http://127.0.0.1:40339/6e0e",
+              "name": "opaque.png",
+              "saveAs": false
+            }
+          ],
+          "settings": {
+            "cors": true,
+            "bg": true,
+            "formats": [
+              "png",
+              "jpg",
+              "webp",
+              "gif",
+              "bmp",
+              "pdf",
+              "original"
+            ]
+          }
+        },
+        "problems": [],
+        "noise": 5
+      }
+    }
+  ]
+}

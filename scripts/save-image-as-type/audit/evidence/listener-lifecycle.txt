@@ -1,0 +1,93 @@
+TAP version 13
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1632:35)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:165:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1632:35)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:165:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1632:35)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:165:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Object.resolveTarget (file:///home/user/save-image-as-type/src/main.js:1632:35)
+#     at TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/main-bootstrap.test.mjs:165:27)
+#     at async Test.run (node:internal/test_runner/test:797:9)
+#     at async Suite.processPendingSubtests (node:internal/test_runner/test:526:7) undefined
+# Subtest: bootstrap — one instance per document
+    # Subtest: boots, reports ready, and publishes the documented API
+    ok 1 - boots, reports ready, and publishes the documented API
+      ---
+      duration_ms: 52.184815
+      ...
+    # Subtest: no privileged handle is published and page-preseeded roots are ignored
+    ok 2 - no privileged handle is published and page-preseeded roots are ignored
+      ---
+      duration_ms: 8.921343
+      ...
+    # Subtest: a second bootstrap returns the same instance and adds no listeners
+    ok 3 - a second bootstrap returns the same instance and adds no listeners
+      ---
+      duration_ms: 7.357943
+      ...
+    # Subtest: REGRESSION: booting at document-start (no <html> yet) is still seen by a later injection
+    ok 4 - REGRESSION: booting at document-start (no <html> yet) is still seen by a later injection
+      ---
+      duration_ms: 10.523175
+      ...
+    # Subtest: destroy() clears private ownership so the module can boot again cleanly
+    ok 5 - destroy() clears private ownership so the module can boot again cleanly
+      ---
+      duration_ms: 7.263246
+      ...
+    # Subtest: failed construction clears private ownership for a fresh retry
+    ok 6 - failed construction clears private ownership for a fresh retry
+      ---
+      duration_ms: 6.96461
+      ...
+    # Subtest: twenty construct/destroy cycles do not accumulate owned page listeners
+    ok 7 - twenty construct/destroy cycles do not accumulate owned page listeners
+      ---
+      duration_ms: 14.991851
+      ...
+    # Subtest: resolveTarget() reports an image and nothing else
+    ok 8 - resolveTarget() reports an image and nothing else
+      ---
+      duration_ms: 63.416777
+      ...
+    1..8
+ok 1 - bootstrap — one instance per document
+  ---
+  duration_ms: 173.160157
+  type: 'suite'
+  ...
+1..1
+# tests 8
+# suites 1
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 572.956232

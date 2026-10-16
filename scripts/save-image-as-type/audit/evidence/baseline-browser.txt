@@ -1,0 +1,69 @@
+
+> save-image-as-type@2.0.0 test:browser
+> node test/browser/run.mjs
+
+Save Image as Type — browser end-to-end test
+
+  Chrome/131.0.6778.204
+  fixture origin A http://127.0.0.1:35989 · CDN origin B http://127.0.0.1:33997
+
+  PASS  boot-and-register          the artifact boots, registers manager commands and touches nothing else
+  PASS  idle-capability-probe      the idle probe measures real encoders and gates AVIF on the result
+  PASS  idempotent-double-injection injecting the artifact twice does not duplicate UI, listeners or work
+  PASS  shadow-dom-isolation       the UI is encapsulated and page CSS cannot reach it
+  PASS  real-right-click-opens-menu a real right-click opens an accessible menu inside the viewport
+  PASS  keyboard-only-operation    the menu can be driven entirely from the keyboard
+  PASS  shift-yields-native-menu   Shift + right-click leaves the browser menu alone
+  PASS  menu-dismissal             Escape, an outside click and a scroll all close the menu
+  PASS  narrow-viewport-clamping   the menu stays fully visible in a narrow viewport
+  PASS  jpg-to-png                 #same-jpg → PNG, verified by an independent decoder
+  PASS  png-to-jpg                 #same-png → JPG, verified by an independent decoder
+  PASS  png-to-webp                #same-png → WebP, verified by an independent decoder
+  PASS  png-to-gif                 #same-png → GIF, verified by an independent decoder
+  PASS  png-to-bmp                 #same-png → BMP, verified by an independent decoder
+  PASS  alpha-to-bmp-lossless      a transparent PNG → 32-bit BMP keeps alpha exactly
+  PASS  alpha-to-jpg-flattened     a transparent PNG → JPG is flattened onto the chosen background
+  PASS  jpg-to-pdf                 JPG → PDF embeds the image and builds a valid xref
+  PASS  original-passthrough       "Original file" re-saves the exact source bytes
+  PASS  cross-origin-no-cors       a CORS-blocked image is fetched through the manager and converted
+  PASS  cross-origin-with-cors     a CORS-enabled cross-origin image never needs the manager XHR
+  PASS  cross-origin-fetch-disabled with cross-origin fetching turned off the user gets an explanation, not a broken file
+  PASS  no-xhr-grant               without the GM_xmlhttpRequest grant the message says exactly that
+  PASS  lazy-loaded-image          an image that loads on scroll is a working target
+  PASS  spa-rerender               after the node is destroyed and replaced the menu still works
+  PASS  toasts-do-not-obscure      the toast stack never covers or swallows page interaction
+  PASS  iframe-image               an image inside an iframe gets its own working menu
+  PASS  inline-svg-target          an inline SVG is rasterised to PNG
+  PASS  css-background-target      a CSS background image is a target when the setting allows it
+  PASS  broken-image-error         an image that 404s produces an actionable error, not a hang
+  PASS  settings-panel-and-persistence the panel saves settings that survive a reload
+  PASS  filename-settings          prefix, sub-folder and max length are applied to the saved name
+  PASS  subfolder-needs-browser-mode in native download mode the sub-folder is dropped and the user is told
+  PASS  anchor-fallback-without-grant without GM_download the browser downloads the file itself
+  PASS  anchor-fallback-on-whitelist-error a not_whitelisted manager error falls back instead of losing the file
+  PASS  download-mode-disabled     downloadMode "disabled" never calls GM_download
+  PASS  animation-capability-honest animated conversion reports what this browser can actually do
+  PASS  v2-inventory-local         picker inventory, filters, thumbnails and rescan produce no image requests
+  PASS  v2-picker-single-routing   picker This one saves the selected row in the chosen format
+  PASS  v2-batch-preview-files     batch dialog previews counts, confirms, then saves each eligible image once
+  PASS  v2-zip-multiple-formats    picker exports two selected images in one independently verified ZIP
+  PASS  v2-transform-save          transform dialog resizes 200×140 to 100×70 and saves real PNG pixels
+  PASS  v2-transform-pixel-geometry rotate, flip and crop preserve exact coloured quadrant geometry
+  PASS  v2-template-download       filename tokens reach the actual saved path without unsafe page text
+  PASS  v2-preset-host-roundtrip   per-host preset changes format, template and transform and survives reload
+  PASS  v2-comparison-save         comparison UI shows real encoded sizes then saves the recommended format
+  PASS  v2-metadata-inspect-strip  inspector detects real GPS and saves an EXIF-free pixel-identical original
+  PASS  v2-keyboard-workflow       hover + shortcut saves without a menu; typing field is left alone; picker shortcut opens UI
+  PASS  v2-clipboard-real          image clipboard uses real browser permission and PNG bytes, or explains a real refusal
+  PASS  v2-multiformat-zip-collisions batch encodes multiple formats and resolves colliding templates inside ZIP
+  PASS  v2-default-transform       Make default transform applies to subsequent ordinary saves and batches
+  PASS  v2-batch-cancel            cancel stops a running batch without scheduling queued saves or replaying writes
+  PASS  v2-partial-failure-no-replay a failed format cannot cause an already-saved sibling output to be retried
+  PASS  v2-clipboard-denied        explicitly denied clipboard permission gives actionable feedback without a save
+  PASS  v2-uncertain-save-no-fallback a manager timeout is reported as uncertain without a second browser download
+  PASS  v2-cancel-without-jobbar   hiding the job bar still leaves an accessible toast Cancel control
+  PASS  no-network-beyond-the-image nothing is requested except the fixture origins
+  PASS  page-untouched             no page errors, no leaked globals, no page storage used
+
+57 passed, 0 failed, 0 skipped (57 scenarios)
+report: /home/user/save-image-as-type/.tmp-browser/report.json

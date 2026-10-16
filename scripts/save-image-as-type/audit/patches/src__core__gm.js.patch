@@ -1,0 +1,13 @@
+--- src/core/gm.js (before)
++++ src/core/gm.js (after)
+@@ -186,7 +186,9 @@
+     downloadMode: String((info && info.downloadMode) || 'unknown'),
+     scriptVersion: String((info && info.script && info.script.version) || ''),
+     injectInto: String((info && (info.injectInto || (info.script && info.script.injectInto))) || ''),
+-    sandboxed: Boolean(info && info.script && info.script['run-at'] !== undefined) || Boolean(info),
++    // A manager's injection label is not proof of an isolation boundary.
++    // null means not independently observed; never manufacture a reassuring yes.
++    sandboxed: null,
+     capabilities: {
+       storage: typeof getValue === 'function' && typeof setValue === 'function',
+       xhr: typeof xhr === 'function',

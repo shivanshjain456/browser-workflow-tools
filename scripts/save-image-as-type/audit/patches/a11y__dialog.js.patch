@@ -1,0 +1,139 @@
+--- src/ui/dialog.js (before)
++++ src/ui/dialog.js (after)
+@@ -1,10 +1,11 @@
++import { ACCESSIBILITY_STYLE } from './accessibility.js';
+ /**
+  * Shared modal-dialog kit.
+  *
+  * Every dialog this script shows (settings, image picker, transform, format
+  * comparison, metadata inspector, batch confirmation, shortcut help) needs the
+  * same shell: a shadow
+- * root the page cannot style or read, a backdrop, role="dialog" + aria-modal, a
++ * root for stylesheet isolation (open roots are page-readable), a backdrop, role="dialog" + aria-modal, a
+  * focus trap, Escape to close, focus restored to whatever had it before, and the
+  * same visual language. Building that five times is how dialogs drift apart, so
+  * it lives here once.
+@@ -28,7 +29,7 @@
+   width: min(680px, 100%); max-height: min(88vh, 780px); overflow: auto; overscroll-behavior: contain;
+   background: #fff; color: #16181d; border-radius: 14px;
+   border: 1px solid rgba(0,0,0,.14); box-shadow: 0 24px 60px rgba(0,0,0,.4);
+-  font: 13.5px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
++  font: max(0.84375rem, 13.5px)/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+ }
+ .siat-dialog[data-width="wide"] { width: min(980px, 100%); }
+ .siat-dialog[data-width="narrow"] { width: min(460px, 100%); }
+@@ -40,11 +41,11 @@
+   padding: 14px 16px; background: inherit; border-bottom: 1px solid rgba(127,127,127,.25);
+ }
+ .siat-dialog-titles { flex: 1 1 auto; min-width: 0; }
+-.siat-dialog-title { font-size: 15px; font-weight: 680; margin: 0; }
+-.siat-dialog-subtitle { font-size: 12px; color: #5c6472; margin: 2px 0 0; overflow-wrap: anywhere; }
++.siat-dialog-title { font-size: max(0.9375rem, 15px); font-weight: 680; margin: 0; }
++.siat-dialog-subtitle { font-size: max(0.75rem, 12px); color: #5c6472; margin: 2px 0 0; overflow-wrap: anywhere; }
+ @media (prefers-color-scheme: dark) { .siat-dialog-subtitle { color: #a3acbb; } }
+ .siat-icon-btn {
+-  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 20px;
++  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: max(1.25rem, 20px);
+   line-height: 1; padding: 4px 8px; border-radius: 8px; flex: 0 0 auto;
+ }
+ .siat-icon-btn:hover { background: rgba(127,127,127,.18); }
+@@ -56,8 +57,8 @@
+ .siat-body { padding: 4px 16px 16px; }
+ .siat-section { border: 0; padding: 12px 0 4px; margin: 0; border-bottom: 1px solid rgba(127,127,127,.2); }
+ .siat-section:last-of-type { border-bottom: 0; }
+-.siat-legend { font-weight: 680; font-size: 13px; padding: 0; margin-bottom: 8px; }
+-.siat-desc { color: #5c6472; font-size: 12px; margin: -4px 0 10px; }
++.siat-legend { font-weight: 680; font-size: max(0.8125rem, 13px); padding: 0; margin-bottom: 8px; }
++.siat-desc { color: #5c6472; font-size: max(0.75rem, 12px); margin: -4px 0 10px; }
+ @media (prefers-color-scheme: dark) { .siat-desc { color: #a3acbb; } }
+ .siat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 6px 14px; }
+ .siat-check {
+@@ -67,28 +68,28 @@
+ .siat-check input { margin-top: 2px; flex: 0 0 auto; }
+ .siat-check-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+ .siat-check-label { font-weight: 620; }
+-.siat-check-hint { color: #5c6472; font-size: 11.5px; }
++.siat-check-hint { color: #5c6472; font-size: max(0.75rem, 12px); }
+ @media (prefers-color-scheme: dark) { .siat-check-hint { color: #a3acbb; } }
+ .siat-check[data-unavailable="true"] { opacity: .55; }
+ .siat-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+-.siat-field > label { font-weight: 620; font-size: 12.5px; }
++.siat-field > label { font-weight: 620; font-size: max(0.78125rem, 12.5px); }
+ .siat-field input[type="text"], .siat-field input[type="number"], .siat-field input[type="search"], .siat-field select {
+   font: inherit; padding: 7px 9px; border-radius: 8px; color: inherit;
+   border: 1px solid rgba(127,127,127,.45); background: rgba(127,127,127,.06); max-width: 320px;
+ }
+-.siat-field small { color: #5c6472; font-size: 11.5px; }
++.siat-field small { color: #5c6472; font-size: max(0.75rem, 12px); }
+ @media (prefers-color-scheme: dark) { .siat-field small { color: #a3acbb; } }
+ .siat-radios { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+ .siat-radio { display: flex; gap: 6px; align-items: center; padding: 4px 6px; border-radius: 8px; cursor: pointer; }
+ .siat-radio:hover { background: rgba(127,127,127,.1); }
+ .siat-banner {
+-  margin: 10px 0 0; padding: 9px 11px; border-radius: 9px; font-size: 12.5px;
++  margin: 10px 0 0; padding: 9px 11px; border-radius: 9px; font-size: max(0.78125rem, 12.5px);
+   background: rgba(214,158,46,.14); border: 1px solid rgba(214,158,46,.5);
+ }
+ .siat-banner[data-kind="error"] { background: rgba(180,35,42,.14); border-color: rgba(180,35,42,.55); }
+ .siat-banner[data-kind="ok"] { background: rgba(26,127,55,.14); border-color: rgba(26,127,55,.5); }
+ .siat-banner ul { margin: 6px 0 0; padding-left: 18px; }
+-.siat-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
++.siat-table { width: 100%; border-collapse: collapse; font-size: max(0.78125rem, 12.5px); }
+ .siat-table th, .siat-table td { text-align: left; padding: 5px 8px 5px 0; border-bottom: 1px solid rgba(127,127,127,.2); }
+ .siat-table th { font-weight: 620; color: #5c6472; }
+ .siat-table td[data-num="true"] { text-align: right; font-variant-numeric: tabular-nums; }
+@@ -102,14 +103,14 @@
+ }
+ .siat-spacer { flex: 1 1 auto; }
+ .siat-btn {
+-  font: inherit; font-size: 12.5px; padding: 8px 13px; border-radius: 9px; cursor: pointer;
++  font: inherit; font-size: max(0.78125rem, 12.5px); padding: 8px 13px; border-radius: 9px; cursor: pointer;
+   border: 1px solid rgba(127,127,127,.45); background: rgba(127,127,127,.08); color: inherit;
+ }
+ .siat-btn[data-variant="primary"] { background: #2f6fdb; border-color: #2f6fdb; color: #fff; font-weight: 620; }
+ .siat-btn[data-variant="danger"] { background: rgba(180,35,42,.9); border-color: rgba(180,35,42,.9); color: #fff; font-weight: 620; }
+ .siat-btn:hover { filter: brightness(1.06); }
+ .siat-btn:disabled { opacity: .5; cursor: default; filter: none; }
+-.siat-note { font-size: 11.5px; color: #5c6472; }
++.siat-note { font-size: max(0.75rem, 12px); color: #5c6472; }
+ @media (prefers-color-scheme: dark) { .siat-note { color: #a3acbb; } }
+ .siat-live { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+ .siat-listbox { list-style: none; margin: 0; padding: 0; max-height: 46vh; overflow: auto; }
+@@ -129,16 +130,16 @@
+ }
+ .siat-row-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+ .siat-row-title { font-weight: 620; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+-.siat-row-meta { font-size: 11.5px; color: #5c6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
++.siat-row-meta { font-size: max(0.75rem, 12px); color: #5c6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ @media (prefers-color-scheme: dark) { .siat-row-meta { color: #a3acbb; } }
+ .siat-badge {
+-  display: inline-block; padding: 1px 6px; border-radius: 999px; font-size: 10.5px; font-weight: 650;
++  display: inline-block; padding: 1px 6px; border-radius: 999px; font-size: max(0.75rem, 12px); font-weight: 650;
+   background: rgba(127,127,127,.18); border: 1px solid rgba(127,127,127,.3);
+ }
+ .siat-badge[data-tone="warn"] { background: rgba(214,158,46,.2); border-color: rgba(214,158,46,.55); }
+ .siat-badge[data-tone="bad"] { background: rgba(180,35,42,.18); border-color: rgba(180,35,42,.5); }
+ .siat-badge[data-tone="good"] { background: rgba(26,127,55,.18); border-color: rgba(26,127,55,.5); }
+-.siat-empty { padding: 26px 12px; text-align: center; color: #5c6472; font-size: 12.5px; }
++.siat-empty { padding: 26px 12px; text-align: center; color: #5c6472; font-size: max(0.78125rem, 12.5px); }
+ @media (prefers-color-scheme: dark) { .siat-empty { color: #a3acbb; } }
+ .siat-preview {
+   display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px;
+@@ -358,7 +359,7 @@
+     host.setAttribute('data-siat', marker);
+     shadow = host.attachShadow({ mode: 'open' });
+     const style = doc.createElement('style');
+-    style.textContent = DIALOG_STYLE + (options.extraStyle || '');
++    style.textContent = DIALOG_STYLE + (options.extraStyle || '') + ACCESSIBILITY_STYLE;
+     shadow.appendChild(style);
+     liveRegion = dialogEl(doc, 'div', { className: 'siat-live', attrs: { 'aria-live': 'polite', role: 'status' } });
+     shadow.appendChild(liveRegion);
+@@ -472,7 +473,7 @@
+       /* noop */
+     }
+     const style = doc.createElement('style');
+-    style.textContent = DIALOG_STYLE + (options.extraStyle || '');
++    style.textContent = DIALOG_STYLE + (options.extraStyle || '') + ACCESSIBILITY_STYLE;
+     shadow.appendChild(style);
+     liveRegion = dialogEl(doc, 'div', { className: 'siat-live', attrs: { 'aria-live': 'polite', role: 'status' } });
+     shadow.appendChild(liveRegion);

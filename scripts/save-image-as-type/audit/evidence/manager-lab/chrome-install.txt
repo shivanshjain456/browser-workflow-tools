@@ -1,0 +1,2 @@
+
+chrome@155.0.8059.84 /home/user/save-image-as-type/.local/manager-lab/browsers/chrome/linux-155.0.8059.84/chrome-linux64/chrome

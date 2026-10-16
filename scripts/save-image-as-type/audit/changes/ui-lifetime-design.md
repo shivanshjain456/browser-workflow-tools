@@ -1,0 +1,9 @@
+# G-19 / G-16 owned lifetime and frame-command policy
+
+Before code changes: three added long-press tests FAIL on the existing candidate (`touch-before.txt`,31/34), demonstrating pending timeout opens after detach, completed hold leaves transient handlers until pointerup, and successive pointerdowns without release accumulate listeners. This is owned-UI lifetime evidence, not all-modal certification.
+
+Approaches: (A) replace all listeners with AbortController per UI/session; (B) retain the existing explicit listener/disposer pattern and own exactly one long-press release closure, called on replacement, completion, cancellation, blur/dismiss and detach. Choose B: smaller change, no dependency on signal-capable listener options, preserves cached guarded-handler identity. The closure must clear its own timer, not another session's timer.
+
+Frame commands: (A) @noframes suppresses existing conversion support in embedded documents; (B) keep document-local context menus/shortcuts but register manager commands only in the top frame. Choose B. Existing eight top-level commands unchanged; embedded image conversion remains available. No cross-origin DOM crawling/message broker or new permission. @run-at document-start remains deliberate for early interaction interception; idle startup pixel-probe scheduling is separately unresolved. A child frame is not a separate menu-command namespace.
+
+Independent-copy interaction: consider cancelation-aware handling and owned live-DOM checks vs public expando ownership. Do NOT restore page-writable bootstrap ownership markers or shared capability handles. Any event-only arbitration is not global authenticated ownership, and does not reduce the number of GM registration calls in a fake manager. No release-acceptance gate may be cleared on that basis alone.

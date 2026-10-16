@@ -1,0 +1,68 @@
+{
+  "baselineMd5": "ed285e423b3e85b5da38e9798423581c",
+  "candidateSha256": "8c79c782c7aa8be156a069c1b4a1e53220129043b6510bed041aa1b5accb34e3",
+  "settingsKeys": 49,
+  "originalSettingsKeys": 48,
+  "addedSettingsKeys": [
+    "profiles"
+  ],
+  "formats": [
+    "png",
+    "jpg",
+    "webp",
+    "gif",
+    "bmp",
+    "pdf",
+    "avif",
+    "original"
+  ],
+  "actions": {
+    "copy": {
+      "label": "Copy image to clipboard",
+      "hint": "Copies a PNG (or the original bytes) for pasting into another app."
+    },
+    "transform": {
+      "label": "Transform and save…",
+      "hint": "Resize, crop, rotate or flip before saving."
+    },
+    "compare": {
+      "label": "Compare formats…",
+      "hint": "Encodes the image several ways and shows which file is smallest."
+    },
+    "inspect": {
+      "label": "Inspect metadata",
+      "hint": "Shows embedded EXIF/XMP/ICC data, including any GPS coordinates."
+    },
+    "browse": {
+      "label": "Browse page images…",
+      "hint": "Lists every image on the page with size, type and state."
+    },
+    "batch": {
+      "label": "Save all images on this page…",
+      "hint": "Converts the whole page in one run, with progress and cancel."
+    }
+  },
+  "shortcuts": {
+    "quickSave": "Alt+Shift+S",
+    "copyImage": "Alt+Shift+C",
+    "openPicker": "Alt+Shift+P",
+    "saveAll": "Alt+Shift+A",
+    "cancelJob": "Alt+Shift+X"
+  },
+  "baselineAndCandidateDefaultsIdentical": true,
+  "formatRegistryAndActionDefinitionsIdentical": true,
+  "grants": [
+    "GM_info",
+    "GM_getValue",
+    "GM_setValue",
+    "GM_addValueChangeListener",
+    "GM_removeValueChangeListener",
+    "GM_deleteValue",
+    "GM_xmlhttpRequest",
+    "GM_download",
+    "GM_registerMenuCommand",
+    "GM_notification"
+  ],
+  "grantsAdded": 0,
+  "scope": "Offline original pure-data extraction compared to current source imports; manager commands and migrations tested separately"
+}

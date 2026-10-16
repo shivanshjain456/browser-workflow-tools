@@ -1,0 +1,45 @@
+{
+  "sourceSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "node": "v22.22.2",
+  "groups": [
+    {
+      "group": "acquisition-contract",
+      "patch": "audit/patches/group-acquisition-contract.patch",
+      "remainingTestsPassed": 569,
+      "lint": 27,
+      "build": true,
+      "reversedFiles": [
+        "src/core/raster.js",
+        "src/core/source.js",
+        "test/unit/core-acquisition.test.mjs"
+      ],
+      "scope": "Rollback source and its own tests only; all other groups retained; unit corpus includes original pinned byte goldens; no claim the removed feature still works"
+    },
+    {
+      "group": "long-press-lifetime",
+      "patch": "audit/patches/group-long-press-lifetime.patch",
+      "remainingTestsPassed": 574,
+      "lint": 27,
+      "build": true,
+      "reversedFiles": [
+        "src/ui/menu.js",
+        "test/unit/ui-menu.test.mjs"
+      ],
+      "scope": "Rollback source and its own tests only; all other groups retained; unit corpus includes original pinned byte goldens; no claim the removed feature still works"
+    },
+    {
+      "group": "top-frame-commands",
+      "patch": "audit/patches/group-top-frame-commands.patch",
+      "remainingTestsPassed": 576,
+      "lint": 27,
+      "build": true,
+      "reversedFiles": [
+        "src/main.js",
+        "src/entry.js",
+        "test/unit/main-bootstrap.test.mjs"
+      ],
+      "scope": "Rollback source and its own tests only; all other groups retained; unit corpus includes original pinned byte goldens; no claim the removed feature still works"
+    }
+  ],
+  "earlierHardeningGroups": "not certified by this tool"
+}

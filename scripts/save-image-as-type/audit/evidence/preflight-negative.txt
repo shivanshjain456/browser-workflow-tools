@@ -1,0 +1,32 @@
+{
+  "node": "v20.20.2",
+  "checks": [
+    {
+      "tool": "jsdom",
+      "ok": true
+    },
+    {
+      "tool": "puppeteer",
+      "ok": true
+    },
+    {
+      "tool": "independent-codecs",
+      "ok": false,
+      "result": "",
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import json,sys,PIL,pypdf;from PIL import features;assert features.check('webp');print(json.dumps({'python':sys.version.split()[0],'Pillow':PIL.__version__,'pypdf':pypdf.__version__,'webp':True}))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'pypdf'"
+    },
+    {
+      "tool": "file(1)",
+      "ok": true,
+      "result": "file-5.46"
+    },
+    {
+      "tool": "Chrome executable/libraries",
+      "ok": true,
+      "binary": "/home/user/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome"
+    }
+  ]
+}
+
+
+exit=1

@@ -1,0 +1,2 @@
+PASS: candidate attacks, production single-save, UI preferences, instrumented fixture regression.
+RELEASE BLOCKED: separate execution duplicates command registration; remaining S1 work and real-manager matrix are incomplete. Passing these assertions is NOT Definition of Done.

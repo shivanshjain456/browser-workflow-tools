@@ -1,0 +1,203 @@
+TAP version 13
+# Subtest: audit — own-data configuration ingress
+    # Subtest: never invokes getters, inherits fields or carries prototype-control keys
+    ok 1 - never invokes getters, inherits fields or carries prototype-control keys
+      ---
+      duration_ms: 2.130332
+      ...
+    # Subtest: JSON magic keys cannot change migration or schema prototypes
+    ok 2 - JSON magic keys cannot change migration or schema prototypes
+      ---
+      duration_ms: 0.851815
+      ...
+    # Subtest: deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+    ok 3 - deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+      ---
+      duration_ms: 2.311847
+      ...
+    # Subtest: every setting field withstands object/array/scalar confusion without throwing
+    ok 4 - every setting field withstands object/array/scalar confusion without throwing
+      ---
+      duration_ms: 10.674784
+      ...
+    # Subtest: text limit is checked before parsing an oversized file
+    ok 5 - text limit is checked before parsing an oversized file
+      ---
+      duration_ms: 0.546425
+      ...
+    # Subtest: manager load, remote change and save patch share the same boundary
+    ok 6 - manager load, remote change and save patch share the same boundary
+      ---
+      duration_ms: 1.333453
+      ...
+    1..6
+ok 1 - audit — own-data configuration ingress
+  ---
+  duration_ms: 19.354324
+  type: 'suite'
+  ...
+# Subtest: audit — reserved names and final byte budgets
+    # Subtest: neutralises CON
+    ok 1 - neutralises CON
+      ---
+      duration_ms: 0.702177
+      ...
+    # Subtest: neutralises nul.png
+    ok 2 - neutralises nul.png
+      ---
+      duration_ms: 0.215614
+      ...
+    # Subtest: neutralises con.txt.txt
+    ok 3 - neutralises con.txt.txt
+      ---
+      duration_ms: 0.283731
+      ...
+    # Subtest: neutralises PRN.pdf
+    ok 4 - neutralises PRN.pdf
+      ---
+      duration_ms: 0.149722
+      ...
+    # Subtest: neutralises AUX.a.b
+    ok 5 - neutralises AUX.a.b
+      ---
+      duration_ms: 0.101782
+      ...
+    # Subtest: neutralises COM1.jpeg
+    ok 6 - neutralises COM1.jpeg
+      ---
+      duration_ms: 0.160872
+      ...
+    # Subtest: neutralises LPT9.tar.png
+    ok 7 - neutralises LPT9.tar.png
+      ---
+      duration_ms: 0.102461
+      ...
+    # Subtest: neutralises COM¹.png
+    ok 8 - neutralises COM¹.png
+      ---
+      duration_ms: 0.17418
+      ...
+    # Subtest: neutralises LPT².bmp
+    ok 9 - neutralises LPT².bmp
+      ---
+      duration_ms: 0.124464
+      ...
+    # Subtest: neutralises CONIN$.txt
+    ok 10 - neutralises CONIN$.txt
+      ---
+      duration_ms: 0.219241
+      ...
+    # Subtest: neutralises CONOUT$.png
+    ok 11 - neutralises CONOUT$.png
+      ---
+      duration_ms: 0.151118
+      ...
+    # Subtest: non-reserved device-like stems stay unchanged
+    ok 12 - non-reserved device-like stems stay unchanged
+      ---
+      duration_ms: 0.229683
+      ...
+    # Subtest: post-truncation device stems cannot reappear
+    ok 13 - post-truncation device stems cannot reappear
+      ---
+      duration_ms: 0.475599
+      ...
+    # Subtest: minimum multibyte stem budget never emits only extension
+    ok 14 - minimum multibyte stem budget never emits only extension
+      ---
+      duration_ms: 0.374951
+      ...
+    1..14
+ok 2 - audit — reserved names and final byte budgets
+  ---
+  duration_ms: 4.085036
+  type: 'suite'
+  ...
+# Subtest: audit — honest environment and startup funnel
+    # Subtest: isolation unknown for unverified metadata 
+    ok 1 - isolation unknown for unverified metadata 
+      ---
+      duration_ms: 0.555284
+      ...
+    # Subtest: isolation unknown for unverified metadata auto
+    ok 2 - isolation unknown for unverified metadata auto
+      ---
+      duration_ms: 0.240935
+      ...
+    # Subtest: isolation unknown for unverified metadata page
+    ok 3 - isolation unknown for unverified metadata page
+      ---
+      duration_ms: 0.113289
+      ...
+    # Subtest: isolation unknown for unverified metadata content
+    ok 4 - isolation unknown for unverified metadata content
+      ---
+      duration_ms: 0.084646
+      ...
+    # Subtest: isolation unknown for unverified metadata sandbox
+    ok 5 - isolation unknown for unverified metadata sandbox
+      ---
+      duration_ms: 0.074399
+      ...
+    # Subtest: a rejected startup promise is reported once without escaping
+    ok 6 - a rejected startup promise is reported once without escaping
+      ---
+      duration_ms: 0.381099
+      ...
+    # Subtest: broken reporter does not turn contained failure into unhandled rejection
+    ok 7 - broken reporter does not turn contained failure into unhandled rejection
+      ---
+      duration_ms: 0.300619
+      ...
+    1..7
+ok 3 - audit — honest environment and startup funnel
+  ---
+  duration_ms: 2.043646
+  type: 'suite'
+  ...
+# Subtest: audit — deterministic encoder bytes pinned to audited original
+    # Subtest: alpha.bmp
+    ok 1 - alpha.bmp
+      ---
+      duration_ms: 0.88819
+      ...
+    # Subtest: odd.bmp
+    ok 2 - odd.bmp
+      ---
+      duration_ms: 0.270515
+      ...
+    # Subtest: static.gif
+    ok 3 - static.gif
+      ---
+      duration_ms: 0.193492
+      ...
+    # Subtest: animated.gif
+    ok 4 - animated.gif
+      ---
+      duration_ms: 0.118546
+      ...
+    # Subtest: single.pdf
+    ok 5 - single.pdf
+      ---
+      duration_ms: 0.223348
+      ...
+    # Subtest: unicode.zip
+    ok 6 - unicode.zip
+      ---
+      duration_ms: 0.158987
+      ...
+    1..6
+ok 4 - audit — deterministic encoder bytes pinned to audited original
+  ---
+  duration_ms: 2.094107
+  type: 'suite'
+  ...
+1..4
+# tests 33
+# suites 4
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 180.042935

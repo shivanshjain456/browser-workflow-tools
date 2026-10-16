@@ -1,0 +1,128 @@
+--- src/main.js (before)
++++ src/main.js (after)
+@@ -3,13 +3,13 @@
+  *
+  * Runs at document-start, which means almost nothing may happen eagerly: the
+  * only work done before the first interaction is attaching listeners. Settings,
+- * encoder probes and DOM creation are deferred, so the script adds no measurable
+- * cost to page load, and the listeners live on `document` rather than on
++ * encoder probes and DOM creation are deferred, so it does not intentionally add
++ * heavy pixel work to page load, and the listeners live on `document` rather than on
+  * elements, so SPA re-renders and route changes cannot orphan them.
+  *
+- * Injection is idempotent: a manager can legitimately inject twice (page +
+- * iframe reuse, or a manual re-run), and the guard below makes the second run a
+- * no-op instead of a second menu.
++ * Repeated bootstrap calls within one module are idempotent. Independently
++ * evaluated copies / multiple managers are not authenticated peers: a shared
++ * DOM marker is deliberately not trusted for ownership or privileged APIs.
+  *
+  * This module is the only place that knows about both the manager adapter and
+  * the UI: every feature (single conversion, batch run, picker, transform,
+@@ -58,7 +58,10 @@
+ import { createShortcutHelp } from './ui/help.js';
+ import { createBatchDialog } from './ui/batch-dialog.js';
+ 
+-const INIT_FLAG = '__saveImageAsTypeInitialised';
++// Private ownership: never put manager capabilities on page-controlled roots.
++// This registry deduplicates callers of THIS module, not independently evaluated
++// copies or different managers. Those are explicitly unverified configurations.
++const bootstrapInstances = new WeakMap();
+ const JOB_TOAST_ID = 'siat-job';
+ const BATCH_TOAST_ID = 'siat-batch';
+ /** Bytes buffered for an archive before the run falls back to separate files. */
+@@ -69,28 +72,10 @@
+   const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
+   if (!doc || !win) return null;
+ 
+-  // Idempotency: exactly one instance per document, however often the script is
+-  // injected (installed in two managers at once, re-run after a soft navigation,
+-  // or loaded twice). At `document-start` there is usually no <html> element
+-  // yet, so the marker has to be written to every root that exists *and* read
+-  // back from all of them: a marker written only on the Document was invisible
+-  // to a later injection, which then booted a second instance with a second set
+-  // of listeners — every right-click produced two conversions and two files.
+-  const markerRoots = () => [doc, doc.documentElement, doc.body, win].filter(Boolean);
+-  const existing = markerRoots().map((root) => root[INIT_FLAG]).find(Boolean);
+-  if (existing) {
+-    // Back-fill: <html>/<body> usually did not exist yet when the instance
+-    // booted at document-start, so a root added later gets the marker too.
+-    for (const root of markerRoots()) {
+-      if (!root[INIT_FLAG]) root[INIT_FLAG] = existing;
+-    }
+-    return existing;
+-  }
+-
+-  // Published before any await so a second injection during boot sees it. The
+-  // real API is copied onto this object at the end; `ready` says when.
++  const existing = bootstrapInstances.get(doc);
++  if (existing) return existing;
+   const api = { ready: false };
+-  for (const root of markerRoots()) root[INIT_FLAG] = api;
++  bootstrapInstances.set(doc, api);
+ 
+   const gm = options.gm || getGm();
+   const store = options.settingsStore || createSettingsStore({ gm });
+@@ -1677,7 +1662,7 @@
+       toaster.destroy();
+       store.dispose();
+       revokeAllPending();
+-      for (const markerRoot of markerRoots()) delete markerRoot[INIT_FLAG];
++      bootstrapInstances.delete(doc);
+     },
+   };
+ 
+@@ -1720,14 +1705,12 @@
+   win.addEventListener('pagehide', onPageHide, { once: true });
+   disposers.push(() => win.removeEventListener('pagehide', onPageHide));
+ 
+-  // Copy the API onto the object that was published before boot, keeping
+-  // getters live (`paused` changes over time), then mark every root that exists
+-  // now — <html> and <body> were typically missing at document-start.
++  // This API is returned only to trusted source-module callers. Production
++  // entry discards it; offline verification imports this module explicitly.
+   for (const key of Reflect.ownKeys(instance)) {
+     Object.defineProperty(api, key, Object.getOwnPropertyDescriptor(instance, key));
+   }
+   api.ready = true;
+-  for (const root of markerRoots()) root[INIT_FLAG] = api; // same-world handle for tests and support
+   return api;
+ }
+ 
+@@ -1738,21 +1721,21 @@
+  */
+ export const SCRIPT_VERSION_REPORTED = '__SIAT_BUILD_VERSION__';
+ 
+-/* Self-start unless a test harness imports this module for its exports only. */
+-const isTestHarness =
+-  (typeof globalThis !== 'undefined' && globalThis.__SIAT_NO_AUTOBOOT) ||
+-  (typeof document !== 'undefined' && document.documentElement && document.documentElement.hasAttribute('data-siat-no-autoboot'));
+-
+-if (!isTestHarness) {
++/**
++ * Owned startup funnel. Catch the async result, not just synchronous throws.
++ * An injected reporter is a trusted verifier dependency; production uses the
++ * local console only on startup failure. Host-page errors are never collected.
++ */
++export async function startProduction(start = bootstrap, report = reportStartupFailure) {
+   try {
+-    bootstrap();
+-  } catch (err) {
+-    // Never break the host page: report and stop.
+-    try {
+-      // eslint-disable-next-line no-console
+-      console.error('[Save Image as Type] failed to start:', err && err.message ? err.message : err);
+-    } catch {
+-      /* noop */
+-    }
++    return await start();
++  } catch (error) {
++    try { report(error); } catch { /* a reporter must not reject into the page */ }
++    return null;
+   }
+ }
++function reportStartupFailure(error) {
++  try {
++    console.error('[Save Image as Type] failed to start:', error && error.message ? error.message : error);
++  } catch { /* console may not exist in a manager sandbox */ }
++}

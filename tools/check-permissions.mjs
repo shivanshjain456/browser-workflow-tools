@@ -54,6 +54,14 @@ const SCRIPT_POLICIES = {
     clipboard: 'Intercepts and sanitizes YouTube share URLs written to clipboard (stripping tracking params)',
     automatic: 'Real-time clipboard sanitization on YouTube share button clicks',
     disclosure: 'Tampermonkey menu command for settings, console diagnostics when enabled'
+  },
+  'save-image-as-type': {
+    name: 'Save Image as Type',
+    authenticated: 'No (processes images and canvas elements entirely in local memory)',
+    persisted: 'GM storage: format preferences, quality, batch/ZIP options, transforms, keyboard shortcuts',
+    clipboard: 'Writes converted image data URLs or image blobs to clipboard upon user export selection',
+    automatic: 'None (only executes on explicit user context menu selection, shortcut, or batch action)',
+    disclosure: 'Custom context menu, settings modal, batch picker dialog, toast notifications'
   }
 };
 

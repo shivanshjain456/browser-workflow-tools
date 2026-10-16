@@ -1,0 +1,352 @@
+TAP version 13
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Error: Not implemented: window.getComputedStyle(elt, pseudoElt)
+#     at module.exports (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+#     at window.getComputedStyle (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/browser/Window.js:895:7)
+#     at findBackgroundImage (file:///home/user/save-image-as-type/src/core/source.js:113:24)
+#     at resolveImageTarget (file:///home/user/save-image-as-type/src/core/source.js:93:19)
+#     at Document.onContextMenu (file:///home/user/save-image-as-type/src/ui/menu.js:434:20)
+#     at Document.wrapped (file:///home/user/save-image-as-type/src/ui/events.js:27:20)
+#     at Document.callTheUserObjectsOperation (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+#     at innerInvokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+#     at invokeEventListeners (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+#     at HTMLDivElementImpl._dispatch (/home/user/save-image-as-type/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:217:9) undefined
+# Subtest: context menu — opening rules
+    # Subtest: a right-click on an image opens a shadow-DOM menu and suppresses the native one
+    ok 1 - a right-click on an image opens a shadow-DOM menu and suppresses the native one
+      ---
+      duration_ms: 80.941819
+      ...
+    # Subtest: a right-click that is not on an image leaves the native menu alone
+    ok 2 - a right-click that is not on an image leaves the native menu alone
+      ---
+      duration_ms: 37.731233
+      ...
+    # Subtest: Shift + right-click always yields the native menu (documented escape hatch)
+    ok 3 - Shift + right-click always yields the native menu (documented escape hatch)
+      ---
+      duration_ms: 7.861547
+      ...
+    # Subtest: requireShift inverts the rule: plain right-click is native, Shift opens ours
+    ok 4 - requireShift inverts the rule: plain right-click is native, Shift opens ours
+      ---
+      duration_ms: 31.062846
+      ...
+    # Subtest: interceptContextMenu:false disables the menu entirely
+    ok 5 - interceptContextMenu:false disables the menu entirely
+      ---
+      duration_ms: 8.051819
+      ...
+    # Subtest: target kinds: CSS background (only when enabled) and inline SVG
+    ok 6 - target kinds: CSS background (only when enabled) and inline SVG
+      ---
+      duration_ms: 26.108906
+      ...
+    # Subtest: two instances never produce two host elements
+    ok 7 - two instances never produce two host elements
+      ---
+      duration_ms: 16.817028
+      ...
+    1..7
+ok 1 - context menu — opening rules
+  ---
+  duration_ms: 209.792684
+  type: 'suite'
+  ...
+# Subtest: context menu — keyboard operation
+    # Subtest: focus starts on the first item and arrow keys wrap around
+    ok 1 - focus starts on the first item and arrow keys wrap around
+      ---
+      duration_ms: 13.499072
+      ...
+    # Subtest: Tab is trapped inside the open menu
+    ok 2 - Tab is trapped inside the open menu
+      ---
+      duration_ms: 13.709078
+      ...
+    # Subtest: Enter activates the focused item, closes the menu and restores page focus
+    ok 3 - Enter activates the focused item, closes the menu and restores page focus
+      ---
+      duration_ms: 19.486105
+      ...
+    # Subtest: Space activates too, and Escape closes without activating anything
+    ok 4 - Space activates too, and Escape closes without activating anything
+      ---
+      duration_ms: 14.716748
+      ...
+    # Subtest: the Settings item opens the panel instead of converting
+    ok 5 - the Settings item opens the panel instead of converting
+      ---
+      duration_ms: 9.955597
+      ...
+    # Subtest: keys are ignored while the menu is closed
+    ok 6 - keys are ignored while the menu is closed
+      ---
+      duration_ms: 9.559979
+      ...
+    1..6
+ok 2 - context menu — keyboard operation
+  ---
+  duration_ms: 81.53533
+  type: 'suite'
+  ...
+# (node:7908) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: context menu — dismissal
+    # Subtest: a click outside, a scroll, a resize, a blur and a pagehide all close it
+    ok 1 - a click outside, a scroll, a resize, a blur and a pagehide all close it
+      ---
+      duration_ms: 175.832385
+      ...
+    # Subtest: clicking the menu’s own chrome does not dismiss it
+    ok 2 - clicking the menu’s own chrome does not dismiss it
+      ---
+      duration_ms: 12.263984
+      ...
+    # Subtest: detach() removes every listener the script added
+    ok 3 - detach() removes every listener the script added
+      ---
+      duration_ms: 7.335399
+      ...
+    1..3
+ok 3 - context menu — dismissal
+  ---
+  duration_ms: 195.699512
+  type: 'suite'
+  ...
+# Subtest: context menu — busy state
+    # Subtest: formats are disabled, explained and unclickable while a conversion runs
+    ok 1 - formats are disabled, explained and unclickable while a conversion runs
+      ---
+      duration_ms: 8.170624
+      ...
+    # Subtest: an empty format list says so instead of showing a blank menu
+    ok 2 - an empty format list says so instead of showing a blank menu
+      ---
+      duration_ms: 6.693595
+      ...
+    # Subtest: an unavailable format is listed but disabled with its reason
+    ok 3 - an unavailable format is listed but disabled with its reason
+      ---
+      duration_ms: 9.867806
+      ...
+    1..3
+ok 4 - context menu — busy state
+  ---
+  duration_ms: 24.879551
+  type: 'suite'
+  ...
+# Subtest: context menu — positioning
+    # Subtest: the menu is clamped inside the viewport instead of opening off-screen
+    ok 1 - the menu is clamped inside the viewport instead of opening off-screen
+      ---
+      duration_ms: 10.280723
+      ...
+    # Subtest: openForLastHovered() places the menu over the element for manager menu commands
+    ok 2 - openForLastHovered() places the menu over the element for manager menu commands
+      ---
+      duration_ms: 7.34102
+      ...
+    1..2
+ok 5 - context menu — positioning
+  ---
+  duration_ms: 17.739022
+  type: 'suite'
+  ...
+# Subtest: context menu — long press (touch)
+    # Subtest: holding still for the long-press duration opens the menu
+    ok 1 - holding still for the long-press duration opens the menu
+      ---
+      duration_ms: 13.155482
+      ...
+    # Subtest: a small finger jitter does not cancel the long press
+    ok 2 - a small finger jitter does not cancel the long press
+      ---
+      duration_ms: 12.696617
+      ...
+    # Subtest: dragging beyond the tolerance cancels it (that is a scroll, not a press)
+    ok 3 - dragging beyond the tolerance cancels it (that is a scroll, not a press)
+      ---
+      duration_ms: 6.265646
+      ...
+    # Subtest: lifting the finger before the delay cancels it
+    ok 4 - lifting the finger before the delay cancels it
+      ---
+      duration_ms: 8.528202
+      ...
+    # Subtest: a mouse pointerdown never starts a long press
+    ok 5 - a mouse pointerdown never starts a long press
+      ---
+      duration_ms: 9.2761
+      ...
+    # Subtest: enableLongPress:false disables the gesture
+    ok 6 - enableLongPress:false disables the gesture
+      ---
+      duration_ms: 4.847688
+      ...
+    # Subtest: detaching during a pending long press cancels timer and local subscriptions
+    not ok 7 - detaching during a pending long press cancels timer and local subscriptions
+      ---
+      duration_ms: 7.671085
+      location: '/home/user/save-image-as-type/test/unit/ui-menu.test.mjs:542:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        true !== false
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: false
+      actual: true
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/ui-menu.test.mjs:546:12)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: completed long press releases local handlers even without pointerup
+    not ok 8 - completed long press releases local handlers even without pointerup
+      ---
+      duration_ms: 13.467013
+      location: '/home/user/save-image-as-type/test/unit/ui-menu.test.mjs:550:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        8 !== 6
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 6
+      actual: 8
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/ui-menu.test.mjs:556:12)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: replacement touch sessions retain only one set of transient listeners
+    not ok 9 - replacement touch sessions retain only one set of transient listeners
+      ---
+      duration_ms: 8.536047
+      location: '/home/user/save-image-as-type/test/unit/ui-menu.test.mjs:559:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        46 !== 9
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 9
+      actual: 46
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (file:///home/user/save-image-as-type/test/unit/ui-menu.test.mjs:563:12)
+        Test.runInAsyncScope (node:async_hooks:206:9)
+        Test.run (node:internal/test_runner/test:796:25)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    # Subtest: repeated touches do not accumulate document listeners (leak regression)
+    ok 10 - repeated touches do not accumulate document listeners (leak regression)
+      ---
+      duration_ms: 106.558874
+      ...
+    1..10
+not ok 6 - context menu — long press (touch)
+  ---
+  duration_ms: 191.670067
+  type: 'suite'
+  location: '/home/user/save-image-as-type/test/unit/ui-menu.test.mjs:477:1'
+  failureType: 'subtestsFailed'
+  error: '3 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: context menu — dismissal timing and listener hygiene
+    # Subtest: a scroll landing right after the menu opens does not dismiss it (grace window)
+    ok 1 - a scroll landing right after the menu opens does not dismiss it (grace window)
+      ---
+      duration_ms: 22.209435
+      ...
+    # Subtest: resize, blur and pagehide dismiss immediately — the grace applies to scroll only
+    ok 2 - resize, blur and pagehide dismiss immediately — the grace applies to scroll only
+      ---
+      duration_ms: 13.952715
+      ...
+    # Subtest: attach() is idempotent: re-applying settings does not stack listeners
+    ok 3 - attach() is idempotent: re-applying settings does not stack listeners
+      ---
+      duration_ms: 10.500136
+      ...
+    1..3
+ok 7 - context menu — dismissal timing and listener hygiene
+  ---
+  duration_ms: 46.884188
+  type: 'suite'
+  ...
+1..7
+# tests 34
+# suites 7
+# pass 31
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1161.437988

@@ -1,0 +1,19 @@
+npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+npm warn deprecated puppeteer@23.11.1: < 24.15.0 is no longer supported
+
+added 156 packages, and audited 157 packages in 10s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+8 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

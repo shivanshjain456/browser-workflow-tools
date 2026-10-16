@@ -1,0 +1,47 @@
+{
+  "name": "save-image-as-type",
+  "version": "2.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Userscript: right-click any image and save it as PNG, JPG, WebP, GIF, BMP, AVIF (probe-gated), PDF, or the original bytes \u2014 local conversion, batch, ZIP, transforms, clipboard, metadata, profiles. No servers, no telemetry.",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:check": "node build.mjs --check",
+    "test": "node test/run-unit.mjs",
+    "test:browser": "node test/browser/run.mjs",
+    "lint": "node lint.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "verify:all": "node audit/verify-all.mjs",
+    "docs:settings": "node scripts/gen-settings-doc.mjs",
+    "docs:settings:check": "node scripts/gen-settings-doc.mjs --check",
+    "probe:encoders": "node tools/probe-encoders.mjs",
+    "probe:codecs": "node tools/probe-codecs.mjs"
+  },
+  "devDependencies": {
+    "esprima": "4.0.1",
+    "js-tokens": "4.0.0",
+    "jsdom": "25.0.1",
+    "puppeteer": "25.14.0"
+  },
+  "engines": {
+    "node": ">=22.22.2",
+    "npm": ">=10"
+  },
+  "license": "MIT",
+  "keywords": [
+    "userscript",
+    "userscripts",
+    "violentmonkey",
+    "tampermonkey",
+    "image",
+    "convert",
+    "png",
+    "webp",
+    "avif",
+    "pdf",
+    "zip",
+    "batch",
+    "privacy",
+    "browser"
+  ]
+}

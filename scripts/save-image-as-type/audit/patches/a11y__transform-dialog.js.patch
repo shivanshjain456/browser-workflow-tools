@@ -1,0 +1,18 @@
+--- src/ui/transform-dialog.js (before)
++++ src/ui/transform-dialog.js (after)
+@@ -22,12 +22,12 @@
+ 
+ const TRANSFORM_STYLE = `
+ .siat-tf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 14px; }
+-.siat-tf-output { font-size: 12.5px; padding: 8px 10px; border-radius: 9px; background: rgba(127,127,127,.1); margin: 8px 0; }
+-.siat-tf-warn { color: #b4232a; font-size: 12px; margin: 4px 0 0; }
++.siat-tf-output { font-size: max(0.78125rem, 12.5px); padding: 8px 10px; border-radius: 9px; background: rgba(127,127,127,.1); margin: 8px 0; }
++.siat-tf-warn { color: #b4232a; font-size: max(0.75rem, 12px); margin: 4px 0 0; }
+ @media (prefers-color-scheme: dark) { .siat-tf-warn { color: #ff8f8f; } }
+ .siat-tf-rotate { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+ .siat-cropwrap:focus-visible { outline: 2px solid #2f6fdb; outline-offset: 2px; }
+-.siat-cropdims { position: absolute; left: 4px; bottom: -18px; font-size: 10.5px; color: #edf0f6; background: rgba(10,12,18,.72); padding: 1px 5px; border-radius: 5px; line-height: 1.4; }
++.siat-cropdims { position: absolute; left: 4px; bottom: -18px; font-size: max(0.75rem, 12px); color: #edf0f6; background: rgba(10,12,18,.72); padding: 1px 5px; border-radius: 5px; line-height: 1.4; }
+ `;
+ 
+ /**

@@ -1,0 +1,20 @@
+--- src/meta.js (before)
++++ src/meta.js (after)
+@@ -6,7 +6,7 @@
+  * declared permissions cannot drift away from what the code actually uses.
+  */
+ 
+-export const SCRIPT_VERSION = '2.0.0';
++export const SCRIPT_VERSION = '2.0.1';
+ 
+ export const META = {
+   name: 'Save Image as Type',
+@@ -18,7 +18,7 @@
+   namespace: 'https://siat.invalid/save-image-as-type',
+   version: SCRIPT_VERSION,
+   description:
+-    'Convert images locally: PNG, JPG, WebP, GIF, BMP or PDF. Batch, ZIP, transforms, clipboard, metadata and keyboard workflows. No servers or tracking.',
++    'Convert images locally: PNG, JPG, WebP, GIF, BMP, PDF, probe-gated AVIF or original bytes. Batch, ZIP, transforms, clipboard, metadata and keyboard workflows. No servers or tracking.',
+   author: 'Save Image as Type userscript contributors',
+   license: 'MIT',
+   /**

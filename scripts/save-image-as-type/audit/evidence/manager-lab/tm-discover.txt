@@ -1,0 +1,932 @@
+targets [
+  [ 'browser', '' ],
+  [ 'other', 'chrome://omnibox-popup.top-chrome/' ],
+  [
+    'other',
+    'chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html'
+  ],
+  [ 'other', 'chrome://webui-toolbar.top-chrome/' ],
+  [ 'page', 'about:blank' ],
+  [
+    'service_worker',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/background.js'
+  ],
+  [
+    'page',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/options.html#nav=settings'
+  ],
+  [
+    'page',
+    'https://www.tampermonkey.net/installed.php?version=5.5.1&ext=mjap&updated=true'
+  ],
+  [
+    'other',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/lint.js'
+  ],
+  [
+    'other',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/lint.js'
+  ]
+]
+mjapildgjlmfdcjccfbokffblkkdmjdl Tampermonkey® by Jan Biniok
+v5.5.1
+Installed Userscripts
+Settings
+Utilities
+Help
+
+
+General	
+Config mode:
+Novice
+Beginner
+Advanced
+
+
+Language:
+Browser Default
+Arabic - ‎‫العربية‬‎
+Belarusian - беларуская
+Czech - čeština
+Danish - dansk
+German - Deutsch
+Hellenic (Greek) - Ελληνικά
+English
+Spanish - español
+French - français
+Hebrew - עברית
+Hindi - हिन्दी
+Croatian - hrvatski
+Hungarian - magyar
+Indonesian - Indonesia
+Italian - italiano
+Japanese - 日本語
+Korean - 한국어
+Macedonian - македонски
+Norwegian - norsk
+Dutch - Nederlands
+Polish - polski
+Portuguese (Brazil) - português (Brasil)
+Portuguese (Portugal) - português (Portugal)
+Russian - русский
+Slovak - slovenčina
+Serbian - српски
+Turkish - Türkçe
+Ukrainian - українська
+Vietnamese - Tiếng Việt
+Chinese (Simplified) - 中文（简体中文）
+Chinese (Traditional) - 中文（繁體）
+
+
+
+Anonymous statistics
+
+
+
+
+Logging Level:
+Debug
+Info
+Warning
+Error
+
+
+
+
+Appearance	
+Layout:
+Default
+Default - Light
+Default - Dark
+Default - Darker
+
+
+
+
+
+
+Tags	
+Enable Tags
+
+
+System Tags:gamesnewsproductivitysocial mediautilities
+New Tag:
+
+
+
+
+Userscript Search	
+Userscript Search integration:
+Disabled
+On click
+On action menu
+Add to icon badge text
+
+
+Userscript Update	
+Check Interval:
+Never
+Every 6 Hours
+Every 12 Hours
+Every Day
+Every Week
+
+
+Automatic installation
+
+
+
+Update disabled scripts
+
+
+
+
+Externals	
+Update Interval:
+Always
+Every Day
+Every Week
+Every Month
+Never
+
+
+
+
+
+
+
+
+
+
+
+
+Please enable the `Allow User Scripts` extension setting. Click here for more info how to do this.
+[
+  {
+    tag: 'A',
+    text: 'Tampermonkey® by Jan Biniok\nv5.5.1',
+    title: '',
+    type: '',
+    outer: `<a id="a_aGVhZF9saW5rX2hlYWRz_head_link" href="https://www.tampermonkey.net" target="_blank"><div id="div_aGVhZHNfaGVhZDE" class="float"><img id="img_aGVhZHNfdW5kZWZpbmVk" class="banner" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='400px' height='400px'%3E%3Cg%3E%3Cpath class=%22st0%22 d=%22M304.8,0`
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: '<a id="a_Z2l0aHViX2xpbmtfdW5kZWZpbmVk" href="https://github.com/derjanb" target="_blank"><img id="img_Z2l0aHViX3VuZGVmaW5lZA" class="icon16" src="data:image/png;base64,AAABAAIAEBAAAAEAIAAoBQAAJgAAACAgAAABACAAKBQAAE4FAAAoAAAAEAAAACAAAAABACAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERE3YTExPFDg4OEgAAAAAAAAAADw8PERERFLETExNpAAAAAAAAAAAAAA'
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: `<a id="a_ZmFjZWJvb2tfbGlua191bmRlZmluZWQ" href="https://www.facebook.com/tampermonkey" target="_blank"><img id="img_ZmFjZWJvb2tfdW5kZWZpbmVk" class="icon16" src="data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30 30' width='30px' height='`
+  },
+  {
+    tag: 'A',
+    text: '',
+    title: '',
+    type: '',
+    outer: `<a id="a_aW5zdGFfbGlua191bmRlZmluZWQ" href="https://www.instagram.com/der_jan_b/" target="_blank"><img id="img_aW5zdGFncmFtX3VuZGVmaW5lZA" class="icon16" src="data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='5 4 44 44' width='44px' height='44p`
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_c21zX2FsbA" class="multiselectcb" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_TXVsdGlTZWxlY3RCdXR0b25fc3RhcnRfYnV0dG9u_bu" class="action_button" name="MultiSelectButton" type="button" value="Start" disabled="true">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_c21zX2FsbA" class="filter_text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_bnVsbF9kYXNoYm9hcmRfY2hlY2tib3g" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_TXVsdGlTZWxlY3RCdXR0b25fY2xvc2VfYnV0dG9u_bu" class="button close_button" name="MultiSelectButton" type="button" value="Close">'
+  },
+  {
+    tag: 'A',
+    text: '# ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_pos_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#"># </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_pos_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_pos_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Enabled ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_en_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Enabled </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_en_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_en_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Name ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_name_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Name </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_name_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_name_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Version ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_ver_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Version </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_ver_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_ver_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Size ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_size_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Size </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_size_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_size_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Sites ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_sites_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Sites </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_sites_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_sites_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Homepage ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_homepage_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Homepage </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_homepage_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_homepage_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'A',
+    text: 'Last updated ',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_updated_a" class="settingsth_a" name="settingsth_aInstalled Userscripts" href="#">Last updated </a>'
+  },
+  {
+    tag: 'A',
+    text: '▾',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_updated_a_down" class="settingsth_a_down" name="settingsth_a_downInstalled Userscripts" href="#" style="display: none;">▾</a>'
+  },
+  {
+    tag: 'A',
+    text: '▴',
+    title: '',
+    type: '',
+    outer: '<a id="a_SW5zdGFsbGVkIFVzZXJzY3JpcHRzX2Rhc2hib2FyZA_thead_updated_a_up" class="settingsth_a_up" name="settingsth_a_upInstalled Userscripts" href="#" style="display: none;">▴</a>'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: 'Reload affected pages if a script was turned on or off',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_QXV0byByZWxvYWQgcGFnZXNfYXV0b1JlbG9hZA_cb" title="Reload affected pages if a script was turned on or off" name="Auto reload pages" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_QW5vbnltb3VzIHN0YXRpc3RpY3Nfc3RhdGlzdGljc19lbmFibGVk_cb" title="" name="Anonymous statistics" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_RGVidWcgc2NyaXB0c19kZWJ1Zw_cb" title="" name="Debug scripts" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_U2hvdyBmaXhlZCBzb3VyY2Vfc2hvd0ZpeGVkU3Jj_cb" title="" name="Show fixed source" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1FYQndaV0Z5WVc1alpWOWhjSEJsWVhKaGJtTmxfY29udGVudA_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_RW5hYmxlIFRhZ3NfdGFnc19lbmFibGVk_cb" title="" name="Enable Tags" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_U3lzdGVtIFRhZ3NfbmV3X3RhZw_input" name="System Tags" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_bmV3X3RhZ19hZGRfYnV0dG9uX3RhZ3M_editorSystem Tags" type="button" value="Add">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_SGlkZSBkaXNhYmxlZCBzY3JpcHRzX2FjdGlvbl9tZW51X3NjcmlwdHNfaGlkZV9kaXNhYmxlZA_cb" title="" name="Hide disabled scripts" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_SWNvbiBiYWRnZSBjb2xvcl9hcHBlYXJhbmNlX2JhZGdlX2NvbG9y_input" name="Icon badge color" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1FXTjBhVzl1SUUxbGJuVmZZV04wYVc5dVgyMWxiblVfY29udGVudA_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_RW5hYmxlIGNvbnRleHQgbWVudV9jb250ZXh0X21lbnVfZW5hYmxlZA_cb" title="" name="Enable context menu" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_VXNlcnNjcmlwdHMgdXNpbmcgQHJ1bi1hdCBjb250ZXh0LW1lbnVfY29udGV4dF9tZW51X3NjcmlwdHM_cb" title="" name="Userscripts using @run-at context-menu" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_VXNlcnNjcmlwdCBtZW51IGNvbW1hbmRzX2NvbnRleHRfbWVudV9jb21tYW5kcw_cb" title="" name="Userscript menu commands" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_QXV0b21hdGljIGluc3RhbGxhdGlvbl9zY3JpcHRVcGRhdGVBdXRvbWF0aWNJbnN0YWxs_cb" title="" name="Automatic installation" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: `<input id="input_RG9uJ3QgYXNrIG1lIGZvciBzaW1wbGUgc2NyaXB0IHVwZGF0ZXNfbm90aWZpY2F0aW9uX3NpbGVudFNjcmlwdFVwZGF0ZQ_cb" title="" name="Don't ask me for simple script updates" type="checkbox">`
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_VXBkYXRlIGRpc2FibGVkIHNjcmlwdHNfc2NyaXB0VXBkYXRlQ2hlY2tEaXNhYmxlZA_cb" title="" name="Update disabled scripts" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: 'Synchronize your scripts across browsers and operation systems',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_RW5hYmxlIFVzZXJzY3JpcHQgU3luY19zeW5jX2VuYWJsZWQ_cb" title="Synchronize your scripts across browsers and operation systems" name="Enable Userscript Sync" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_VVJMX2Nsb3VkX3VybA_input" name="URL" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_TG9naW5fY2xvdWRfdXNlcg_input" name="Login" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'password',
+    placeholder: '',
+    outer: '<input id="input_UGFzc3dvcmRfY2xvdWRfcGFzcw_input" name="Password" type="password" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_UnVuIG5vd19ydW5fc3luYw_bu" class="button" name="enabled_by_sync_enabled" type="button" value="Run now" style="display: none;" disabled="disabled">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_UmVzZXRfcmVzZXRfc3luYw_bu" class="button" name="enabled_by_sync_enabled" type="button" value="Reset" style="display: none;" disabled="disabled">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1ZYTmxjbk5qY21sd2RDQlRlVzVqWDNOamNtbHdkRjl6ZVc1al9jb250ZW50_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_RW5hYmxlIGVuaGFuY2VkIGVkaXRvcl9lZGl0b3JfZW5hYmxlZA_cb" title="" name="Enable enhanced editor" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_V29yZCB3cmFwX2VkaXRvcl9saW5lV3JhcHBpbmc_cb" title="" name="Word wrap" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_UmUtaW5kZW50IG9uIHR5cGluZ19lZGl0b3JfZWxlY3RyaWNDaGFycw_cb" title="" name="Re-indent on typing" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_U2F2ZSBjb250ZW50IHdoZW4gZWRpdG9yIGxvc2VzIGZvY3VzX2VkaXRvcl9hdXRvU2F2ZQ_cb" title="" name="Save content when editor loses focus" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: `<input id="input_RG9uJ3Qgc2hvdyBjb25maXJtYXRpb24gZGlhbG9nIG9uIHNhdmVfZWRpdG9yX2Vhc3lTYXZl_cb" title="" name="Don't show confirmation dialog on save" type="checkbox">`
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_SGlnaGxpZ2h0IHRyYWlsaW5nIHdoaXRlc3BhY2VfZWRpdG9yX2hpZ2hsaWdodFRyYWlsaW5nV2hpdGVzcGFjZQ_cb" title="" name="Highlight trailing whitespace" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_VHJpbSB0cmFpbGluZyB3aGl0ZXNwYWNlIGZyb20gbW9kaWZpZWQgbGluZXNfZWRpdG9yX3RyaW1UcmFpbGluZ1NwYWNlc0Zyb21Nb2RpZmllZExpbmVz_cb" title="" name="Trim trailing whitespace from modified lines" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: 'Enable this option to automatically check the code on typing.',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_QXV0b21hdGljIHN5bnRheCBjaGVjayBvbiB0eXBpbmdfZWRpdG9yX2F1dG9MaW50_cb" title="Enable this option to automatically check the code on typing." name="Automatic syntax check on typing" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_QXV0b21hdGljIHN5bnRheCBjaGVjayBtYXggc2l6ZV9lZGl0b3JfYXV0b0xpbnRNYXhMZW4_input" name="Automatic syntax check max size" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1JXUnBkRzl5WDJWa2FYUnZjZ19jb250ZW50_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1UyVmpkWEpwZEhsZmMyVmpkWEpwZEhrX2NvbnRlbnQ_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Grant Selected',
+    title: '',
+    type: 'submit',
+    outer: '<button id="button_SG9zdCBwZXJtaXNzaW9ucyBkZW5pZWQgYnkgdXNlcjpfdW5kZWZpbmVkcGVybWlzc2lvbnM_btn1" disabled="">Grant Selected</button>'
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Grant All',
+    title: '',
+    type: 'submit',
+    outer: '<button id="button_SG9zdCBwZXJtaXNzaW9ucyBkZW5pZWQgYnkgdXNlcjpfdW5kZWZpbmVkcGVybWlzc2lvbnM_btn2" disabled="">Grant All</button>'
+  },
+  {
+    tag: 'BUTTON',
+    text: 'Reset List',
+    title: '',
+    type: 'submit',
+    outer: '<button id="button_SG9zdCBwZXJtaXNzaW9ucyBkZW5pZWQgYnkgdXNlcjpfdW5kZWZpbmVkcGVybWlzc2lvbnM_btn3" disabled="">Reset List</button>'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1FteGhZMnREYUdWamExOWliR0ZqYTJOb1pXTnJfY29udGVudA_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1JHOTNibXh2WVdSeklFSkZWRUZmWkc5M2JteHZZV1J6X2NvbnRlbnQ_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3RhYmxlX1ZYTmxjbk5qY21sd2RITmZkWE5sY25OamNtbHdkSE1fY29udGVudA_Save" type="button" disabled="" value="Save">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_UmVzdGFydCBUYW1wZXJtb25rZXlfcmVzZXRfc2ltcGxl_bu" class="button" name="Restart Tampermonkey" type="button" value="Restart Tampermonkey" style="display: none;">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_RmFjdG9yeSBSZXNldF9yZXNldF9mYWN0b3J5_bu" class="button" name="Factory Reset" type="button" value="Factory Reset" style="display: none;">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_cmVzdG9yZV9hbGxfdW5kZWZpbmVkX2RlbGFsbA_bu" class="button" name="restore_all" type="button" value="Restore all">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_ZGVsZXRlX2FsbF91bmRlZmluZWRfZGVsYWxs_bu" class="button" name="delete_all" type="button" value="Delete all">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3V0aWxzX2VfZXhwb3J0X3N0b3JhZ2U_cb" title="" name="undefined" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3V0aWxzX2VfZXhwb3J0X3RtX3NldHRpbmdz_cb" title="" name="undefined" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'checkbox',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3V0aWxzX2VfZXhwb3J0X2V4dGVybmFscw_cb" title="" name="undefined" type="checkbox">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3NlbGVjdF9jbG91ZF91cmw_input" name="undefined" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3NlbGVjdF9jbG91ZF91c2VybmFtZQ_input" name="undefined" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'password',
+    placeholder: '',
+    outer: '<input id="input_dW5kZWZpbmVkX3NlbGVjdF9jbG91ZF9wYXNzd29yZA_input" name="undefined" type="password" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfZV96aXA_bu" class="button" name="utils" type="button" value="Export">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfaV9jbG91ZA_bu" class="button" name="utils" type="button" value="Show backups">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_cmV2b2tlX3Rva2VuX2J1dHRvbl91bmRlZmluZWQ_bu" class="button" name="revoke_token_button" type="button" value="Revoke Access Token">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'file',
+    placeholder: '',
+    outer: '<input id="input_ZmlsZV91dGlscw_file" type="file" accept="application/javascript,application/json,application/zip,text/plain">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfZV96aXA_bu" class="button" name="utils" type="button" value="Export">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfZV9maWxl_bu" class="button" name="utils" type="button" value="Export">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfZV90YQ_bu" class="button" name="utils" type="button" value="Export">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfaV90YQ_bu" class="button" name="utils" type="button" value="Import">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'text',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHM_url" class="updateurl_input" type="text" spellcheck="false">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_dXRpbHNfdXRpbHNfaV91cmw_bu" class="button" name="utils" type="button" value="Install">'
+  },
+  {
+    tag: 'BUTTON',
+    text: '',
+    title: 'Save to disk',
+    type: 'submit',
+    outer: '<button id="button_bmV3LXVzZXItc2NyaXB0X3NhdmVfdG9fZGlzaw_bu" class="imgbutton button" title="Save to disk"><i id="i_bmV3LXVzZXItc2NyaXB0X3NhdmVfdG9fZGlzaw_bu_img" class="imgbutton_image far fa-download" title="Save to disk"></i></button>'
+  },
+  {
+    tag: 'BUTTON',
+    text: '',
+    title: 'Save',
+    type: 'submit',
+    outer: '<button id="button_bmV3LXVzZXItc2NyaXB0X3NhdmU_bu" class="imgbutton button" title="Save"><i id="i_bmV3LXVzZXItc2NyaXB0X3NhdmU_bu_img" class="imgbutton_image far fa-save" title="Save"></i></button>'
+  },
+  {
+    tag: 'BUTTON',
+    text: '',
+    title: 'Discard changes',
+    type: 'submit',
+    outer: '<button id="button_bmV3LXVzZXItc2NyaXB0X2NhbmNlbA_bu" class="imgbutton button" title="Discard changes"><i id="i_bmV3LXVzZXItc2NyaXB0X2NhbmNlbA_bu_img" class="imgbutton_image far fa-undo" title="Discard changes"></i></button>'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_ZmluZE5leHRfbmV3LXVzZXItc2NyaXB0_bu" class="button" name="findNext" type="button" value="Find Next">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_ZmluZFByZXZfbmV3LXVzZXItc2NyaXB0_bu" class="button" name="findPrev" type="button" value="Find Previous">'
+  },
+  {
+    tag: 'INPUT',
+    text: '',
+    title: '',
+    type: 'button',
+    placeholder: '',
+    outer: '<input id="input_anVtcF9uZXctdXNlci1zY3JpcHQ_bu" class="button" name="jump" type="button" value="Jump to line">'
+  },
+  ... 5 more items
+]

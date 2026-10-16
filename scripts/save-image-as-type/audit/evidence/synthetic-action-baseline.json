@@ -1,0 +1,15 @@
+{
+  "scriptPath": "audit/baseline/v2.0.0.user.js",
+  "sha256": "2eb8851b422393ebe9d14ef5a0bd11874abac03fd76a28328d6fae6ff280daed",
+  "scope": "Chrome shared-world page DOM attack with fake GM; NOT actual-manager exploit validation",
+  "contextEventTrusted": false,
+  "menuOpened": true,
+  "publicApiPresent": true,
+  "privilegedFetchAttempted": true,
+  "attempts": [
+    {
+      "url": "http://127.0.0.1:44621/image.png"
+    }
+  ],
+  "status": "CONFIRMED ADDITIONAL RELEASE BLOCKER"
+}

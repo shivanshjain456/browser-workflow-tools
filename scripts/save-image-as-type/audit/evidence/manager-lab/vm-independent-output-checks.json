@@ -1,0 +1,109 @@
+{
+  "Pillow": "12.3.0",
+  "artifactSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "checks": [
+    {
+      "case": "/same",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-same-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "case": "/same",
+      "kind": "original",
+      "file": "audit/evidence/manager-lab/vm-same-original-0.png",
+      "sha256": "106f6169ecc7272fa3c735ba20dc00afc98e763ffe5c787782c8302958f053d5",
+      "bytes": 230,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+      "originalBytesEqual": true
+    },
+    {
+      "case": "/cross",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-cross-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "case": "/cross",
+      "kind": "original",
+      "file": "audit/evidence/manager-lab/vm-cross-original-0.png",
+      "sha256": "106f6169ecc7272fa3c735ba20dc00afc98e763ffe5c787782c8302958f053d5",
+      "bytes": 230,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+      "originalBytesEqual": true
+    },
+    {
+      "case": "/csp",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-csp-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "case": "/csp",
+      "kind": "original",
+      "file": "audit/evidence/manager-lab/vm-csp-original-0.png",
+      "sha256": "106f6169ecc7272fa3c735ba20dc00afc98e763ffe5c787782c8302958f053d5",
+      "bytes": 230,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+      "originalBytesEqual": true
+    },
+    {
+      "case": "/data-csp",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-data-csp-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "case": "/data-csp",
+      "kind": "original",
+      "file": "audit/evidence/manager-lab/vm-data-csp-original-0.png",
+      "sha256": "106f6169ecc7272fa3c735ba20dc00afc98e763ffe5c787782c8302958f053d5",
+      "bytes": 230,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+      "originalBytesEqual": true
+    },
+    {
+      "case": "/svg-csp",
+      "kind": "original",
+      "file": "audit/evidence/manager-lab/vm-svg-csp-original-0.svg",
+      "sha256": "9d97574336d3c24d84954c8e3615990742bb35c610daf3bc86722f96fb4a4768",
+      "bytes": 126,
+      "svgRoot": "{http://www.w3.org/2000/svg}svg",
+      "svgFixtureStructureEqual": true
+    },
+    {
+      "case": "embedded",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-frame-0-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "case": "embedded",
+      "kind": "converted",
+      "file": "audit/evidence/manager-lab/vm-frame-1-png-0.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489,
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    }
+  ]
+}

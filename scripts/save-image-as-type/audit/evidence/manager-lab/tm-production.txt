@@ -1,0 +1,32 @@
+storage [
+  '!extdb.#begging',
+  '!extdb.#config',
+  '!extdb.#laststart',
+  '!extdb.#schema',
+  '!extdb.#update',
+  '!extdb.#version',
+  '!extdb.@meta#666d00f4-ff00-48d0-9f76-dc0e2c295dd8',
+  '!extdb.@re#666d00f4-ff00-48d0-9f76-dc0e2c295dd8',
+  '!extdb.@source#666d00f4-ff00-48d0-9f76-dc0e2c295dd8',
+  '!extdb.@st#666d00f4-ff00-48d0-9f76-dc0e2c295dd8',
+  '!extdb.@uid#666d00f4-ff00-48d0-9f76-dc0e2c295dd8',
+  '!misc.global_hints.items'
+] hashes [
+  {
+    key: 'manager editor visible document',
+    sha256: 'b2b543e77ca5663d24cca1258bd11bd451fa7dc9b88677e38c22ff46070dfe42'
+  }
+]
+file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/WaitTask.js:45
+            this.#timeoutError = new TimeoutError(`Waiting failed: ${options.timeout}ms exceeded`);
+                                 ^
+
+TimeoutError: Waiting failed: 15000ms exceeded
+    at new WaitTask (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/common/WaitTask.js:45:34)
+    at IsolatedWorld.waitForFunction (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/api/Realm.js:22:26)
+    at CdpFrame.waitForFunction (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/api/Frame.js:568:43)
+    at CdpFrame.<anonymous> (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/util/decorators.js:101:27)
+    at CdpPage.waitForFunction (file:///home/user/save-image-as-type/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:1430:37)
+    at file:///home/user/save-image-as-type/audit/real-manager.mjs:63:14
+
+Node.js v20.20.2

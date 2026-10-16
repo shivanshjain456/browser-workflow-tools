@@ -1,0 +1,202 @@
+{
+  "sourcePath": "release/save-image-as-type.user.js",
+  "sha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499",
+  "browser": "Chrome/131.0.6778.204",
+  "scope": "Exact production source with timing marks outside its bytes; Chrome CDP and fake GM, not actual manager",
+  "boot": [
+    {
+      "syncStartupMs": 5,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:43879/",
+        "http://127.0.0.1:43879/favicon.ico",
+        "http://127.0.0.1:43879/fixture.png",
+        "blob:http://127.0.0.1:43879/cadd0ffe-18ea-4ab8-9ddc-4a3180a79058",
+        "blob:http://127.0.0.1:43879/837fee0e-d273-4dc9-96ba-f35c7656bc2f",
+        "blob:http://127.0.0.1:43879/867d9946-30ac-482c-a703-8bbdc2f9a1be",
+        "blob:http://127.0.0.1:43879/113a9c0c-7ab4-484e-92f0-7aad686b6dba"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 3,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:43879/",
+        "http://127.0.0.1:43879/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 6.100000000093132,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:43879/",
+        "http://127.0.0.1:43879/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 4.599999999627471,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:43879/",
+        "http://127.0.0.1:43879/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 3.8000000002793968,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:43879/",
+        "http://127.0.0.1:43879/favicon.ico"
+      ],
+      "errors": []
+    }
+  ],
+  "a11y": [
+    {
+      "mode": "default",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 182,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-default.png"
+    },
+    {
+      "mode": "large-type",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 24,
+      "maxTextPx": 40,
+      "textNodes": 182,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-large-type.png"
+    },
+    {
+      "mode": "reduced-motion",
+      "motionAnimation": "none",
+      "motionTransition": "0s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 182,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": true,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-reduced-motion.png"
+    },
+    {
+      "mode": "forced-colors",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 182,
+      "dialogColor": "rgb(0, 0, 0)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgba(5, 0, 73, 0.8) solid 3px",
+      "reducedMotion": false,
+      "forcedColors": true,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-forced-colors.png"
+    },
+    {
+      "mode": "more-contrast",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 182,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(22, 24, 29) solid 3px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": true,
+      "screenshot": "audit/evidence/candidate-more-contrast.png"
+    },
+    {
+      "mode": "dark",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 182,
+      "dialogColor": "rgb(237, 240, 246)",
+      "dialogBackground": "rgb(30, 33, 40)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-dark.png"
+    }
+  ],
+  "save": {
+    "count": 1,
+    "name": "fixture.png",
+    "bytes": 350
+  },
+  "keyboardSaves": [
+    {
+      "key": "1",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    },
+    {
+      "key": "Enter",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    },
+    {
+      "key": "Space",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    }
+  ],
+  "keyboardSave": {
+    "key": "1",
+    "newDownloads": 1,
+    "mode": "real key, production event policy"
+  },
+  "separateExecution": {
+    "commandsBefore": 8,
+    "commandsAfter": 16,
+    "supported": false
+  }
+}

@@ -1,0 +1,143 @@
+afterFile Tampermonkey® by Jan Biniok
+v5.5.1
+Installed Userscripts
+Settings
+Utilities
+Help
+
+
+General	Include script storage
+Include Tampermonkey settings
+Include external script resources
+Cloud	
+Type:
+Google Drive
+Dropbox
+OneDrive
+Yandex.Disk
+WebDAV
+Import from file	
+Zip	
+File	
+Import from URL	
+
+
+	
+Please wait...
+	
+targets [
+  [ 'browser', '' ],
+  [ 'other', 'chrome://omnibox-popup.top-chrome/' ],
+  [ 'other', 'chrome://webui-toolbar.top-chrome/' ],
+  [
+    'other',
+    'chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html'
+  ],
+  [ 'page', 'about:blank' ],
+  [
+    'service_worker',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/background.js'
+  ],
+  [
+    'page',
+    'chrome://extensions/?id=mjapildgjlmfdcjccfbokffblkkdmjdl'
+  ],
+  [
+    'page',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/options.html#nav=utils'
+  ],
+  [
+    'other',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/lint.js'
+  ],
+  [
+    'other',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/lint.js'
+  ],
+  [
+    'background_page',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/offscreen.html'
+  ],
+  [
+    'page',
+    'chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/ask.html?aid=196852c7-3bd5-4e41-8598-3f73365521a6'
+  ],
+  [
+    'page',
+    'https://www.tampermonkey.net/index.php?version=5.5.1&ext=mjap&updated=true'
+  ]
+]
+install controls [
+  {
+    tag: 'A',
+    text: 'Tampermonkey®\nv5.5.1',
+    outer: `<a id="a_aGVhZF9saW5rX2Fzaw_head_link" href="https://www.tampermonkey.net" target="_blank"><div id="div_YXNrX2hlYWQx" class="float"><img id="img_YXNrX3VuZGVmaW5lZA" class="banner" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='400px' height='400px'%3E%`
+  },
+  {
+    tag: 'INPUT',
+    value: 'Install',
+    text: '',
+    outer: '<input id="input_SW5zdGFsbF91bmRlZmluZWQ_bu" class="button install" name="Install" type="button" value="Install">'
+  },
+  {
+    tag: 'INPUT',
+    value: 'Cancel',
+    text: '',
+    outer: '<input id="input_Q2FuY2VsX3VuZGVmaW5lZA_bu" class="button install" name="Cancel" type="button" value="Cancel">'
+  }
+]
+beforeInstallClick
+afterInstallClick
+INSTALLED Tampermonkey® by Jan Biniok
+v5.5.1
+Installed Userscripts
+Settings
+Utilities
+Help
+
+
+	#	Enabled		Name ▴	Version	Size			Sites	Features	Homepage	Last updated		Actions
+	1	
+		Save Image as Type	2.0.1	588 KB		
+				0 min		
+
+
+Tam - Your service bot
+Do you need help working with Tampermonkey?
+Disable
+PAGE chrome-extension://mjapildgjlmfdcjccfbokffblkkdmjdl/options.html#nav=dashboard Tampermonkey® by Jan Biniok
+v5.5.1
+Installed Userscripts
+Settings
+Utilities
+Help
+
+
+	#	Enabled		Name ▴	Version	Size			Sites	Features	Homepage	Last updated		Actions
+	1	
+		Save Image as Type	2.0.1	588 KB		
+				0 min		
+
+
+Operation completed successfully
+Tam - Your service bot
+Do you need help working with Tampermonkey?
+Disable
+afterImport Tampermonkey® by Jan Biniok
+v5.5.1
+Installed Userscripts
+Settings
+Utilities
+Help
+
+
+	#	Enabled		Name ▴	Version	Size			Sites	Features	Homepage	Last updated		Actions
+	1	
+		Save Image as Type	2.0.1	588 KB		
+				0 min		
+
+
+Operation completed successfully
+Tam - Your service bot
+Do you need help working with Tampermonkey?
+Disable

@@ -1,0 +1,234 @@
+{
+  "sourcePath": "release/save-image-as-type.user.js",
+  "sha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "browser": "Chrome/155.0.8059.79",
+  "scope": "Exact production source with timing marks outside its bytes; Chrome CDP and fake GM, not actual manager",
+  "boot": [
+    {
+      "syncStartupMs": 4.300000000745058,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico",
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico",
+        "http://127.0.0.1:40263/fixture.png",
+        "blob:http://127.0.0.1:40263/4fcdb726-5004-460d-86d9-092d939b43e4",
+        "blob:http://127.0.0.1:40263/4af7d8b7-9849-4a48-9b62-4a0c61a5e129",
+        "blob:http://127.0.0.1:40263/7cfe443d-7ab5-4f8c-ae1b-1ea7e7560bba",
+        "blob:http://127.0.0.1:40263/c2fd2882-cfe3-4afa-8677-3ad2f5fc5758"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 7.5,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 5.300000000745058,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 5.3999999994412065,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico"
+      ],
+      "errors": []
+    },
+    {
+      "syncStartupMs": 4.7000000001862645,
+      "commands": 8,
+      "localStorageKeys": [],
+      "sessionStorageKeys": [],
+      "cookie": "",
+      "publicHandle": false,
+      "requests": [
+        "http://127.0.0.1:40263/",
+        "http://127.0.0.1:40263/favicon.ico"
+      ],
+      "errors": []
+    }
+  ],
+  "a11y": [
+    {
+      "mode": "default",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 187,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-default.png"
+    },
+    {
+      "mode": "large-type",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 24,
+      "maxTextPx": 40,
+      "textNodes": 187,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-large-type.png"
+    },
+    {
+      "mode": "reduced-motion",
+      "motionAnimation": "none",
+      "motionTransition": "0s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 187,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": true,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-reduced-motion.png"
+    },
+    {
+      "mode": "forced-colors",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 187,
+      "dialogColor": "rgb(0, 0, 0)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgba(5, 0, 73, 0.8) solid 3px",
+      "reducedMotion": false,
+      "forcedColors": true,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-forced-colors.png"
+    },
+    {
+      "mode": "more-contrast",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 187,
+      "dialogColor": "rgb(22, 24, 29)",
+      "dialogBackground": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(22, 24, 29) solid 3px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": true,
+      "screenshot": "audit/evidence/candidate-more-contrast.png"
+    },
+    {
+      "mode": "dark",
+      "motionAnimation": "audit-motion",
+      "motionTransition": "1s",
+      "minTextPx": 12,
+      "maxTextPx": 20,
+      "textNodes": 187,
+      "dialogColor": "rgb(237, 240, 246)",
+      "dialogBackground": "rgb(30, 33, 40)",
+      "focusOutline": "rgb(47, 111, 219) solid 2px",
+      "reducedMotion": false,
+      "forcedColors": false,
+      "moreContrast": false,
+      "screenshot": "audit/evidence/candidate-dark.png"
+    }
+  ],
+  "profileWorkflow": {
+    "afterCapture": {
+      "sectionPresent": true,
+      "direction": "ltr",
+      "rows": 1,
+      "subfolder": "profile-shots",
+      "banner": ""
+    },
+    "afterApply": {
+      "sectionPresent": true,
+      "direction": "ltr",
+      "rows": 1,
+      "subfolder": "profile-shots",
+      "banner": ""
+    },
+    "afterReload": {
+      "sectionPresent": true,
+      "direction": "ltr",
+      "rows": 0,
+      "subfolder": "",
+      "banner": ""
+    },
+    "sameDocumentStoreWritesContainingProfile": 3,
+    "profilesInSameDocumentStore": 1,
+    "capturedThroughRealUI": true,
+    "appliedThroughRealUI": true,
+    "fakeStoreResetsOnReload": true,
+    "reloadPersistenceScope": "not claimed here: this harness store is per-document (it is re-injected on every navigation by design). Cross-reload persistence of a profile is verified in the actual manager lab instead.",
+    "scope": "Real trusted input in a shadow-root dialog, exact production code; language/direction come from the document, and no page-authored flag can enable this"
+  },
+  "save": {
+    "count": 1,
+    "name": "fixture.png",
+    "bytes": 489
+  },
+  "keyboardSaves": [
+    {
+      "key": "1",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    },
+    {
+      "key": "Enter",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    },
+    {
+      "key": "Space",
+      "newDownloads": 1,
+      "mode": "real key, production event policy"
+    }
+  ],
+  "keyboardSave": {
+    "key": "1",
+    "newDownloads": 1,
+    "mode": "real key, production event policy"
+  },
+  "separateExecution": {
+    "commandsBefore": 8,
+    "commandsAfter": 16,
+    "supported": false
+  }
+}

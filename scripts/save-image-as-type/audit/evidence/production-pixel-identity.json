@@ -1,0 +1,15 @@
+{
+  "decoder": "Pillow 12.3.0",
+  "candidateSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "input": "test/fixtures/opaque.png",
+  "output": "audit/evidence/candidate-saved/0.png",
+  "outputBytes": 489,
+  "outputSha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+  "size": [
+    64,
+    48
+  ],
+  "inputPixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+  "outputPixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc",
+  "fullRgbaPixelsEqual": true
+}

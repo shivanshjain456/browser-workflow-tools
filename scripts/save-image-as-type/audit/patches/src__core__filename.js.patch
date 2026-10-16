@@ -1,0 +1,36 @@
+--- src/core/filename.js (before)
++++ src/core/filename.js (after)
+@@ -14,7 +14,9 @@
+  */
+ 
+ const ILLEGAL_CHARS = /[\u0000-\u001f\u007f\\/:*?"<>|\u200e\u200f\u202a-\u202e\ufeff]/g;
+-const WINDOWS_RESERVED = /^(con|prn|aux|nul|com[1-9]|lpt[1-9])$/i;
++// Windows interprets device names before any extension, including dotted bases.
++// Superscript 1/2/3 are also device digits. Console pseudo-files are disallowed.
++const WINDOWS_RESERVED = /^(con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³]|conin\$|conout\$)(?:[. ]|$)/i;
+ const ABSOLUTE_MAX_BYTES = 200; // keep room for the extension + manager suffixes
+ 
+ /** Strip everything that is not safe in a single path component. */
+@@ -52,10 +54,11 @@
+     .replace(/^[.\s]+/, '')
+     .replace(/[.\s]+$/, '')
+     .trim();
+-  if (WINDOWS_RESERVED.test(text)) text = `_${text}`;
+   // Never allow a component to become empty-looking or to re-introduce a path.
+   text = text.replace(/[.]+$/, '');
+   if (text.length > maxChars) text = text.slice(0, maxChars).replace(/[.\s]+$/, '');
++  // Truncation itself can turn an innocent stem such as CONvoy into CON.
++  if (WINDOWS_RESERVED.test(text)) text = `_${text}`.slice(0, Math.max(1, maxChars));
+   return text;
+ }
+ 
+@@ -151,7 +154,8 @@
+     stem = truncateToBytes(stem, budget);
+     truncated = true;
+   }
+-  if (WINDOWS_RESERVED.test(stem)) stem = `_${stem}`;
++  if (!stem) stem = 'i'; // a multibyte character may not fit a one-byte budget
++  if (WINDOWS_RESERVED.test(stem)) stem = truncateToBytes(`_${stem}`, budget) || 'i';
+ 
+   const filename = `${stem}${suffix}`;
+   const folder = sanitizeSubfolder(subfolder);

@@ -1,0 +1,77 @@
+--- src/core/settings.js (before)
++++ src/core/settings.js (after)
+@@ -1,3 +1,4 @@
++import { cleanConfigData, parseConfigJson } from './config-data.js';
+ /**
+  * Settings: schema, validation, migration and persistence.
+  *
+@@ -184,6 +185,7 @@
+  * silently resets somebody's configuration.
+  */
+ export function migrateSettings(raw) {
++  raw = cleanConfigData(raw);
+   if (!raw || typeof raw !== 'object') return { value: null, from: null };
+   const version = Number(raw.schemaVersion);
+   if (version === SETTINGS_SCHEMA_VERSION) return { value: raw, from: version };
+@@ -193,7 +195,7 @@
+   // v2 -> v3 only *adds* settings; nothing was renamed. Every stored value is
+   // carried over untouched and normalizeSettings() fills in the new defaults.
+   if (version === 2) {
+-    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: 2 };
++    return { value: Object.assign(Object.create(null), raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: 2 };
+   }
+ 
+   // Keys that only ever existed in the flat v1 shape. Their presence is what
+@@ -228,7 +230,7 @@
+   // downgrade does not explode, and report it.
+   if (version < SETTINGS_SCHEMA_VERSION) {
+     // Older but not a shape this build maps explicitly: keep the values.
+-    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: version };
++    return { value: Object.assign(Object.create(null), raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: version };
+   }
+   const known = Object.keys(DEFAULT_SETTINGS);
+   for (const key of known) {
+@@ -242,6 +244,7 @@
+  * @returns {{settings: object, warnings: string[], recovered: boolean}}
+  */
+ export function normalizeSettings(raw) {
++  raw = cleanConfigData(raw);
+   const out = cloneDefaults();
+   const warnings = [];
+   let recovered = false;
+@@ -460,7 +463,7 @@
+ export function validateImportedSettings(text) {
+   let parsed;
+   try {
+-    parsed = JSON.parse(String(text));
++    parsed = parseConfigJson(typeof text === 'string' ? text : '');
+   } catch (err) {
+     return { ok: false, errors: [`Not valid JSON: ${err.message}`], settings: null };
+   }
+@@ -510,7 +513,7 @@
+       usedKey = key;
+       if (typeof value === 'string') {
+         try {
+-          raw = JSON.parse(value);
++          raw = parseConfigJson(value);
+         } catch {
+           raw = null;
+           loadInfo.warnings = [`Stored settings under "${key}" were corrupt — reset to defaults.`];
+@@ -560,7 +563,7 @@
+         if (typeof next !== 'string') return;
+         let parsed = null;
+         try {
+-          parsed = JSON.parse(next);
++          parsed = parseConfigJson(next);
+         } catch {
+           return;
+         }
+@@ -579,7 +582,7 @@
+   }
+ 
+   async function save(patch) {
+-    const merged = Object.assign({}, cached, patch || {});
++    const merged = Object.assign(Object.create(null), cached, cleanConfigData(patch) || {});
+     const normalized = normalizeSettings(merged);
+     cached = normalized.settings;
+     const ok = await persist(cached);

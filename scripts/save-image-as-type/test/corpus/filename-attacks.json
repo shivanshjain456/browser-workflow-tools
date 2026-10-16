@@ -1,0 +1,5 @@
+{
+  "reserved": ["CON", "nul.png", "con.txt.txt", "PRN.pdf", "AUX.a.b", "COM1.jpeg", "LPT9.tar.png", "COM¹.png", "LPT².bmp", "CONIN$.txt", "CONOUT$.png"],
+  "notReserved": ["COM10", "LPT0", "CONvoy", "NULlage"],
+  "generatedCases": ["CONvoy truncated to 3 characters", "é / 😀 / अ with a one-byte stem budget", "10000 nested records", "100000-element list", "cycle", "own accessor", "inherited field", "symbol key", "all 48 settings x object/array/scalar/null shapes"]
+}

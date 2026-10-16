@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: audit — own-data configuration ingress
+    # Subtest: never invokes getters, inherits fields or carries prototype-control keys
+    ok 1 - never invokes getters, inherits fields or carries prototype-control keys
+      ---
+      duration_ms: 1.957834
+      ...
+    # Subtest: JSON magic keys cannot change migration or schema prototypes
+    ok 2 - JSON magic keys cannot change migration or schema prototypes
+      ---
+      duration_ms: 0.770561
+      ...
+    # Subtest: deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+    ok 3 - deep nesting, cycles, huge lists, symbols and scalar type confusion are bounded
+      ---
+      duration_ms: 2.228568
+      ...
+    # Subtest: text limit is checked before parsing an oversized file
+    ok 4 - text limit is checked before parsing an oversized file
+      ---
+      duration_ms: 0.437689
+      ...
+    # Subtest: manager load, remote change and save patch share the same boundary
+    ok 5 - manager load, remote change and save patch share the same boundary
+      ---
+      duration_ms: 1.740582
+      ...
+    1..5
+ok 1 - audit — own-data configuration ingress
+  ---
+  duration_ms: 8.379142
+  type: 'suite'
+  ...
+# Subtest: audit — reserved names and final byte budgets
+    # Subtest: neutralises CON
+    ok 1 - neutralises CON
+      ---
+      duration_ms: 0.612509
+      ...
+    # Subtest: neutralises nul.png
+    ok 2 - neutralises nul.png
+      ---
+      duration_ms: 0.279185
+      ...
+    # Subtest: neutralises con.txt.txt
+    ok 3 - neutralises con.txt.txt
+      ---
+      duration_ms: 0.166041
+      ...
+    # Subtest: neutralises PRN.pdf
+    ok 4 - neutralises PRN.pdf
+      ---
+      duration_ms: 0.215727
+      ...
+    # Subtest: neutralises AUX.a.b
+    ok 5 - neutralises AUX.a.b
+      ---
+      duration_ms: 0.151362
+      ...
+    # Subtest: neutralises COM1.jpeg
+    ok 6 - neutralises COM1.jpeg
+      ---
+      duration_ms: 0.153582
+      ...
+    # Subtest: neutralises LPT9.tar.png
+    ok 7 - neutralises LPT9.tar.png
+      ---
+      duration_ms: 0.137824
+      ...
+    # Subtest: neutralises COM¹.png
+    ok 8 - neutralises COM¹.png
+      ---
+      duration_ms: 0.098564
+      ...
+    # Subtest: neutralises LPT².bmp
+    ok 9 - neutralises LPT².bmp
+      ---
+      duration_ms: 0.169232
+      ...
+    # Subtest: neutralises CONIN$.txt
+    ok 10 - neutralises CONIN$.txt
+      ---
+      duration_ms: 0.191173
+      ...
+    # Subtest: neutralises CONOUT$.png
+    ok 11 - neutralises CONOUT$.png
+      ---
+      duration_ms: 0.116337
+      ...
+    # Subtest: non-reserved device-like stems stay unchanged
+    ok 12 - non-reserved device-like stems stay unchanged
+      ---
+      duration_ms: 0.156572
+      ...
+    # Subtest: post-truncation device stems cannot reappear
+    ok 13 - post-truncation device stems cannot reappear
+      ---
+      duration_ms: 0.524655
+      ...
+    # Subtest: minimum multibyte stem budget never emits only extension
+    ok 14 - minimum multibyte stem budget never emits only extension
+      ---
+      duration_ms: 0.410636
+      ...
+    1..14
+ok 2 - audit — reserved names and final byte budgets
+  ---
+  duration_ms: 4.004295
+  type: 'suite'
+  ...
+# Subtest: audit — honest environment and startup funnel
+    # Subtest: isolation unknown for unverified metadata 
+    ok 1 - isolation unknown for unverified metadata 
+      ---
+      duration_ms: 0.533445
+      ...
+    # Subtest: isolation unknown for unverified metadata auto
+    ok 2 - isolation unknown for unverified metadata auto
+      ---
+      duration_ms: 0.202324
+      ...
+    # Subtest: isolation unknown for unverified metadata page
+    ok 3 - isolation unknown for unverified metadata page
+      ---
+      duration_ms: 0.106262
+      ...
+    # Subtest: isolation unknown for unverified metadata content
+    ok 4 - isolation unknown for unverified metadata content
+      ---
+      duration_ms: 0.085533
+      ...
+    # Subtest: isolation unknown for unverified metadata sandbox
+    ok 5 - isolation unknown for unverified metadata sandbox
+      ---
+      duration_ms: 0.074565
+      ...
+    # Subtest: a rejected startup promise is reported once without escaping
+    ok 6 - a rejected startup promise is reported once without escaping
+      ---
+      duration_ms: 0.347
+      ...
+    # Subtest: broken reporter does not turn contained failure into unhandled rejection
+    ok 7 - broken reporter does not turn contained failure into unhandled rejection
+      ---
+      duration_ms: 0.254175
+      ...
+    1..7
+ok 3 - audit — honest environment and startup funnel
+  ---
+  duration_ms: 1.822064
+  type: 'suite'
+  ...
+# Subtest: audit — deterministic encoder bytes pinned to audited original
+    # Subtest: alpha.bmp
+    ok 1 - alpha.bmp
+      ---
+      duration_ms: 1.037451
+      ...
+    # Subtest: odd.bmp
+    ok 2 - odd.bmp
+      ---
+      duration_ms: 0.271858
+      ...
+    # Subtest: static.gif
+    ok 3 - static.gif
+      ---
+      duration_ms: 0.154172
+      ...
+    # Subtest: animated.gif
+    ok 4 - animated.gif
+      ---
+      duration_ms: 0.118504
+      ...
+    # Subtest: single.pdf
+    ok 5 - single.pdf
+      ---
+      duration_ms: 0.115026
+      ...
+    # Subtest: unicode.zip
+    ok 6 - unicode.zip
+      ---
+      duration_ms: 0.107002
+      ...
+    1..6
+ok 4 - audit — deterministic encoder bytes pinned to audited original
+  ---
+  duration_ms: 2.115387
+  type: 'suite'
+  ...
+# Subtest: zip — structure and primitives
+    # Subtest: CRC-32 matches the published check values
+    ok 1 - CRC-32 matches the published check values
+      ---
+      duration_ms: 0.798039
+      ...
+    # Subtest: DOS date/time encodes the documented fields and clamps impossible years
+    ok 2 - DOS date/time encodes the documented fields and clamps impossible years
+      ---
+      duration_ms: 0.389039
+      ...
+    # Subtest: entry names cannot escape the extraction directory (zip-slip)
+    ok 3 - entry names cannot escape the extraction directory (zip-slip)
+      ---
+      duration_ms: 1.084909
+      ...
+    # Subtest: a long name is truncated on a byte boundary, not mid-character
+    ok 4 - a long name is truncated on a byte boundary, not mid-character
+      ---
+      duration_ms: 0.507875
+      ...
+    # Subtest: the size estimate is close to the archive that is actually built
+    ok 5 - the size estimate is close to the archive that is actually built
+      ---
+      duration_ms: 2.209295
+      ...
+    # Subtest: junk input is refused with a code, not a corrupt archive
+    ok 6 - junk input is refused with a code, not a corrupt archive
+      ---
+      duration_ms: 2.471285
+      ...
+    # Subtest: an entry with no bytes is skipped with a note rather than archived empty
+    ok 7 - an entry with no bytes is skipped with a note rather than archived empty
+      ---
+      duration_ms: 0.280254
+      ...
+    # Subtest: byte-ish inputs (ArrayBuffer, plain array) are all accepted
+    ok 8 - byte-ish inputs (ArrayBuffer, plain array) are all accepted
+      ---
+      duration_ms: 0.8443
+      ...
+    # Subtest: the entry cap is enforced and reported
+    ok 9 - the entry cap is enforced and reported
+      ---
+      duration_ms: 36.097874
+      ...
+    1..9
+ok 5 - zip — structure and primitives
+  ---
+  duration_ms: 45.79242
+  type: 'suite'
+  ...
+# Subtest: zip — verified by Python zipfile and Pillow
+    # Subtest: a real archive opens, and every member decodes to the pixels we stored
+    ok 1 - a real archive opens, and every member decodes to the pixels we stored
+      ---
+      duration_ms: 115.874601
+      ...
+    # Subtest: non-ASCII names survive the round-trip
+    ok 2 - non-ASCII names survive the round-trip
+      ---
+      duration_ms: 88.201598
+      ...
+    # Subtest: duplicate names are both kept, under distinct names
+    ok 3 - duplicate names are both kept, under distinct names
+      ---
+      duration_ms: 83.989099
+      ...
+    # Subtest: a hostile name is repaired before it reaches the archive
+    ok 4 - a hostile name is repaired before it reaches the archive
+      ---
+      duration_ms: 85.072015
+      ...
+    # Subtest: an archive of 300 members (a realistic batch) is valid
+    ok 5 - an archive of 300 members (a realistic batch) is valid
+      ---
+      duration_ms: 115.655242
+      ...
+    1..5
+ok 6 - zip — verified by Python zipfile and Pillow
+  ---
+  duration_ms: 489.38678
+  type: 'suite'
+  ...
+# Subtest: BMP encoder — header and pixel layout
+    # Subtest: writes a 32-bit BITMAPV5 file with alpha masks when the image has transparency
+    ok 1 - writes a 32-bit BITMAPV5 file with alpha masks when the image has transparency
+      ---
+      duration_ms: 2.943302
+      ...
+    # Subtest: stores rows bottom-up in BGRA order
+    ok 2 - stores rows bottom-up in BGRA order
+      ---
+      duration_ms: 0.261968
+      ...
+    # Subtest: writes a 24-bit V3 file with 4-byte row padding for an odd width
+    ok 3 - writes a 24-bit V3 file with 4-byte row padding for an odd width
+      ---
+      duration_ms: 0.409047
+      ...
+    # Subtest: alpha mode is respected (auto / always / never)
+    ok 4 - alpha mode is respected (auto / always / never)
+      ---
+      duration_ms: 0.344313
+      ...
+    # Subtest: rejects invalid input instead of writing a broken file
+    ok 5 - rejects invalid input instead of writing a broken file
+      ---
+      duration_ms: 0.479296
+      ...
+    1..5
+ok 7 - BMP encoder — header and pixel layout
+  ---
+  duration_ms: 5.678524
+  type: 'suite'
+  ...
+# Subtest: GIF encoder — container structure
+    # Subtest: header, screen descriptor and global colour table are well formed
+    ok 1 - header, screen descriptor and global colour table are well formed
+      ---
+      duration_ms: 16.218223
+      ...
+    # Subtest: writes the Netscape looping extension with loop=0 (forever)
+    ok 2 - writes the Netscape looping extension with loop=0 (forever)
+      ---
+      duration_ms: 8.412651
+      ...
+    # Subtest: one Graphic Control Extension + image descriptor per frame, with clamped delays
+    ok 3 - one Graphic Control Extension + image descriptor per frame, with clamped delays
+      ---
+      duration_ms: 7.555275
+      ...
+    # Subtest: delays below 2cs are raised (browsers clamp them) and zero becomes 10cs
+    ok 4 - delays below 2cs are raised (browsers clamp them) and zero becomes 10cs
+      ---
+      duration_ms: 3.31084
+      ...
+    # Subtest: transparency gets a reserved palette index and the GCE flag
+    ok 5 - transparency gets a reserved palette index and the GCE flag
+      ---
+      duration_ms: 5.854607
+      ...
+    # Subtest: splits the LZW stream into <=255 byte sub-blocks on a large noisy image
+    ok 6 - splits the LZW stream into <=255 byte sub-blocks on a large noisy image
+      ---
+      duration_ms: 86.56077
+      ...
+    # Subtest: subsampleFrames keeps total duration when dropping frames
+    ok 7 - subsampleFrames keeps total duration when dropping frames
+      ---
+      duration_ms: 0.674286
+      ...
+    # Subtest: estimateAnimationMemory reports RGBA bytes for the crash guard
+    ok 8 - estimateAnimationMemory reports RGBA bytes for the crash guard
+      ---
+      duration_ms: 0.147982
+      ...
+    # Subtest: lzwEncode emits clear + EOI and never exceeds 12-bit codes
+    ok 9 - lzwEncode emits clear + EOI and never exceeds 12-bit codes
+      ---
+      duration_ms: 1.491439
+      ...
+    # Subtest: rejects mismatched frame dimensions and empty input
+    ok 10 - rejects mismatched frame dimensions and empty input
+      ---
+      duration_ms: 0.283651
+      ...
+    1..10
+ok 8 - GIF encoder — container structure
+  ---
+  duration_ms: 131.133043
+  type: 'suite'
+  ...
+# Subtest: PDF encoder — structure
+    # Subtest: produces a parseable 1.4 file with a byte-exact xref table
+    ok 1 - produces a parseable 1.4 file with a byte-exact xref table
+      ---
+      duration_ms: 1.360136
+      ...
+    # Subtest: page geometry follows the pageFit setting
+    ok 2 - page geometry follows the pageFit setting
+      ---
+      duration_ms: 0.360705
+      ...
+    # Subtest: the MediaBox in the written file matches the layout
+    ok 3 - the MediaBox in the written file matches the layout
+      ---
+      duration_ms: 0.551452
+      ...
+    # Subtest: embeds the JPEG byte-for-byte with DCTDecode
+    ok 4 - embeds the JPEG byte-for-byte with DCTDecode
+      ---
+      duration_ms: 1.157361
+      ...
+    # Subtest: refuses input that is not a complete JPEG rather than writing a broken PDF
+    ok 5 - refuses input that is not a complete JPEG rather than writing a broken PDF
+      ---
+      duration_ms: 0.250913
+      ...
+    # Subtest: escapePdfString neutralises hostile titles
+    ok 6 - escapePdfString neutralises hostile titles
+      ---
+      duration_ms: 0.305549
+      ...
+    1..6
+ok 9 - PDF encoder — structure
+  ---
+  duration_ms: 4.28628
+  type: 'suite'
+  ...
+# Subtest: encoders verified by independent decoders (Pillow + pypdf)
+    # Subtest: BMP: Pillow decodes our files back to the exact pixels
+    ok 1 - BMP: Pillow decodes our files back to the exact pixels
+      ---
+      duration_ms: 77.790481
+      ...
+    # Subtest: GIF: Pillow reads frames, delays, transparency; an independent LZW decoder reads our stream
+    ok 2 - GIF: Pillow reads frames, delays, transparency; an independent LZW decoder reads our stream
+      ---
+      duration_ms: 171.781128
+      ...
+    # Subtest: PDF: pypdf opens it in strict mode and extracts the embedded image
+    ok 3 - PDF: pypdf opens it in strict mode and extracts the embedded image
+      ---
+      duration_ms: 179.284076
+      ...
+    1..3
+ok 10 - encoders verified by independent decoders (Pillow + pypdf)
+  ---
+  duration_ms: 429.088169
+  type: 'suite'
+  ...
+1..10
+# tests 70
+# suites 10
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1810.004338

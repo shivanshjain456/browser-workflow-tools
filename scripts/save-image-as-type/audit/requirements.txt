@@ -1,0 +1,3 @@
+# Independent verification environment used for this candidate.
+Pillow==12.3.0
+pypdf==6.21.0

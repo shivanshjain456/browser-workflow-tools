@@ -1,0 +1,224 @@
+{
+  "scope": "Hash-verified pure source function execution and constructed workflow coverage; NOT actual user interviews or a manager compatibility test",
+  "inputs": [
+    {
+      "path": "save-image-as-type.user.js",
+      "md5": "2bdcd447318a9b576d2184c7647fb574",
+      "sha256": "4b5ed2e3853a8bcf246f4604c26de8eb53a1346cfef02fb7278ef83d3cd292ce",
+      "extracted": [
+        {
+          "name": "Fe",
+          "start": 54879,
+          "end": 54989,
+          "sha256": "327efccd75bbb64332e09444ca90641c3f52b5589bd363d09f4b1cf562a825ec"
+        },
+        {
+          "name": "Ue",
+          "start": 55047,
+          "end": 55121,
+          "sha256": "353997454bc2523ee41f4a5c0dcf3bd23220191a2601099a218b81bacc57d29c"
+        },
+        {
+          "name": "mn",
+          "start": 55121,
+          "end": 55219,
+          "sha256": "017eb6142d34f1c239e374cfbc5a6358bb70489ffac923826cf16d651663966a"
+        },
+        {
+          "name": "pn",
+          "start": 55219,
+          "end": 55436,
+          "sha256": "b6c6b16ddfe170cb5c30ccce9f119d845bc75112c5e9bfb7b0ae06c0aa74dc4d"
+        },
+        {
+          "name": "fn",
+          "start": 55436,
+          "end": 55676,
+          "sha256": "f0836d8c92a2654dc9e0e2143141e5610af0aaf185067dc89e620a6e91e6d4ea"
+        },
+        {
+          "name": "Fi",
+          "start": 55676,
+          "end": 55702,
+          "sha256": "6d66d388c068c3e480802b68837175bc965837c7c03336e011fa360c6d60c0d0"
+        },
+        {
+          "name": "bn",
+          "start": 56598,
+          "end": 56708,
+          "sha256": "d14ebb0d20c8a4054f658c906f1245a157b4673df78dc338f4a86a62817229bd"
+        }
+      ]
+    },
+    {
+      "path": "save-image-as-type (1).user.js",
+      "md5": "5772b531f84325987730792cb6435ba4",
+      "sha256": "696e75d904233d2653eb33207fd79f9a15115a06c2c6a9aafdf9240edfd57803",
+      "extracted": [
+        {
+          "name": "clampInt",
+          "start": 5615,
+          "end": 5782,
+          "sha256": "b0e14d42a6cd627309f40a7ba047d85de9612daea4cbebc3e4229cf935e19f66"
+        },
+        {
+          "name": "sanitizeFilenameBase",
+          "start": 11038,
+          "end": 11396,
+          "sha256": "7bee79d32f39a9ccb217aa0b1afbfecd82437d7b2ac9238eade7059994d192a6"
+        },
+        {
+          "name": "normalizeProfile",
+          "start": 53220,
+          "end": 53754,
+          "sha256": "e5547d144d505de28e22fef19e65ceb3471202037ffb8af55c6eba57b4a07938"
+        }
+      ]
+    }
+  ],
+  "A": {
+    "excluded": [
+      "profiles",
+      "presetBackup",
+      "devProbe"
+    ],
+    "snapshot": {
+      "id": "fixed-study-id",
+      "name": "Publishing",
+      "createdAt": 1792168141836,
+      "values": {
+        "formats": {
+          "png": true,
+          "jpeg": false
+        },
+        "resize": {
+          "mode": "max",
+          "width": 1400,
+          "height": 1000
+        },
+        "language": "ar",
+        "hotkeys": {
+          "save": "Alt+S"
+        },
+        "rules": [
+          {
+            "host": "example.test",
+            "enabled": true
+          }
+        ],
+        "metadata": "strip"
+      }
+    },
+    "exported": {
+      "sitProfile": 1,
+      "name": "Publishing",
+      "createdAt": 1792168141836,
+      "values": {
+        "formats": {
+          "png": true,
+          "jpeg": false
+        },
+        "resize": {
+          "mode": "max",
+          "width": 1400,
+          "height": 1000
+        },
+        "language": "ar",
+        "hotkeys": {
+          "save": "Alt+S"
+        },
+        "rules": [
+          {
+            "host": "example.test",
+            "enabled": true
+          }
+        ],
+        "metadata": "strip"
+      }
+    },
+    "overlay": {
+      "formats": {
+        "png": true,
+        "jpeg": false
+      },
+      "language": "ar",
+      "profiles": [
+        1
+      ],
+      "resize": {
+        "mode": "max",
+        "width": 1400,
+        "height": 1000
+      },
+      "hotkeys": {
+        "save": "Alt+S"
+      },
+      "rules": [
+        {
+          "host": "example.test",
+          "enabled": true
+        }
+      ],
+      "metadata": "strip"
+    }
+  },
+  "B": {
+    "outputProfile": {
+      "name": "Album",
+      "format": "jpg",
+      "resize": 1400,
+      "pack": "pdf"
+    }
+  },
+  "own": {
+    "normalized": {
+      "id": "preset-1-web",
+      "name": "Web",
+      "formatId": "jpg",
+      "jpegQuality": 0,
+      "webpQuality": 0,
+      "filenameTemplate": "",
+      "subfolder": "",
+      "destination": "zip",
+      "stripMetadata": false,
+      "transform": {
+        "resize": {
+          "mode": "fit",
+          "width": 1400,
+          "height": 1000,
+          "keepAspect": true
+        },
+        "crop": null,
+        "rotate": 0,
+        "flipH": false,
+        "flipV": false
+      },
+      "hosts": []
+    },
+    "effective": {
+      "language": "en",
+      "hotkeys": {
+        "save": "Ctrl+S"
+      },
+      "rules": [],
+      "presetFormatId": "jpg",
+      "subfolder": "",
+      "presetDestination": "zip",
+      "presetTransform": {
+        "resize": {
+          "mode": "fit",
+          "width": 1400,
+          "height": 1000,
+          "keepAspect": true
+        },
+        "crop": null,
+        "rotate": 0,
+        "flipH": false,
+        "flipV": false
+      },
+      "activePresetId": "preset-1-web",
+      "activePresetName": "Web"
+    }
+  },
+  "conclusion": "B output profiles largely overlap conversion presets, but PDF packing and automatic format are separate open capabilities. A named portable global snapshots include language/hotkeys/site rules and are NOT semantically subsumed by current output presets. Keep G-67 open; do not permanently decline by name overlap. Actual demand/UX research remains unperformed."
+}

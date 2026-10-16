@@ -1,0 +1,70 @@
+Save Image as Type 2.0.0
+Artifact SHA256 2eb8851b422393ebe9d14ef5a0bd11874abac03fd76a28328d6fae6ff280daed
+
+Build: 35 runtime modules, 405 exports, 14642 lines, 573476 bytes
+Freshness: build.mjs --check passed
+
+PASS  no-eval
+      dynamic code execution: absent from all 36 sources and the artifact
+PASS  no-new-function
+      dynamic code execution: absent from all 36 sources and the artifact
+PASS  no-innerhtml
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-outerhtml
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-insert-adjacent-html
+      HTML sink reachable by page text: absent from all 36 sources and the artifact
+PASS  no-document-write
+      document rewriting: absent from all 36 sources and the artifact
+PASS  no-string-timer
+      string timers are eval in disguise: absent from all 36 sources and the artifact
+PASS  no-unsafeWindow
+      page-world access is not needed by this script: absent from all 36 sources and the artifact
+PASS  no-debugger
+      debug statement left in source: absent from all 36 sources and the artifact
+PASS  no-javascript-url
+      script URL sink: absent from all 36 sources and the artifact
+PASS  no-remote-require
+      unpinned remote executable dependency: absent from all 36 sources and the artifact
+PASS  no-remote-resource
+      unpinned remote dependency: absent from all 36 sources and the artifact
+PASS  no-gm-add-element-src
+      remote script injection: absent from all 36 sources and the artifact
+PASS  grants-match-usage
+      10 grants, all used: GM_info, GM_getValue, GM_setValue, GM_addValueChangeListener, GM_removeValueChangeListener, GM_deleteValue, GM_xmlhttpRequest, GM_download, GM_registerMenuCommand, GM_notification
+PASS  connect-scope
+      @connect = ["*"] (wildcard required: images are hosted on arbitrary CDNs; documented in README)
+PASS  match-scope
+      @match = ["*://*/*"]; no file://, chrome://, or extension origins
+PASS  artifact-exists
+      560.0 KB, sha256 2eb8851b422393eb
+PASS  artifact-header-matches-meta
+      metadata block in release/ is byte-identical to src/meta.js
+PASS  no-build-placeholder
+      version placeholder was replaced at build time
+PASS  no-runtime-imports
+      no import/require statements survive into the artifact
+PASS  version-consistent
+      metadata @version and in-script version are both 2.0.0
+PASS  no-remote-endpoints
+      only inert identifiers/reserved parse bases appear: https://siat.invalid/save-image-as-type, http://www.w3.org/2000/svg, https://siat.invalid/
+PASS  no-implicit-page-globals
+      no bare calls to window-owned names (27 checked) across 36 sources
+
+23/23 lint checks passed
+
+Unit runner final summary:
+1..90
+# tests 513
+# suites 90
+# pass 513
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 47299.847834
+
+Browser final run 1: 57 passed, 0 failed, 0 skipped, 0 retries
+Browser final run 2: 57 passed, 0 failed, 0 skipped, 0 retries
+Raw reports: e2e-report-v2-run{1,2}.json
+Scope: real Chrome/local fixtures/emulated manager; no public-site or real manager tests

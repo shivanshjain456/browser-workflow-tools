@@ -1,0 +1,4016 @@
+{
+  "scope": "Original baseline artifact plus src/**/*.js, regex IGNORECASE; line hits capped at 160 per query. Semantic confirmation in triage-data.json, no dynamic absence proof.",
+  "queries": {
+    "privileged_handle": {
+      "regex": "__saveImageAsTypeInitialised|INIT_FLAG|markerRoots",
+      "count": 16,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12942,
+          "text": "const INIT_FLAG = '__saveImageAsTypeInitialised';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12960,
+          "text": "  const markerRoots = () => [doc, doc.documentElement, doc.body, win].filter(Boolean);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12961,
+          "text": "  const existing = markerRoots().map((root) => root[INIT_FLAG]).find(Boolean);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12965,
+          "text": "    for (const root of markerRoots()) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12966,
+          "text": "      if (!root[INIT_FLAG]) root[INIT_FLAG] = existing;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12974,
+          "text": "  for (const root of markerRoots()) root[INIT_FLAG] = api;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14561,
+          "text": "      for (const markerRoot of markerRoots()) delete markerRoot[INIT_FLAG];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14611,
+          "text": "  for (const root of markerRoots()) root[INIT_FLAG] = api; // same-world handle for tests and support"
+        },
+        {
+          "file": "src/main.js",
+          "line": 61,
+          "text": "const INIT_FLAG = '__saveImageAsTypeInitialised';"
+        },
+        {
+          "file": "src/main.js",
+          "line": 79,
+          "text": "  const markerRoots = () => [doc, doc.documentElement, doc.body, win].filter(Boolean);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 80,
+          "text": "  const existing = markerRoots().map((root) => root[INIT_FLAG]).find(Boolean);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 84,
+          "text": "    for (const root of markerRoots()) {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 85,
+          "text": "      if (!root[INIT_FLAG]) root[INIT_FLAG] = existing;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 93,
+          "text": "  for (const root of markerRoots()) root[INIT_FLAG] = api;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1680,
+          "text": "      for (const markerRoot of markerRoots()) delete markerRoot[INIT_FLAG];"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1730,
+          "text": "  for (const root of markerRoots()) root[INIT_FLAG] = api; // same-world handle for tests and support"
+        }
+      ]
+    },
+    "boot_switch": {
+      "regex": "__SIAT_NO_AUTOBOOT|data-siat-no-autoboot",
+      "count": 4,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14624,
+          "text": "  (typeof globalThis !== 'undefined' && globalThis.__SIAT_NO_AUTOBOOT) ||"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14625,
+          "text": "  (typeof document !== 'undefined' && document.documentElement && document.documentElement.hasAttribute('data-siat-no-autoboot'));"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1743,
+          "text": "  (typeof globalThis !== 'undefined' && globalThis.__SIAT_NO_AUTOBOOT) ||"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1744,
+          "text": "  (typeof document !== 'undefined' && document.documentElement && document.documentElement.hasAttribute('data-siat-no-autoboot'));"
+        }
+      ]
+    },
+    "worker": {
+      "regex": "new Worker|OffscreenCanvas|createImageBitmap|transferToImageBitmap",
+      "count": 0,
+      "hits": []
+    },
+    "gamut": {
+      "regex": "colorSpace|display-p3|rec2020",
+      "count": 2,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4235,
+          "text": "      `<< /Type /XObject /Subtype /Image /Width ${width | 0} /Height ${height | 0} /ColorSpace /DeviceRGB ` +"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 57,
+          "text": "      `<< /Type /XObject /Subtype /Image /Width ${width | 0} /Height ${height | 0} /ColorSpace /DeviceRGB ` +"
+        }
+      ]
+    },
+    "metadata_write": {
+      "regex": "preserveMetadata|embedExif|writeExif|writeIcc|writeXmp",
+      "count": 0,
+      "hits": []
+    },
+    "intake": {
+      "regex": "clipboard\\.read|videoWidth|videoHeight|type = .file.|promptForUrl|INPUT|srcset",
+      "count": 234,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 633,
+          "text": " * So every string is treated as hostile input: control characters, path"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 643,
+          "text": "function sanitizePathComponent(input, { maxChars = 100 } = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 644,
+          "text": "  if (typeof input !== 'string') return '';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 645,
+          "text": "  let text = input;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 689,
+          "text": "function sanitizeSubfolder(input) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 690,
+          "text": "  if (typeof input !== 'string') return '';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 691,
+          "text": "  const trimmed = input.replace(/\\\\/g, '/').trim();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1313,
+          "text": "/** Coerce untrusted input (settings import, preset, dialog) into a valid spec. */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1749,
+          "text": "  // the user never typed, so such input is refused instead of cleaned."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1986,
+          "text": "function normalizeKeyName(input) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1987,
+          "text": "  const text = String(input || '').trim();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2157,
+          "text": "  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2787,
+          "text": " * 1. \"Any image on the page\" is more than <img>. Real pages use srcset/<picture>"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2826,
+          "text": "  // 1. <img>, <input type=image>"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2827,
+          "text": "  if (element.tagName === 'IMG' || (element.tagName === 'INPUT' && element.getAttribute('type') === 'image')) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2836,
+          "text": "      hasSrcset: Boolean(element.getAttribute('srcset') || closestPictureSource(element)),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2884,
+          "text": "  return picture.querySelector('source[srcset]');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3280,
+          "text": "      return target.hasSrcset ? 'Image (responsive srcset)' : 'Image';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4205,
+          "text": " * @param {object} input"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4206,
+          "text": " * @param {Uint8Array} input.jpegBytes   complete JPEG file (must start FFD8, end FFD9)"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4207,
+          "text": " * @param {number} input.width           image width in pixels"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4208,
+          "text": " * @param {number} input.height          image height in pixels"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4209,
+          "text": " * @param {'a4'|'letter'|'pixel'} [input.pageFit='a4']"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4210,
+          "text": " * @param {number} [input.margin]"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4211,
+          "text": " * @param {string} [input.title]"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6039,
+          "text": " * poster>`, and the alternative sizes a `srcset` offers \u2014 and describes each one"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6062,
+          "text": "  /** srcset candidates kept per image. */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6343,
+          "text": "    element.getAttribute('data-srcset') ||"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6346,
+          "text": "  const url = absolutize(currentSrc || rawSrc || (element.getAttribute('srcset') ? firstSrcsetUrl(element.getAttribute('srcset')) : ''), doc);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6350,
+          "text": "  const candidates = parseSrcset(element.getAttribute('srcset') || '', doc).concat(pictureCandidates(element, doc));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6363,
+          "text": "    lazyUrl: lazySrc ? absolutize(firstSrcsetUrl(lazySrc) || lazySrc, doc) : '',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6450,
+          "text": "    const value = sources[index].getAttribute('srcset') || '';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6451,
+          "text": "    for (const candidate of parseSrcset(value, doc)) out.push(candidate);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6457,
+          "text": " * Parse a `srcset` attribute into candidates."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6459,
+          "text": " * Deliberately tolerant: real-world srcsets contain stray commas, missing"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6463,
+          "text": "function parseSrcset(value, doc) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6485,
+          "text": "function firstSrcsetUrl(value) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6697,
+          "text": "      attributeFilter: ['src', 'srcset', 'data-src', 'style', 'poster'],"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7248,
+          "text": "function sanitizeEntryName(input, { maxBytes = ZIP_LIMITS.maxNameBytes } = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7249,
+          "text": "  const raw = typeof input === 'string' ? input : String(input == null ? '' : input);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8554,
+          "text": ".siat-icon-btn:focus-visible, .siat-field input:focus-visible, .siat-field select:focus-visible,"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8570,
+          "text": ".siat-check input { margin-top: 2px; flex: 0 0 auto; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8578,
+          "text": ".siat-field input[type=\"text\"], .siat-field input[type=\"number\"], .siat-field input[type=\"search\"], .siat-field select {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8715,
+          "text": "  const input = doc.createElement('input');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8716,
+          "text": "  input.type = 'checkbox';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8717,
+          "text": "  if (id) input.id = id;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8718,
+          "text": "  input.checked = Boolean(checked);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8719,
+          "text": "  if (unavailable) input.disabled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8720,
+          "text": "  if (typeof onChange === 'function') input.addEventListener('change', () => onChange(input.checked));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8721,
+          "text": "  wrapper.appendChild(input);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8744,
+          "text": "  const input = doc.createElement('input');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8745,
+          "text": "  input.type = attrs.type || 'text';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8746,
+          "text": "  input.value = value === undefined || value === null ? '' : String(value);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8749,
+          "text": "    input.setAttribute(key, String(val));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8751,
+          "text": "  return input;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8943,
+          "text": "    const found = dialog.querySelectorAll('button, input, select, textarea, [href], summary, details, [tabindex]:not([tabindex=\"-1\"])');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9147,
+          "text": "  let fileInput = null;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9196,
+          "text": "      fileInput = doc.createElement('input');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9197,
+          "text": "      fileInput.type = 'file';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9198,
+          "text": "      fileInput.accept = '.json,application/json';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9199,
+          "text": "      fileInput.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9200,
+          "text": "      fileInput.addEventListener('change', onImportFile);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9201,
+          "text": "      context.shadowRoot.appendChild(fileInput);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9257,
+          "text": "    prefix.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9265,
+          "text": "    subfolder.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9281,
+          "text": "    maxLen.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9327,
+          "text": "    templateControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9370,
+          "text": "    jpeg.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9376,
+          "text": "    webp.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9410,
+          "text": "    downscale.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9437,
+          "text": "    maxFrames.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9443,
+          "text": "    memLimit.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9459,
+          "text": "    concurrency.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9472,
+          "text": "    maxImages.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9482,
+          "text": "    minWidth.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9487,
+          "text": "    minHeight.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9559,
+          "text": "    zipMax.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9584,
+          "text": "    scanCap.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9709,
+          "text": "    nameControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9750,
+          "text": "    templateControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9756,
+          "text": "    hostsControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9821,
+          "text": "      control.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9863,
+          "text": "      const input = doc.createElement('input');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9864,
+          "text": "      input.type = 'radio';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9865,
+          "text": "      input.className = 'siat-radio-input';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9866,
+          "text": "      input.name = 'siat-download-behavior';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9867,
+          "text": "      input.value = value;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9868,
+          "text": "      input.checked = draft.downloadBehavior === value;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9869,
+          "text": "      input.addEventListener('change', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9870,
+          "text": "        if (input.checked) draft.downloadBehavior = value;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9872,
+          "text": "      wrapper.appendChild(input);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10143,
+          "text": "    if (!fileInput) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10144,
+          "text": "    fileInput.value = '';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10145,
+          "text": "    fileInput.click();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10149,
+          "text": "    const file = fileInput && fileInput.files && fileInput.files[0];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10187,
+          "text": "      fileInput = null;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10487,
+          "text": ".siat-toolbar input[type=\"search\"], .siat-toolbar input[type=\"number\"] { max-width: 150px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10630,
+          "text": "    search.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10637,
+          "text": "    minWidth.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10644,
+          "text": "    minHeight.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10794,
+          "text": "    const checkbox = doc.createElement('input');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11509,
+          "text": "    width.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11523,
+          "text": "    height.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11584,
+          "text": "      const input = dialogTextControl(doc, '', { type: 'number', min: 0, max: 100000, step: 1 });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11585,
+          "text": "      input.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11587,
+          "text": "        spec.crop[key] = Number(input.value) || 0;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11594,
+          "text": "      controls[`crop-${key}`] = input;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11595,
+          "text": "      grid.appendChild(dialogField(doc, { id: `siat-tf-crop-${key}`, label, control: input }));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11733,
+          "text": "      const input = controls[`crop-${key}`];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11734,
+          "text": "      if (input) input.value = String(spec.crop ? spec.crop[key] || 0 : 0);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11737,
+          "text": "      const cropInput = dialog.shadowRoot.querySelector('#siat-tf-crop-enable');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11738,
+          "text": "      if (cropInput) cropInput.checked = cropEnabled;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11739,
+          "text": "      const aspectInput = dialog.shadowRoot.querySelector('#siat-tf-aspect');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11740,
+          "text": "      if (aspectInput) aspectInput.checked = spec.resize.keepAspect !== false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12284,
+          "text": " * The values come from the file, which is untrusted input: everything is written"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12797,
+          "text": "    minWidth.addEventListener('input', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12803,
+          "text": "    minHeight.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 27,
+          "text": " * @param {object} input"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 28,
+          "text": " * @param {Uint8Array} input.jpegBytes   complete JPEG file (must start FFD8, end FFD9)"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 29,
+          "text": " * @param {number} input.width           image width in pixels"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 30,
+          "text": " * @param {number} input.height          image height in pixels"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 31,
+          "text": " * @param {'a4'|'letter'|'pixel'} [input.pageFit='a4']"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 32,
+          "text": " * @param {number} [input.margin]"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 33,
+          "text": " * @param {string} [input.title]"
+        },
+        {
+          "file": "src/encoders/zip.js",
+          "line": 83,
+          "text": "export function sanitizeEntryName(input, { maxBytes = ZIP_LIMITS.maxNameBytes } = {}) {"
+        },
+        {
+          "file": "src/encoders/zip.js",
+          "line": 84,
+          "text": "  const raw = typeof input === 'string' ? input : String(input == null ? '' : input);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 50,
+          "text": "  let fileInput = null;"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 99,
+          "text": "      fileInput = doc.createElement('input');"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 100,
+          "text": "      fileInput.type = 'file';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 101,
+          "text": "      fileInput.accept = '.json,application/json';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 102,
+          "text": "      fileInput.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 103,
+          "text": "      fileInput.addEventListener('change', onImportFile);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 104,
+          "text": "      context.shadowRoot.appendChild(fileInput);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 160,
+          "text": "    prefix.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 168,
+          "text": "    subfolder.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 184,
+          "text": "    maxLen.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 230,
+          "text": "    templateControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 273,
+          "text": "    jpeg.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 279,
+          "text": "    webp.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 313,
+          "text": "    downscale.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 340,
+          "text": "    maxFrames.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 346,
+          "text": "    memLimit.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 362,
+          "text": "    concurrency.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 375,
+          "text": "    maxImages.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 385,
+          "text": "    minWidth.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 390,
+          "text": "    minHeight.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 462,
+          "text": "    zipMax.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 487,
+          "text": "    scanCap.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 612,
+          "text": "    nameControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 653,
+          "text": "    templateControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 659,
+          "text": "    hostsControl.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 724,
+          "text": "      control.addEventListener('input', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 766,
+          "text": "      const input = doc.createElement('input');"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 767,
+          "text": "      input.type = 'radio';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 768,
+          "text": "      input.className = 'siat-radio-input';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 769,
+          "text": "      input.name = 'siat-download-behavior';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 770,
+          "text": "      input.value = value;"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 771,
+          "text": "      input.checked = draft.downloadBehavior === value;"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 772,
+          "text": "      input.addEventListener('change', () => {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 773,
+          "text": "        if (input.checked) draft.downloadBehavior = value;"
+        }
+      ]
+    },
+    "history": {
+      "regex": "history|ahash|hamming|fnv1a|domainMemory",
+      "count": 0,
+      "hits": []
+    },
+    "ambient": {
+      "regex": "watcher|slideshow|palette|quickSaveButton|tray",
+      "count": 42,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3298,
+          "text": " *     palette across all frames (a single palette keeps animated output small"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3299,
+          "text": " *     and avoids per-frame palette flicker),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3300,
+          "text": " *   - one reserved palette entry for binary transparency (GIF has no partial"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3309,
+          "text": " *   - one global palette rather than per-frame local palettes,"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3360,
+          "text": "  const palette = boxes.map((box) => boxAverage(box, counts));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3365,
+          "text": "    transparentIndex = palette.length;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3366,
+          "text": "    palette.push([0, 0, 0]);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3368,
+          "text": "  const tableBits = Math.max(1, Math.ceil(Math.log2(palette.length)));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3370,
+          "text": "  while (palette.length < tableSize) palette.push([0, 0, 0]);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3372,
+          "text": "  // 4. Reduced-colour -> palette-index lookup table."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3374,
+          "text": "  for (let key = 0; key < REDUCED_SIZE; key += 1) lut[key] = nearestPaletteIndex(key, palette);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3386,
+          "text": "    tableBytes[i * 3] = palette[i][0];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3387,
+          "text": "    tableBytes[i * 3 + 1] = palette[i][1];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3388,
+          "text": "    tableBytes[i * 3 + 2] = palette[i][2];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3513,
+          "text": "/** Fill the lookup table: every reduced colour maps to its nearest palette entry. */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3514,
+          "text": "function nearestPaletteIndex(key, palette) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3518,
+          "text": "  for (let i = 0; i < palette.length; i += 1) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3519,
+          "text": "    const dr = palette[i][0] - r;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3520,
+          "text": "    const dg = palette[i][1] - g;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3521,
+          "text": "    const db = palette[i][2] - b;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6459,
+          "text": " * Deliberately tolerant: real-world srcsets contain stray commas, missing"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 14,
+          "text": " *     palette across all frames (a single palette keeps animated output small"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 15,
+          "text": " *     and avoids per-frame palette flicker),"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 16,
+          "text": " *   - one reserved palette entry for binary transparency (GIF has no partial"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 25,
+          "text": " *   - one global palette rather than per-frame local palettes,"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 76,
+          "text": "  const palette = boxes.map((box) => boxAverage(box, counts));"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 81,
+          "text": "    transparentIndex = palette.length;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 82,
+          "text": "    palette.push([0, 0, 0]);"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 84,
+          "text": "  const tableBits = Math.max(1, Math.ceil(Math.log2(palette.length)));"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 86,
+          "text": "  while (palette.length < tableSize) palette.push([0, 0, 0]);"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 88,
+          "text": "  // 4. Reduced-colour -> palette-index lookup table."
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 90,
+          "text": "  for (let key = 0; key < REDUCED_SIZE; key += 1) lut[key] = nearestPaletteIndex(key, palette);"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 102,
+          "text": "    tableBytes[i * 3] = palette[i][0];"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 103,
+          "text": "    tableBytes[i * 3 + 1] = palette[i][1];"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 104,
+          "text": "    tableBytes[i * 3 + 2] = palette[i][2];"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 229,
+          "text": "/** Fill the lookup table: every reduced colour maps to its nearest palette entry. */"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 230,
+          "text": "function nearestPaletteIndex(key, palette) {"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 234,
+          "text": "  for (let i = 0; i < palette.length; i += 1) {"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 235,
+          "text": "    const dr = palette[i][0] - r;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 236,
+          "text": "    const dg = palette[i][1] - g;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 237,
+          "text": "    const db = palette[i][2] - b;"
+        },
+        {
+          "file": "src/core/scan.js",
+          "line": 426,
+          "text": " * Deliberately tolerant: real-world srcsets contain stray commas, missing"
+        }
+      ]
+    },
+    "accessibility": {
+      "regex": "prefers-reduced-motion|forced-colors|prefers-contrast|font-size|direction|dir=",
+      "count": 100,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3098,
+          "text": "  // wrong direction."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4989,
+          "text": "  const direction = typeof ref === 'string' ? ref.trim().toUpperCase() : '';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4990,
+          "text": "  if (direction === 'S' || direction === 'W') decimal = -decimal;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7963,
+          "text": ".siat-head-title { font-weight: 650; font-size: 12.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7964,
+          "text": ".siat-head-sub { color: #5c6472; font-size: 11.5px; margin-top: 2px; word-break: break-all; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7975,
+          "text": "  flex: 0 0 auto; min-width: 46px; font-weight: 680; letter-spacing: .2px; font-size: 12.5px;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7977,
+          "text": ".siat-hint { flex: 1 1 auto; color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7980,
+          "text": ".siat-foot { padding: 6px 9px 3px; color: #6b7280; font-size: 11px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7982,
+          "text": ".siat-busy { padding: 7px 9px; font-size: 12px; color: #2f6fdb; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7986,
+          "text": "  font: inherit; font-size: 12px; cursor: pointer;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8546,
+          "text": ".siat-dialog-title { font-size: 15px; font-weight: 680; margin: 0; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8547,
+          "text": ".siat-dialog-subtitle { font-size: 12px; color: #5c6472; margin: 2px 0 0; overflow-wrap: anywhere; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8550,
+          "text": "  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 20px;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8562,
+          "text": ".siat-legend { font-weight: 680; font-size: 13px; padding: 0; margin-bottom: 8px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8563,
+          "text": ".siat-desc { color: #5c6472; font-size: 12px; margin: -4px 0 10px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8571,
+          "text": ".siat-check-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8573,
+          "text": ".siat-check-hint { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8576,
+          "text": ".siat-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8577,
+          "text": ".siat-field > label { font-weight: 620; font-size: 12.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8582,
+          "text": ".siat-field small { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8588,
+          "text": "  margin: 10px 0 0; padding: 9px 11px; border-radius: 9px; font-size: 12.5px;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8594,
+          "text": ".siat-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8608,
+          "text": "  font: inherit; font-size: 12.5px; padding: 8px 13px; border-radius: 9px; cursor: pointer;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8615,
+          "text": ".siat-note { font-size: 11.5px; color: #5c6472; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8633,
+          "text": ".siat-row-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 1px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8635,
+          "text": ".siat-row-meta { font-size: 11.5px; color: #5c6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8638,
+          "text": "  display: inline-block; padding: 1px 6px; border-radius: 999px; font-size: 10.5px; font-weight: 650;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8644,
+          "text": ".siat-empty { padding: 26px 12px; text-align: center; color: #5c6472; font-size: 12.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10216,
+          "text": "  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10231,
+          "text": ".siat-meta { color: #c3cad8; font-size: 12px; margin-top: 2px; word-break: break-word; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10234,
+          "text": "  font-size: 16px; line-height: 1; padding: 2px 4px; border-radius: 6px;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10239,
+          "text": ".siat-details summary { cursor: pointer; color: #9fb3d9; font-size: 12px; user-select: none; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10240,
+          "text": ".siat-details ul { margin: 6px 0 0; padding-left: 18px; color: #d7dce6; font-size: 12px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10245,
+          "text": "  font: inherit; font-size: 12px; cursor: pointer;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10252,
+          "text": "@media (prefers-reduced-motion: reduce) { .siat-spinner { animation: none; } }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10490,
+          "text": ".siat-count { font-size: 12px; color: #5c6472; padding: 2px 0 8px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10492,
+          "text": ".siat-row-thumb-empty { display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #5c6472; text-align: center; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10495,
+          "text": "  font: inherit; font-size: 11px; padding: 3px 7px; border-radius: 7px; cursor: pointer;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11065,
+          "text": "  display: flex; flex-direction: column;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11076,
+          "text": ".siat-jobbar-body { padding: 9px 11px 11px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11081,
+          "text": ".siat-jobbar-status { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11084,
+          "text": ".siat-jobbar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11085,
+          "text": ".siat-jobbar-item { display: flex; gap: 7px; align-items: baseline; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11096,
+          "text": ".siat-jobbar details summary { cursor: pointer; font-size: 11.5px; color: #5c6472; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11390,
+          "text": ".siat-tf-output { font-size: 12.5px; padding: 8px 10px; border-radius: 9px; background: rgba(127,127,127,.1); margin: 8px 0; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11391,
+          "text": ".siat-tf-warn { color: #b4232a; font-size: 12px; margin: 4px 0 0; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11395,
+          "text": ".siat-cropdims { position: absolute; left: 4px; bottom: -18px; font-size: 10.5px; color: #edf0f6; background: rgba(10,12,18,.72); padding: 1px 5px; border-radius: 5px; line-height: 1.4; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12053,
+          "text": ".siat-cmp-status { font-size: 12.5px; color: #5c6472; padding: 8px 0; min-height: 1.4em; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12055,
+          "text": ".siat-table td .siat-btn { padding: 4px 9px; font-size: 11.5px; }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12297,
+          "text": ".siat-insp-status { font-size: 12.5px; color: #5c6472; padding: 6px 0; }"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 25,
+          "text": ".siat-tf-output { font-size: 12.5px; padding: 8px 10px; border-radius: 9px; background: rgba(127,127,127,.1); margin: 8px 0; }"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 26,
+          "text": ".siat-tf-warn { color: #b4232a; font-size: 12px; margin: 4px 0 0; }"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 30,
+          "text": ".siat-cropdims { position: absolute; left: 4px; bottom: -18px; font-size: 10.5px; color: #edf0f6; background: rgba(10,12,18,.72); padding: 1px 5px; border-radius: 5px; line-height: 1.4; }"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 26,
+          "text": "  display: flex; flex-direction: column;"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 37,
+          "text": ".siat-jobbar-body { padding: 9px 11px 11px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 42,
+          "text": ".siat-jobbar-status { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 45,
+          "text": ".siat-jobbar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 46,
+          "text": ".siat-jobbar-item { display: flex; gap: 7px; align-items: baseline; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 57,
+          "text": ".siat-jobbar details summary { cursor: pointer; font-size: 11.5px; color: #5c6472; }"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 23,
+          "text": "  display: flex; flex-direction: column; gap: 8px; align-items: flex-end;"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 38,
+          "text": ".siat-meta { color: #c3cad8; font-size: 12px; margin-top: 2px; word-break: break-word; }"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 41,
+          "text": "  font-size: 16px; line-height: 1; padding: 2px 4px; border-radius: 6px;"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 46,
+          "text": ".siat-details summary { cursor: pointer; color: #9fb3d9; font-size: 12px; user-select: none; }"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 47,
+          "text": ".siat-details ul { margin: 6px 0 0; padding-left: 18px; color: #d7dce6; font-size: 12px; }"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 52,
+          "text": "  font: inherit; font-size: 12px; cursor: pointer;"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 59,
+          "text": "@media (prefers-reduced-motion: reduce) { .siat-spinner { animation: none; } }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 52,
+          "text": ".siat-head-title { font-weight: 650; font-size: 12.5px; }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 53,
+          "text": ".siat-head-sub { color: #5c6472; font-size: 11.5px; margin-top: 2px; word-break: break-all; }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 64,
+          "text": "  flex: 0 0 auto; min-width: 46px; font-weight: 680; letter-spacing: .2px; font-size: 12.5px;"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 66,
+          "text": ".siat-hint { flex: 1 1 auto; color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 69,
+          "text": ".siat-foot { padding: 6px 9px 3px; color: #6b7280; font-size: 11px; }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 71,
+          "text": ".siat-busy { padding: 7px 9px; font-size: 12px; color: #2f6fdb; }"
+        },
+        {
+          "file": "src/ui/menu.js",
+          "line": 75,
+          "text": "  font: inherit; font-size: 12px; cursor: pointer;"
+        },
+        {
+          "file": "src/ui/compare-dialog.js",
+          "line": 17,
+          "text": ".siat-cmp-status { font-size: 12.5px; color: #5c6472; padding: 8px 0; min-height: 1.4em; }"
+        },
+        {
+          "file": "src/ui/compare-dialog.js",
+          "line": 19,
+          "text": ".siat-table td .siat-btn { padding: 4px 9px; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 33,
+          "text": ".siat-count { font-size: 12px; color: #5c6472; padding: 2px 0 8px; }"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 35,
+          "text": ".siat-row-thumb-empty { display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #5c6472; text-align: center; }"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 38,
+          "text": "  font: inherit; font-size: 11px; padding: 3px 7px; border-radius: 7px; cursor: pointer;"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 43,
+          "text": ".siat-dialog-title { font-size: 15px; font-weight: 680; margin: 0; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 44,
+          "text": ".siat-dialog-subtitle { font-size: 12px; color: #5c6472; margin: 2px 0 0; overflow-wrap: anywhere; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 47,
+          "text": "  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 20px;"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 59,
+          "text": ".siat-legend { font-weight: 680; font-size: 13px; padding: 0; margin-bottom: 8px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 60,
+          "text": ".siat-desc { color: #5c6472; font-size: 12px; margin: -4px 0 10px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 68,
+          "text": ".siat-check-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 70,
+          "text": ".siat-check-hint { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 73,
+          "text": ".siat-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 74,
+          "text": ".siat-field > label { font-weight: 620; font-size: 12.5px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 79,
+          "text": ".siat-field small { color: #5c6472; font-size: 11.5px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 85,
+          "text": "  margin: 10px 0 0; padding: 9px 11px; border-radius: 9px; font-size: 12.5px;"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 91,
+          "text": ".siat-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 105,
+          "text": "  font: inherit; font-size: 12.5px; padding: 8px 13px; border-radius: 9px; cursor: pointer;"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 112,
+          "text": ".siat-note { font-size: 11.5px; color: #5c6472; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 130,
+          "text": ".siat-row-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 1px; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 132,
+          "text": ".siat-row-meta { font-size: 11.5px; color: #5c6472; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 135,
+          "text": "  display: inline-block; padding: 1px 6px; border-radius: 999px; font-size: 10.5px; font-weight: 650;"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 141,
+          "text": ".siat-empty { padding: 26px 12px; text-align: center; color: #5c6472; font-size: 12.5px; }"
+        },
+        {
+          "file": "src/ui/inspector.js",
+          "line": 21,
+          "text": ".siat-insp-status { font-size: 12.5px; color: #5c6472; padding: 6px 0; }"
+        },
+        {
+          "file": "src/core/source.js",
+          "line": 317,
+          "text": "  // wrong direction."
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 617,
+          "text": "  const direction = typeof ref === 'string' ? ref.trim().toUpperCase() : '';"
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 618,
+          "text": "  if (direction === 'S' || direction === 'W') decimal = -decimal;"
+        }
+      ]
+    },
+    "prototype": {
+      "regex": "Object.assign|Object.create|hasOwnProperty|__proto__",
+      "count": 76,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 329,
+          "text": "            headers: Object.assign({ Accept: 'image/*,*/*' }, headers),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 920,
+          "text": "  const ctx = Object.assign({}, context);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1813,
+          "text": "  const base = Object.assign({}, settings || {});"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2290,
+          "text": "  shortcuts: Object.assign({}, DEFAULT_SHORTCUTS),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2321,
+          "text": "    shortcuts: Object.assign({}, DEFAULT_SETTINGS.shortcuts),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2362,
+          "text": "    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: 2 };"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2397,
+          "text": "    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: version };"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2549,
+          "text": "      const map = Object.assign({}, DEFAULT_SETTINGS.shortcuts);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2748,
+          "text": "    const merged = Object.assign({}, cached, patch || {});"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3697,
+          "text": "    keep.push(Object.assign({}, frame, { delayMs }));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5557,
+          "text": "  const report = Object.assign("
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6081,
+          "text": "  const opts = Object.assign("
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6852,
+          "text": "        listener(Object.assign({ jobLabel: label, stats: stats() }, event));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7782,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7788,
+          "text": "    return Object.assign(base, { reason: 'empty', message: 'There is no image data to copy.' });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7793,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7799,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7814,
+          "text": "        return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7820,
+          "text": "      return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7831,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7838,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9161,
+          "text": "      draft = Object.assign({}, deps.getSettings());"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9164,
+          "text": "      draft.shortcuts = Object.assign({}, draft.shortcuts || {});"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9822,
+          "text": "        draft.shortcuts = Object.assign({}, draft.shortcuts, { [action.id]: control.value });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10127,
+          "text": "    const payload = JSON.stringify(Object.assign({}, draft, { exportedBy: 'save-image-as-type', exportedAt: new Date().toISOString() }), null, 2);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11003,
+          "text": "      if (options.filter) filterState = Object.assign({}, filterState, options.filter);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11908,
+          "text": "      startCrop = Object.assign({}, spec.crop);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11921,
+          "text": "      const next = Object.assign({}, startCrop);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11956,
+          "text": "      const next = Object.assign({}, spec.crop);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12663,
+          "text": "        options = Object.assign({}, options, presetOptions);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12701,
+          "text": "        deps.onStart(Object.assign({}, options));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12815,
+          "text": "      plan = deps.plan(Object.assign({}, options)) || {};"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12872,
+          "text": "      if (nextOptions && typeof nextOptions === 'object') presetOptions = Object.assign({}, presetOptions || {}, nextOptions);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12886,
+          "text": "    state: () => ({ options: Object.assign({}, options), plan: plan ? Object.assign({}, plan) : null }),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13120,
+          "text": "    const effective = preset ? effectiveSettings(base, preset) : Object.assign({}, base);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13192,
+          "text": "    const naming = Object.assign("
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13258,
+          "text": "      const produced = await produceOutput(target, effectiveFormat, Object.assign({}, runOptions, {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14098,
+          "text": "    startBatch(Object.assign({}, state.lastBatchOptions || {}, { entries, retry: true }));"
+        },
+        {
+          "file": "src/main.js",
+          "line": 239,
+          "text": "    const effective = preset ? effectiveSettings(base, preset) : Object.assign({}, base);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 311,
+          "text": "    const naming = Object.assign("
+        },
+        {
+          "file": "src/main.js",
+          "line": 377,
+          "text": "      const produced = await produceOutput(target, effectiveFormat, Object.assign({}, runOptions, {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1217,
+          "text": "    startBatch(Object.assign({}, state.lastBatchOptions || {}, { entries, retry: true }));"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 413,
+          "text": "    keep.push(Object.assign({}, frame, { delayMs }));"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 64,
+          "text": "      draft = Object.assign({}, deps.getSettings());"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 67,
+          "text": "      draft.shortcuts = Object.assign({}, draft.shortcuts || {});"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 725,
+          "text": "        draft.shortcuts = Object.assign({}, draft.shortcuts, { [action.id]: control.value });"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 1030,
+          "text": "    const payload = JSON.stringify(Object.assign({}, draft, { exportedBy: 'save-image-as-type', exportedAt: new Date().toISOString() }), null, 2);"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 543,
+          "text": "      startCrop = Object.assign({}, spec.crop);"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 556,
+          "text": "      const next = Object.assign({}, startCrop);"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 591,
+          "text": "      const next = Object.assign({}, spec.crop);"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 546,
+          "text": "      if (options.filter) filterState = Object.assign({}, filterState, options.filter);"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 64,
+          "text": "        options = Object.assign({}, options, presetOptions);"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 102,
+          "text": "        deps.onStart(Object.assign({}, options));"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 216,
+          "text": "      plan = deps.plan(Object.assign({}, options)) || {};"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 273,
+          "text": "      if (nextOptions && typeof nextOptions === 'object') presetOptions = Object.assign({}, presetOptions || {}, nextOptions);"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 287,
+          "text": "    state: () => ({ options: Object.assign({}, options), plan: plan ? Object.assign({}, plan) : null }),"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 289,
+          "text": "            headers: Object.assign({ Accept: 'image/*,*/*' }, headers),"
+        },
+        {
+          "file": "src/core/queue.js",
+          "line": 92,
+          "text": "        listener(Object.assign({ jobLabel: label, stats: stats() }, event));"
+        },
+        {
+          "file": "src/core/scan.js",
+          "line": 48,
+          "text": "  const opts = Object.assign("
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 355,
+          "text": "  const report = Object.assign("
+        },
+        {
+          "file": "src/core/template.js",
+          "line": 102,
+          "text": "  const ctx = Object.assign({}, context);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 199,
+          "text": "  const base = Object.assign({}, settings || {});"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 124,
+          "text": "  shortcuts: Object.assign({}, DEFAULT_SHORTCUTS),"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 155,
+          "text": "    shortcuts: Object.assign({}, DEFAULT_SETTINGS.shortcuts),"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 196,
+          "text": "    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: 2 };"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 231,
+          "text": "    return { value: Object.assign({}, raw, { schemaVersion: SETTINGS_SCHEMA_VERSION }), from: version };"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 383,
+          "text": "      const map = Object.assign({}, DEFAULT_SETTINGS.shortcuts);"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 582,
+          "text": "    const merged = Object.assign({}, cached, patch || {});"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 85,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 91,
+          "text": "    return Object.assign(base, { reason: 'empty', message: 'There is no image data to copy.' });"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 96,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 102,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 117,
+          "text": "        return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 123,
+          "text": "      return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 134,
+          "text": "    return Object.assign(base, {"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 141,
+          "text": "    return Object.assign(base, {"
+        }
+      ]
+    },
+    "encoding": {
+      "regex": "encodePdf|encodeGif|encodeBmp|encodeZip|apng|ico|tiff|heic|heif|jxl",
+      "count": 133,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8,
+          "text": "// @icon        data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Cpath d='M32 14v24m0 0-9-9m9 9 9-9' stroke='white' stroke-wi"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 592,
+          "text": "  'image/apng': 'apng',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 593,
+          "text": "  'image/tiff': 'tiff',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 594,
+          "text": "  'image/x-icon': 'ico',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 595,
+          "text": "  'image/vnd.microsoft.icon': 'ico',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 659,
+          "text": "        return decodeURIComponent(run);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 664,
+          "text": "            kept += decodeURIComponent(single[0]);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 723,
+          "text": "        decoded = decodeURIComponent(last);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1944,
+          "text": "  Semicolon: ';',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2246,
+          "text": "  /** Ignore images smaller than these (0 = off). Keeps icons and tracking pixels out. */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2791,
+          "text": " *    is how most icon systems work). Each gets its own resolution path."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3239,
+          "text": "  const map = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', bmp: 'image/bmp', avif: 'image/avif', svg: 'image/svg+xml', ico: 'image/x-icon', tif: 'image/tiff', tiff: 'im"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3323,
+          "text": "function encodeGif(frames, options = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3324,
+          "text": "  if (!Array.isArray(frames) || !frames.length) throw new Error('encodeGif: no frames');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3327,
+          "text": "  if (width <= 0 || height <= 0) throw new Error('encodeGif: invalid dimensions');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3330,
+          "text": "      throw new Error('encodeGif: all frames must share dimensions');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3354,
+          "text": "  if (!present.length && !transparentSeen) throw new Error('encodeGif: frame has no pixels');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3550,
+          "text": "  const eoiCode = clearCode + 1;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3554,
+          "text": "  let nextCode = eoiCode + 1;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3563,
+          "text": "    writeCode(eoiCode, codeSize);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3585,
+          "text": "      nextCode = eoiCode + 1;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3591,
+          "text": "  writeCode(eoiCode, codeSize);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3890,
+          "text": "/** ImageDecoder's `type` for a given source MIME (APNG is decoded as PNG). */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 3893,
+          "text": "  if (lower === 'image/apng') return 'image/png';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4041,
+          "text": "function encodeBmp(imageData, options = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4044,
+          "text": "  if (width <= 0 || height <= 0) throw new Error('encodeBmp: invalid dimensions');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4046,
+          "text": "  if (!pixels || pixels.length < width * height * 4) throw new Error('encodeBmp: pixel buffer too small');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4051,
+          "text": "  return hasAlpha ? encodeBmp32(imageData, width, height) : encodeBmp24(imageData, width, height);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4061,
+          "text": "function encodeBmp32(imageData, width, height) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4121,
+          "text": "function encodeBmp24(imageData, width, height) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4214,
+          "text": "function encodePdf({ jpegBytes, width, height, pageFit = 'a4', margin = DEFAULT_MARGIN, title = '' }) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4215,
+          "text": "  if (!jpegBytes || jpegBytes.length < 4) throw new Error('encodePdf: no JPEG data supplied');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4216,
+          "text": "  if (jpegBytes[0] !== 0xff || jpegBytes[1] !== 0xd8) throw new Error('encodePdf: data is not a JPEG (missing SOI marker)');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4218,
+          "text": "  if (tail[0] !== 0xff || tail[1] !== 0xd9) throw new Error('encodePdf: data is not a complete JPEG (missing EOI marker)');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4219,
+          "text": "  if (!(width > 0) || !(height > 0)) throw new Error('encodePdf: invalid image dimensions');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4852,
+          "text": "  const parsed = parseTiff(text);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4915,
+          "text": "function parseTiff(data) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5473,
+          "text": "    const bytes = encodeBmp(imageData, { alpha: alpha.hasAlpha ? 'always' : 'never' });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5476,
+          "text": "    blob = await encodeGifOutput({ acquired, imageData, settings, signal, notes, progress, alpha, sourceMime, gm, timeout, transform, createCanvas });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5495,
+          "text": "    const pdfBytes = encodePdf({"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5591,
+          "text": "async function encodeGifOutput({ acquired, imageData, settings, signal, notes, progress, alpha, sourceMime, gm, timeout, transform = null, createCanvas }) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5640,
+          "text": "      return encodeGifBlob(frames, notes, settings);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5660,
+          "text": "  return encodeGifBlob([{ imageData, delayMs: 0 }], notes, settings);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5663,
+          "text": "function encodeGifBlob(frames, notes, settings) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5682,
+          "text": "  return blobFromBytes(encodeGif(fitted.frames, { loop: 0 }), 'image/gif');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7271,
+          "text": "function encodeZip(entries, { comment = '', now = () => new Date(), dedupe = true } = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8549,
+          "text": ".siat-icon-btn {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8553,
+          "text": ".siat-icon-btn:hover { background: rgba(127,127,127,.18); }"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8554,
+          "text": ".siat-icon-btn:focus-visible, .siat-field input:focus-visible, .siat-field select:focus-visible,"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8894,
+          "text": "        className: 'siat-icon-btn',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9496,
+          "text": "        label: 'Skip icons and tracking pixels',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10261,
+          "text": " * Icons are built with createElementNS rather than innerHTML: this script runs"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10265,
+          "text": "function svgIcon(kind) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10343,
+          "text": "    node.appendChild(svgIcon(kind));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10463,
+          "text": " * for spotting icons, duplicates, lazy placeholders and cross-origin sources."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10694,
+          "text": "      { id: 'siat-pick-notiny', label: 'Hide icons', key: 'excludeTiny' },"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10728,
+          "text": "      if (filterState.excludeTiny) settingsSummary.push('icons hidden');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10750,
+          "text": "    if (all.tiny) parts.push(`${all.tiny} icon-sized`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10825,
+          "text": "    if (entry.tiny) badges.appendChild(badge('icon', ''));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11149,
+          "text": "      className: 'siat-icon-btn',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12775,
+          "text": "        label: 'Skip icons and tracking pixels (under 64\u00d764)',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12830,
+          "text": "    if (plan.skippedTiny) rows.push(['Skipped: icon-sized', String(plan.skippedTiny)]);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13683,
+          "text": "    if (skippedTiny) notes.push(`${skippedTiny} icon-sized image${skippedTiny === 1 ? '' : 's'} were skipped.`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13974,
+          "text": "      const built = encodeZip(archive, { comment: `Created by Save Image as Type ${SCRIPT_VERSION_REPORTED}` });"
+        },
+        {
+          "file": "src/main.js",
+          "line": 44,
+          "text": "import { encodeZip, estimateZipSize } from './encoders/zip.js';"
+        },
+        {
+          "file": "src/main.js",
+          "line": 802,
+          "text": "    if (skippedTiny) notes.push(`${skippedTiny} icon-sized image${skippedTiny === 1 ? '' : 's'} were skipped.`);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1093,
+          "text": "      const built = encodeZip(archive, { comment: `Created by Save Image as Type ${SCRIPT_VERSION_REPORTED}` });"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 30,
+          "text": "  icon:"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 93,
+          "text": "  'icon',"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 36,
+          "text": "export function encodePdf({ jpegBytes, width, height, pageFit = 'a4', margin = DEFAULT_MARGIN, title = '' }) {"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 37,
+          "text": "  if (!jpegBytes || jpegBytes.length < 4) throw new Error('encodePdf: no JPEG data supplied');"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 38,
+          "text": "  if (jpegBytes[0] !== 0xff || jpegBytes[1] !== 0xd8) throw new Error('encodePdf: data is not a JPEG (missing SOI marker)');"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 40,
+          "text": "  if (tail[0] !== 0xff || tail[1] !== 0xd9) throw new Error('encodePdf: data is not a complete JPEG (missing EOI marker)');"
+        },
+        {
+          "file": "src/encoders/pdf.js",
+          "line": 41,
+          "text": "  if (!(width > 0) || !(height > 0)) throw new Error('encodePdf: invalid image dimensions');"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 34,
+          "text": "export function encodeBmp(imageData, options = {}) {"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 37,
+          "text": "  if (width <= 0 || height <= 0) throw new Error('encodeBmp: invalid dimensions');"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 39,
+          "text": "  if (!pixels || pixels.length < width * height * 4) throw new Error('encodeBmp: pixel buffer too small');"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 44,
+          "text": "  return hasAlpha ? encodeBmp32(imageData, width, height) : encodeBmp24(imageData, width, height);"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 54,
+          "text": "function encodeBmp32(imageData, width, height) {"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 114,
+          "text": "function encodeBmp24(imageData, width, height) {"
+        },
+        {
+          "file": "src/encoders/zip.js",
+          "line": 106,
+          "text": "export function encodeZip(entries, { comment = '', now = () => new Date(), dedupe = true } = {}) {"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 39,
+          "text": "export function encodeGif(frames, options = {}) {"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 40,
+          "text": "  if (!Array.isArray(frames) || !frames.length) throw new Error('encodeGif: no frames');"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 43,
+          "text": "  if (width <= 0 || height <= 0) throw new Error('encodeGif: invalid dimensions');"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 46,
+          "text": "      throw new Error('encodeGif: all frames must share dimensions');"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 70,
+          "text": "  if (!present.length && !transparentSeen) throw new Error('encodeGif: frame has no pixels');"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 266,
+          "text": "  const eoiCode = clearCode + 1;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 270,
+          "text": "  let nextCode = eoiCode + 1;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 279,
+          "text": "    writeCode(eoiCode, codeSize);"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 301,
+          "text": "      nextCode = eoiCode + 1;"
+        },
+        {
+          "file": "src/encoders/gif.js",
+          "line": 307,
+          "text": "  writeCode(eoiCode, codeSize);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 399,
+          "text": "        label: 'Skip icons and tracking pixels',"
+        },
+        {
+          "file": "src/ui/jobbar.js",
+          "line": 110,
+          "text": "      className: 'siat-icon-btn',"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 68,
+          "text": " * Icons are built with createElementNS rather than innerHTML: this script runs"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 72,
+          "text": "function svgIcon(kind) {"
+        },
+        {
+          "file": "src/ui/toast.js",
+          "line": 150,
+          "text": "    node.appendChild(svgIcon(kind));"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 6,
+          "text": " * for spotting icons, duplicates, lazy placeholders and cross-origin sources."
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 237,
+          "text": "      { id: 'siat-pick-notiny', label: 'Hide icons', key: 'excludeTiny' },"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 271,
+          "text": "      if (filterState.excludeTiny) settingsSummary.push('icons hidden');"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 293,
+          "text": "    if (all.tiny) parts.push(`${all.tiny} icon-sized`);"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 368,
+          "text": "    if (entry.tiny) badges.appendChild(badge('icon', ''));"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 176,
+          "text": "        label: 'Skip icons and tracking pixels (under 64\u00d764)',"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 231,
+          "text": "    if (plan.skippedTiny) rows.push(['Skipped: icon-sized', String(plan.skippedTiny)]);"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 46,
+          "text": ".siat-icon-btn {"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 50,
+          "text": ".siat-icon-btn:hover { background: rgba(127,127,127,.18); }"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 51,
+          "text": ".siat-icon-btn:focus-visible, .siat-field input:focus-visible, .siat-field select:focus-visible,"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 391,
+          "text": "        className: 'siat-icon-btn',"
+        },
+        {
+          "file": "src/core/source.js",
+          "line": 10,
+          "text": " *    is how most icon systems work). Each gets its own resolution path."
+        },
+        {
+          "file": "src/core/source.js",
+          "line": 458,
+          "text": "  const map = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', bmp: 'image/bmp', avif: 'image/avif', svg: 'image/svg+xml', ico: 'image/x-icon', tif: 'image/tiff', tiff: 'im"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 35,
+          "text": "import { encodeBmp } from '../encoders/bmp.js';"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 36,
+          "text": "import { encodeGif, subsampleFrames, fitFramesToMemory } from '../encoders/gif.js';"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 37,
+          "text": "import { encodePdf } from '../encoders/pdf.js';"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 271,
+          "text": "    const bytes = encodeBmp(imageData, { alpha: alpha.hasAlpha ? 'always' : 'never' });"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 274,
+          "text": "    blob = await encodeGifOutput({ acquired, imageData, settings, signal, notes, progress, alpha, sourceMime, gm, timeout, transform, createCanvas });"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 293,
+          "text": "    const pdfBytes = encodePdf({"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 389,
+          "text": "async function encodeGifOutput({ acquired, imageData, settings, signal, notes, progress, alpha, sourceMime, gm, timeout, transform = null, createCanvas }) {"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 438,
+          "text": "      return encodeGifBlob(frames, notes, settings);"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 458,
+          "text": "  return encodeGifBlob([{ imageData, delayMs: 0 }], notes, settings);"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 461,
+          "text": "function encodeGifBlob(frames, notes, settings) {"
+        },
+        {
+          "file": "src/core/convert.js",
+          "line": 480,
+          "text": "  return blobFromBytes(encodeGif(fitted.frames, { loop: 0 }), 'image/gif');"
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 480,
+          "text": "  const parsed = parseTiff(text);"
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 543,
+          "text": "function parseTiff(data) {"
+        },
+        {
+          "file": "src/core/shortcuts.js",
+          "line": 65,
+          "text": "  Semicolon: ';',"
+        },
+        {
+          "file": "src/core/formats.js",
+          "line": 142,
+          "text": "  'image/apng': 'apng',"
+        },
+        {
+          "file": "src/core/formats.js",
+          "line": 143,
+          "text": "  'image/tiff': 'tiff',"
+        },
+        {
+          "file": "src/core/formats.js",
+          "line": 144,
+          "text": "  'image/x-icon': 'ico',"
+        },
+        {
+          "file": "src/core/formats.js",
+          "line": 145,
+          "text": "  'image/vnd.microsoft.icon': 'ico',"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 80,
+          "text": "  /** Ignore images smaller than these (0 = off). Keeps icons and tracking pixels out. */"
+        },
+        {
+          "file": "src/core/filename.js",
+          "line": 37,
+          "text": "        return decodeURIComponent(run);"
+        },
+        {
+          "file": "src/core/filename.js",
+          "line": 42,
+          "text": "            kept += decodeURIComponent(single[0]);"
+        },
+        {
+          "file": "src/core/filename.js",
+          "line": 101,
+          "text": "        decoded = decodeURIComponent(last);"
+        },
+        {
+          "file": "src/core/frames.js",
+          "line": 188,
+          "text": "/** ImageDecoder's `type` for a given source MIME (APNG is decoded as PNG). */"
+        },
+        {
+          "file": "src/core/frames.js",
+          "line": 191,
+          "text": "  if (lower === 'image/apng') return 'image/png';"
+        }
+      ]
+    },
+    "reporting": {
+      "regex": "console\\.|unhandledrejection|supportURL|homepageURL",
+      "count": 5,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14634,
+          "text": "      console.error('[Save Image as Type] failed to start:', err && err.message ? err.message : err);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1753,
+          "text": "      console.error('[Save Image as Type] failed to start:', err && err.message ? err.message : err);"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 25,
+          "text": "   * Deliberately no @homepageURL / @supportURL / @updateURL / @downloadURL:"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 91,
+          "text": "  'homepageURL',"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 92,
+          "text": "  'supportURL',"
+        }
+      ]
+    },
+    "config": {
+      "regex": "profiles|rules|presets|registerMenuCommand|unregisterMenuCommand",
+      "count": 168,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 19,
+          "text": "// @grant       GM_registerMenuCommand"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 139,
+          "text": "  registerMenuCommand: () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 142,
+          "text": "      return typeof GM_registerMenuCommand !== 'undefined' ? GM_registerMenuCommand : undefined;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 184,
+          "text": "    registerMenuCommand: { classic: ['GM_registerMenuCommand'], ns: ['registerMenuCommand'] },"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 218,
+          "text": "  const menuCommand = pick('registerMenuCommand');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 386,
+          "text": "    registerMenuCommand(label, handler, accessKey) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1283,
+          "text": "const RESIZE_PRESETS = Object.freeze(["
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1614,
+          "text": "/* \u2500\u2500 src/core/presets.js \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1616,
+          "text": " * Conversion presets."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1622,
+          "text": " * Everything here is pure data handling. Presets arrive from storage or from an"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1691,
+          "text": "      warnings.push(`Preset \"${name}\": only the first ${PRESET_LIMITS.maxHosts} host rules were kept.`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1699,
+          "text": "function validatePresets(list, { allowedFormats = PRESET_FORMAT_IDS } = {}) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1701,
+          "text": "  const presets = [];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1707,
+          "text": "    warnings.push(`Only the first ${PRESET_LIMITS.max} presets were kept (${incoming.length} were stored).`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1717,
+          "text": "      warnings.push(`Two presets shared an id, so one was renamed to \"${id}\".`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1725,
+          "text": "      warnings.push(`Two presets were both called \"${preset.name}\", so one is now \"${name}\".`);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1730,
+          "text": "    presets.push(preset);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1733,
+          "text": "  return { presets, warnings };"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1740,
+          "text": " * anything that is not a hostname character. Rules are matched against the page"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1781,
+          "text": " * over wildcard) wins; ties break on declaration order, so importing presets"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1784,
+          "text": "function presetForHost(presets, host) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1785,
+          "text": "  const list = Array.isArray(presets) ? presets : [];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1830,
+          "text": "function presetSummary(preset) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1843,
+          "text": "function serializePresets(presets) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1844,
+          "text": "  const list = Array.isArray(presets) ? presets : [];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1883,
+          "text": " * Rules that keep this from breaking the pages it runs on:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2170,
+          "text": " * Rules this module enforces:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2268,
+          "text": "  /* \u2500\u2500 v3: presets \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2270,
+          "text": "  presets: [],"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2320,
+          "text": "    presets: [],"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2509,
+          "text": "  /* \u2500\u2500 v3: presets \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2510,
+          "text": "  if (raw.presets !== undefined) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2511,
+          "text": "    if (!Array.isArray(raw.presets)) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2512,
+          "text": "      note('presets was not a list \u2014 presets were cleared.');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2514,
+          "text": "      const validated = validatePresets(raw.presets, { allowedFormats: FORMAT_IDS });"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2515,
+          "text": "      out.presets = serializePresets(validated.presets);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 2521,
+          "text": "    const exists = id && out.presets.some((preset) => preset.id === id);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4101,
+          "text": "  view.setUint32(o, 0, true); o += 4; // profileSize"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4377,
+          "text": " * EXIF (camera, timestamps, sometimes GPS), XMP and ICC profiles. Users who"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 4383,
+          "text": " * Safety rules: every read is bounds-checked; malformed structures degrade to"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6042,
+          "text": " * Two rules shape this module:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6773,
+          "text": " * Rules that matter for correctness:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8515,
+          "text": " * Isolation and safety rules, inherited from the settings panel:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9163,
+          "text": "      draft.presets = Array.isArray(draft.presets) ? draft.presets.slice() : [];"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9177,
+          "text": "      body.appendChild(buildPresetsSection());"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9616,
+          "text": "  function buildPresetsSection() {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9618,
+          "text": "      'Presets',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9619,
+          "text": "      `A preset bundles format, quality, resize, file-name template, destination and (optionally) the sites it applies to automatically. Up to ${PRESET_LIMITS.max} presets are stored.`,"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9629,
+          "text": "      const preset = draft.presets.find((item) => item.id === draft.activePresetId);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9630,
+          "text": "      active.textContent = preset ? `Active preset: ${preset.name} \u2014 ${presetSummary(preset) || 'no overrides'}` : 'No preset is active; your normal settings are used.';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9635,
+          "text": "      if (!draft.presets.length) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9638,
+          "text": "        empty.textContent = 'No presets yet. Add one to capture the current settings.';"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9641,
+          "text": "      draft.presets.forEach((preset) => list.appendChild(presetRow(preset, renderList, renderActive)));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9649,
+          "text": "      if (draft.presets.length >= PRESET_LIMITS.max) {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9650,
+          "text": "        showBanner('error', 'Preset limit reached', [`Delete one of the ${PRESET_LIMITS.max} presets first.`]);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9653,
+          "text": "      const index = draft.presets.length + 1;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9654,
+          "text": "      draft.presets.push({"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9727,
+          "text": "      RESIZE_PRESETS.map((entry) => ({ value: entry.id, label: entry.label })),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9730,
+          "text": "        const found = RESIZE_PRESETS.find((entry) => entry.id === value);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9780,
+          "text": "      const index = draft.presets.findIndex((item) => item.id === preset.id);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9781,
+          "text": "      if (index >= 0) draft.presets.splice(index, 1);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 9844,
+          "text": "    const found = RESIZE_PRESETS.find("
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10025,
+          "text": "      'Re-saving the original file copies it byte for byte \u2014 including EXIF (camera, timestamps, sometimes GPS), XMP and colour profiles. \"Inspect metadata\" on any image shows exactly what a file carries.',"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 10465,
+          "text": " * Privacy and performance rules, all visible in the UI rather than hidden:"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11491,
+          "text": "      RESIZE_PRESETS.map((entry) => ({ value: entry.id, label: entry.label })),"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11494,
+          "text": "        const found = RESIZE_PRESETS.find((entry) => entry.id === value);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 11750,
+          "text": "    const found = RESIZE_PRESETS.find((entry) => entry.mode === resize.mode && (entry.width || 0) === (Number(resize.width) || 0));"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12281,
+          "text": " * ICC profiles, comments, and above all GPS coordinates \u2014 and offers to save the"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13096,
+          "text": "  /* ---------------- presets ---------------- */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13115,
+          "text": "    const manual = (base.presets || []).find((preset) => preset.id === base.activePresetId) || null;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13116,
+          "text": "    const auto = !manual && base.autoApplyPresetByHost ? presetForHost(base.presets || [], pageHost()) : null;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13133,
+          "text": "    const preset = (settings.presets || []).find((item) => item.id === settings.activePresetId);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13188,
+          "text": "   * transforms, presets and metadata handling behave identically everywhere."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14442,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Settings\u2026', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14445,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Convert the last image I pointed at\u2026', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14452,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Browse page images\u2026', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14455,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Convert every image on this page\u2026', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14458,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Copy the last image I pointed at', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14469,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Keyboard shortcut help', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14472,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Capability report', () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14483,
+          "text": "          `Presets: ${(getSettings().presets || []).length} stored${activePresetLabel() ? `, active: ${activePresetLabel()}` : ''}`,"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14490,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Pause on this page', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 47,
+          "text": "import { presetForHost, effectiveSettings } from './core/presets.js';"
+        },
+        {
+          "file": "src/main.js",
+          "line": 215,
+          "text": "  /* ---------------- presets ---------------- */"
+        },
+        {
+          "file": "src/main.js",
+          "line": 234,
+          "text": "    const manual = (base.presets || []).find((preset) => preset.id === base.activePresetId) || null;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 235,
+          "text": "    const auto = !manual && base.autoApplyPresetByHost ? presetForHost(base.presets || [], pageHost()) : null;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 252,
+          "text": "    const preset = (settings.presets || []).find((item) => item.id === settings.activePresetId);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 307,
+          "text": "   * transforms, presets and metadata handling behave identically everywhere."
+        },
+        {
+          "file": "src/main.js",
+          "line": 1561,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Settings\u2026', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1564,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Convert the last image I pointed at\u2026', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1571,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Browse page images\u2026', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1574,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Convert every image on this page\u2026', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1577,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Copy the last image I pointed at', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1588,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Keyboard shortcut help', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1591,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Capability report', () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1602,
+          "text": "          `Presets: ${(getSettings().presets || []).length} stored${activePresetLabel() ? `, active: ${activePresetLabel()}` : ''}`,"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1609,
+          "text": "  gm.registerMenuCommand('Save Image as Type \u2014 Pause on this page', () => {"
+        },
+        {
+          "file": "src/meta.js",
+          "line": 70,
+          "text": "    'GM_registerMenuCommand', // manager menu entries: settings / diagnostics / pause"
+        },
+        {
+          "file": "src/encoders/bmp.js",
+          "line": 94,
+          "text": "  view.setUint32(o, 0, true); o += 4; // profileSize"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 24,
+          "text": "import { PRESET_LIMITS, sanitizeHostPattern, presetSummary } from '../core/presets.js';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 25,
+          "text": "import { RESIZE_PRESETS } from '../core/transform.js';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 66,
+          "text": "      draft.presets = Array.isArray(draft.presets) ? draft.presets.slice() : [];"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 80,
+          "text": "      body.appendChild(buildPresetsSection());"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 519,
+          "text": "  function buildPresetsSection() {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 521,
+          "text": "      'Presets',"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 522,
+          "text": "      `A preset bundles format, quality, resize, file-name template, destination and (optionally) the sites it applies to automatically. Up to ${PRESET_LIMITS.max} presets are stored.`,"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 532,
+          "text": "      const preset = draft.presets.find((item) => item.id === draft.activePresetId);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 533,
+          "text": "      active.textContent = preset ? `Active preset: ${preset.name} \u2014 ${presetSummary(preset) || 'no overrides'}` : 'No preset is active; your normal settings are used.';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 538,
+          "text": "      if (!draft.presets.length) {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 541,
+          "text": "        empty.textContent = 'No presets yet. Add one to capture the current settings.';"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 544,
+          "text": "      draft.presets.forEach((preset) => list.appendChild(presetRow(preset, renderList, renderActive)));"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 552,
+          "text": "      if (draft.presets.length >= PRESET_LIMITS.max) {"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 553,
+          "text": "        showBanner('error', 'Preset limit reached', [`Delete one of the ${PRESET_LIMITS.max} presets first.`]);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 556,
+          "text": "      const index = draft.presets.length + 1;"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 557,
+          "text": "      draft.presets.push({"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 630,
+          "text": "      RESIZE_PRESETS.map((entry) => ({ value: entry.id, label: entry.label })),"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 633,
+          "text": "        const found = RESIZE_PRESETS.find((entry) => entry.id === value);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 683,
+          "text": "      const index = draft.presets.findIndex((item) => item.id === preset.id);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 684,
+          "text": "      if (index >= 0) draft.presets.splice(index, 1);"
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 747,
+          "text": "    const found = RESIZE_PRESETS.find("
+        },
+        {
+          "file": "src/ui/panel.js",
+          "line": 928,
+          "text": "      'Re-saving the original file copies it byte for byte \u2014 including EXIF (camera, timestamps, sometimes GPS), XMP and colour profiles. \"Inspect metadata\" on any image shows exactly what a file carries.',"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 17,
+          "text": "import { applyTransform, validateTransform, planTransform, isTransformActive, describeTransform, RESIZE_PRESETS, TRANSFORM_DEFAULTS } from '../core/transform.js';"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 126,
+          "text": "      RESIZE_PRESETS.map((entry) => ({ value: entry.id, label: entry.label })),"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 129,
+          "text": "        const found = RESIZE_PRESETS.find((entry) => entry.id === value);"
+        },
+        {
+          "file": "src/ui/transform-dialog.js",
+          "line": 385,
+          "text": "    const found = RESIZE_PRESETS.find((entry) => entry.mode === resize.mode && (entry.width || 0) === (Number(resize.width) || 0));"
+        },
+        {
+          "file": "src/ui/picker.js",
+          "line": 8,
+          "text": " * Privacy and performance rules, all visible in the UI rather than hidden:"
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 12,
+          "text": " * Isolation and safety rules, inherited from the settings panel:"
+        },
+        {
+          "file": "src/ui/inspector.js",
+          "line": 5,
+          "text": " * ICC profiles, comments, and above all GPS coordinates \u2014 and offers to save the"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 99,
+          "text": "  registerMenuCommand: () => {"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 102,
+          "text": "      return typeof GM_registerMenuCommand !== 'undefined' ? GM_registerMenuCommand : undefined;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 144,
+          "text": "    registerMenuCommand: { classic: ['GM_registerMenuCommand'], ns: ['registerMenuCommand'] },"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 178,
+          "text": "  const menuCommand = pick('registerMenuCommand');"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 346,
+          "text": "    registerMenuCommand(label, handler, accessKey) {"
+        },
+        {
+          "file": "src/core/queue.js",
+          "line": 13,
+          "text": " * Rules that matter for correctness:"
+        },
+        {
+          "file": "src/core/scan.js",
+          "line": 9,
+          "text": " * Two rules shape this module:"
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 5,
+          "text": " * EXIF (camera, timestamps, sometimes GPS), XMP and ICC profiles. Users who"
+        },
+        {
+          "file": "src/core/metadata.js",
+          "line": 11,
+          "text": " * Safety rules: every read is bounds-checked; malformed structures degrade to"
+        },
+        {
+          "file": "src/core/shortcuts.js",
+          "line": 4,
+          "text": " * Rules that keep this from breaking the pages it runs on:"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 2,
+          "text": " * Conversion presets."
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 8,
+          "text": " * Everything here is pure data handling. Presets arrive from storage or from an"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 77,
+          "text": "      warnings.push(`Preset \"${name}\": only the first ${PRESET_LIMITS.maxHosts} host rules were kept.`);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 85,
+          "text": "export function validatePresets(list, { allowedFormats = PRESET_FORMAT_IDS } = {}) {"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 87,
+          "text": "  const presets = [];"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 93,
+          "text": "    warnings.push(`Only the first ${PRESET_LIMITS.max} presets were kept (${incoming.length} were stored).`);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 103,
+          "text": "      warnings.push(`Two presets shared an id, so one was renamed to \"${id}\".`);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 111,
+          "text": "      warnings.push(`Two presets were both called \"${preset.name}\", so one is now \"${name}\".`);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 116,
+          "text": "    presets.push(preset);"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 119,
+          "text": "  return { presets, warnings };"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 126,
+          "text": " * anything that is not a hostname character. Rules are matched against the page"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 167,
+          "text": " * over wildcard) wins; ties break on declaration order, so importing presets"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 170,
+          "text": "export function presetForHost(presets, host) {"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 171,
+          "text": "  const list = Array.isArray(presets) ? presets : [];"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 216,
+          "text": "export function presetSummary(preset) {"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 229,
+          "text": "export function serializePresets(presets) {"
+        },
+        {
+          "file": "src/core/presets.js",
+          "line": 230,
+          "text": "  const list = Array.isArray(presets) ? presets : [];"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 4,
+          "text": " * Rules this module enforces:"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 18,
+          "text": "import { validatePresets, serializePresets } from './presets.js';"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 102,
+          "text": "  /* \u2500\u2500 v3: presets \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 104,
+          "text": "  presets: [],"
+        },
+        {
+          "file": "src/core/settings.js",
+          "line": 154,
+          "text": "    presets: [],"
+        }
+      ]
+    },
+    "confirmation": {
+      "regex": "saveAll|openBatchDialog|confirm|settle",
+      "count": 88,
+      "hits": [
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 293,
+          "text": "        let settled = false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 295,
+          "text": "          if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 296,
+          "text": "          settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 365,
+          "text": "        let settled = false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 367,
+          "text": "          if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 368,
+          "text": "          settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 1899,
+          "text": "  { id: 'saveAll', label: 'Convert every image on this page', default: 'Alt+Shift+A' },"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 5960,
+          "text": "        result.message = `The download outcome was not confirmed (${reason}). Check your downloads folder before trying again; no automatic fallback was attempted because it could duplicate the file.`;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 6555,
+          "text": "/** Aggregate numbers for the picker header and the batch confirmation dialog. */"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7881,
+          "text": "    let settled = false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7883,
+          "text": "      if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7884,
+          "text": "      settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7889,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7890,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7895,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 7896,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 8508,
+          "text": " * comparison, metadata inspector, batch confirmation, shortcut help) needs the"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 12601,
+          "text": " * Batch confirmation dialog."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13175,
+          "text": "        openBatchDialog();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13614,
+          "text": "   * Build the batch plan shown in the confirmation dialog."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13725,
+          "text": "  function openBatchDialog() {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13833,
+          "text": "    // The queue pumps asynchronously; wait for it to settle so the caller (and"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13877,
+          "text": "    // Set only by a save whose outcome the manager could not confirm."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13962,
+          "text": "      // it could not confirm (the file may be on disk, so never repeat silently)."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 13996,
+          "text": "        return { ok: false, filename: name, entries: archive.length, bytes: 0, notes: [`Archive save was not confirmed (${messageOf(err)}). Check downloads before saving again; no outputs were replayed.`], uncertain: tru"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14056,
+          "text": "            ? 'Archive save was not confirmed'"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14090,
+          "text": "      toaster.error(BATCH_TOAST_ID, 'Nothing to retry', 'No safely retryable items remain. Partial or unconfirmed saves are not replayed: check your downloads and select only the missing outputs manually.', [], null, 800"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14103,
+          "text": "      let settled = false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14105,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14106,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14126,
+          "text": "      // forever. Cleared as soon as the run settles."
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14200,
+          "text": "        toaster.error('siat-retry-wait', 'Wait for this batch to finish', 'Retry is available after the run settles; partial and unconfirmed saves are never replayed.');"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14265,
+          "text": "      let settled = false;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14268,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14269,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14276,
+          "text": "        const settle = () => {"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14280,
+          "text": "          image.removeEventListener('load', settle);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14281,
+          "text": "          image.removeEventListener('error', settle);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14284,
+          "text": "        image.addEventListener('load', settle);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14285,
+          "text": "        image.addEventListener('error', settle);"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14286,
+          "text": "        if (image.complete) settle();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14405,
+          "text": "      case 'saveAll':"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14406,
+          "text": "        openBatchDialog();"
+        },
+        {
+          "file": "audit/baseline/v2.0.0.user.js",
+          "line": 14456,
+          "text": "    ensureSettings().then(() => openBatchDialog());"
+        },
+        {
+          "file": "src/main.js",
+          "line": 294,
+          "text": "        openBatchDialog();"
+        },
+        {
+          "file": "src/main.js",
+          "line": 733,
+          "text": "   * Build the batch plan shown in the confirmation dialog."
+        },
+        {
+          "file": "src/main.js",
+          "line": 844,
+          "text": "  function openBatchDialog() {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 952,
+          "text": "    // The queue pumps asynchronously; wait for it to settle so the caller (and"
+        },
+        {
+          "file": "src/main.js",
+          "line": 996,
+          "text": "    // Set only by a save whose outcome the manager could not confirm."
+        },
+        {
+          "file": "src/main.js",
+          "line": 1081,
+          "text": "      // it could not confirm (the file may be on disk, so never repeat silently)."
+        },
+        {
+          "file": "src/main.js",
+          "line": 1115,
+          "text": "        return { ok: false, filename: name, entries: archive.length, bytes: 0, notes: [`Archive save was not confirmed (${messageOf(err)}). Check downloads before saving again; no outputs were replayed.`], uncertain: tru"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1175,
+          "text": "            ? 'Archive save was not confirmed'"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1209,
+          "text": "      toaster.error(BATCH_TOAST_ID, 'Nothing to retry', 'No safely retryable items remain. Partial or unconfirmed saves are not replayed: check your downloads and select only the missing outputs manually.', [], null, 800"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1222,
+          "text": "      let settled = false;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1224,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1225,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1245,
+          "text": "      // forever. Cleared as soon as the run settles."
+        },
+        {
+          "file": "src/main.js",
+          "line": 1319,
+          "text": "        toaster.error('siat-retry-wait', 'Wait for this batch to finish', 'Retry is available after the run settles; partial and unconfirmed saves are never replayed.');"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1384,
+          "text": "      let settled = false;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1387,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1388,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1395,
+          "text": "        const settle = () => {"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1399,
+          "text": "          image.removeEventListener('load', settle);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1400,
+          "text": "          image.removeEventListener('error', settle);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1403,
+          "text": "        image.addEventListener('load', settle);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1404,
+          "text": "        image.addEventListener('error', settle);"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1405,
+          "text": "        if (image.complete) settle();"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1524,
+          "text": "      case 'saveAll':"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1525,
+          "text": "        openBatchDialog();"
+        },
+        {
+          "file": "src/main.js",
+          "line": 1575,
+          "text": "    ensureSettings().then(() => openBatchDialog());"
+        },
+        {
+          "file": "src/ui/batch-dialog.js",
+          "line": 2,
+          "text": " * Batch confirmation dialog."
+        },
+        {
+          "file": "src/ui/dialog.js",
+          "line": 5,
+          "text": " * comparison, metadata inspector, batch confirmation, shortcut help) needs the"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 253,
+          "text": "        let settled = false;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 255,
+          "text": "          if (settled) return;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 256,
+          "text": "          settled = true;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 325,
+          "text": "        let settled = false;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 327,
+          "text": "          if (settled) return;"
+        },
+        {
+          "file": "src/core/gm.js",
+          "line": 328,
+          "text": "          settled = true;"
+        },
+        {
+          "file": "src/core/scan.js",
+          "line": 522,
+          "text": "/** Aggregate numbers for the picker header and the batch confirmation dialog. */"
+        },
+        {
+          "file": "src/core/download.js",
+          "line": 81,
+          "text": "        result.message = `The download outcome was not confirmed (${reason}). Check your downloads folder before trying again; no automatic fallback was attempted because it could duplicate the file.`;"
+        },
+        {
+          "file": "src/core/shortcuts.js",
+          "line": 20,
+          "text": "  { id: 'saveAll', label: 'Convert every image on this page', default: 'Alt+Shift+A' },"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 184,
+          "text": "    let settled = false;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 186,
+          "text": "      if (settled) return;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 187,
+          "text": "      settled = true;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 192,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 193,
+          "text": "        settled = true;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 198,
+          "text": "        if (settled) return;"
+        },
+        {
+          "file": "src/core/clipboard.js",
+          "line": 199,
+          "text": "        settled = true;"
+        }
+      ]
+    }
+  }
+}

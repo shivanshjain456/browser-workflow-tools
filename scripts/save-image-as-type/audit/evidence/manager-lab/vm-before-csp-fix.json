@@ -1,0 +1,283 @@
+{
+  "scope": "Actual Violentmonkey unpacked official MV3 distribution, installed via manager UI, production artifact unmodified; local HTTP fixture, headless Chrome, not public-site/other-OS certification",
+  "artifactSha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499",
+  "tests": [
+    {
+      "path": "/same",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "synthetic": {
+        "isTrusted": false,
+        "visible": false,
+        "buttonExists": false
+      },
+      "syntheticRequests": [],
+      "downloads": [
+        {
+          "name": "fixture.png",
+          "url": "blob:chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/905c9813-8b15-4860-a606-81b29cdb6379"
+        }
+      ],
+      "after": {
+        "toast": "Saved fixture.png\nImage \u00b7 489 B \u00b7 saved through your userscript manager\n3 details\n\u00d7",
+        "menu": false
+      },
+      "errors": []
+    },
+    {
+      "path": "/cross",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "synthetic": {
+        "isTrusted": false,
+        "visible": false,
+        "buttonExists": false
+      },
+      "syntheticRequests": [],
+      "downloads": [
+        {
+          "name": "opaque.png",
+          "url": "blob:chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/7fd6b9ee-2f2c-44a2-a2ce-3a9c8b15dc76"
+        }
+      ],
+      "after": {
+        "toast": "Saved opaque.png\nImage \u00b7 489 B \u00b7 saved through your userscript manager\n3 details\n\u00d7",
+        "menu": false
+      },
+      "errors": []
+    },
+    {
+      "path": "/csp",
+      "boot": {
+        "publicApi": false,
+        "localKeys": [],
+        "sessionKeys": [],
+        "gmExposed": false
+      },
+      "synthetic": {
+        "isTrusted": false,
+        "visible": false,
+        "buttonExists": false
+      },
+      "syntheticRequests": [],
+      "downloads": [],
+      "after": {
+        "toast": "Could not save as PNG\nThe browser could not decode image data.\n\u00d7",
+        "menu": false
+      },
+      "errors": []
+    }
+  ],
+  "requests": [
+    {
+      "server": "page",
+      "url": "/same"
+    },
+    {
+      "server": "page",
+      "url": "/fixture.png"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "page",
+      "url": "/cross"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "http://127.0.0.1:36773/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "http://127.0.0.1:36773",
+      "referer": "http://127.0.0.1:36773/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "",
+      "fetchSite": "none"
+    },
+    {
+      "server": "page",
+      "url": "/csp"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "http://127.0.0.1:36773/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "page",
+      "url": "/favicon.ico"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "http://127.0.0.1:36773",
+      "referer": "http://127.0.0.1:36773/",
+      "fetchSite": "same-site"
+    },
+    {
+      "server": "image",
+      "url": "/opaque.png",
+      "origin": "",
+      "referer": "",
+      "fetchSite": "none"
+    }
+  ],
+  "browser": "Chrome/155.0.8059.84",
+  "managerManifest": {
+    "action": {
+      "browser_style": true,
+      "default_icon": {
+        "16": "public/images/icon16b.png",
+        "32": "public/images/icon32b.png",
+        "38": "public/images/icon38b.png",
+        "48": "public/images/icon48b.png",
+        "64": "public/images/icon64b.png"
+      },
+      "default_popup": "popup/index.html",
+      "default_title": "Violentmonkey"
+    },
+    "author": "Gerald",
+    "background": {
+      "service_worker": "sw.js"
+    },
+    "commands": {
+      "SkipScripts": {
+        "description": "Reload page without userscripts"
+      },
+      "_execute_action": {},
+      "dashboard": {
+        "description": "Open Dashboard"
+      },
+      "newScript": {
+        "description": "Create a new script"
+      },
+      "settings": {
+        "description": "Settings"
+      },
+      "toggleInjection": {
+        "description": "Toggle userscript injection"
+      },
+      "updateScripts": {
+        "description": "Update all scripts"
+      },
+      "updateScriptsInTab": {
+        "description": "Update current tab's scripts"
+      }
+    },
+    "current_locale": "en_US",
+    "default_locale": "en",
+    "description": "An open source userscript manager that supports a lot of browsers",
+    "homepage_url": "https://violentmonkey.github.io/",
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "icons": {
+      "16": "public/images/icon16.png",
+      "48": "public/images/icon48.png",
+      "128": "public/images/icon128.png"
+    },
+    "incognito": "split",
+    "manifest_version": 3,
+    "minimum_chrome_version": "135.0",
+    "name": "Violentmonkey",
+    "optional_permissions": [
+      "downloads"
+    ],
+    "options_ui": {
+      "open_in_tab": true,
+      "page": "options/index.html#settings"
+    },
+    "permissions": [
+      "tabs",
+      "webRequest",
+      "notifications",
+      "storage",
+      "unlimitedStorage",
+      "clipboardWrite",
+      "contextMenus",
+      "cookies",
+      "alarms",
+      "declarativeNetRequestWithHostAccess",
+      "identity",
+      "offscreen",
+      "userScripts",
+      "webNavigation"
+    ],
+    "version": "2.49.0"
+  },
+  "storedKeys": [
+    "blacklistErrors",
+    "blacklistNetErrors",
+    "code:1",
+    "mod:1",
+    "options",
+    "scr:1",
+    "version"
+  ],
+  "storedCodeHashes": [
+    {
+      "key": "code:1",
+      "sha256": "0b2b1b50c24009f638667aec37b727e48ab255700fc99507fe9e063bcbe8c499"
+    }
+  ],
+  "popupText": "Violentmonkey 2.49.0 MV3\nFind scripts for this site (GF)\n/\nOUJS\nMatched scripts\nSave Image as Type\nSave Image as Type \u2014 Settings\u2026\nSave Image as Type \u2014 Convert the last image I pointed at\u2026\nSave Image as Type \u2014 Browse page images\u2026\nSave Image as Type \u2014 Convert every image on this page\u2026\nSave Image as Type \u2014 Copy the last image I pointed at\nSave Image as Type \u2014 Keyboard shortcut help\nSave Image as Type \u2014 Capability report\nSave Image as Type \u2014 Pause on this page\nviolentmonkey.github.io",
+  "downloadedFiles": [
+    {
+      "name": "fixture.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489
+    },
+    {
+      "name": "opaque.png",
+      "sha256": "7a43fff6b480031e1a63214cfec02bbdaffc1b70bddd8de08d722ecf9ed31c0f",
+      "bytes": 489
+    }
+  ],
+  "valueKeys": [],
+  "independentPixelEquality": [
+    {
+      "file": ".local/manager-lab/downloads/fixture.png",
+      "size": [
+        64,
+        48
+      ],
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    },
+    {
+      "file": ".local/manager-lab/downloads/opaque.png",
+      "size": [
+        64,
+        48
+      ],
+      "rgbaEqual": true,
+      "pixelSha256": "7ca5508449938a34549e120b3ad5ea1d17e4b21d8a227808a1235681af2accdc"
+    }
+  ]
+}

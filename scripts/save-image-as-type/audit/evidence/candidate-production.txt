@@ -1,0 +1,291 @@
+{
+  "artifact": "release/save-image-as-type.user.js",
+  "sha256": "6c99ddb7dbb5e97dcef24c2281b6b7cf98a435d935efeed5b5cb09b32bd689d3",
+  "browser": "Chrome/131.0.6778.204",
+  "scope": "Chrome same-world CDP injection with a fake manager, NOT a real userscript manager",
+  "cases": [
+    {
+      "kind": "clean",
+      "commands": 8,
+      "publicHandle": false,
+      "preseedAdopted": false,
+      "privilegedWrite": false,
+      "pageStorageCalls": [],
+      "roots": [
+        {
+          "document": false,
+          "html": false,
+          "body": false,
+          "window": false
+        }
+      ],
+      "cookie": "",
+      "requests": [
+        {
+          "url": "http://127.0.0.1:37285/empty",
+          "type": "document"
+        },
+        {
+          "url": "http://127.0.0.1:37285/favicon.ico",
+          "type": "other"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "preseed",
+      "commands": 8,
+      "publicHandle": false,
+      "preseedAdopted": true,
+      "privilegedWrite": false,
+      "pageStorageCalls": [],
+      "roots": [
+        {
+          "document": false,
+          "html": false,
+          "body": false,
+          "window": true
+        }
+      ],
+      "cookie": "",
+      "requests": [
+        {
+          "url": "http://127.0.0.1:37285/empty",
+          "type": "document"
+        },
+        {
+          "url": "http://127.0.0.1:37285/favicon.ico",
+          "type": "other"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "flag",
+      "commands": 8,
+      "publicHandle": false,
+      "preseedAdopted": false,
+      "privilegedWrite": false,
+      "pageStorageCalls": [],
+      "roots": [
+        {
+          "document": false,
+          "html": false,
+          "body": false,
+          "window": false
+        }
+      ],
+      "cookie": "",
+      "requests": [
+        {
+          "url": "http://127.0.0.1:37285/empty",
+          "type": "document"
+        },
+        {
+          "url": "http://127.0.0.1:37285/favicon.ico",
+          "type": "other"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "attribute",
+      "commands": 8,
+      "publicHandle": false,
+      "preseedAdopted": false,
+      "privilegedWrite": false,
+      "pageStorageCalls": [],
+      "roots": [
+        {
+          "document": false,
+          "html": false,
+          "body": false,
+          "window": false
+        }
+      ],
+      "cookie": "",
+      "requests": [
+        {
+          "url": "http://127.0.0.1:37285/empty",
+          "type": "document"
+        },
+        {
+          "url": "http://127.0.0.1:37285/favicon.ico",
+          "type": "other"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "performance": [
+    {
+      "size": 512,
+      "run": 0,
+      "encodeMs": 155.9000000001397,
+      "timerDelayMs": 156,
+      "bytes": 86514
+    },
+    {
+      "size": 512,
+      "run": 1,
+      "encodeMs": 111.9000000001397,
+      "timerDelayMs": 112.10000000009313,
+      "bytes": 86514
+    },
+    {
+      "size": 512,
+      "run": 2,
+      "encodeMs": 138,
+      "timerDelayMs": 138.19999999995343,
+      "bytes": 86514
+    },
+    {
+      "size": 1024,
+      "run": 0,
+      "encodeMs": 261.30000000004657,
+      "timerDelayMs": 261.5,
+      "bytes": 275556
+    },
+    {
+      "size": 1024,
+      "run": 1,
+      "encodeMs": 382.0999999998603,
+      "timerDelayMs": 382.29999999981374,
+      "bytes": 275556
+    },
+    {
+      "size": 1024,
+      "run": 2,
+      "encodeMs": 242.39999999990687,
+      "timerDelayMs": 243.0999999998603,
+      "bytes": 275556
+    }
+  ],
+  "frames": {
+    "frames": [
+      {
+        "url": "http://127.0.0.1:37285/frames",
+        "commands": 8,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "commands": 0,
+        "handle": false,
+        "hosts": 0
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:37285/frames",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/empty",
+        "type": "document"
+      },
+      {
+        "url": "http://127.0.0.1:37285/favicon.ico",
+        "type": "other"
+      }
+    ]
+  },
+  "csp": {
+    "outcome": "error",
+    "violation": {
+      "directive": "img-src",
+      "blocked": "data"
+    }
+  }
+}

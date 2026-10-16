@@ -1,0 +1,150 @@
+extensions text [
+  {
+    tag: 'INPUT',
+    id: 'searchInput',
+    text: '<input id="searchInput" aria-labelledby="prompt" autocapitalize="off" autocomplete="off" type="search" spellcheck="false" aria-description="" autofocus="">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'devMode',
+    text: '<cr-toggle id="devMode" aria-labelledby="devModeLabel" role="switch" tabindex="0" aria-checked="false" aria-disabled="false">\n' +
+      '    </cr-toggle>'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'pinned-toggle',
+    text: '<cr-toggle id="pinned-toggle" aria-labelledby="pinned-toggle-label" checked="" role="switch" tabindex="0" aria-checked="true" aria-disabled="false">\n' +
+      '            </cr-toggle>'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'enableToggle',
+    text: '<cr-toggle id="enableToggle" aria-describedby="a11yAssociation" aria-label="On, extension enabled" checked="" role="switch" tabindex="0" aria-checked="true" aria-disabled="false">\n' +
+      '    </cr-toggle>'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'enableToggle',
+    text: '<cr-toggle id="enableToggle" aria-describedby="name" aria-label="On, extension enabled" checked="" role="switch" tabindex="0" aria-checked="true" aria-disabled="false">\n' +
+      '        </cr-toggle>'
+  },
+  {
+    tag: 'INPUT',
+    id: 'native',
+    text: '<input id="native" type="checkbox">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'crToggle',
+    text: '<cr-toggle id="crToggle" aria-labelledby="label" checked="" role="switch" tabindex="0" aria-checked="true" aria-disabled="false">\n' +
+      '</cr-toggle>'
+  },
+  {
+    tag: 'INPUT',
+    id: 'native',
+    text: '<input id="native" type="checkbox">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'crToggle',
+    text: '<cr-toggle id="crToggle" aria-labelledby="label" role="switch" tabindex="0" aria-checked="false" aria-disabled="false">\n' +
+      '</cr-toggle>'
+  },
+  {
+    tag: 'INPUT',
+    id: 'native',
+    text: '<input id="native" type="checkbox">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'crToggle',
+    text: '<cr-toggle id="crToggle" aria-labelledby="label" role="switch" tabindex="0" aria-checked="false" aria-disabled="false">\n' +
+      '</cr-toggle>'
+  },
+  {
+    tag: 'INPUT',
+    id: 'native',
+    text: '<input id="native" type="checkbox">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'crToggle',
+    text: '<cr-toggle id="crToggle" aria-labelledby="label" role="switch" tabindex="0" aria-checked="false" aria-disabled="false">\n' +
+      '</cr-toggle>'
+  },
+  {
+    tag: 'INPUT',
+    id: 'native',
+    text: '<input id="native" type="checkbox">'
+  },
+  {
+    tag: 'CR-TOGGLE',
+    id: 'crToggle',
+    text: '<cr-toggle id="crToggle" aria-labelledby="label" checked="" role="switch" tabindex="0" aria-checked="true" aria-disabled="false">\n' +
+      '</cr-toggle>'
+  }
+]
+toggle? true
+permissionChecked false
+after 
+options Violentmonkey
+Installed scripts
+Settings | Backup
+About
+New
+New from file
+Install from OpenUserJS
+Install from GreasyFork
+Install from URL
+Import from zip / Sync...
+execution
+execution ▼
+alphabetical
+alphabetical ▼
+author
+author ▼
+last update time
+last update time ▼
+last visit time
+last visit time ▼
+size
+size ▼
+No script is found.
+targets [
+  [ 'browser', '' ],
+  [ 'page', 'about:blank' ],
+  [
+    'service_worker',
+    'chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/sw.js'
+  ],
+  [
+    'page',
+    'chrome://extensions/?id=mhgcikllajkigcoackdmejhakoklkngl'
+  ],
+  [
+    'page',
+    'chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/options/index.html#scripts'
+  ]
+]
+PAGE chrome-extension://mhgcikllajkigcoackdmejhakoklkngl/options/index.html#scripts Violentmonkey
+Installed scripts
+Settings | Backup
+About
+for 1 matching scripts
+execution
+execution ▼
+alphabetical
+alphabetical ▼
+author
+author ▼
+last update time
+last update time ▼
+last visit time
+last visit time ▼
+size
+size ▼
+Save Image as Type
+Save Image as Type userscript contributors
+2.0.1
+600k
+0min

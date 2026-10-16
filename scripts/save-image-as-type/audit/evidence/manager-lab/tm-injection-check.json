@@ -1,0 +1,10 @@
+{
+  "permission": {
+    "checked": true,
+    "inner": "<!----><!--_html_template_start_-->\n<label id=\"label\" aria-hidden=\"true\">\n  <input id=\"native\" type=\"checkbox\">\n  <slot></slot>\n</label>\n<cr-toggle id=\"crToggle\" aria-labelledby=\"label\" checked=\"\" role=\"switch\" tabindex=\"0\" aria-checked=\"true\" aria-disabled=\"false\">\n</cr-toggle>\n<!--_html_template_end_-->"
+  },
+  "userScripts": [],
+  "errors": [],
+  "hosts": [],
+  "popup": "\tScan the QR code to use Tampermonkey on your phone or tablet.\nLearn more\n\t\n\tEnabled\n\t\nManager execution control (offline audit fixture)\n\t\n\n\n\t\nSave Image as Type\n\t\n\n\n\tFind new scripts...\n\tCreate a new script...\n\n\n\tPlease send a donation\n\n\t\nUtilities\n\t\n\tDashboard\n\tHelp | Changelog | "
+}

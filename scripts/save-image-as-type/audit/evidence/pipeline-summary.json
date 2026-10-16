@@ -1,0 +1,62 @@
+{
+  "status": "CANDIDATE REGRESSION GATES PASSED; RELEASE BLOCKED. The full engineering brief is NOT completed.",
+  "exitCode": 2,
+  "artifactSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "steps": [
+    {
+      "name": "preflight",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "build",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "unit",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "browser-1",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "browser-2",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "production",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "production-ui",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "synthetic-attack",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "goldens",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "assertions",
+      "status": 0,
+      "signal": null
+    }
+  ]
+}
