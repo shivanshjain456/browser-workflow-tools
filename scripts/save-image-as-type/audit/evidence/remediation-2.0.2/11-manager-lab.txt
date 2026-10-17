@@ -1,0 +1,17 @@
+# command: INHERITED (delta proof only; runner requires Linux x86_64)
+# commit: 01e8f5d4b6d1611c1eb24dc447a9c3eb342c3c06
+# artifact sha256: 182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab
+INHERITED — delta proof only
+
+Environment: Windows (manager lab runner audit/prepare-vm-lab.py enforces Linux x86_64).
+No manager run was performed on the final bytes.
+Runtime body byte-identity proven by tools/prove-delta.mjs against commit 88fff69b artifact (0769501f...):
+  old body sha256: 1629950dc58490a82d7a61c31aca2c8da1b26d4eb47b8aaecd7b54c63c8082eb
+  new body sha256: 1629950dc58490a82d7a61c31aca2c8da1b26d4eb47b8aaecd7b54c63c8082eb
+
+Inherited manager lab result from audit/evidence/manager-lab/vm-production.json:
+  Manager: Violentmonkey v2.49.0
+  Results: 11/11 independent output checks passed
+
+NOTE: Per Protocol §10 Phase 8, this PR is treated as requiring human confirmation if physical VM manager run is requested.
+# exit: 0

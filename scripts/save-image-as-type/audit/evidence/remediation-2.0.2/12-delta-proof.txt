@@ -1,0 +1,7 @@
+# command: node tools/prove-delta.mjs /tmp/88fff69b-artifact.user.js release/save-image-as-type.user.js 2.0.1 2.0.2
+# commit: 01e8f5d4b6d1611c1eb24dc447a9c3eb342c3c06
+# artifact sha256: 182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab
+old body sha256: 1629950dc58490a82d7a61c31aca2c8da1b26d4eb47b8aaecd7b54c63c8082eb
+new body sha256: 1629950dc58490a82d7a61c31aca2c8da1b26d4eb47b8aaecd7b54c63c8082eb
+PASS: runtime body identical; only metadata and version differ.
+# exit: 0
