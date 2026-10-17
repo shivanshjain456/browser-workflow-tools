@@ -1,65 +1,133 @@
 # Save Image as Type
 
-> Convert and save any web image locally in PNG, JPG, WebP, GIF, BMP, AVIF, or PDF, or re-save untouched original bytes, with batch extraction, ZIP archives, image transforms, and metadata stripping.
+A userscript that adds a **Save image as** menu to every website: right-click any image and save it
+as **PNG, JPG, WebP, GIF, BMP, PDF**, as **AVIF** when your browser can really encode it, or as the
+**original file byte for byte** — without uploading anything anywhere.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Install](https://img.shields.io/badge/Install-Userscript-green.svg)](https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js)
+Everything happens inside your browser. There is no server, no account, no analytics and no
+third-party code downloaded at run time.
 
----
+> **Release status — 2.0.2.** The installable file is
+> [`release/save-image-as-type.user.js`](release/save-image-as-type.user.js). It passes this
+> repository's regression suite (577 unit tests, 27 static checks, 57 browser scenarios, byte-exact
+> encoder goldens) and a Violentmonkey installation test. Tampermonkey is **unverified**; Firefox is
+> **untested**. Known limitations are listed in
+> [Compatibility](docs/compatibility.md#known-limitations). Nothing here is a security guarantee.
 
-## 1. Problem It Solves
-Modern web platforms serve images wrapped in opaque containers, complex `<picture>`/`srcset` hierarchies, CSS pseudo-elements (`::before`/`::after`), canvas renderings, and modern formats like WebP or AVIF that third-party desktop tools or image viewers cannot open. Additionally, browsers offer minimal native control when saving images, forcing users into tedious multi-step conversion workflows or insecure cloud converters.
+## What it does
 
-## 2. Why the Workflow Exists
-Existing browser extensions for image conversion require aggressive permissions (such as `<all_urls>` with background service workers), upload image bytes to cloud APIs for conversion, inject third-party trackers, or break on single-page applications. This userscript runs 100% locally in your browser memory using the HTML5 Canvas API and WebCodecs encoders, providing immediate, zero-telemetry conversion and privacy-first metadata cleaning.
+| I want to… | What you get |
+|---|---|
+| Save one image in another format | Right-click → the **Save image as** menu → pick a format. Digits `1`–`9` pick a format while the menu is open. |
+| Keep the exact original file | **Original** re-saves the untouched bytes (useful for animated GIF/WebP or archival). |
+| Save every image on a page | **Save all images on this page…** lists what it found, then converts with progress, Cancel and safe recovery. |
+| Get one file instead of twenty | Choose **A single .zip archive** as the destination. Names are UTF-8, entries are stored (not deflated) and CRC32-checked. |
+| Resize/crop/rotate before saving | **Transform and save…** with aspect-locked resize, crop, 90° rotation and horizontal/vertical flips, plus *Make default*. |
+| Find the smallest format | **Compare formats…** shows real encoded sizes, then *Save smallest*. |
+| Strip GPS/EXIF before sharing | **Inspect metadata** shows EXIF/XMP/ICC and GPS risk; **Save original without metadata** removes supported container fields without touching pixels. |
+| Paste an image into another app | **Copy image to clipboard**. |
+| Switch between whole setups | **Settings → Configuration profiles**: name the current configuration and re-apply it later. |
+| Work by keyboard | `Alt+Shift+S` save, `Alt+Shift+C` copy, `Alt+Shift+P` picker, `Alt+Shift+A` batch, `Alt+Shift+X` cancel — all rebindable. |
 
-## 3. Feature List
-- **Universal Format Conversion:** Right-click any image to convert and save as PNG, JPG, WebP, GIF, BMP, PDF, or probe-gated AVIF.
-- **Original Byte Preservation:** Re-save untouched image bytes byte-for-byte to keep animations, transparency layers, and original bitstreams.
-- **Batch Image Downloader:** Extract and convert all images across any webpage with real-time preview, selection filtering, and failure recovery.
-- **Single ZIP Packaging:** Bundle batch-downloaded images into a single zip archive with clean UTF-8 filenames, DEFLATE compression, and CRC32 verification.
-- **Interactive Transform Suite:** Rotate (90° steps), flip horizontally/vertically, crop, resize with aspect-ratio locking, grayscale, or invert before saving.
-- **Format Size Comparison:** Compare real encoded sizes across all supported output formats in a live inspector and automatically pick the smallest.
-- **EXIF & Privacy Sanitization:** Inspect EXIF, XMP, ICC profiles, and GPS location markers; strip tracking metadata before saving.
-- **Clipboard Workflows:** Copy converted image blobs or data URLs directly to the OS clipboard for pasting into Photoshop, Discord, or office tools.
-- **Keyboard-Driven Shortcuts:** Quick-access shortcuts (`Alt+Shift+S` to save, number keys to pick format, `C` to copy, `A` for batch).
-- **Settings & Profiles:** Custom filename templates (`{title}`, `{origin}`, `{date}`, `{w}x{h}`), quality sliders, and reusable preset profiles.
+Full behaviour with expected outcomes: [User guide](docs/user-guide.md).
 
-## 4. Supported Routes & Exclusions
-- **Supported:**
-  - `*://*/*` (All HTTP and HTTPS web pages, HTML documents, and iframe containers).
-- **Exclusions:**
-  - Privileged browser internal schemes (`chrome://`, `edge://`, `about:`, `moz-extension://`) and local file schemes (`file://`) are excluded by sandbox policies.
+## Requirements
 
-## 5. Install & Update Instructions
-- **Direct Install:** Click [save-image-as-type.user.js](https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js) with Tampermonkey or Violentmonkey installed.
-- **Automatic Updates:** The script header includes `@updateURL` pointing directly to the canonical raw release in `browser-workflow-tools`.
+* **A userscript manager.** Tested with **Violentmonkey 2.49.0** (MV3, Chromium).
+  Tampermonkey 5.5.1 installs but its runtime behaviour was not observed in this repository's lab;
+  treat it as unverified.
+* **A Chromium-based browser.** Automated checks ran on Chrome 131 and Chrome 155 for Testing
+  (headless, Linux). Other Chromium browsers and Firefox are expected to work but are not verified.
+* **Node.js ≥ 22.22.2 and Python 3** are needed only to build and verify from source. The installed
+  userscript has no runtime dependencies.
 
-## 6. Example Workflow
-1. Browse to any web page containing images (e.g. photography portfolio, e-commerce catalog, social post).
-2. Right-click on any image element (including background images or CSS pseudo-elements).
-3. In the custom context menu, select **Save as WebP** or press key `3`.
-4. The userscript processes the image locally, applies quality settings and filename templating, and initiates a clean local download.
+## Install
 
-## 7. Permissions & Why Each Is Required
-- `GM_getValue` / `GM_setValue` / `GM_deleteValue`: Persists format preferences, quality levels, batch settings, and keyboard bindings.
-- `GM_addValueChangeListener` / `GM_removeValueChangeListener`: Synchronizes user settings and active profiles across open browser tabs.
-- `GM_registerMenuCommand`: Registers quick commands in the userscript manager popup menu (Settings, Diagnostics, Reset).
-- `GM_notification`: Displays non-intrusive notifications when conversions finish or when downloads require user attention.
-- `GM_download`: Triggers browser downloads with custom filenames, bypassing browser navigation hooks.
-- `GM_info`: Detects userscript manager capabilities and execution environment.
-- `GM_xmlhttpRequest`: Used as an optional, fallback-only mechanism to fetch cross-origin image bytes when canvas cross-origin taint prevents local pixel reads.
+1. Install a userscript manager (Violentmonkey or Tampermonkey).
+2. On Chrome/Edge, enable the browser's user-script permission for the manager:
+   `chrome://extensions` → manager **Details** → **Allow User Scripts**.
+3. Open the raw file and let the manager intercept it:
 
-## 8. Outbound Network Hosts & Payload Categories
-- **Zero Remote Scope:** Operates with zero tracking servers, zero analytics endpoints, and zero unauthenticated telemetry.
-- **Strict Network Isolation:** All image transformations, encoding, compression, and metadata sanitization occur entirely within local browser memory.
+   ```
+   https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js
+   ```
 
-## 9. Stored Data, Retention & Deletion
-- **Stored Data:** User configuration JSON object containing export format preferences, quality levels, batch presets, and keyboard bindings.
-- **Retention:** Stored locally in the browser's userscript storage until modified or cleared.
-- **Deletion:** Click "Reset to defaults" in the settings panel or delete the script storage via your userscript manager.
+   Or install from a checkout: **Violentmonkey** `+` → *Install from file*;
+   **Tampermonkey** *Utilities* → *Import from file*.
+4. Confirm the prompt. The script asks for exactly ten `GM_*` grants and a wildcard `@connect`;
+   the reasons are in [Privacy and permissions](docs/privacy-and-permissions.md).
 
-## 10. Security & Privacy Considerations
-- **Sandboxed DOM Injection:** All UI dialogs (context menu, transform modal, batch picker, settings) use strict Shadow DOM encapsulation to prevent stylesheet leakage and host page DOM interference.
-- **Defensive Image Decoding:** Employs defensive timeouts and size probes to prevent canvas allocation crashes or memory exhaustion on malicious image bombs.
-- **Zero Analytics:** Contains no network beacons, telemetry calls, external CDN dependencies, or dynamic code execution (`eval` / `new Function` sinks).
+Do not install two copies: independent installations do not coordinate, and both will register the
+same manager commands.
+
+## First run
+
+1. Open any page with an image.
+2. Right-click the image. The **Save image as** menu opens. Hold **Shift** while right-clicking to
+   get the browser's own menu instead.
+3. Pick a format, or press `1` for PNG.
+4. A toast reports `Saved <file name>` with the byte size.
+
+If nothing appears, read [Troubleshooting](docs/troubleshooting.md). The most common cause is the
+*Allow User Scripts* switch being off.
+
+## Updates, disabling, uninstalling
+
+| Action | How |
+|---|---|
+| Automatic update | The metadata declares `@updateURL`/`@downloadURL` pointing at the canonical file above. Whether and how often to check is your **manager's** setting; the script itself never performs an update request. |
+| Manual update | Install the newer `.user.js` over the old one. Settings survive (schema-3 migration runs automatically). |
+| Check which version you have | The manager dashboard shows the version; *Settings → Diagnostics* reports the same value from inside the script. |
+| Rollback | Keep the previous file, remove the script, install the older file. Unknown settings keys are ignored. |
+| Disable | Toggle the script off in the manager dashboard. No page state needs cleaning. |
+| Uninstall | Remove it from the dashboard; optionally clear the manager key `siat.settings.v3`. |
+
+## Documentation
+
+| Document | What it covers |
+|---|---|
+| [Installation](docs/installation.md) | Manager setup, install paths, first run, removal |
+| [User guide](docs/user-guide.md) | Every command, dialog and outcome |
+| [Configuration](docs/configuration.md) | The 49 settings and what they change |
+| [Settings reference](docs/reference/settings.md) | Generated table of every key, default and range |
+| [Advanced usage](docs/advanced-usage.md) | Profiles, batch/ZIP, metadata, manager commands, diagnostics |
+| [Compatibility](docs/compatibility.md) | What was actually tested, and the known limitations |
+| [Privacy and permissions](docs/privacy-and-permissions.md) | Every grant, every destination, every stored key |
+| [Troubleshooting](docs/troubleshooting.md) | Symptom → cause → fix, diagnostics, safe reset |
+| [Architecture](docs/architecture.md) | Module map and data flow |
+| [Development](docs/development.md) | Build, test, verification harnesses |
+| [Release process](docs/release-process.md) | Versioning, gates, tagging, assets |
+
+## Verification status
+
+Measured in this repository, on the current artifact:
+
+| Check | Result |
+|---|---|
+| Unit suite | 577 tests, 0 failures |
+| Static checks (`lint.mjs`) | 27/27 |
+| Browser scenarios (real Chromium, built artifact) | 57/57 |
+| Security tests | 18/18 |
+| Encoder goldens | Byte-exact against pinned independent outputs |
+| Real manager (Violentmonkey 2.49.0 MV3, Chrome 155) | Installs and converts; 11/11 independent output checks |
+
+Not verified: Tampermonkey runtime behavior, Firefox, real remote sites, and update-polling timing.
+See [Compatibility](docs/compatibility.md).
+
+## Privacy in one paragraph
+
+Your images never leave your machine. The script stores one settings key in your manager, makes no
+telemetry, and performs no network request except a `GET` for an image you explicitly asked to
+convert when the page's own CORS policy blocks reading its pixels. Installing it does not fetch an
+icon; updating is your manager's job, not the script's. Details:
+[Privacy and permissions](docs/privacy-and-permissions.md).
+
+## Contributing, support, security
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before sending a patch.
+Questions and bugs: [SUPPORT.md](SUPPORT.md) and [issues](https://github.com/shivanshjain456/browser-workflow-tools/issues).
+Security reports: [SECURITY.md](SECURITY.md) — please use private reporting, not a public issue.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

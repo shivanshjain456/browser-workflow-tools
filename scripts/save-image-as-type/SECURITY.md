@@ -7,12 +7,6 @@
 Preferred route: GitHub's **private vulnerability reporting** on this
 repository — *Security* tab → *Report a vulnerability*.
 
-> **Owner action required:** private vulnerability reporting must be enabled for
-> the repository (*Settings → Security → Private vulnerability reporting*). It is
-> a repository setting, not something a file can switch on. Until it is enabled,
-> this route does not exist; the owner must either enable it or add a monitored
-> contact address to this file. No address is fabricated here on purpose.
-
 Please include: the script version, manager and browser versions, what an
 attacker controls, the impact, and (if you have one) a minimal reproduction.
 A proof-of-concept is welcome; please keep it private until a fix is released.
@@ -44,8 +38,10 @@ A proof-of-concept is welcome; please keep it private until a fix is released.
   page-controlled boot flag.
 * Nothing is written to page storage (no `localStorage`/`sessionStorage`/
   `IndexedDB`/cookies).
-* No telemetry, no remote configuration, no update check, no remote code, no
-  `eval`, no HTML sinks.
+* No telemetry, no remote configuration, no remote code. The script never performs an update check;
+  the `@updateURL`/`@downloadURL` metadata only tells your userscript manager where the canonical
+  file lives, and any check is performed by the manager under its own settings.
+* No `eval`, no HTML sinks.
 * Network requests are limited to fetching an image you explicitly asked to
   convert; no uploads ever.
 * Untrusted data is validated before use; a failing validation produces a warning

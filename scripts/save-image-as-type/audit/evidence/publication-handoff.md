@@ -100,7 +100,7 @@ paste the CHANGELOG section).
 
 ## 5. Owner decisions still required
 
-1. **Repository URL** — replace `https://github.com/<OWNER>/<REPO>` in
+1. **Repository URL** — resolved to `https://github.com/shivanshjain456/browser-workflow-tools` in
    `README.md`, `docs/installation.md`, `.github/ISSUE_TEMPLATE/config.yml` and
    `docs/publication-checklist.md`, and add `repository`/`homepage` to
    `package.json`. Until then the install link is repository-relative.

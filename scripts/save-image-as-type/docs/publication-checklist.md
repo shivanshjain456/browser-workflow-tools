@@ -25,43 +25,15 @@ must be answered before the repository is published.
 | Environment: Node/Browser/Python requirements pinned and documented | `package.json` (`engines`, exact dev pins), `docs/development.md` |
 | Installation and development paths walked end-to-end | The repository snapshot was extracted to an unrelated directory, `npm ci` was run there, and lint + release gates + `build:check` + 577 unit tests + 57 browser scenarios + independent decoder checks all passed: `audit/evidence/clean-checkout.txt`. Browser/manager behaviour of the same bytes is recorded in `audit/evidence/manager-lab/`. |
 
-## Owner decisions (cannot be inferred)
+## Owner decisions (resolved for this publication)
 
-### 1. Repository URL
-Needed for: the raw install link, `repository`/`homepage`/`bugs` fields in
-`package.json`, `@updateURL`/`@downloadURL` (deliberately absent today), badge
-URLs, and the release asset links.
-**Decision:** publish as e.g. `github.com/<OWNER>/<REPO>`. Until then, the README
-uses a repository-relative path and marks the raw URL as a placeholder. Do not
-publish a guessed URL.
-
-### 2. Copyright holder
-`LICENSE` currently reads *“Copyright (c) 2026 Save Image as Type userscript
-contributors”*. **Decision:** keep the collective line, or replace it with the
-legal entity that will actually own the project. No third-party code is bundled,
-so no additional attribution is required by the current dependency set.
-
-### 3. Security contact
-`SECURITY.md` instructs reporters to use GitHub's private vulnerability
-reporting, **and explicitly records that the feature must be enabled by the
-owner**. **Decision:** enable *Settings → Security → Private vulnerability
-reporting* after publishing, or supply a monitored contact address to add to that
-file. No address is invented.
-
-### 4. Whether to publish `audit/`
-`audit/` (about 6 MB) contains the executed verification evidence, harnesses and
-the ordered engineering record. Publishing it makes the claims auditable; it also
-adds noise and includes local `127.0.0.1` fixtures.
-**Decision:** publish as-is (recommended, keeps the claims checkable), or move it
-to a `verification/` GitHub Release asset and keep only `audit/README.md` +
-`audit/engineering-report.md` in the tree.
-
-### 5. Release acceptance level for this repository snapshot
-`release/release-manifest.json` has `releaseAccepted: false` because the
-project's own acceptance brief still has open items (broad S1 work, Tampermonkey
-verification, whole-interface localisation). **Decision:** either publish this as
-a **pre-release / community preview** (recommended, with the limitations listed
-in `docs/compatibility.md`), or hold publication until those items are closed.
+| Decision | Resolution | Date |
+|---|---|---|
+| Repository URL | `https://github.com/shivanshjain456/browser-workflow-tools` (package: `scripts/save-image-as-type`) | 2026-10-17 |
+| Copyright holder | Shivansh Jain (matches `@author` and `LICENSES/MIT.txt`) | 2026-10-17 |
+| Security contact | GitHub private vulnerability reporting, enabled and verified | 2026-10-17 |
+| `audit/` publication | Published as-is; no secrets, no personal data | 2026-10-17 |
+| Update channel | `@updateURL`/`@downloadURL` kept, pointing at the single canonical artifact | 2026-10-17 |
 
 ### 6. Packaging note discovered by this check
 
