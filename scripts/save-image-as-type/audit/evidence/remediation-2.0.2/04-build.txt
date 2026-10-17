@@ -1,0 +1,10 @@
+# command: npm run build && sha256sum release/save-image-as-type.user.js
+# commit: 01e8f5d4b6d1611c1eb24dc447a9c3eb342c3c06
+# artifact sha256: 182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab
+> save-image-as-type@2.0.2 build
+> node build.mjs
+
+built release/save-image-as-type.user.js ΓÇö v2.0.2, 41 modules, 444 exports, 15474 lines, 605.6 KB
+updated release/release-manifest.json and release/SHA256SUMS
+182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab  release/save-image-as-type.user.js
+# exit: 0

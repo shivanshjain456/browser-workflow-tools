@@ -15,7 +15,7 @@ build if they drift:
 
 | Asset | Notes |
 |---|---|
-| `release/save-image-as-type.user.js` | The installable file. **Committed** to the repository *and* attached to the GitHub Release. |
+| `release/save-image-as-type.user.js` | The single canonical installable file. Exactly one distributable userscript artifact is **committed** to the repository and attached to the GitHub Release. No second copy exists at the package root. |
 | `save-image-as-type-<version>-source.zip` | Rebuilt by `python3 audit/make-package.py`; contains sources, tests, docs and the evidence capsule. Attached to the Release only, not committed (see `.gitignore`). |
 | `SHA256SUMS` / `PACKAGE_SHA256SUMS` | Checksums for the two artifacts above, written by the packaging step. |
 
@@ -43,17 +43,17 @@ access for the pinned manager/Chrome assets and is therefore not part of CI.
 
 ## Steps to cut a release
 
-1. Update the version in `package.json`, `src/meta.js` and `CHANGELOG.md`.
+1. Update the version in `package.json`, `src/meta.js`, `release-manifest.json`, and `CHANGELOG.md`.
 2. `npm run build` and commit the regenerated `release/save-image-as-type.user.js`.
-3. Run the gate list above; all must pass (and, for a full release, every item in
-   the acceptance checklist must be genuinely satisfied).
-4. `python3 audit/make-package.py` to rebuild the source capsule and checksums.
-5. Tag `v<version>` and create a GitHub Release from that tag.
-6. Attach the userscript, the source ZIP and the checksum files.
-7. Paste the changelog section as the release notes, adding upgrade notes for
+3. Run `npm run verify:release`, `npm run verify:metadata`, `npm test`, and `npm run test:browser`.
+4. Run `node tools/prove-delta.mjs` against the previous release to ensure the runtime body is identical or intended.
+5. `python3 audit/make-package.py` to rebuild the source capsule and checksums.
+6. Tag `v<version>` and create a GitHub Release from that tag.
+7. Attach the userscript, the source ZIP and the checksum files.
+8. Paste the changelog section as the release notes, adding upgrade notes for
    settings/schema changes and any newly *verified* compatibility result.
-8. Verify the published download twice: install it in a throwaway profile and
-   confirm the version in the manager dashboard matches the tag.
+9. Verify the published download twice: install it in a throwaway profile and
+   confirm the version in the manager dashboard matches the tag, and verify that the raw URL serves the tagged bytes.
 
 ## Repository snapshot versus release asset
 
@@ -78,18 +78,12 @@ userscript, so an accidental `npm publish` would be a mistake, not a feature.
 
 ## Automation
 
-`.github/workflows/ci.yml` runs the static/unit/browser checks for pull requests
+`.github/workflows/save-image-as-type.yml` runs the path-filtered static/unit/browser checks for pull requests
 and pushes, with read-only permissions and no secrets. It builds the artifact and
-fails if the committed file is stale. `.github/workflows/release.yml` runs on an
-explicit `v*` tag that is already published as a Release: it re-runs the gates,
-rebuilds the sources archive, writes checksums, and uploads the assets to that
-Release. Neither workflow needs repository secrets. Both workflows must be
-enabled by the owner after the repository is pushed; a workflow file existing
-locally is not evidence that CI has run.
+fails if the committed file is stale. Neither workflow needs repository secrets.
 
 ## Owner decisions required before publishing
 
 See [Publication checklist](publication-checklist.md) — repository URL
-(affects the install link, `homepage`/`repository` fields and any future
-`@updateURL`), copyright holder, security contact, and whether the `audit/`
-evidence tree is published as-is.
+(affects the install link and `homepage`/`repository` fields), copyright holder, security contact, and whether the `audit/`
+evidence tree is published as-is (all resolved for 2.0.2).

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "node --test tests/**/*.test.mjs",
-    "check:syntax": "node -e \"const fs = require('fs'); ['clip-leetcode/clip-leetcode.user.js','codebase-uploader/codebase-uploader.user.js','chatgpt-conversation-bridge/chatgpt-conversation-bridge.user.js','web-archives/web-archives.user.js','youtube-search-command/youtube-search-command.user.js','yt-share-antitrack/yt-share-antitrack.user.js','save-image-as-type/save-image-as-type.user.js'].forEach(f => new Function(fs.readFileSync('scripts/' + f, 'utf8'))); console.log('All 7 userscripts are valid JavaScript syntax.');\"",
+    "check:syntax": "node -e \"const fs = require('fs'); ['clip-leetcode/clip-leetcode.user.js','codebase-uploader/codebase-uploader.user.js','chatgpt-conversation-bridge/chatgpt-conversation-bridge.user.js','web-archives/web-archives.user.js','youtube-search-command/youtube-search-command.user.js','yt-share-antitrack/yt-share-antitrack.user.js','save-image-as-type/release/save-image-as-type.user.js'].forEach(f => new Function(fs.readFileSync('scripts/' + f, 'utf8'))); console.log('All 7 userscripts are valid JavaScript syntax.');\"",
     "check:meta": "node tools/check-userscript-metadata.mjs",
     "check:perm": "node tools/check-permissions.mjs",
     "check:secrets": "node tools/check-secrets.mjs",

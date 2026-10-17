@@ -13,6 +13,7 @@ assignees: shivanshjain456
 - [ ] Web Archives (`scripts/web-archives`)
 - [ ] YouTube Search Command (`scripts/youtube-search-command`)
 - [ ] YTShareAntiTrack (`scripts/yt-share-antitrack`)
+- [ ] Save Image as Type (`scripts/save-image-as-type`)
 
 ### Environment
 - **Browser:** (e.g. Chrome 128, Firefox 129, Edge 128)

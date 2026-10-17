@@ -13,6 +13,7 @@ assignees: shivanshjain456
 - [ ] Web Archives (`scripts/web-archives`)
 - [ ] YouTube Search Command (`scripts/youtube-search-command`)
 - [ ] YTShareAntiTrack (`scripts/yt-share-antitrack`)
+- [ ] Save Image as Type (`scripts/save-image-as-type`)
 - [ ] Shared Tooling / Infrastructure
 
 ### Problem or Opportunity

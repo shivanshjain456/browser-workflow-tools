@@ -69,23 +69,43 @@ describe('metadata block', () => {
     for (const grant of grants) {
       assert.match(grant, /^GM_[A-Za-z]+$/, `classic GM_* spelling for maximum manager compatibility: ${grant}`);
     }
+    // Each grant must have a written justification next to it in the source.
+    const metaSource = readFileSync(join(ROOT, 'src/meta.js'), 'utf8');
+    for (const grant of grants) {
+      const index = metaSource.indexOf(`'${grant}'`);
+      assert.ok(index > 0, `${grant} declared in src/meta.js`);
+      const rest = metaSource.slice(index, index + 200);
+      assert.match(rest, /\/\/|\/\*/, `${grant} carries an inline justification comment`);
+    }
   });
 
   test('no remote code or untracked resources are pulled in', () => {
     assert.equal('require' in fields, false, 'no @require: an unpinned remote script would run with our permissions');
     assert.equal('resource' in fields, false, 'no @resource');
-    assert.ok(fields.updateURL[0].startsWith('https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js'));
-    assert.ok(fields.downloadURL[0].startsWith('https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js'));
+    assert.ok(fields.updateURL[0].startsWith('https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js'));
+    assert.ok(fields.downloadURL[0].startsWith('https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js'));
   });
 
-  test('zero wildcard @connect is enforced', () => {
-    assert.equal('connect' in fields, false, 'zero wildcard connect policy is strictly enforced');
+  test('@connect is the documented wildcard and is explained at the declaration', () => {
+    assert.deepEqual(fields.connect, ['*']);
+    const metaSource = readFileSync(join(ROOT, 'src/meta.js'), 'utf8');
+    const index = metaSource.indexOf('connect: [');
+    const before = metaSource.slice(Math.max(0, index - 700), index);
+    assert.match(before, /CDN|cross-origin|CORS/i, 'the wildcard is justified where it is declared');
+    assert.match(before, /allowCrossOriginFetch/, 'and the user-facing kill switch is named');
   });
 
-  test('the icon URLs point to canonical repository assets', () => {
+  test('the icon is a self-contained data URI (no network fetch)', () => {
     assert.equal(fields.icon.length, 1);
-    assert.ok(fields.icon[0].includes('browser-workflow-tools-mark-32.png'));
-    assert.ok(fields.icon64[0].includes('browser-workflow-tools-mark-64.png'));
+    assert.match(fields.icon[0], /^data:image\/svg\+xml,/);
+    // The only URL-shaped text allowed inside the payload is the SVG namespace
+    // URI, which is a name and is never fetched; anything else would mean the
+    // icon depends on the network.
+    const payload = fields.icon[0].replace(/^data:[^,]*,/, '');
+    const inside = [...payload.matchAll(/https?%3A%2F%2F[^%'"]*|https?:\/\/[^\s'"]*/gi)].map((m) => decodeURIComponent(m[0]));
+    assert.deepEqual(inside, ['http://www.w3.org/2000/svg'], `icon payload references only the SVG namespace: ${inside.join(', ')}`);
+    assert.equal(/%3Cscript|onerror|javascript:/i.test(payload), false, 'no executable content in the icon');
+    assert.ok(fields.icon[0].length < 1200, 'icon stays small');
   });
 });
 

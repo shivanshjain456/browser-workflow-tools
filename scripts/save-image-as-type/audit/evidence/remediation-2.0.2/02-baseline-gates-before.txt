@@ -1,0 +1,119 @@
+# Baseline gate reproduction at commit 88fff69b45193589bbce49fa8924cd83cbcb20e1
+# Environment: Node v22.23.1, npm 10.9.8, Python 3.12.11 (Pillow 12.2.0, pypdf 6.13.1), Windows
+
+=== 1. npm run build:check ===
+$ npm run build:check
+> save-image-as-type@2.0.1 build:check
+> node build.mjs --check
+
+OK: release/save-image-as-type.user.js is in sync with 41 source modules.
+exit: 0
+
+=== 2. npm run docs:settings:check ===
+$ npm run docs:settings:check
+> save-image-as-type@2.0.1 docs:settings:check
+> node scripts/gen-settings-doc.mjs --check
+
+settings reference is current (49 settings, 8 formats, 5 shortcuts)
+exit: 0
+
+=== 3. npm run lint ===
+$ npm run lint
+> save-image-as-type@2.0.1 lint
+> node lint.mjs
+
+PASS  no-public-capability-handle
+PASS  no-page-boot-switch
+PASS  no-page-persistence
+PASS  no-telemetry-channels
+PASS  no-eval
+PASS  no-new-function
+PASS  no-innerhtml
+PASS  no-outerhtml
+PASS  no-insert-adjacent-html
+PASS  no-document-write
+PASS  no-string-timer
+PASS  no-unsafeWindow
+PASS  no-debugger
+PASS  no-javascript-url
+PASS  no-remote-require
+PASS  no-remote-resource
+PASS  no-gm-add-element-src
+PASS  grants-match-usage
+FAIL  connect-scope
+      @connect = [] (wildcard required: images are hosted on arbitrary CDNs; documented in README)
+PASS  match-scope
+PASS  artifact-exists
+PASS  artifact-header-matches-meta
+PASS  no-build-placeholder
+PASS  no-runtime-imports
+FAIL  version-consistent
+      metadata @version and in-script version are both 2.0.1
+FAIL  no-remote-endpoints
+      unexpected remote URLs baked into the artifact: https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js, https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-32.png, https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-64.png
+PASS  no-implicit-page-globals
+
+24/27 lint checks passed
+exit: 1
+
+=== 4. npm run verify:release ===
+$ npm run verify:release
+> save-image-as-type@2.0.1 verify:release
+> node scripts/verify-release.mjs
+
+Owner decisions still open (see docs/publication-checklist.md):
+  - repository URL (install link, package.json fields)
+  - copyright holder in LICENSE
+  - security contact / enable private vulnerability reporting
+  - publish audit/ evidence tree as-is or move it to a release asset
+
+PASS version 2.0.1 consistent across 5 locations
+PASS artifact 605.5 KiB, sha256 0769501f089aebcf…, metadata complete
+PASS 10 grants and @connect * documented and unchanged
+PASS release/SHA256SUMS matches the artifact
+PASS settings reference is current (49 settings, 8 formats, 5 shortcuts)
+PASS 29 relative documentation links resolve
+PASS 8 manager command labels documented exactly as registered
+PASS 6 menu action labels documented in the user guide
+WARN @connect is no longer the wildcard; update docs/privacy-and-permissions.md
+WARN owner placeholders still present in: docs/installation.md, .github/ISSUE_TEMPLATE/config.yml, docs/publication-checklist.md (expected until the repository URL exists)
+WARN package.json has no repository/homepage URL yet (owner decision)
+FAIL artifact metadata is missing @connect
+
+1 release gate(s) failed.
+exit: 1
+
+=== 5. npm test ===
+$ npm test
+> save-image-as-type@2.0.1 test
+> node test/run-unit.mjs
+
+# Subtest: static security gate (lint.mjs)
+    not ok 1 - every lint rule passes
+      failures: connect-scope, version-consistent, no-remote-endpoints
+# Subtest: network access is a single auditable choke point
+    not ok 3 - no reachable remote endpoint is baked into the shipped artifact
+      unexpected URL in artifact: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type
+
+# tests 552
+# pass 550
+# fail 2
+exit: 1
+
+=== 6. node --test test/unit/security.test.mjs ===
+$ node --test test/unit/security.test.mjs
+# tests 18
+# suites 5
+# pass 16
+# fail 2
+exit: 1
+
+=== 7. npm run test:browser ===
+$ npm run test:browser
+> save-image-as-type@2.0.1 test:browser
+> node test/browser/run.mjs
+
+Save Image as Type — browser end-to-end test
+  Chrome/155.0.8059.79
+  57 passed, 0 failed, 0 skipped (57 scenarios)
+exit: 0

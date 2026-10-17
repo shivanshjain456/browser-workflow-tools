@@ -1,17 +1,16 @@
 // SPDX-License-Identifier: MIT
 // ==UserScript==
 // @name          Save Image as Type
-// @namespace     https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type
-// @version       2.0.1
+// @namespace     https://siat.invalid/save-image-as-type
+// @version       2.0.2
 // @description   Convert images locally: PNG, JPG, WebP, GIF, BMP, PDF, probe-gated AVIF or original bytes. Batch, ZIP, transforms, clipboard, metadata and keyboard workflows. No servers or tracking.
 // @author        Shivansh Jain
 // @license       MIT
 // @homepageURL   https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type
 // @supportURL    https://github.com/shivanshjain456/browser-workflow-tools/issues
-// @downloadURL   https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js
-// @updateURL     https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/save-image-as-type.user.js
-// @icon          https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-32.png
-// @icon64        https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/assets/brand/png/browser-workflow-tools-mark-64.png
+// @downloadURL   https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js
+// @updateURL     https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js
+// @icon          data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Cpath d='M32 14v24m0 0-9-9m9 9 9-9' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 46h32' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E
 // @match         *://*/*
 // @run-at        document-start
 // @grant         GM_info
@@ -24,11 +23,12 @@
 // @grant         GM_download
 // @grant         GM_registerMenuCommand
 // @grant         GM_notification
+// @connect       *
 // ==/UserScript==
 
 /*
  * Save Image as Type — userscript
- * version 2.0.1
+ * version 2.0.2
  *
  * Everything below runs locally in your browser. The script makes no network
  * requests except the image you explicitly asked it to convert (fetched
@@ -15432,7 +15432,7 @@ async function bootstrap(options = {}) {
  * shown in diagnostics can never drift from the metadata block. A test asserts
  * that no placeholder survives into the built artifact.
  */
-const SCRIPT_VERSION_REPORTED = '2.0.1';
+const SCRIPT_VERSION_REPORTED = '2.0.2';
 
 /**
  * Owned startup funnel. Catch the async result, not just synchronous throws.

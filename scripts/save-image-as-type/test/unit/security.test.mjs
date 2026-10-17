@@ -3,9 +3,11 @@ import assert from 'node:assert/strict';
 import tokenizer from 'js-tokens';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { runLintChecks } from '../../lint.mjs';
+import { META } from '../../src/meta.js';
 
-const ROOT = join(new URL('.', import.meta.url).pathname, '..', '..');
+const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 
 function* walk(dir) {
   for (const entry of readdirSync(dir)) {
@@ -19,7 +21,7 @@ function* walk(dir) {
   }
 }
 
-const sources = [...walk(join(ROOT, 'src'))].map((file) => ({ file: relative(ROOT, file), code: readFileSync(file, 'utf8') }));
+const sources = [...walk(join(ROOT, 'src'))].map((file) => ({ file: relative(ROOT, file).replace(/\\/g, '/'), code: readFileSync(file, 'utf8') }));
 const DIST = readFileSync(join(ROOT, 'release/save-image-as-type.user.js'), 'utf8');
 
 describe('static security gate (lint.mjs)', () => {
@@ -108,15 +110,20 @@ describe('network access is a single auditable choke point', () => {
 
   test('no reachable remote endpoint is baked into the shipped artifact', () => {
     const urls = [...new Set([...DIST.matchAll(/https?:\/\/[^\s'"`)<>]+/g)].map((m) => m[0].replace(/[.,;]$/, '')))];
-    const inert = [
-      'https://siat.invalid/save-image-as-type', // @namespace: an opaque identifier, never fetched
+    const metadataLinks = new Set([
+      META.namespace,
+      META.homepageURL,
+      META.supportURL,
+      META.downloadURL,
+      META.updateURL,
+    ].filter(Boolean));
+    const inert = new Set([
       'http://www.w3.org/2000/svg', // XML namespace URI: a name, not a location
       'http://www.w3.org/1999/xhtml',
       'https://siat.invalid/', // base argument for `new URL()` so relative image URLs can be parsed
-    ];
+    ]);
     for (const url of urls) {
-      assert.ok(inert.includes(url), `unexpected URL in artifact: ${url}`);
-      assert.match(url, /\.(invalid|test|example|local)\b|^http:\/\/www\.w3\.org\//, `${url} cannot resolve to a real host`);
+      assert.ok(metadataLinks.has(url) || inert.has(url), `unexpected URL in artifact: ${url}`);
     }
     // And none of them is ever handed to a network call.
     const networkArgs = [...DIST.matchAll(/(?:fetch|GM_xmlhttpRequest|xhrBlob|downloadBlobUrl)\s*\(([^)]{0,160})/g)].map((m) => m[1]);

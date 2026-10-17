@@ -21,9 +21,17 @@ rule and by a measured boot check on a blank origin.
 | The image's own host | Only when you ask for an image whose pixels the page cannot hand over (cross-origin read blocked by the page's CORS policy) | A plain `GET` for that image through `GM_xmlhttpRequest`. |
 | Your download folder | When you save | The converted or original bytes, through `GM_download` or the browser's download API. |
 
-There are **no** other requests. No start-up request, no update check
-(there is no `@updateURL`), no telemetry, no crash reporting, no remote code, and
-no third-party scripts, fonts or stylesheets at run time.
+There are **no** other requests made by the script itself. It performs no start-up request, no
+telemetry, no crash reporting, no remote code, and it loads no third-party scripts, fonts or
+stylesheets at run time. Two things do involve the network by design:
+
+* **Your manager may poll `@updateURL`.** The metadata declares
+  `@updateURL`/`@downloadURL` pointing at the canonical file in this repository. Checking for a
+  newer version and downloading it is done by your userscript manager, not by this script; the
+  script itself never contacts that URL. You can disable update checks for this script in the
+  manager's settings (or remove the script from automatic updates) without affecting it otherwise.
+* **The icon is inline.** `@icon` is a `data:` URI, so installing the script does not fetch an
+  image from anywhere.
 
 ## Every permission and why it exists
 
@@ -39,6 +47,7 @@ no third-party scripts, fonts or stylesheets at run time.
 | `@grant GM_registerMenuCommand` | The eight manager commands. | — |
 | `@grant GM_notification` | Tell you when a long batch has finished while the tab is in the background. | — |
 | `@connect *` | The manager must be allowed to fetch images from arbitrary CDNs. | Wildcard is inherent to a site-agnostic image tool; the request only happens on your explicit action. |
+| `@updateURL` / `@downloadURL` | Tell your manager where the canonical file lives so it can check for a newer version. | Remove the script from the manager's update checks; the script never fetches these URLs itself. |
 
 No permission is requested that the code does not use; `lint.mjs` fails the
 build if a grant appears in the metadata without a matching use, or vice versa.

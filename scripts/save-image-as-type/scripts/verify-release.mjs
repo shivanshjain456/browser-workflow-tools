@@ -48,7 +48,7 @@ const changelogTop = changelog.match(/^## (\d+\.\d+\.\d+)/m)?.[1];
 for (const [label, value] of [['package.json', pkg.version], ['src/meta.js', SCRIPT_VERSION], ['artifact @version', metaVersion], ['CHANGELOG.md', changelogTop], ['release-manifest.json', manifest.version]]) {
   if (value !== SCRIPT_VERSION) fail(`version disagreement: ${label} is ${value}, expected ${SCRIPT_VERSION}`);
 }
-if (!/^2\.0\.1$/.test(SCRIPT_VERSION)) warn(`version ${SCRIPT_VERSION}: this repository snapshot is a pre-release; see docs/publication-checklist.md`);
+if (!/^2\.0\.2$/.test(SCRIPT_VERSION)) warn(`version ${SCRIPT_VERSION}: this repository snapshot is a pre-release; see docs/publication-checklist.md`);
 ok(`version ${SCRIPT_VERSION} consistent across 5 locations`);
 
 /* 2. artifact validity ---------------------------------------------------- */
@@ -142,19 +142,60 @@ const missingActions = actionLabels.filter((label) => !guide.includes(label));
 if (missingActions.length) fail(`docs/user-guide.md does not mention the menu action(s): ${missingActions.join(', ')}`);
 else ok(`${actionLabels.length} menu action labels documented in the user guide`);
 
-/* 8. unfilled owner placeholders ----------------------------------------- */
-const placeholderFiles = ['README.md', 'docs/installation.md', '.github/ISSUE_TEMPLATE/config.yml', 'docs/publication-checklist.md'];
-const placeholders = placeholderFiles.filter((file) => existsSync(resolve(root, file)) && /<OWNER>|<REPO>|OWNER\/REPO/.test(read(file)));
-if (placeholders.length) warn(`owner placeholders still present in: ${placeholders.join(', ')} (expected until the repository URL exists)`);
-if (!pkg.repository && !pkg.homepage) warn('package.json has no repository/homepage URL yet (owner decision)');
-const ownerDecisions = [
-  'repository URL (install link, package.json fields)',
-  'copyright holder in LICENSE',
-  'security contact / enable private vulnerability reporting',
-  'publish audit/ evidence tree as-is or move it to a release asset',
+/* 8. metadata ↔ documentation parity -------------------------------------- */
+const header = block ? block[1] : '';
+const tagValues = (name) => [...header.matchAll(new RegExp(`^// @${name}\\s+(\\S+)$`, 'gm'))].map((m) => m[1]);
+const connect = tagValues('connect');
+if (JSON.stringify(connect) !== JSON.stringify(['*'])) {
+  fail(`artifact must declare exactly "@connect *"; found ${JSON.stringify(connect)}`);
+}
+const CANONICAL = 'https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js';
+for (const key of ['downloadURL', 'updateURL']) {
+  if (tagValues(key)[0] !== CANONICAL) fail(`@${key} must equal the canonical artifact URL`);
+}
+if (tagValues('icon')[0] && !tagValues('icon')[0].startsWith('data:image/svg+xml,')) {
+  fail('@icon must be a self-contained data URI (no install-time network request)');
+}
+if (tagValues('icon64').length) fail('@icon64 must not be declared (duplicate remote icon)');
+const banned = [
+  [/there is no `?@updateURL`?/i, ['docs/installation.md', 'docs/privacy-and-permissions.md', 'README.md', 'SECURITY.md']],
+  [/automatic update channel by design/i, ['docs/installation.md']],
+  [/deliberately absent today/i, ['docs/publication-checklist.md']],
+  [/webcodecs encoders/i, ['README.md']],
+  [/DEFLATE compression/i, ['README.md']],
+  [/grayscale, or invert/i, ['README.md']],
+  [/`C` to copy/i, ['README.md']],
+  [/no update check/i, ['SECURITY.md', 'docs/privacy-and-permissions.md']],
 ];
-console.log('Owner decisions still open (see docs/publication-checklist.md):');
-for (const item of ownerDecisions) console.log(`  - ${item}`);
+for (const [pattern, files] of banned) {
+  for (const file of files) {
+    if (existsSync(resolve(root, file)) && pattern.test(read(file))) {
+      fail(`${file} contains a claim the artifact contradicts: ${pattern}`);
+    }
+  }
+}
+for (const [file, needle] of [
+  ['README.md', CANONICAL],
+  ['docs/installation.md', CANONICAL],
+  ['docs/privacy-and-permissions.md', '@connect *'],
+]) {
+  if (!read(file).includes(needle)) fail(`${file} must contain ${needle}`);
+}
+ok('artifact metadata, documentation and links agree');
+
+/* 9. no owner placeholders anywhere --------------------------------------- */
+const allMarkdown = ['README.md', 'docs/installation.md', 'docs/publication-checklist.md', '.github/ISSUE_TEMPLATE/config.yml']
+  .filter((file) => existsSync(resolve(root, file)));
+const leftovers = allMarkdown.filter((file) => /<OWNER>|<REPO>|OWNER\/REPO/.test(read(file)));
+if (leftovers.length) fail(`unfilled owner placeholders remain in: ${leftovers.join(', ')}`);
+
+/* 10. release manifest is derived-only ------------------------------------ */
+for (const key of ['gates', 'status', 'blockers', 'combinedVerification', 'exactProductionChecks']) {
+  if (key in manifest) fail(`release-manifest.json must not contain the evidence claim "${key}"`);
+}
+if (!manifest.evidence || !existsSync(resolve(root, manifest.evidence))) {
+  fail('release-manifest.json must point at an existing evidence file');
+}
 
 /* summary ----------------------------------------------------------------- */
 console.log('');

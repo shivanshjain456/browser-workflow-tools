@@ -1,0 +1,80 @@
+name: save-image-as-type
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/save-image-as-type/**'
+      - '.github/workflows/save-image-as-type.yml'
+  pull_request:
+    paths:
+      - 'scripts/save-image-as-type/**'
+      - '.github/workflows/save-image-as-type.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: siat-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: scripts/save-image-as-type
+
+jobs:
+  gates:
+    name: gates (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: scripts/save-image-as-type/package-lock.json
+      - name: Set up Python (independent decoders)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install decoder dependencies
+        run: python3 -m pip install --upgrade pip pillow pypdf
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Environment
+        run: |
+          node -v
+          npm -v
+          python3 -V
+          sha256sum release/save-image-as-type.user.js
+      - name: Build is reproducible
+        run: npm run build:check
+      - name: Static checks
+        run: npm run lint
+      - name: Release gate
+        run: npm run verify:release
+      - name: Metadata parity
+        run: npm run verify:metadata
+      - name: Generated settings reference is current
+        run: npm run docs:settings:check
+      - name: Unit suite
+        run: npm test
+      - name: Security suite
+        run: node --test test/unit/security.test.mjs
+      - name: Browser suite
+        run: npm run test:browser
+      - name: Upload failure artefacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siat-failure-${{ github.run_id }}
+          path: |
+            scripts/save-image-as-type/.tmp-browser
+          retention-days: 7

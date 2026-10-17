@@ -1,0 +1,19 @@
+# command: npm run verify:release
+# commit: 01e8f5d4b6d1611c1eb24dc447a9c3eb342c3c06
+# artifact sha256: 182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab
+> save-image-as-type@2.0.2 verify:release
+> node scripts/verify-release.mjs
+
+
+PASS version 2.0.2 consistent across 5 locations
+PASS artifact 605.6 KiB, sha256 182f7854e0f225a0ΓÇª, metadata complete
+PASS 10 grants and @connect * documented and unchanged
+PASS release/SHA256SUMS matches the artifact
+PASS settings reference is current (49 settings, 8 formats, 5 shortcuts)
+PASS 50 relative documentation links resolve
+PASS 8 manager command labels documented exactly as registered
+PASS 6 menu action labels documented in the user guide
+PASS artifact metadata, documentation and links agree
+
+All release gates passed (0 warnings; warnings are owner decisions, not defects).
+# exit: 0
