@@ -12,10 +12,10 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { createHash } from 'node:crypto';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 import { META, renderMetadata, SCRIPT_VERSION } from './src/meta.js';
 
-const ROOT = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
+const ROOT = fileURLToPath(new URL('.', import.meta.url)).replace(/[\\/]$/, '');
 
 function* walk(dir) {
   for (const entry of readdirSync(dir)) {
@@ -123,7 +123,8 @@ export function runLintChecks() {
     push('no-build-placeholder', !dist.includes('__SIAT_BUILD_VERSION__'), 'version placeholder was replaced at build time');
     push('no-runtime-imports', !/^\s*(?:import|require)\s*[({\s'"]/.test(dist.replace(/^\/\/.*$/gm, '')),
       'no import/require statements survive into the artifact');
-    push('version-consistent', dist.includes(`@version     ${SCRIPT_VERSION}`) && dist.includes(`SCRIPT_VERSION_REPORTED = '${SCRIPT_VERSION}'`),
+    const versionPattern = new RegExp(`^// @version\\s+${SCRIPT_VERSION.replace(/\\./g, '\\.')}$`, 'm');
+    push('version-consistent', versionPattern.test(dist) && dist.includes(`SCRIPT_VERSION_REPORTED = '${SCRIPT_VERSION}'`),
       `metadata @version and in-script version are both ${SCRIPT_VERSION}`);
 
     // 6. no remote URLs other than the non-executable metadata identifiers
@@ -134,7 +135,7 @@ export function runLintChecks() {
     // RFC 6761 reserved hosts that cannot resolve, used only as a base argument
     // to `new URL()` so relative image URLs can be parsed.
     const allowed = new Set([
-      META.namespace, META.homepageURL, META.supportURL,
+      META.namespace, META.homepageURL, META.supportURL, META.downloadURL, META.updateURL,
       'http://www.w3.org/2000/svg', 'http://www.w3.org/1999/xhtml',
     ].filter(Boolean));
     const isReservedHost = (url) => /https?:\/\/[^/]*\.(invalid|test|example|localhost|local)\b/i.test(url);
