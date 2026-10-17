@@ -1,9 +1,18 @@
 {
   "name": "save-image-as-type",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "type": "module",
-  "description": "Userscript: right-click any image and save it as PNG, JPG, WebP, GIF, BMP, AVIF (probe-gated), PDF, or the original bytes \u2014 local conversion, batch, ZIP, transforms, clipboard, metadata, profiles. No servers, no telemetry.",
+  "description": "Userscript: right-click any image and save it as PNG, JPG, WebP, GIF, BMP, AVIF (probe-gated), PDF, or the original bytes — local conversion, batch, ZIP, transforms, clipboard, metadata, profiles. No servers, no telemetry.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivanshjain456/browser-workflow-tools.git",
+    "directory": "scripts/save-image-as-type"
+  },
+  "homepage": "https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type",
+  "bugs": {
+    "url": "https://github.com/shivanshjain456/browser-workflow-tools/issues"
+  },
   "scripts": {
     "build": "node build.mjs",
     "build:check": "node build.mjs --check",
@@ -11,6 +20,7 @@
     "test:browser": "node test/browser/run.mjs",
     "lint": "node lint.mjs",
     "verify:release": "node scripts/verify-release.mjs",
+    "verify:metadata": "node tools/check-metadata-parity.mjs",
     "verify:all": "node audit/verify-all.mjs",
     "docs:settings": "node scripts/gen-settings-doc.mjs",
     "docs:settings:check": "node scripts/gen-settings-doc.mjs --check",

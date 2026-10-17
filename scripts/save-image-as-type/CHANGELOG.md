@@ -3,6 +3,35 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses semantic versioning.
 
+## 2.0.2 — consistency and release-engineering fixes, 2026-10-17
+
+### Fixed
+
+- **Permission metadata restored.** `@connect *` is declared again, matching the documented model,
+  `lint.mjs`, the release gate, the security tests and the in-product explanation. No runtime
+  behavior changed.
+- **One canonical artifact.** The duplicate root-level `save-image-as-type.user.js` is removed.
+  `@downloadURL`/`@updateURL` now point at `release/save-image-as-type.user.js`, the file that every
+  gate, checksum and document already describes.
+- **Icons are inline again.** `@icon` is a self-contained SVG data URI; installing the script no
+  longer fetches an image, so "no network except the image you asked for" is literally true.
+- **Namespace restored** to the stable `https://siat.invalid/save-image-as-type` identity so an
+  upgrade cannot register a second copy of the script.
+- **Release manifest is derived-only.** Verification claims moved to
+  `audit/evidence/release-evidence.json`; a rebuild can no longer leave stale gate results next to
+  fresh bytes.
+- **Documentation corrected:** README no longer claims WebCodecs encoders, DEFLATE ZIP compression,
+  grayscale/invert transforms or bare `C`/`A` shortcuts; installation, privacy and security pages
+  describe the real update channel and the restored `@connect`; all owner/repo placeholders
+  and the stale install path are gone.
+- **Repository-level statements corrected:** the compatibility matrix scopes its rows to the six
+  scripts that were actually tested, the root README/PERMISSIONS matrix no longer reports this
+  script as offline-only, and a root `LICENSE` (MIT) was added.
+- **CI now tests this package.** A path-filtered workflow runs lint, the release gate, the build
+  check, the generated-doc check, the unit suite and the browser suite for
+  `scripts/save-image-as-type/`. The inert nested `.github/` tree was removed.
+- **Evidence re-bound** to the 2.0.2 artifact hash.
+
 ## 2.0.1 — unreleased engineering candidate, 2026-10-16
 
 ### Added — repository and release engineering (publication package)

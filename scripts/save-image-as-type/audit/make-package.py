@@ -3,9 +3,10 @@
 Stable ordering, permissions and timestamps make this reproducible on the tested zlib.
 """
 from pathlib import Path
-import zipfile,hashlib
+import zipfile,hashlib,json
 root=Path(__file__).resolve().parent.parent
-name='save-image-as-type-2.0.1-candidate-source.zip'
+pkg=json.loads((root/'package.json').read_text(encoding='utf-8'))
+name=f"save-image-as-type-{pkg['version']}-source.zip"
 dest=root/'release'/name
 included=[]
 for folder in ['src','test','tools','docs','audit','scripts','.github']:
