@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: Installation, usage and troubleshooting help
-    url: https://github.com/OWNER/REPO/blob/main/docs/troubleshooting.md
-    about: Most first-run problems are covered here (permission switch, cross-origin fetch, strict-CSP pages).
-  - name: Security or privacy report (private)
-    url: https://github.com/OWNER/REPO/security/policy
-    about: Do not open a public issue for a vulnerability; use the private reporting route in SECURITY.md.

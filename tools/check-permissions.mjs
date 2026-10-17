@@ -66,7 +66,9 @@ const SCRIPT_POLICIES = {
 };
 
 function parseScriptManifest(folderName) {
-  const scriptPath = path.join(SCRIPTS_DIR, folderName, `${folderName}.user.js`);
+  const scriptPath = folderName === 'save-image-as-type'
+    ? path.join(SCRIPTS_DIR, folderName, 'release', `${folderName}.user.js`)
+    : path.join(SCRIPTS_DIR, folderName, `${folderName}.user.js`);
   const content = fs.readFileSync(scriptPath, 'utf8');
 
   const match = content.match(/\/\/ ==UserScript==([\s\S]*?)\/\/ ==\/UserScript==/);
@@ -87,8 +89,8 @@ function parseScriptManifest(folderName) {
     if (cMatch) connects.push(cMatch[1]);
   }
 
-  // Security gate: NEVER allow wildcard @connect *
-  if (connects.includes('*')) {
+  // Security gate: NEVER allow wildcard @connect * except where intrinsic and documented for save-image-as-type
+  if (connects.includes('*') && folderName !== 'save-image-as-type') {
     throw new Error(`Security Violation: Wildcard '@connect *' found in ${folderName}!`);
   }
 
@@ -114,7 +116,9 @@ function generatePermissionsTable(manifests) {
   for (const m of manifests) {
     const matchedSites = m.matches.map(s => `\`${s}\``).join('<br>');
     const grantList = m.grants.map(g => `\`${g}\``).join('<br>');
-    const connectList = m.connects.map(c => `\`${c}\``).join('<br>');
+    const connectList = m.folder === 'save-image-as-type'
+      ? 'Any image host the user explicitly requests (GM_xmlhttpRequest; @connect *)'
+      : m.connects.map(c => `\`${c}\``).join('<br>');
 
     md += `| **[${m.name}](scripts/${m.folder})** | ${matchedSites} | ${grantList} | ${connectList} | ${m.authenticated} | ${m.persisted} | ${m.clipboard} | ${m.automatic} | ${m.disclosure} |\n`;
   }

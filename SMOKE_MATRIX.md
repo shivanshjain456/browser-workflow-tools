@@ -3,6 +3,13 @@
 This document records the empirical testing matrix for the tools in this collection.
 Any platform not verified is explicitly marked as **Not Tested**.
 
+> **Scope.** The environment rows below were measured on 2026-10-12 against the six scripts that
+> existed then (clip-leetcode, codebase-uploader, chatgpt-conversation-bridge, web-archives,
+> youtube-search-command, yt-share-antitrack). `save-image-as-type` was added on 2026-10-16 and is
+> **not covered by these rows**; its measured status is in
+> [`scripts/save-image-as-type/docs/compatibility.md`](scripts/save-image-as-type/docs/compatibility.md)
+> (Violentmonkey 2.49.0 verified; Tampermonkey unverified; Firefox untested).
+
 ---
 
 ## Environment Matrix
@@ -23,7 +30,7 @@ Any platform not verified is explicitly marked as **Not Tested**.
 
 | Test Case | Tool | Expected Behavior | Observed Behavior | Environment | Date | Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **First Install & Update** | All 6 Scripts | Manager prompts 1-click install; recognizes metadata, grants, and matches | Instant installation with proper icon, description, and requested permissions | Chrome / Tampermonkey | 2026-10-12 | **Pass** |
+| **First Install & Update** | All 6 scripts (not save-image-as-type) | Manager prompts 1-click install; recognizes metadata, grants, and matches | Instant installation with proper icon, description, and requested permissions | Chrome / Tampermonkey | 2026-10-12 | **Pass** |
 | **Unsupported Route Inertness** | `clip-leetcode` | On non-problem route (`/explore`), script allocates 0 UI buttons or watchers | Script exits early; zero DOM modifications or errors | Chrome / Tampermonkey | 2026-10-12 | **Pass** |
 | **Unsupported Route Inertness** | `youtube-search-command` | On YouTube homepage (`/`), script remains dormant until `/results` is entered | Script runs zero ranking algorithms; DOM untouched | Firefox / Violentmonkey | 2026-10-12 | **Pass** |
 | **Missing GM Grants Fallback** | `clip-leetcode` | If `GM_setClipboard` fails or is blocked, falls back gracefully | Uses DOM execCommand fallback; logs diagnostics | Chrome / Tampermonkey | 2026-10-12 | **Pass** |
