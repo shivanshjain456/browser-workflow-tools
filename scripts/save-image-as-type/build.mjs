@@ -183,10 +183,9 @@ if (isCheck) {
 } else {
   mkdirSync(dirname(OUT), { recursive: true });
   writeFileSync(OUT, source, 'utf8');
-  writeFileSync(resolve(ROOT, 'save-image-as-type.user.js'), source, 'utf8');
   const kb = (Buffer.byteLength(source) / 1024).toFixed(1);
   console.log(
-    `built save-image-as-type.user.js — v${SCRIPT_VERSION}, ${modules.length} modules, ` +
+    `built release/save-image-as-type.user.js — v${SCRIPT_VERSION}, ${modules.length} modules, ` +
       `${exportNames.length} exports, ${source.split('\n').length} lines, ${kb} KB`,
   );
   // Keep the release metadata in step with the bytes that were just written, so a
@@ -196,6 +195,15 @@ if (isCheck) {
   const manifestPath = resolve(ROOT, 'release/release-manifest.json');
   if (existsSync(manifestPath)) {
     const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    // Derived facts only. Verification claims live in
+    // `audit/evidence/release-evidence.json` and are never rewritten by a build.
+    for (const stale of [
+      'status', 'gates', 'blockers', 'exactProductionChecks', 'combinedVerification',
+      'actualManagerEvidence', 'extractedCapsuleVerification', 'recentIndependentRollbackGroups',
+      'productionKeyboardKeys', 'devAudit', 'localisation', 'toolchain',
+      'newSettings', 'newStorageKeys', 'newRuntimeDependencies', 'newRuntimeDestinations',
+    ]) delete manifest[stale];
+    manifest.evidence = 'audit/evidence/release-evidence.json';
     manifest.bytes = bytes.length;
     manifest.md5 = createHash('md5').update(bytes).digest('hex');
     manifest.sha256 = createHash('sha256').update(bytes).digest('hex');

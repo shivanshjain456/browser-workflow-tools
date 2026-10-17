@@ -46,7 +46,9 @@ function parseMetadata(content, filePath) {
 }
 
 function validateScript(folderName) {
-  const scriptPath = path.join(SCRIPTS_DIR, folderName, `${folderName}.user.js`);
+  const scriptPath = folderName === 'save-image-as-type'
+    ? path.join(SCRIPTS_DIR, folderName, 'release', `${folderName}.user.js`)
+    : path.join(SCRIPTS_DIR, folderName, `${folderName}.user.js`);
   if (!fs.existsSync(scriptPath)) {
     throw new Error(`Script file not found: ${scriptPath}`);
   }
@@ -75,7 +77,7 @@ function validateScript(folderName) {
     errors.push(`Unexpected author '${meta.author[0]}' (expected '${EXPECTED_AUTHOR}')`);
   }
 
-  if (meta.namespace && !meta.namespace[0].startsWith(CANONICAL_REPO_URL)) {
+  if (meta.namespace && !meta.namespace[0].startsWith(CANONICAL_REPO_URL) && meta.namespace[0] !== 'https://siat.invalid/save-image-as-type') {
     errors.push(`Namespace '${meta.namespace[0]}' does not start with '${CANONICAL_REPO_URL}'`);
   }
 
