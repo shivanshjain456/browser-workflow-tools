@@ -341,7 +341,10 @@ async function waitForCdpDownload(dir, timeout = 25000) {
     const files = readdirSync(dir).filter((name) => !name.endsWith('.crdownload'));
     if (files.length) {
       const newest = files.map((name) => ({ name, mtime: statSync(join(dir, name)).mtimeMs })).sort((a, b) => b.mtime - a.mtime)[0];
-      return { name: newest.name, path: join(dir, newest.name), bytes: readFileSync(join(dir, newest.name)) };
+      const bytes = readFileSync(join(dir, newest.name));
+      if (bytes.length > 0) {
+        return { name: newest.name, path: join(dir, newest.name), bytes };
+      }
     }
     await sleep(50);
   }

@@ -19,11 +19,13 @@ The runtime logic is byte-identical to the baseline release (commit `88fff69b`);
 |---|---|---|
 | `save-image-as-type.user.js` | `182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab` | Canonical userscript artifact |
 | `save-image-as-type-2.0.2-source.zip` | `ce6a633c54dbf1e1cc50955de3ab7a863d84ba4e9ba101596aac678c45ddd100` | Complete verifiable source capsule |
-| `SHA256SUMS` | `7a16709778dd28a4aa50190ee01b225bf4e377fa2c0353c9f2b86c2e35e98585` | Checksum file for artifact |
-| `PACKAGE_SHA256SUMS` | `b3d368e73ee0a90575d506bc1dff63f8546b41fe3db1fef67e9f4544755106d7` | Checksum file for source package |
+| `SHA256SUMS` | `ca6221b659e7fbb82028347d33bfdfa344e34846edfba2968ef5ff57c53ad22f` | Checksum file for artifact |
+| `PACKAGE_SHA256SUMS` | `8e4150576552563a7bf5b3367b82584d20a5d59179a3b7db5fc68c520d3915f6` | Checksum file for source package |
 
 ## Verification Command
 ```bash
 sha256sum -c SHA256SUMS
 sha256sum -c PACKAGE_SHA256SUMS
 ```
+
+> **Integrity Erratum & Asset Repair Note (2026-10-17)**: The `save-image-as-type.user.js`, `SHA256SUMS`, and `PACKAGE_SHA256SUMS` attachments were re-uploaded to replace CRLF line-ending artifacts with the exact canonical LF bytes from Git tag `v2.0.2` (blob `f4b4e1b0`). The checksum table has been updated to reflect the true published LF hashes. Tag `v2.0.2` and commit `f7376f28` were not modified.

@@ -1,0 +1,7 @@
+# command: gh release download v2.0.2 -D /tmp/v2.0.2-verify && sha256sum -c SHA256SUMS && sha256sum -c PACKAGE_SHA256SUMS
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+save-image-as-type.user.js: OK
+save-image-as-type-2.0.2-source.zip: OK
+# exit: 0

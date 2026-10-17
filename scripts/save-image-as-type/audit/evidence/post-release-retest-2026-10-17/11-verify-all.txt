@@ -1,0 +1,89 @@
+# command: npm run verify:all
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+========================================================================
+save-image-as-type: comprehensive verification pipeline
+  node: v22.23.3 (linux, x64)
+  artifact: release/save-image-as-type.user.js
+  artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+========================================================================
+[1/11] preflight
+[2/11] build
+[3/11] lint
+[4/11] unit
+[5/11] browser-1
+[6/11] browser-2
+[7/11] production
+[8/11] production-ui
+[9/11] synthetic-attack
+[10/11] goldens
+[11/11] assertions
+OK: all evidence assertions passed against manifest and release artifact
+
+Pipeline execution summary:
+{
+  "status": "CANDIDATE REGRESSION GATES PASSED; RELEASE BLOCKED. The full engineering brief is NOT completed.",
+  "exitCode": 2,
+  "artifactSha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
+  "steps": [
+    {
+      "name": "preflight",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "build",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "lint",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "unit",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "browser-1",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "browser-2",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "production",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "production-ui",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "synthetic-attack",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "goldens",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "assertions",
+      "status": 0,
+      "signal": null
+    }
+  ]
+}
+
+CANDIDATE REGRESSION GATES PASSED; RELEASE BLOCKED. The full engineering brief is NOT completed.
+# exit: 2

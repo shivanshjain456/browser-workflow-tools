@@ -50,7 +50,7 @@
   ],
   "toolchain": {
     "nodeMinimum": "22.22.2",
-    "nodeTested": "22.22.2",
+    "nodeTested": "22.23.3",
     "puppeteer": "25.14.0",
     "fixtureChrome": "155.0.8059.79",
     "realManagerChrome": "155.0.8059.84"
@@ -59,7 +59,7 @@
     "manager": "Violentmonkey 2.49.0 MV3",
     "completed": true,
     "scope": "unpacked unchanged official distribution; native file install in isolated lab; five local cases plus same/cross-origin frames, manager settings round trip; SVG raster explicitly unavailable",
-    "artifactSha256": "f15a9041cafbf0171c76ef126b8c89e193bf08a877eed93f1f9bdb1137b8b88c",
+    "artifactSha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
     "independentDownloads": 11,
     "report": "audit/evidence/manager-lab/vm-production.json",
     "verifier": "python3 audit/verify-manager-outputs.py vm",

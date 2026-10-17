@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name          Save Image as Type
 // @namespace     https://siat.invalid/save-image-as-type
-// @version       2.0.2
+// @version       2.0.3
 // @description   Convert images locally: PNG, JPG, WebP, GIF, BMP, PDF, probe-gated AVIF or original bytes. Batch, ZIP, transforms, clipboard, metadata and keyboard workflows. No servers or tracking.
 // @author        Shivansh Jain
 // @license       MIT
@@ -28,7 +28,7 @@
 
 /*
  * Save Image as Type — userscript
- * version 2.0.2
+ * version 2.0.3
  *
  * Everything below runs locally in your browser. The script makes no network
  * requests except the image you explicitly asked it to convert (fetched
@@ -40,7 +40,7 @@
  * page-global privileged API, no page-controlled boot flag. lint.mjs and
  * the accompanying offline source/test capsule check these invariants.
  * Verification entry: import audit/verify-api.mjs OFFLINE; never a page hook.
- * Cross-origin pixel acquisition adheres strictly to zero-wildcard security policies.
+ * Cross-origin pixel acquisition uses documented @connect * exclusively for user-initiated image retrieval when page CORS blocks canvas access.
  * Disable manager acquisition with allowCrossOriginFetch if not wanted.
  * Independent installations/managers are not authenticated by DOM markers.
  *
@@ -15432,7 +15432,7 @@ async function bootstrap(options = {}) {
  * shown in diagnostics can never drift from the metadata block. A test asserts
  * that no placeholder survives into the built artifact.
  */
-const SCRIPT_VERSION_REPORTED = '2.0.2';
+const SCRIPT_VERSION_REPORTED = '2.0.3';
 
 /**
  * Owned startup funnel. Catch the async result, not just synchronous throws.

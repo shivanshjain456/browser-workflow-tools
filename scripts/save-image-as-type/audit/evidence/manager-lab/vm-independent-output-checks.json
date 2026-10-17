@@ -1,6 +1,6 @@
 {
   "Pillow": "12.3.0",
-  "artifactSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "artifactSha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
   "checks": [
     {
       "case": "/same",

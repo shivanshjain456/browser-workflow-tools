@@ -6,7 +6,7 @@
  * declared permissions cannot drift away from what the code actually uses.
  */
 
-export const SCRIPT_VERSION = '2.0.2';
+export const SCRIPT_VERSION = '2.0.3';
 
 export const META = {
   name: 'Save Image as Type',
