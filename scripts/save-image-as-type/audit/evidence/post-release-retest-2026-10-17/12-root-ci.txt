@@ -1,0 +1,114 @@
+# command: cd ../.. && npm run ci
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+> browser-workflow-tools@1.0.0 validate:headers
+> node tools/validate-headers.mjs
+
+Validating userscript headers...
+  ✓ ChatGPT Conversation Bridge (v2.0.1) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/chatgpt-conversation-bridge]
+  ✓ Clip LeetCode (v3.0.0) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/clip-leetcode]
+  ✓ Codebase Uploader (v2.0.2) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/codebase-uploader]
+  ✓ Save Image as Type (v2.0.3) [@namespace: https://siat.invalid/save-image-as-type]
+  ✓ Web Archives (v8.0.0) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/web-archives]
+  ✓ YouTube Search Command (v2.1.0) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/youtube-search-command]
+  ✓ YTShareAntiTrack (v2.0.0) [@namespace: https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/yt-share-antitrack]
+
+All userscript metadata headers successfully validated!
+
+> browser-workflow-tools@1.0.0 check:perm
+> node tools/check-permissions.mjs
+
+Auditing security privileges for 7 scripts...
+  ✓ ChatGPT Conversation Bridge: 3 grants, 1 connects, 0 wildcard connect
+  ✓ Clip LeetCode: 8 grants, 1 connects, 0 wildcard connect
+  ✓ Codebase Uploader: 10 grants, 1 connects, 0 wildcard connect
+  ✓ Save Image as Type: 10 grants, 1 connects, 0 wildcard connect
+  ✓ Web Archives: 13 grants, 13 connects, 0 wildcard connect
+  ✓ YouTube Search Command: 10 grants, 1 connects, 0 wildcard connect
+  ✓ YTShareAntiTrack: 8 grants, 1 connects, 0 wildcard connect
+
+Successfully wrote verified permissions matrix to PERMISSIONS.md!
+
+> browser-workflow-tools@1.0.0 check:secrets
+> node tools/check-secrets.mjs
+
+Scanning repository for accidental secrets and real credentials...
+Scanned 1188 files: 0 secrets detected. Clean!
+
+> browser-workflow-tools@1.0.0 test
+> node --test tests/**/*.test.mjs
+
+TAP version 13
+# Subtest: ChatGPT URL validator only allows verified share and conversation endpoints
+ok 1 - ChatGPT URL validator only allows verified share and conversation endpoints
+# Subtest: XML escaping prevents markup corruption in OOXML DOCX generation
+ok 2 - XML escaping prevents markup corruption in OOXML DOCX generation
+# Subtest: Filename sanitizer strips illegal Windows/POSIX characters
+ok 3 - Filename sanitizer strips illegal Windows/POSIX characters
+# Subtest: Conversation DAG reconstruction recovers chronological message sequence
+ok 4 - Conversation DAG reconstruction recovers chronological message sequence
+# Subtest: CRC32 checksum produces deterministic standard ZIP checksums
+ok 5 - CRC32 checksum produces deterministic standard ZIP checksums
+# Subtest: LeetCode route parser accurately classifies problem routes
+ok 6 - LeetCode route parser accurately classifies problem routes
+# Subtest: HTML to Markdown conversion preserves semantic structures
+ok 7 - HTML to Markdown conversion preserves semantic structures
+# Subtest: Custom export template substitution replaces all variables safely
+ok 8 - Custom export template substitution replaces all variables safely
+# Subtest: Settings schema handles missing keys and applies safe defaults
+ok 9 - Settings schema handles missing keys and applies safe defaults
+# Subtest: Binary extension classification distinguishes code from binary assets
+ok 10 - Binary extension classification distinguishes code from binary assets
+# Subtest: Secret file policy flags sensitive credential files
+ok 11 - Secret file policy flags sensitive credential files
+# Subtest: Path normalization strictly strips path traversal sequences
+ok 12 - Path normalization strictly strips path traversal sequences
+# Subtest: Token estimation scales predictably with codebase byte volume
+ok 13 - Token estimation scales predictably with codebase byte volume
+# Subtest: Gitignore matcher respects directory patterns, wildcards, and ignores
+ok 14 - Gitignore matcher respects directory patterns, wildcards, and ignores
+# Subtest: Format MIME resolver correctly maps standard image and document formats
+ok 15 - Format MIME resolver correctly maps standard image and document formats
+# Subtest: Filename sanitizer removes path traversal and reserved characters across OS targets
+ok 16 - Filename sanitizer removes path traversal and reserved characters across OS targets
+# Subtest: Filename template expansion replaces standard variables safely
+ok 17 - Filename template expansion replaces standard variables safely
+# Subtest: Rotation normalization snaps angles to valid 90-degree increments in [0, 270]
+ok 18 - Rotation normalization snaps angles to valid 90-degree increments in [0, 270]
+# Subtest: Quality clamp limits values to [0.0, 1.0] with sensible fallback
+ok 19 - Quality clamp limits values to [0.0, 1.0] with sensible fallback
+# Subtest: Target URL validation rejects private IPs, localhost, and non-http schemes
+ok 20 - Target URL validation rejects private IPs, localhost, and non-http schemes
+# Subtest: Memento TimeMap parser extracts snapshots and timestamps accurately
+ok 21 - Memento TimeMap parser extracts snapshots and timestamps accurately
+# Subtest: Probe hosts strictly adhere to static allowlist without wildcards
+ok 22 - Probe hosts strictly adhere to static allowlist without wildcards
+# Subtest: Archive URL constructors build canonical search/snapshot targets
+ok 23 - Archive URL constructors build canonical search/snapshot targets
+# Subtest: Locale-aware view count parser correctly normalizes abbreviations
+ok 24 - Locale-aware view count parser correctly normalizes abbreviations
+# Subtest: Duration parser converts HH:MM:SS strings to total seconds
+ok 25 - Duration parser converts HH:MM:SS strings to total seconds
+# Subtest: Multi-signal ranking algorithm scores verified and authoritative videos higher
+ok 26 - Multi-signal ranking algorithm scores verified and authoritative videos higher
+# Subtest: Channel policy precedence evaluates in strictly deterministic order
+ok 27 - Channel policy precedence evaluates in strictly deterministic order
+# Subtest: Sanitizer removes tracking parameters while preserving media parameters
+ok 28 - Sanitizer removes tracking parameters while preserving media parameters
+# Subtest: Sanitizer cleans youtu.be shortlinks
+ok 29 - Sanitizer cleans youtu.be shortlinks
+# Subtest: Sanitizer supports music.youtube.com and m.youtube.com
+ok 30 - Sanitizer supports music.youtube.com and m.youtube.com
+# Subtest: Sanitizer preserves exact case for non-tracking parameters
+ok 31 - Sanitizer preserves exact case for non-tracking parameters
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 134.884657
+# exit: 0

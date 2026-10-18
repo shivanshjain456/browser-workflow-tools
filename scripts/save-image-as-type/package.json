@@ -1,6 +1,6 @@
 {
   "name": "save-image-as-type",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "private": true,
   "type": "module",
   "description": "Userscript: right-click any image and save it as PNG, JPG, WebP, GIF, BMP, AVIF (probe-gated), PDF, or the original bytes — local conversion, batch, ZIP, transforms, clipboard, metadata, profiles. No servers, no telemetry.",

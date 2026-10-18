@@ -3,6 +3,16 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses semantic versioning.
 
+## 2.0.3 — integrity and verifier follow-up, 2026-10-17
+
+### Fixed
+
+- **Verifier crash resolved:** `audit/assert-evidence.mjs` reads verified test totals from `release-evidence.json` instead of a non-existent `manifest.gates` object, keeping `release-manifest.json` strictly derived-only.
+- **Truthful permission statement:** Corrected the generated build comment in `build.mjs` to accurately explain that `@connect *` is used exclusively for user-initiated cross-origin image retrieval when page CORS blocks reading canvas pixels, removing the false "zero-wildcard" phrasing.
+- **Audit documentation updated:** `audit/README.md` clarifies that canonical `@updateURL` and `@downloadURL` are declared for manager-level updates with zero in-script background checks, and clearly bounds historical 2.0.1 audit records.
+- **Release notes corrected:** Synchronized tracked `docs/release-notes-2.0.2.md` and public Release notes with true published LF checksums.
+- **Evidence provenance:** Re-ran actual Violentmonkey manager lab on the exact candidate artifact, eliminating stale SHA discrepancies in `vm-production.json` and `release-evidence.json`.
+
 ## 2.0.2 — consistency and release-engineering fixes, 2026-10-17
 
 ### Fixed

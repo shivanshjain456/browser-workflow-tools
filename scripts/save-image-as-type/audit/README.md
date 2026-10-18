@@ -1,4 +1,4 @@
-# Verification capsule — 2.0.1 engineering candidate
+# Verification capsule — historical 2.0.1 audit record (current candidate: 2.0.3)
 
 **NOT publish-ready.** [The ordered master record](engineering-report.md) is the current authority. Broad S1 functionality/fidelity/resource requirements, normative study and other acceptance obligations remain unfinished. Passing regression gates is not acceptance of the 75-item brief. All 35 Domain9 dispositions remain explicit; a future release number is not an accepted S1 waiver.
 
@@ -104,7 +104,7 @@ Requires A MD5 `2bdcd447318a9b576d2184c7647fb574` and B `5772b531f84325987730792
 
 ## Distribution, licensing and safety
 
-One `.user.js`, no runtime dependencies/resources/telemetry/update URL, no extra grant/persistent key/default setting. Manager-only storage. Existing wildcard connect retained for consented user-selected arbitrary image hosts; detailed origin trail remains open. Source ZIP includes original/evidence checkpoints for review, not recommendations to install known older vulnerabilities or multiple copies.
+One `.user.js`, no runtime dependencies/resources/telemetry, no extra grant/persistent key/default setting. Manager-only storage. Declares canonical @updateURL and @downloadURL for manager-level updates (the script itself executes no background update checks or telemetry). Existing wildcard connect retained for consented user-selected arbitrary image hosts; detailed origin trail remains open. Source ZIP includes original/evidence checkpoints for review, not recommendations to install known older vulnerabilities or multiple copies.
 
 Development tools are not inlined: Puppeteer (Apache-2.0), jsdom (MIT), esprima (BSD-2-Clause), js-tokens (MIT), Pillow and pypdf (their distribution licences). GIF/Graphics Interchange Format is the copyright property of CompuServe Incorporated; GIF is its service mark. Referenced specifications are not redistributed wholesale. Proprietary managers/browser binaries are not in the capsule.
 

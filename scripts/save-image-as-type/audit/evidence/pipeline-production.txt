@@ -1,6 +1,6 @@
 {
   "artifact": "release/save-image-as-type.user.js",
-  "sha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "sha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
   "browser": "Chrome/155.0.8059.79",
   "scope": "Chrome same-world CDP injection with a fake manager, NOT a real userscript manager",
   "cases": [
@@ -22,11 +22,11 @@
       "cookie": "",
       "requests": [
         {
-          "url": "http://127.0.0.1:32773/empty",
+          "url": "http://127.0.0.1:44739/empty",
           "type": "document"
         },
         {
-          "url": "http://127.0.0.1:32773/favicon.ico",
+          "url": "http://127.0.0.1:44739/favicon.ico",
           "type": "other"
         }
       ],
@@ -50,11 +50,11 @@
       "cookie": "",
       "requests": [
         {
-          "url": "http://127.0.0.1:32773/empty",
+          "url": "http://127.0.0.1:44739/empty",
           "type": "document"
         },
         {
-          "url": "http://127.0.0.1:32773/favicon.ico",
+          "url": "http://127.0.0.1:44739/favicon.ico",
           "type": "other"
         }
       ],
@@ -78,11 +78,11 @@
       "cookie": "",
       "requests": [
         {
-          "url": "http://127.0.0.1:32773/empty",
+          "url": "http://127.0.0.1:44739/empty",
           "type": "document"
         },
         {
-          "url": "http://127.0.0.1:32773/favicon.ico",
+          "url": "http://127.0.0.1:44739/favicon.ico",
           "type": "other"
         }
       ],
@@ -106,11 +106,11 @@
       "cookie": "",
       "requests": [
         {
-          "url": "http://127.0.0.1:32773/empty",
+          "url": "http://127.0.0.1:44739/empty",
           "type": "document"
         },
         {
-          "url": "http://127.0.0.1:32773/favicon.ico",
+          "url": "http://127.0.0.1:44739/favicon.ico",
           "type": "other"
         }
       ],
@@ -121,110 +121,110 @@
     {
       "size": 512,
       "run": 0,
-      "encodeMs": 157.29999999981374,
-      "timerDelayMs": 159.70000000018626,
+      "encodeMs": 132.19999999995343,
+      "timerDelayMs": 134.19999999995343,
       "bytes": 86514
     },
     {
       "size": 512,
       "run": 1,
-      "encodeMs": 131.6000000005588,
-      "timerDelayMs": 133.70000000018626,
+      "encodeMs": 113.29999999993015,
+      "timerDelayMs": 114,
       "bytes": 86514
     },
     {
       "size": 512,
       "run": 2,
-      "encodeMs": 161.90000000037253,
-      "timerDelayMs": 163.90000000037253,
+      "encodeMs": 108.30000000004657,
+      "timerDelayMs": 109,
       "bytes": 86514
     },
     {
       "size": 1024,
       "run": 0,
-      "encodeMs": 218.30000000074506,
-      "timerDelayMs": 220.80000000074506,
+      "encodeMs": 145.5,
+      "timerDelayMs": 146,
       "bytes": 275556
     },
     {
       "size": 1024,
       "run": 1,
-      "encodeMs": 238.1000000005588,
-      "timerDelayMs": 240.79999999981374,
+      "encodeMs": 176.29999999993015,
+      "timerDelayMs": 177.59999999997672,
       "bytes": 275556
     },
     {
       "size": 1024,
       "run": 2,
-      "encodeMs": 188.70000000018626,
-      "timerDelayMs": 191.29999999981374,
+      "encodeMs": 156.20000000006985,
+      "timerDelayMs": 156.5,
       "bytes": 275556
     }
   ],
   "frames": {
     "frames": [
       {
-        "url": "http://127.0.0.1:32773/frames",
+        "url": "http://127.0.0.1:44739/frames",
         "commands": 8,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "commands": 0,
         "handle": false,
         "hosts": 0
@@ -232,51 +232,51 @@
     ],
     "requests": [
       {
-        "url": "http://127.0.0.1:32773/frames",
+        "url": "http://127.0.0.1:44739/frames",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/empty",
+        "url": "http://127.0.0.1:44739/empty",
         "type": "document"
       },
       {
-        "url": "http://127.0.0.1:32773/favicon.ico",
+        "url": "http://127.0.0.1:44739/favicon.ico",
         "type": "other"
       }
     ]

@@ -1,0 +1,8 @@
+# command: gh api repos/shivanshjain456/browser-workflow-tools/git/refs/tags/v2.0.2 && gh api repos/shivanshjain456/browser-workflow-tools/git/tags/06c58edb7df8241e6a9d309ccb5ecc791c546fbf && gh api repos/shivanshjain456/browser-workflow-tools/private-vulnerability-reporting
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+{"ref":"refs/tags/v2.0.2","node_id":"REF_kwDOVFImjLByZWZzL3RhZ3MvdjIuMC4y","url":"https://api.github.com/repos/shivanshjain456/browser-workflow-tools/git/refs/tags/v2.0.2","object":{"sha":"06c58edb7df8241e6a9d309ccb5ecc791c546fbf","type":"tag","url":"https://api.github.com/repos/shivanshjain456/browser-workflow-tools/git/tags/06c58edb7df8241e6a9d309ccb5ecc791c546fbf"}}
+{"node_id":"TA_kwDOVFImjNoAKDA2YzU4ZWRiN2RmODI0MWU2YTlkMzA5Y2NiNWVjYzc5MWM1NDZmYmY","sha":"06c58edb7df8241e6a9d309ccb5ecc791c546fbf","url":"https://api.github.com/repos/shivanshjain456/browser-workflow-tools/git/tags/06c58edb7df8241e6a9d309ccb5ecc791c546fbf","tagger":{"name":"Shivansh Jain","email":"[REDACTED]","date":"2026-10-17T14:07:40Z"},"object":{"sha":"f7376f2855171fb2c32c005fd8e34c2b856ff1d7","type":"commit","url":"https://api.github.com/repos/shivanshjain456/browser-workflow-tools/git/commits/f7376f2855171fb2c32c005fd8e34c2b856ff1d7"},"tag":"v2.0.2","message":"Save Image as Type 2.0.2 — 182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab\n","verification":{"verified":false,"reason":"unsigned","signature":null,"payload":null,"verified_at":null}}
+{"enabled":true}
+# exit: 0

@@ -39,7 +39,7 @@ PASS  connect-scope
 PASS  match-scope
       @match = ["*://*/*"]; no file://, chrome://, or extension origins
 PASS  artifact-exists
-      605.0 KB, sha256 2e994164334133f8
+      605.6 KB, sha256 51a0d1afe950d7bc
 PASS  artifact-header-matches-meta
       metadata block in release/ is byte-identical to src/meta.js
 PASS  no-build-placeholder
@@ -47,9 +47,9 @@ PASS  no-build-placeholder
 PASS  no-runtime-imports
       no import/require statements survive into the artifact
 PASS  version-consistent
-      metadata @version and in-script version are both 2.0.1
+      metadata @version and in-script version are both 2.0.3
 PASS  no-remote-endpoints
-      only inert identifiers/reserved parse bases appear: https://siat.invalid/save-image-as-type, http://www.w3.org/2000/svg, https://siat.invalid/
+      only inert identifiers/reserved parse bases appear: https://siat.invalid/save-image-as-type, https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type, https://github.com/shivanshjain456/browser-workflow-tools/issues, https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js, http://www.w3.org/2000/svg, https://siat.invalid/
 PASS  no-implicit-page-globals
       no bare calls to window-owned names (27 checked) across 42 sources
 

@@ -1,0 +1,61 @@
+# command: npm run lint
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+PASS  no-public-capability-handle
+      privileged test handles must never ship: absent from all 42 sources and the artifact
+PASS  no-page-boot-switch
+      production boot is not page-configurable: absent from all 42 sources and the artifact
+PASS  no-page-persistence
+      persistence belongs only in manager storage: absent from all 42 sources and the artifact
+PASS  no-telemetry-channels
+      no beacon or socket destinations: absent from all 42 sources and the artifact
+PASS  no-eval
+      dynamic code execution: absent from all 42 sources and the artifact
+PASS  no-new-function
+      dynamic code execution: absent from all 42 sources and the artifact
+PASS  no-innerhtml
+      HTML sink reachable by page text: absent from all 42 sources and the artifact
+PASS  no-outerhtml
+      HTML sink reachable by page text: absent from all 42 sources and the artifact
+PASS  no-insert-adjacent-html
+      HTML sink reachable by page text: absent from all 42 sources and the artifact
+PASS  no-document-write
+      document rewriting: absent from all 42 sources and the artifact
+PASS  no-string-timer
+      string timers are eval in disguise: absent from all 42 sources and the artifact
+PASS  no-unsafeWindow
+      page-world access is not needed by this script: absent from all 42 sources and the artifact
+PASS  no-debugger
+      debug statement left in source: absent from all 42 sources and the artifact
+PASS  no-javascript-url
+      script URL sink: absent from all 42 sources and the artifact
+PASS  no-remote-require
+      unpinned remote executable dependency: absent from all 42 sources and the artifact
+PASS  no-remote-resource
+      unpinned remote dependency: absent from all 42 sources and the artifact
+PASS  no-gm-add-element-src
+      remote script injection: absent from all 42 sources and the artifact
+PASS  grants-match-usage
+      10 grants, all used: GM_info, GM_getValue, GM_setValue, GM_addValueChangeListener, GM_removeValueChangeListener, GM_deleteValue, GM_xmlhttpRequest, GM_download, GM_registerMenuCommand, GM_notification
+PASS  connect-scope
+      @connect = ["*"] (wildcard required: images are hosted on arbitrary CDNs; documented in README)
+PASS  match-scope
+      @match = ["*://*/*"]; no file://, chrome://, or extension origins
+PASS  artifact-exists
+      605.6 KB, sha256 51a0d1afe950d7bc
+PASS  artifact-header-matches-meta
+      metadata block in release/ is byte-identical to src/meta.js
+PASS  no-build-placeholder
+      version placeholder was replaced at build time
+PASS  no-runtime-imports
+      no import/require statements survive into the artifact
+PASS  version-consistent
+      metadata @version and in-script version are both 2.0.3
+PASS  no-remote-endpoints
+      only inert identifiers/reserved parse bases appear: https://siat.invalid/save-image-as-type, https://github.com/shivanshjain456/browser-workflow-tools/tree/main/scripts/save-image-as-type, https://github.com/shivanshjain456/browser-workflow-tools/issues, https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js, http://www.w3.org/2000/svg, https://siat.invalid/
+PASS  no-implicit-page-globals
+      no bare calls to window-owned names (27 checked) across 42 sources
+
+27/27 lint checks passed
+# exit: 0

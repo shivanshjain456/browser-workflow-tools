@@ -48,7 +48,7 @@ const changelogTop = changelog.match(/^## (\d+\.\d+\.\d+)/m)?.[1];
 for (const [label, value] of [['package.json', pkg.version], ['src/meta.js', SCRIPT_VERSION], ['artifact @version', metaVersion], ['CHANGELOG.md', changelogTop], ['release-manifest.json', manifest.version]]) {
   if (value !== SCRIPT_VERSION) fail(`version disagreement: ${label} is ${value}, expected ${SCRIPT_VERSION}`);
 }
-if (!/^2\.0\.2$/.test(SCRIPT_VERSION)) warn(`version ${SCRIPT_VERSION}: this repository snapshot is a pre-release; see docs/publication-checklist.md`);
+if (!/^2\.0\.3$/.test(SCRIPT_VERSION)) warn(`version ${SCRIPT_VERSION}: this repository snapshot is a pre-release; see docs/publication-checklist.md`);
 ok(`version ${SCRIPT_VERSION} consistent across 5 locations`);
 
 /* 2. artifact validity ---------------------------------------------------- */
@@ -166,6 +166,8 @@ const banned = [
   [/grayscale, or invert/i, ['README.md']],
   [/`C` to copy/i, ['README.md']],
   [/no update check/i, ['SECURITY.md', 'docs/privacy-and-permissions.md']],
+  [/zero-wildcard/i, ['build.mjs', 'release/save-image-as-type.user.js', 'audit/README.md', 'README.md', 'docs/privacy-and-permissions.md']],
+  [/no\s+(?:runtime\s+dependencies\/resources\/telemetry\/)?update\s+URL/i, ['audit/README.md', 'docs/installation.md', 'docs/privacy-and-permissions.md', 'README.md', 'SECURITY.md']],
 ];
 for (const [pattern, files] of banned) {
   for (const file of files) {
