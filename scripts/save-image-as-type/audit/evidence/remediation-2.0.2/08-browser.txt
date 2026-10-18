@@ -68,5 +68,5 @@ Save Image as Type ΓÇö browser end-to-end test
   PASS  page-untouched             no page errors, no leaked globals, no page storage used
 
 57 passed, 0 failed, 0 skipped (57 scenarios)
-report: C:\Projects\3. PERSONAL\browser-workflow-tools\scripts\save-image-as-type\.tmp-browser\report.json
+report: C:\Projects\browser-workflow-tools\scripts\save-image-as-type\.tmp-browser\report.json
 # exit: 0
