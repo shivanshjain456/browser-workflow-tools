@@ -131,7 +131,7 @@ export function bundle() {
     ` * page-global privileged API, no page-controlled boot flag. lint.mjs and`,
     ` * the accompanying offline source/test capsule check these invariants.`,
     ` * Verification entry: import audit/verify-api.mjs OFFLINE; never a page hook.`,
-    ` * Cross-origin pixel acquisition adheres strictly to zero-wildcard security policies.`,
+    ` * Cross-origin pixel acquisition uses documented @connect * exclusively for user-initiated image retrieval when page CORS blocks canvas access.`,
     ` * Disable manager acquisition with allowCrossOriginFetch if not wanted.`,
     ` * Independent installations/managers are not authenticated by DOM markers.`,
     ` *`,
@@ -204,6 +204,7 @@ if (isCheck) {
       'newSettings', 'newStorageKeys', 'newRuntimeDependencies', 'newRuntimeDestinations',
     ]) delete manifest[stale];
     manifest.evidence = 'audit/evidence/release-evidence.json';
+    manifest.version = SCRIPT_VERSION;
     manifest.bytes = bytes.length;
     manifest.md5 = createHash('md5').update(bytes).digest('hex');
     manifest.sha256 = createHash('sha256').update(bytes).digest('hex');

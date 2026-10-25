@@ -1,7 +1,7 @@
 Save Image as Type — browser end-to-end test
 
   Chrome/155.0.8059.79
-  fixture origin A http://127.0.0.1:34769 · CDN origin B http://127.0.0.1:43899
+  fixture origin A http://127.0.0.1:32795 · CDN origin B http://127.0.0.1:34903
 
   PASS  boot-and-register          the artifact boots, registers manager commands and touches nothing else
   PASS  idle-capability-probe      the idle probe measures real encoders and gates AVIF on the result
@@ -62,4 +62,4 @@ Save Image as Type — browser end-to-end test
   PASS  page-untouched             no page errors, no leaked globals, no page storage used
 
 57 passed, 0 failed, 0 skipped (57 scenarios)
-report: /home/user/save-image-as-type/.tmp-browser/report.json
+report: /workspace/browser-workflow-tools/scripts/save-image-as-type/.tmp-browser/report.json

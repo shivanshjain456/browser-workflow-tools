@@ -1,10 +1,10 @@
 {
-  "version": "2.0.2",
+  "version": "2.0.3",
   "releaseAccepted": false,
   "artifact": "release/save-image-as-type.user.js",
-  "bytes": 620098,
-  "md5": "caff115f284deb60931fbc020daea74e",
-  "sha256": "182f7854e0f225a07a5979d0f3f2783bbcec796851283aef612af205c4c0c8ab",
+  "bytes": 620156,
+  "md5": "7cca689ba3ce1c85e397a68cafe8d55f",
+  "sha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
   "build": {
     "modules": 41,
     "namedTopLevelBindings": 444,

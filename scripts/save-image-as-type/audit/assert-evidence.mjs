@@ -6,8 +6,10 @@ const sha256=createHash('sha256').update(readFileSync('release/save-image-as-typ
 const manifest=JSON.parse(readFileSync('release/release-manifest.json'));
 assert.equal(manifest.sha256,sha256,'manifest must identify current source');
 assert.equal(manifest.defaultSettingsKeys,49,'48 original defaults plus the profiles list');
+const evidence=JSON.parse(readFileSync('audit/evidence/release-evidence.json'));
+assert.equal(manifest.evidence,'audit/evidence/release-evidence.json','manifest must link to release evidence');
 const unit=readFileSync('audit/evidence/candidate-unit-current.txt','utf8');
-for(const key of ['tests','pass'])assert.equal(Number(unit.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1]),manifest.gates.unit.total,'full unit count');
+for(const key of ['tests','pass'])assert.equal(Number(unit.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1]),evidence.gates.unit.total,'full unit count');
 for(const key of ['fail','skipped','cancelled','todo'])assert.match(unit,new RegExp('^# '+key+' 0$','m'));
 const production=JSON.parse(readFileSync('audit/evidence/candidate-production.json'));
 assert.equal(production.sha256,sha256,'production evidence source drift');

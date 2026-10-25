@@ -1,0 +1,11 @@
+# command: npm run build && sha256sum release/save-image-as-type.user.js
+# commit: f7376f2855171fb2c32c005fd8e34c2b856ff1d7
+# artifact sha256: 51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172
+# timestamp UTC: 2026-10-17T19:00:00Z
+> save-image-as-type@2.0.3 build
+> node build.mjs
+
+built release/save-image-as-type.user.js — v2.0.3, 41 modules, 444 exports, 15474 lines, 605.6 KB
+updated release/release-manifest.json and release/SHA256SUMS
+51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172  release/save-image-as-type.user.js
+# exit: 0

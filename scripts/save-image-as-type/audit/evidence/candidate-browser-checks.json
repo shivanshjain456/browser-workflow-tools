@@ -1,78 +1,78 @@
 {
   "sourcePath": "release/save-image-as-type.user.js",
-  "sha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "sha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
   "browser": "Chrome/155.0.8059.79",
   "scope": "Exact production source with timing marks outside its bytes; Chrome CDP and fake GM, not actual manager",
   "boot": [
     {
-      "syncStartupMs": 4.300000000745058,
+      "syncStartupMs": 4.099999999976717,
       "commands": 8,
       "localStorageKeys": [],
       "sessionStorageKeys": [],
       "cookie": "",
       "publicHandle": false,
       "requests": [
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico",
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico",
-        "http://127.0.0.1:40263/fixture.png",
-        "blob:http://127.0.0.1:40263/4fcdb726-5004-460d-86d9-092d939b43e4",
-        "blob:http://127.0.0.1:40263/4af7d8b7-9849-4a48-9b62-4a0c61a5e129",
-        "blob:http://127.0.0.1:40263/7cfe443d-7ab5-4f8c-ae1b-1ea7e7560bba",
-        "blob:http://127.0.0.1:40263/c2fd2882-cfe3-4afa-8677-3ad2f5fc5758"
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico",
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico",
+        "http://127.0.0.1:42965/fixture.png",
+        "blob:http://127.0.0.1:42965/ae346a9b-24dd-4f52-ab54-e0884ba04be0",
+        "blob:http://127.0.0.1:42965/faa74013-c1f2-4046-a73a-9f07bb6b9342",
+        "blob:http://127.0.0.1:42965/7e325f09-45fb-4b9a-96ef-4bc1d5ef3380",
+        "blob:http://127.0.0.1:42965/5507a8d3-a588-472c-b292-7879fd6d9f3a"
       ],
       "errors": []
     },
     {
-      "syncStartupMs": 7.5,
+      "syncStartupMs": 4.5,
       "commands": 8,
       "localStorageKeys": [],
       "sessionStorageKeys": [],
       "cookie": "",
       "publicHandle": false,
       "requests": [
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico"
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico"
       ],
       "errors": []
     },
     {
-      "syncStartupMs": 5.300000000745058,
+      "syncStartupMs": 4.599999999976717,
       "commands": 8,
       "localStorageKeys": [],
       "sessionStorageKeys": [],
       "cookie": "",
       "publicHandle": false,
       "requests": [
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico"
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico"
       ],
       "errors": []
     },
     {
-      "syncStartupMs": 5.3999999994412065,
+      "syncStartupMs": 4.199999999953434,
       "commands": 8,
       "localStorageKeys": [],
       "sessionStorageKeys": [],
       "cookie": "",
       "publicHandle": false,
       "requests": [
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico"
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico"
       ],
       "errors": []
     },
     {
-      "syncStartupMs": 4.7000000001862645,
+      "syncStartupMs": 4.199999999953434,
       "commands": 8,
       "localStorageKeys": [],
       "sessionStorageKeys": [],
       "cookie": "",
       "publicHandle": false,
       "requests": [
-        "http://127.0.0.1:40263/",
-        "http://127.0.0.1:40263/favicon.ico"
+        "http://127.0.0.1:42965/",
+        "http://127.0.0.1:42965/favicon.ico"
       ],
       "errors": []
     }

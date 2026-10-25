@@ -1,11 +1,11 @@
 {
   "manager": "vm",
   "driver": {
-    "node": "v22.22.2",
+    "node": "v22.23.3",
     "puppeteer": "25.14.0"
   },
   "scope": "Actual userscript manager unpacked official MV3 distribution, installed via manager UI, production artifact unmodified; local HTTP fixture, headless Chrome, not public-site/other-OS certification",
-  "artifactSha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4",
+  "artifactSha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172",
   "tests": [
     {
       "path": "/same",
@@ -225,7 +225,7 @@
       "server": "image",
       "url": "/opaque.png",
       "origin": "",
-      "referer": "http://127.0.0.1:45019/",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -235,8 +235,8 @@
     {
       "server": "image",
       "url": "/opaque.png",
-      "origin": "http://127.0.0.1:45019",
-      "referer": "http://127.0.0.1:45019/",
+      "origin": "http://127.0.0.1:42285",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -249,8 +249,8 @@
     {
       "server": "image",
       "url": "/opaque.png",
-      "origin": "http://127.0.0.1:45019",
-      "referer": "http://127.0.0.1:45019/",
+      "origin": "http://127.0.0.1:42285",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -268,7 +268,7 @@
       "server": "image",
       "url": "/opaque.png",
       "origin": "",
-      "referer": "http://127.0.0.1:45019/",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -278,8 +278,8 @@
     {
       "server": "image",
       "url": "/opaque.png",
-      "origin": "http://127.0.0.1:45019",
-      "referer": "http://127.0.0.1:45019/",
+      "origin": "http://127.0.0.1:42285",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -292,8 +292,8 @@
     {
       "server": "image",
       "url": "/opaque.png",
-      "origin": "http://127.0.0.1:45019",
-      "referer": "http://127.0.0.1:45019/",
+      "origin": "http://127.0.0.1:42285",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -377,17 +377,13 @@
     },
     {
       "server": "page",
-      "url": "/favicon.ico"
-    },
-    {
-      "server": "page",
       "url": "/frames"
     },
     {
       "server": "image",
       "url": "/opaque.png",
       "origin": "",
-      "referer": "http://127.0.0.1:45019/",
+      "referer": "http://127.0.0.1:42285/",
       "fetchSite": "same-site"
     },
     {
@@ -395,15 +391,15 @@
       "url": "/child-same"
     },
     {
-      "server": "page",
-      "url": "/fixture.png"
-    },
-    {
       "server": "image",
       "url": "/opaque.png",
       "origin": "",
-      "referer": "http://127.0.0.1:35909/child-cross",
+      "referer": "http://127.0.0.1:33605/child-cross",
       "fetchSite": "same-origin"
+    },
+    {
+      "server": "page",
+      "url": "/fixture.png"
     },
     {
       "server": "page",
@@ -413,7 +409,7 @@
       "server": "image",
       "url": "/opaque.png",
       "origin": "",
-      "referer": "http://127.0.0.1:35909/child-cross",
+      "referer": "http://127.0.0.1:33605/child-cross",
       "fetchSite": "same-origin"
     }
   ],
@@ -504,14 +500,17 @@
     "blacklistErrors",
     "blacklistNetErrors",
     "code:1",
+    "mod:1",
+    "mod:https://raw.githubusercontent.com/shivanshjain456/browser-workflow-tools/main/scripts/save-image-as-type/release/save-image-as-type.user.js",
     "options",
     "scr:1",
+    "val:1",
     "version"
   ],
   "storedCodeHashes": [
     {
       "key": "code:1",
-      "sha256": "2e994164334133f8b5901e6649c96ec8e90931975b4faf59ca1c8877e91edbd4"
+      "sha256": "51a0d1afe950d7bcb51c4e57253c7db14930010cbf3565f00d70f2b1fb6a9172"
     }
   ],
   "popupText": "Violentmonkey 2.49.0 MV3\nFind scripts for this site (GF)\n/\nOUJS\nMatched scripts\nSave Image as Type\nSave Image as Type — Settings…\nSave Image as Type — Convert the last image I pointed at…\nSave Image as Type — Browse page images…\nSave Image as Type — Convert every image on this page…\nSave Image as Type — Copy the last image I pointed at\nSave Image as Type — Keyboard shortcut help\nSave Image as Type — Capability report\nSave Image as Type — Pause on this page\nviolentmonkey.github.io",
@@ -548,7 +547,7 @@
   },
   "embeddedConversions": [
     {
-      "url": "http://127.0.0.1:45019/child-same",
+      "url": "http://127.0.0.1:42285/child-same",
       "files": [
         {
           "name": "fixture.png",
@@ -559,7 +558,7 @@
       ]
     },
     {
-      "url": "http://127.0.0.1:35909/child-cross",
+      "url": "http://127.0.0.1:33605/child-cross",
       "files": [
         {
           "name": "opaque.png",
